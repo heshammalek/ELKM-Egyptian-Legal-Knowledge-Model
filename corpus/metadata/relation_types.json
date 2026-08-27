@@ -1,0 +1,99 @@
+{
+  "relation_types": {
+    "description": "انواع العلاقات القانونية الثابتة (enum) المستخدمة في بناء الرسم البياني المعرفي. هذه الانواع غير نهائية ويمكن توسيعها باكتشاف علاقات جديدة اثناء بناء الكوربس.",
+    "is_enum": true,
+    "is_final": false,
+    "types": [
+      {
+        "id": "REL-001",
+        "name": "total_repeal",
+        "name_ar": "إلغاء كلي",
+        "category": "تأثير تشريعي",
+        "description": "إلغاء نص قانوني بالكامل بنص لاحق",
+        "direction": "directed",
+        "example": "قانون 174 لسنة 2025 يلغي كلياً قانون 58 لسنة 1937",
+        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+      },
+      {
+        "id": "REL-002",
+        "name": "partial_repeal",
+        "name_ar": "إلغاء جزئي",
+        "category": "تأثير تشريعي",
+        "description": "إلغاء جزء محدد من نص قانوني (مادة، فقرة، عبارة) بنص لاحق",
+        "direction": "directed",
+        "example": "قانون 174 لسنة 2025 يلغي المادة 53 من قانون العقوبات",
+        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+      },
+      {
+        "id": "REL-003",
+        "name": "amendment",
+        "name_ar": "تعديل",
+        "category": "تأثير تشريعي",
+        "description": "تعديل نص قانوني قائم بنص لاحق (تغيير النص، استبدال، إضافة)",
+        "direction": "directed",
+        "example": "قانون 174 لسنة 2025 يعدل المادة 53 من قانون العقوبات",
+        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+      },
+      {
+        "id": "REL-004",
+        "name": "addition",
+        "name_ar": "إضافة",
+        "category": "تأثير تشريعي",
+        "description": "إضافة مواد أو نصوص جديدة إلى قانون قائم",
+        "direction": "directed",
+        "example": "قانون 174 لسنة 2025 يضيف المادة 53 مكرر إلى قانون العقوبات",
+        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+      },
+      {
+        "id": "REL-005",
+        "name": "renumbering",
+        "name_ar": "إعادة ترقيم",
+        "category": "تأثير تشريعي",
+        "description": "إعادة ترقيم مواد قانونية دون تغيير مضمونها",
+        "direction": "directed",
+        "example": "قانون 174 لسنة 2025 يعيد ترقيم المواد 50-60 لتصبح 55-65",
+        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+      },
+      {
+        "id": "REL-006",
+        "name": "delegation_basis",
+        "name_ar": "أساس التفويض",
+        "category": "علاقة هيكلية",
+        "description": "نص يخول سلطة إصدار لوائح أو قرارات تنفيذية",
+        "direction": "directed",
+        "example": "المادة 170 من الدستور تخول رئيس مجلس الوزراء إصدار اللوائح التنفيذية",
+        "constitutional_basis": "المادة 170 (لوائح تنفيذية)"
+      },
+      {
+        "id": "REL-007",
+        "name": "unconstitutionality_ruling",
+        "name_ar": "حكم بعدم دستورية",
+        "category": "تأثير قضائي",
+        "description": "حكم قضائي من المحكمة الدستورية العليا بعدم دستورية نص قانوني",
+        "direction": "directed",
+        "example": "حكم المحكمة الدستورية العليا بعدم دستورية المادة 53 من قانون العقوبات",
+        "constitutional_basis": "المادة 192 (رقابة دستورية)"
+      },
+      {
+        "id": "REL-008",
+        "name": "interpretation_fatwa",
+        "name_ar": "فتوى تفسيرية",
+        "category": "تأثير تفسيري",
+        "description": "فتوى تفسيرية من مجلس الدولة أو الأزهر تفسر نص قانوني",
+        "direction": "directed",
+        "example": "فتوى مجلس الدولة رقم 88 لسنة 2021 تفسر المادة 53 من قانون العقوبات",
+        "constitutional_basis": "المادة 190 (اختصاصات مجلس الدولة)"
+      },
+      {
+        "id": "REL-009",
+        "name": "reinstatement",
+        "name_ar": "إعادة العمل",
+        "category": "تأثير تشريعي",
+        "description": "إعادة العمل بنص قانوني كان ملغياً أو موقوفاً",
+        "direction": "directed",
+        "example": "قانون 174 لسنة 2025 يعيد العمل بالمادة 53 من قانون العقوبات",
+        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+      }
+    ]
+  }
+}
