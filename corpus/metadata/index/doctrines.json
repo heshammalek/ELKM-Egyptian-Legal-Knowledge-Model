@@ -1,1 +1,44 @@
-
+{
+  "doc_id": "LAW-58-1937",
+  "doc_type": "law",
+  "sub_type": "penal_code",
+  "title_ar": "قانون رقم ٥٨ لسنة ١٩٣٧ بإصدار قانون العقوبات",
+  "title_en": "Penal Code Law No. 58 of 1937",
+  "year": 1937,
+  "doc_number": "58",
+  "source": {
+    "gazette_number": "71",
+    "gazette_date": "1937-08-05"
+  },
+  "issuing_authority": "فاروق الأول ملك مصر",
+  "issuing_authority_type": "AUTH-TYPE-002",
+  "status": "amended",
+  "subjects": [
+    "الشرطة والأجهزة الأمنية",
+    "الإجراءات الجنائية",
+    "الإرهاب وجرائم العنف",
+    "الوظيفة العامة والعاملون المدنيون بالدولة",
+    "الحقوق والحريات العامة"
+  ],
+  "paths": {
+    "image": "raw/scanned/law/LAW-58-1937.pdf",
+    "original_text": "raw/text_as_is/law/LAW-58-1937.txt",
+    "normalized_txt": "normalized/law/txt/LAW-58-1937.txt",
+    "json": "normalized/law/json/LAW-58-1937.json"
+  },
+  "stats": {
+    "articles_count": 395,
+    "books_count": 4,
+    "chapters_count": 15
+  },
+  "relations_refs": [
+    {
+      "relation_id": "REL-003",
+      "ref_path": "relations/by_document/REL-003-LAW-58-1937-LAW-174-2025.json",
+      "path_naming": {
+        "pattern": "{relation_id}-{source_doc_id}-{target_doc_id}.json",
+        "description": "تسمية ملف العلاقة تتكون من: نوع العلاقة (relation_id) متبوعاً بالوثيقة المصدر ثم الوثيقة الهدف، لفصل كل علاقة في ملف مستقل وتسهيل التتبع والربط الآلي."
+      }
+    }
+  ]
+}
