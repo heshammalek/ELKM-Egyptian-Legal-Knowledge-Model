@@ -1,6 +1,6 @@
 {
   "relation_types": {
-    "description": "انواع العلاقات القانونية الثابتة (enum) المستخدمة في بناء الرسم البياني المعرفي. هذه الانواع غير نهائية ويمكن توسيعها باكتشاف علاقات جديدة اثناء بناء الكوربس.",
+    "description": "انواع العلاقات القانونية الثابتة (enum) المستخدمة في بناء الرسم البياني المعرفي. هذه الانواع غير نهائية ويمكن توسيعها باكتشاف علاقات جديدة اثناء بناء الكوربس. short_code هو المصدر الوحيد لبادئة instance_id الخاصة بكل علاقة فردية داخل relations/.",
     "is_enum": true,
     "is_final": false,
     "types": [
@@ -8,9 +8,8 @@
         "id": "REL-001",
         "name": "total_repeal",
         "name_ar": "إلغاء كلي",
-        "category": "تأثير تشريعي",
+        "short_code": "TREP",
         "description": "إلغاء نص قانوني بالكامل بنص لاحق",
-        "direction": "directed",
         "example": "قانون 174 لسنة 2025 يلغي كلياً قانون 58 لسنة 1937",
         "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
       },
@@ -18,9 +17,8 @@
         "id": "REL-002",
         "name": "partial_repeal",
         "name_ar": "إلغاء جزئي",
-        "category": "تأثير تشريعي",
+        "short_code": "PREP",
         "description": "إلغاء جزء محدد من نص قانوني (مادة، فقرة، عبارة) بنص لاحق",
-        "direction": "directed",
         "example": "قانون 174 لسنة 2025 يلغي المادة 53 من قانون العقوبات",
         "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
       },
@@ -28,9 +26,8 @@
         "id": "REL-003",
         "name": "amendment",
         "name_ar": "تعديل",
-        "category": "تأثير تشريعي",
+        "short_code": "AMD",
         "description": "تعديل نص قانوني قائم بنص لاحق (تغيير النص، استبدال، إضافة)",
-        "direction": "directed",
         "example": "قانون 174 لسنة 2025 يعدل المادة 53 من قانون العقوبات",
         "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
       },
@@ -38,9 +35,8 @@
         "id": "REL-004",
         "name": "addition",
         "name_ar": "إضافة",
-        "category": "تأثير تشريعي",
+        "short_code": "ADD",
         "description": "إضافة مواد أو نصوص جديدة إلى قانون قائم",
-        "direction": "directed",
         "example": "قانون 174 لسنة 2025 يضيف المادة 53 مكرر إلى قانون العقوبات",
         "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
       },
@@ -48,9 +44,8 @@
         "id": "REL-005",
         "name": "renumbering",
         "name_ar": "إعادة ترقيم",
-        "category": "تأثير تشريعي",
+        "short_code": "RENUM",
         "description": "إعادة ترقيم مواد قانونية دون تغيير مضمونها",
-        "direction": "directed",
         "example": "قانون 174 لسنة 2025 يعيد ترقيم المواد 50-60 لتصبح 55-65",
         "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
       },
@@ -58,9 +53,8 @@
         "id": "REL-006",
         "name": "delegation_basis",
         "name_ar": "أساس التفويض",
-        "category": "علاقة هيكلية",
+        "short_code": "DELEG",
         "description": "نص يخول سلطة إصدار لوائح أو قرارات تنفيذية",
-        "direction": "directed",
         "example": "المادة 170 من الدستور تخول رئيس مجلس الوزراء إصدار اللوائح التنفيذية",
         "constitutional_basis": "المادة 170 (لوائح تنفيذية)"
       },
@@ -68,9 +62,8 @@
         "id": "REL-007",
         "name": "unconstitutionality_ruling",
         "name_ar": "حكم بعدم دستورية",
-        "category": "تأثير قضائي",
+        "short_code": "UNCONST",
         "description": "حكم قضائي من المحكمة الدستورية العليا بعدم دستورية نص قانوني",
-        "direction": "directed",
         "example": "حكم المحكمة الدستورية العليا بعدم دستورية المادة 53 من قانون العقوبات",
         "constitutional_basis": "المادة 192 (رقابة دستورية)"
       },
@@ -78,9 +71,8 @@
         "id": "REL-008",
         "name": "interpretation_fatwa",
         "name_ar": "فتوى تفسيرية",
-        "category": "تأثير تفسيري",
+        "short_code": "INTERP",
         "description": "فتوى تفسيرية من مجلس الدولة أو الأزهر تفسر نص قانوني",
-        "direction": "directed",
         "example": "فتوى مجلس الدولة رقم 88 لسنة 2021 تفسر المادة 53 من قانون العقوبات",
         "constitutional_basis": "المادة 190 (اختصاصات مجلس الدولة)"
       },
@@ -88,11 +80,91 @@
         "id": "REL-009",
         "name": "reinstatement",
         "name_ar": "إعادة العمل",
-        "category": "تأثير تشريعي",
+        "short_code": "REINST",
         "description": "إعادة العمل بنص قانوني كان ملغياً أو موقوفاً",
-        "direction": "directed",
         "example": "قانون 174 لسنة 2025 يعيد العمل بالمادة 53 من قانون العقوبات",
         "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+      },
+      {
+        "id": "REL-010",
+        "name": "referral",
+        "name_ar": "إحالة",
+        "short_code": "REF",
+        "description": "نص يحيل إلى نص آخر (مادة، فقرة، قانون)",
+        "example": "المادة 53 من قانون العقوبات تحيل إلى المادة 12 من قانون الإجراءات الجنائية",
+        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+      },
+      {
+        "id": "REL-011",
+        "name": "establishes",
+        "name_ar": "ينشئ",
+        "short_code": "EST",
+        "description": "نص ينشئ هيئة أو مؤسسة أو كياناً جديداً",
+        "example": "قانون 174 لسنة 2025 ينشئ هيئة النيابة الإدارية",
+        "constitutional_basis": "المادة 197"
+      },
+      {
+        "id": "REL-012",
+        "name": "prohibits",
+        "name_ar": "يحظر",
+        "short_code": "PROH",
+        "description": "نص يحظر فعلاً أو سلوكاً معيناً بشكل عام",
+        "example": "يحظر على الأحزاب السياسية إنشاء تشكيلات عسكرية أو شبه عسكرية",
+        "constitutional_basis": "المادة 74 (الأحزاب السياسية)"
+      },
+      {
+        "id": "REL-013",
+        "name": "obligates",
+        "name_ar": "يلزم",
+        "short_code": "OBL",
+        "description": "نص يلزم جهة أو فرداً بفعل معين",
+        "example": "المادة 170 من الدستور تلزم رئيس مجلس الوزراء بإصدار اللوائح التنفيذية",
+        "constitutional_basis": "المادة 170"
+      },
+      {
+        "id": "REL-014",
+        "name": "empowers",
+        "name_ar": "يخول",
+        "short_code": "EMP",
+        "description": "نص يخول سلطة أو اختصاصاً معيناً",
+        "example": "المادة 192 من الدستور تخول المحكمة الدستورية العليا الرقابة على دستورية القوانين",
+        "constitutional_basis": "المادة 192"
+      },
+      {
+        "id": "REL-015",
+        "name": "acceptance_procedural",
+        "name_ar": "قبول شكلي",
+        "short_code": "ACCPROC",
+        "description": "حكم يقبل الطعن شكلاً لاستيفاء الشروط الشكلية",
+        "example": "قبول الطعن شكلاً في الحكم الصادر من محكمة استئناف القاهرة",
+        "constitutional_basis": "المادة 96 (ضمانات المحاكمة)"
+      },
+      {
+        "id": "REL-016",
+        "name": "acceptance_substantive",
+        "name_ar": "قبول موضوعي",
+        "short_code": "ACCSUB",
+        "description": "حكم يقبل الطعن موضوعاً لثبوت مخالفة القانون",
+        "example": "قبول الطعن موضوعاً في الحكم الصادر من محكمة استئناف القاهرة",
+        "constitutional_basis": "المادة 96 (ضمانات المحاكمة)"
+      },
+      {
+        "id": "REL-017",
+        "name": "rejection_procedural",
+        "name_ar": "رفض شكلي",
+        "short_code": "REJPROC",
+        "description": "حكم يرفض الطعن شكلاً لعدم استيفاء الشروط الشكلية",
+        "example": "رفض الطعن شكلاً في الحكم الصادر من محكمة استئناف القاهرة",
+        "constitutional_basis": "المادة 96 (ضمانات المحاكمة)"
+      },
+      {
+        "id": "REL-018",
+        "name": "rejection_substantive",
+        "name_ar": "رفض موضوعي",
+        "short_code": "REJSUB",
+        "description": "حكم يرفض الطعن موضوعاً لعدم توافر أسباب النقض",
+        "example": "رفض الطعن موضوعاً في الحكم الصادر من محكمة استئناف القاهرة",
+        "constitutional_basis": "المادة 96 (ضمانات المحاكمة)"
       }
     ]
   }
