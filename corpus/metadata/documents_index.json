@@ -20,7 +20,7 @@
     "regulation": {
       "path": "metadata/index/regulations.json",
       "count": 0,
-      "description": "اللوائح التنفيذية والقرارات التنظيمية"
+      "description": "اللوائح التنفيذية و التنظيمية"
     },
     "treatiy": {
       "path": "metadata/index/treaties.json",
@@ -35,7 +35,7 @@
     "fatwa": {
       "path": "metadata/index/fatwas.json",
       "count": 0,
-      "description": "الفتاوى (مجلس الدولة، الأزهر، وغيرها)"
+      "description": "الفتاوى (مجلس الدولة)"
     },
     "administrative_decision": {
       "path": "metadata/index/administrative_decisions.json",
