@@ -1,0 +1,21 @@
+{
+  "instance_id": "PREP-LAW-174-2025-LAW-58-1937-01",
+  "relation_type_id": "REL-002",
+  "relation_type": "partial_repeal",
+  "source_doc_id": "LAW-174-2025",
+  "source_entities": [
+    { "type": "article", "id": "12" }
+  ],
+  "target_doc_id": "LAW-58-1937",
+  "target_entities": [
+    { "type": "article", "id": "53" },
+    { "type": "article", "id": "54" },
+    { "type": "paragraph", "id": "2", "parent_article": "55" }
+  ],
+  "description": "يلغي المواد 53 و54 والفقرة الثانية من المادة 55 من قانون العقوبات",
+  "effective_date": "2025-07-01",
+  "retroactive": false,
+  "confidence": 0.98,
+  "extraction_method": "explicit",
+  "status": "active"
+}
