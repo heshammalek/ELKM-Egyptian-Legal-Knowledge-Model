@@ -1,4 +1,3 @@
-
 {
   "doc_id": "LAW-58-1937",
   "doc_type": "law",
@@ -13,7 +12,6 @@
   },
   "issuing_authority": "فاروق الأول ملك مصر",
   "issuing_authority_type": "AUTH-TYPE-002",
-  "status": "amended",
   "subjects": [
     "الشرطة والأجهزة الأمنية",
     "الإجراءات الجنائية",
@@ -32,5 +30,8 @@
     "books_count": 4,
     "chapters_count": 15
   },
-  "relations_ref": "relations/by_document/LAW-58-1937_relations.json"
+  "relations_refs": [
+    "PREP-LAW-174-2025-LAW-58-1937-01",
+    "UNCONST-JUDG-CONST-15-20-LAW-58-1937-01"
+  ]
 }
