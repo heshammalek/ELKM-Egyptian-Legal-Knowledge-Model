@@ -1,0 +1,17 @@
+{
+  "instance_id": "UNCONST-JUDG-CONST-15-20-LAW-58-1937-01",
+  "relation_type_id": "REL-007",
+  "relation_type": "unconstitutionality_ruling",
+  "source_doc_id": "JUDG-CONST-15-20",
+  "source_entities": [],
+  "target_doc_id": "LAW-58-1937",
+  "target_entities": [
+    { "type": "article", "id": "61" }
+  ],
+  "description": "حكم المحكمة الدستورية العليا بعدم دستورية المادة 61 من قانون العقوبات",
+  "effective_date": "2020-11-15",
+  "retroactive": true,
+  "confidence": 0.99,
+  "extraction_method": "explicit",
+  "status": "active"
+}
