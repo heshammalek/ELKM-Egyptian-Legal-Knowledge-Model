@@ -1,181 +1,265 @@
 {
-  "relation_types": {
-    "description": "انواع العلاقات القانونية الثابتة (enum) المستخدمة في بناء الرسم البياني المعرفي. هذه الانواع غير نهائية ويمكن توسيعها باكتشاف علاقات جديدة اثناء بناء الكوربس. short_code هو المصدر الوحيد لبادئة instance_id الخاصة بكل علاقة فردية داخل relations/.",
+  "relation_schema": {
+    "version": "1.2",
     "is_enum": true,
     "is_final": false,
+    "direction_model": "all relation types are directed (source → target)",
+    "file_location": "metadata/relation_schema.json",
+
+    "categories": [
+      {
+        "id": "DOC-DOC",
+        "name": "document_to_document",
+        "name_ar": "مستند ← مستند",
+        "source_type": "document",
+        "target_type": "document"
+      },
+      {
+        "id": "DOC-ENT",
+        "name": "document_to_entity",
+        "name_ar": "مستند ← كيان",
+        "source_type": "document",
+        "target_type": "entity"
+      },
+      {
+        "id": "DOC-POS",
+        "name": "document_to_position",
+        "name_ar": "مستند ← منصب",
+        "source_type": "document",
+        "target_type": "position"
+      }
+    ],
+
     "types": [
       {
         "id": "REL-001",
         "name": "total_repeal",
         "name_ar": "إلغاء كلي",
         "short_code": "TREP",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 224",
         "description": "إلغاء نص قانوني بالكامل بنص لاحق",
         "example": "قانون 174 لسنة 2025 يلغي كلياً قانون 58 لسنة 1937",
-        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+        "keywords": ["يلغي", "يبطل", "ينسخ", "يزيل", "يقضي على"]
       },
       {
         "id": "REL-002",
         "name": "partial_repeal",
         "name_ar": "إلغاء جزئي",
         "short_code": "PREP",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 224",
         "description": "إلغاء جزء محدد من نص قانوني (مادة، فقرة، عبارة) بنص لاحق",
         "example": "قانون 174 لسنة 2025 يلغي المادة 53 من قانون العقوبات",
-        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+        "keywords": ["يلغي المادة", "يبطل الفقرة", "ينسخ البند", "يحذف العبارة"]
       },
       {
         "id": "REL-003",
         "name": "amendment",
         "name_ar": "تعديل",
         "short_code": "AMD",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 224",
         "description": "تعديل نص قانوني قائم بنص لاحق (تغيير النص، استبدال، إضافة)",
         "example": "قانون 174 لسنة 2025 يعدل المادة 53 من قانون العقوبات",
-        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+        "keywords": ["يعدل", "يغير", "يستبدل", "يبدل", "يحل محل"]
       },
       {
         "id": "REL-004",
         "name": "addition",
         "name_ar": "إضافة",
         "short_code": "ADD",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 224",
         "description": "إضافة مواد أو نصوص جديدة إلى قانون قائم",
         "example": "قانون 174 لسنة 2025 يضيف المادة 53 مكرر إلى قانون العقوبات",
-        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+        "keywords": ["يضيف", "يضاف", "يستحدث", "يدرج", "يضاف إليه"]
       },
       {
         "id": "REL-005",
         "name": "renumbering",
         "name_ar": "إعادة ترقيم",
         "short_code": "RENUM",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 224",
         "description": "إعادة ترقيم مواد قانونية دون تغيير مضمونها",
         "example": "قانون 174 لسنة 2025 يعيد ترقيم المواد 50-60 لتصبح 55-65",
-        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+        "keywords": ["يعيد ترقيم", "يرقم", "يصبح رقم", "تغيير الترقيم"]
       },
       {
         "id": "REL-006",
-        "name": "delegation_basis",
-        "name_ar": "أساس التفويض",
+        "name": "delegation",
+        "name_ar": "تفويض",
         "short_code": "DELEG",
-        "description": "نص يخول سلطة إصدار لوائح أو قرارات تنفيذية",
+        "category_id": "DOC-POS",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_position_id}",
+        "constitutional_basis": "المادة 170",
+        "description": "نص يخول أو يفوض منصباً سلطة إصدار لوائح أو قرارات أو مباشرة اختصاص",
         "example": "المادة 170 من الدستور تخول رئيس مجلس الوزراء إصدار اللوائح التنفيذية",
-        "constitutional_basis": "المادة 170 (لوائح تنفيذية)"
+        "keywords": ["يفوض", "يخول", "ينيب", "يمنح", "يعهد", "يسند", "يكلف"]
       },
       {
         "id": "REL-007",
         "name": "unconstitutionality_ruling",
         "name_ar": "حكم بعدم دستورية",
         "short_code": "UNCONST",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 192",
         "description": "حكم قضائي من المحكمة الدستورية العليا بعدم دستورية نص قانوني",
         "example": "حكم المحكمة الدستورية العليا بعدم دستورية المادة 53 من قانون العقوبات",
-        "constitutional_basis": "المادة 192 (رقابة دستورية)"
+        "keywords": ["عدم دستورية", "مخالف للدستور", "بطلان نص", "يبطل"]
       },
       {
         "id": "REL-008",
         "name": "interpretation_fatwa",
         "name_ar": "فتوى تفسيرية",
         "short_code": "INTERP",
-        "description": "فتوى من مجلس الدولة تفسر نص قانوني",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 190",
+        "description": "فتوى تفسيرية من مجلس الدولة تفسر نص قانوني",
         "example": "فتوى مجلس الدولة رقم 88 لسنة 2021 تفسر المادة 53 من قانون العقوبات",
-        "constitutional_basis": "المادة 190 (اختصاصات مجلس الدولة)"
+        "keywords": ["تفسر", "يفسر", "توضيح", "بيان المقصود", "فتوى"]
       },
       {
         "id": "REL-009",
         "name": "reinstatement",
         "name_ar": "إعادة العمل",
         "short_code": "REINST",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 224",
         "description": "إعادة العمل بنص قانوني كان ملغياً أو موقوفاً",
         "example": "قانون 174 لسنة 2025 يعيد العمل بالمادة 53 من قانون العقوبات",
-        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+        "keywords": ["يعيد العمل", "يعيد سريان", "يرجع نفاذ", "يستأنف العمل"]
       },
       {
         "id": "REL-010",
         "name": "referral",
         "name_ar": "إحالة",
         "short_code": "REF",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 224",
         "description": "نص يحيل إلى نص آخر (مادة، فقرة، قانون)",
         "example": "المادة 53 من قانون العقوبات تحيل إلى المادة 12 من قانون الإجراءات الجنائية",
-        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+        "keywords": ["يحيل", "إحالة", "وفقاً ل", "طبقاً ل", "يرجع إلى"]
       },
       {
         "id": "REL-011",
         "name": "establishes",
         "name_ar": "ينشئ",
         "short_code": "EST",
+        "category_id": "DOC-ENT",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_entity_id}",
+        "constitutional_basis": "المادة 197",
         "description": "نص ينشئ هيئة أو مؤسسة أو كياناً جديداً",
         "example": "قانون 174 لسنة 2025 ينشئ هيئة النيابة الإدارية",
-        "constitutional_basis": "المادة 197"
+        "keywords": ["ينشئ", "يحدث", "يؤسس", "يستحدث", "يخلق", "يشكل"]
       },
       {
         "id": "REL-012",
         "name": "prohibits",
         "name_ar": "يحظر",
         "short_code": "PROH",
-        "description": "نص يحظر فعلاً أو سلوكاً معيناً بشكل عام",
+        "category_id": "DOC-POS",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_position_id}",
+        "constitutional_basis": "المادة 74",
+        "description": "نص يحظر على منصب أو جهة فعلاً أو سلوكاً معيناً",
         "example": "يحظر على الأحزاب السياسية إنشاء تشكيلات عسكرية أو شبه عسكرية",
-        "constitutional_basis": "المادة 74 (الأحزاب السياسية)"
+        "keywords": ["يحظر", "يمنع", "لا يجوز", "محظور", "يحرم"]
       },
       {
         "id": "REL-013",
         "name": "obligates",
         "name_ar": "يلزم",
         "short_code": "OBL",
-        "description": "نص يلزم جهة أو فرداً بفعل معين",
+        "category_id": "DOC-POS",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_position_id}",
+        "constitutional_basis": "المادة 170",
+        "description": "نص يلزم منصباً أو جهة بفعل معين",
         "example": "المادة 170 من الدستور تلزم رئيس مجلس الوزراء بإصدار اللوائح التنفيذية",
-        "constitutional_basis": "المادة 170"
+        "keywords": ["يلزم", "يوجب", "يفرض", "يجب", "يتعين"]
       },
       {
         "id": "REL-014",
         "name": "empowers",
         "name_ar": "يخول",
         "short_code": "EMP",
-        "description": "نص يخول سلطة أو اختصاصاً معيناً",
+        "category_id": "DOC-POS",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_position_id}",
+        "constitutional_basis": "المادة 192",
+        "description": "نص يخول منصباً سلطة أو اختصاصاً معيناً",
         "example": "المادة 192 من الدستور تخول المحكمة الدستورية العليا الرقابة على دستورية القوانين",
-        "constitutional_basis": "المادة 192"
+        "keywords": ["يخول", "يمنح", "يمنح صلاحية", "يمنح اختصاص"]
       },
       {
         "id": "REL-015",
         "name": "acceptance_procedural",
         "name_ar": "قبول شكلي",
         "short_code": "ACCPROC",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 96",
         "description": "حكم يقبل الطعن شكلاً لاستيفاء الشروط الشكلية",
         "example": "قبول الطعن شكلاً في الحكم الصادر من محكمة استئناف القاهرة",
-        "constitutional_basis": "المادة 96 (ضمانات المحاكمة)"
+        "keywords": ["يقبل شكلاً", "قبول شكلي", "مقبول شكلاً"]
       },
       {
         "id": "REL-016",
         "name": "acceptance_substantive",
         "name_ar": "قبول موضوعي",
         "short_code": "ACCSUB",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 96",
         "description": "حكم يقبل الطعن موضوعاً لثبوت مخالفة القانون",
         "example": "قبول الطعن موضوعاً في الحكم الصادر من محكمة استئناف القاهرة",
-        "constitutional_basis": "المادة 96 (ضمانات المحاكمة)"
+        "keywords": ["يقبل موضوعاً", "قبول موضوعي", "مقبول موضوعاً"]
       },
       {
         "id": "REL-017",
         "name": "rejection_procedural",
         "name_ar": "رفض شكلي",
         "short_code": "REJPROC",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 96",
         "description": "حكم يرفض الطعن شكلاً لعدم استيفاء الشروط الشكلية",
         "example": "رفض الطعن شكلاً في الحكم الصادر من محكمة استئناف القاهرة",
-        "constitutional_basis": "المادة 96 (ضمانات المحاكمة)"
+        "keywords": ["يرفض شكلاً", "رفض شكلي", "مرفوض شكلاً"]
       },
       {
         "id": "REL-018",
         "name": "rejection_substantive",
         "name_ar": "رفض موضوعي",
         "short_code": "REJSUB",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 96",
         "description": "حكم يرفض الطعن موضوعاً لعدم توافر أسباب النقض",
         "example": "رفض الطعن موضوعاً في الحكم الصادر من محكمة استئناف القاهرة",
-        "constitutional_basis": "المادة 96 (ضمانات المحاكمة)"
+        "keywords": ["يرفض موضوعاً", "رفض موضوعي", "مرفوض موضوعاً"]
       },
       {
         "id": "REL-019",
         "name": "preemptive_repeal",
         "name_ar": "إلغاء وقائي",
         "short_code": "PREE",
-        "category": "تأثير تشريعي",
+        "category_id": "DOC-DOC",
+        "instance_id_format": "{short_code}-{source_doc_id}-{target_doc_id}",
+        "constitutional_basis": "المادة 224",
         "description": "إلغاء كل نص يخالف أحكام القانون الجديد، دون تحديد النصوص الملغاة بشكل دقيق",
-        "direction": "directed",
         "example": "المادة 2 من قانون الإجراءات الجنائية: 'يلغي كل نص يخالف أحكام هذا القانون'",
-        "constitutional_basis": "المادة 224 (استمرار القوانين القائمة)"
+        "keywords": ["يلغي كل ما يخالف", "كل نص مخالف", "يبطل كل مخالف"],
+        "target_doc_id_required": false,
+        "target_resolution": ["pending", "resolved", "unresolvable"]
       }
     ]
   }
