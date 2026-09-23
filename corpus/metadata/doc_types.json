@@ -1,333 +1,243 @@
 {
-  "version": "2.6",
-  "last_updated": "2026-07-14",
-  "description": "أنواع الوثائق القانونية المصرية",
+  "version": "4.1",
+  "last_updated": "2026-09-23",
+  "description": "أنواع الوثائق القانونية المصرية — تعريف النوع + الترتيب الهرمي + سلطة الإصدار + قاعدة الترميز",
+
+  "hierarchy_model": {
+    "description": "الترتيب الهرمي للقوة القانونية — المستند الأدنى لا يخالف الأعلى",
+    "levels": {
+      "1": "دستوري",
+      "2": "معاهدي (لها قوة القانون بعد التصديق والنشر)",
+      "3": "تشريعي أصيل",
+      "4": "تنظيمي",
+      "5": "إداري",
+      "supervisory": "رقابة تابعة (خارج الهرم — مش مصدر تشريعي)",
+      "null": "استرشادي/تحضيري (خارج الهرم)"
+    }
+  },
+
   "types": {
-    "law": {
-      "name_ar": "قانون",
-      "name_en": "Law",
-      "folder": "law",
-      "description": "نصوص تشريعية صادرة عن السلطة التشريعية (مجلس النواب/الرئيس او من يثوم مقامه في حالات غياب مجلس النواب) وموقعة من رئيس الجمهورية",
-      "legal_effect": "تشريعي أصيل",
-      "ordinary_jurisdiction": "المحاكم العادية (مدني/جنائي/تجاري) أو مجلس الدولة بحسب طبيعة النزاع الموضوعي الناشئ عن تطبيق النص — صاحبة الاختصاص الأصيل والدائم بالفصل في أي نزاع، بصرف النظر عن أي مسألة دستورية",
-      "constitutional_review_venue": "المحكمة الدستورية العليا — اختصاص استثنائي شرطي غير مباشر. لا يُلجأ إليه إلا عبر: (أ) إحالة من محكمة الموضوع من تلقاء نفسها، أو (ب) دفع فرعي من أحد الخصوم تُقدّر محكمة الموضوع جديته ثم تمنحه مهلة أقصاها 3 أشهر لرفع الدعوى الدستورية. إن لم يُثَر الدفع أو تُقبل جديته، فلا دور للمحكمة الدستورية إطلاقاً وتبقى المحاكم العادية هي الفيصل",
-      "statuses": [
-        "in_force",
-        "amended",
-        "repealed",
-        "suspended",
-        "draft"
-      ],
-      "issuing_authorities": [
-        "رئيس الجمهورية",
-        "مجلس النواب",
-        "من يشغل منصب الرئيس في حالات غيابه "
-      ],
-      "keywords": [
-        "قانون",
-        "مادة",
-        "باب",
-        "فصل",
-        "يعمل به",
-        "نشر في الجريدة"
-      ],
-      "fidelity_levels": [
-        "official",
-        "semi_official",
-        "compiled",
-        "draft"
-      ]
-    },
-    "decree_law": {
-      "name_ar": "مرسوم بقانون",
-      "name_en": "Decree-Law",
-      "folder": "decree_law",
-      "description": "تشريع استثنائي مؤقت يصدره رئيس الجمهورية في غيبة مجلس النواب أو حالة الضرورة، له قوة القانون فور صدوره، ويجب عرضه على المجلس خلال 15 يوماً من أول اجتماع تال وإلا زال بأثر رجعي (م.156 دستور 2014)",
-      "legal_effect": "تشريعي استثنائي مشروط",
-      "ordinary_jurisdiction": "المحاكم العادية أو مجلس الدولة بحسب طبيعة النزاع الموضوعي — نفس منطق القانون العادي بمجرد نفاذه",
-      "constitutional_review_venue": "المحكمة الدستورية العليا — بنفس الآلية الشرطية غير المباشرة (إحالة أو دفع فرعي) المطبقة على القوانين، ولا علاقة لها بشرط العرض البرلماني الذي هو إجراء دستوري منفصل يحدد بقاء نفاذ المرسوم من عدمه",
-      "statuses": [
-        "in_force",
-        "pending_ratification",
-        "lapsed",
-        "ratified",
-        "repealed"
-      ],
-      "issuing_authorities": [
-        "رئيس الجمهورية"
-      ],
-      "keywords": [
-        "مرسوم بقانون",
-        "حالة الضرورة",
-        "غيبة المجلس",
-        "عرض على مجلس النواب",
-        "زوال القوة"
-      ],
-      "fidelity_levels": [
-        "official",
-        "semi_official",
-        "compiled"
-      ]
-    },
-    "administrative_decision": {
-      "name_ar": "قرار إداري",
-      "name_en": "Administrative Decision",
-      "folder": "administrative_decision",
-      "description": "قرار إداري فردي أو تنظيمي (جمهوري، أو صادر عن رئيس مجلس الوزراء، أو وزاري) لا يرقى لمرتبة التشريع ولا يخضع لشرط العرض البرلماني — مثل التعيينات والتصديق على المعاهدات والإعلانات الفردية",
-      "legal_effect": "إداري (فردي أو تنظيمي)",
-      "challenge_venue": "مجلس الدولة (القضاء الإداري) — دعوى إلغاء مباشرة لا تشترط وجود نزاع سابق، خلافاً لمسار الرقابة الدستورية",
-      "statuses": [
-        "in_force",
-        "executed",
-        "cancelled",
-        "suspended",
-        "draft"
-      ],
-      "issuing_authorities": [
-        "رئيس الجمهورية",
-        "رئيس مجلس الوزراء",
-        "وزير"
-      ],
-      "keywords": [
-        "قرار جمهوري",
-        "قرار رئيس مجلس الوزراء",
-        "قرار وزاري",
-        "تعيين",
-        "إقالة",
-        "تصديق"
-      ],
-      "fidelity_levels": [
-        "official",
-        "semi_official",
-        "compiled",
-        "draft"
-      ]
-    },
     "constitution": {
       "name_ar": "دستور",
       "name_en": "Constitution",
-      "folder": "constitutions",
       "description": "الوثيقة الدستورية الأساسية للدولة",
-      "legal_effect": "دستوري (القمة في الهرم التشريعي)",
-      "challenge_venue": null,
-      "statuses": [
-        "in_force",
-        "amended",
-        "suspended",
-        "draft"
-      ],
-      "issuing_authorities": [
-        "الشعب",
-        "الجمعية التأسيسية",
-        "لجنة الخمسين"
-      ],
-      "keywords": [
-        "دستور",
-        "مادة",
-        "باب",
-        "حقوق",
-        "واجبات"
-      ],
-      "fidelity_levels": [
-        "official",
-        "semi_official",
-        "compiled",
-        "draft"
-      ],
+      "hierarchy": {
+        "level": 1,
+        "name": "دستوري",
+        "cannot_contradict": [],
+        "can_be_repealed_by": [],
+        "repeals": ["law", "decree_law", "treaty", "regulation", "administrative_decision"]
+      },
       "sub_types": [
         {
           "name_ar": "دستور دائم",
-          "description": "الوثيقة الدستورية الدائمة المقرة من الشعب عبر استفتاء، تمثل الإطار الأعلى الناظم للدولة بلا أفق زمني محدد"
+          "description": "الوثيقة الدستورية الدائمة المقرة من الشعب عبر استفتاء، تمثل الإطار الأعلى الناظم للدولة بلا أفق زمني محدد",
+          "status": "permanent",
+          "issuing_authority": {
+            "authority_type_ids": [],
+            "note": "الشعب — عبر استفتاء عام"
+          },
+          "id_scheme": {
+            "format": "CONST-{YEAR}",
+            "components": { "YEAR": "سنة الإصدار" },
+            "example": "CONST-2014"
+          }
         },
         {
           "name_ar": "إعلان دستوري",
           "description": "وثيقة دستورية مؤقتة تصدر في الفترات الانتقالية عند غياب دستور دائم نافذ، تسمو على القوانين العادية وتنظم السلطات لحين وضع دستور دائم أو انتهاء الفترة الانتقالية — مثل إعلانات 2011 و2012 و2013",
-          "issuing_authorities": [
-            "المجلس الأعلى للقوات المسلحة",
-            "رئيس الجمهورية المؤقت أو المفوَّض"
-          ],
-          "typical_lifecycle": "transitional ثم superseded لاحقاً بالدستور الدائم"
+          "status": "transitional",
+          "issuing_authority": {
+            "authority_type_ids": ["AUTH-TYPE-002", "AUTH-TYPE-007"],
+            "note": "جهة مؤقتة — المجلس الأعلى للقوات المسلحة أو رئيس مؤقت"
+          },
+          "id_scheme": {
+            "format": "CONST-TRANS-{YEAR}",
+            "components": { "YEAR": "سنة الإصدار" },
+            "example": "CONST-TRANS-2011"
+          }
         }
       ]
-    
     },
-    
-    "regulation": {
-      "name_ar": "لائحة",
-      "name_en": "Regulation",
-      "folder": "regulation",
-      "description": "لوائح تنفيذية وتفصيلية للقوانين — قاعدة عامة مجردة تنظيمية، تختلف عن القرار الإداري الفردي",
-      "legal_effect": "تنظيمي عام (لائحة تنفيذية/داخلية)",
-      "challenge_venue": "مجلس الدولة (القضاء الإداري) — دعوى إلغاء مباشرة لا تشترط وجود نزاع سابق",
-      "statuses": [
-        "in_force",
-        "amended",
-        "repealed",
-        "draft"
-      ],
-      "issuing_authorities": [
-        "رئيس الجمهورية",
-        "وزير",
-        "مجلس إدارة",
-        "هيئة"
-      ],
-      "keywords": [
-        "لائحة",
-        "قرار",
-        "تنفيذي",
-        "وزير"
-      ],
-      "fidelity_levels": [
-        "official",
-        "semi_official",
-        "compiled",
-        "draft"
-      ]
-    },
-    "report": {
-      "name_ar": "تقرير",
-      "name_en": "Report",
-      "folder": "report",
-      "description": "تقارير رسمية أو دراسات متخصصة",
-      "legal_effect": "استرشادي/توثيقي",
-      "challenge_venue": null,
-      "statuses": [
-        "published",
-        "draft",
-        "confidential"
-      ],
-      "issuing_authorities": [
-        "لجنة",
-        "وزارة",
-        "منظمة دولية او محلية",
-        "هيئة",
-        "مجلس الدولة",
-        "هيئة مفوضي الدولة"
-      ],
-      "keywords": [
-        "تقرير",
-        "دراسة",
-        "تحليل",
-        "توصيات",
-        "مذكرة"
-      ],
-      "fidelity_levels": [
-        "official",
-        "semi_official",
-        "compiled",
-        "draft"
-      ]
-    },
+
     "treaty": {
       "name_ar": "معاهدة",
       "name_en": "Treaty",
-      "folder": "treaty",
       "description": "اتفاقيات ومواثيق دولية، تصبح جزءاً من القانون الداخلي بعد التصديق والنشر",
-      "legal_effect": "تشريعي بعد التصديق (م.93 دستور 2014)",
-      "ordinary_jurisdiction": "المحاكم العادية أو مجلس الدولة بحسب طبيعة النزاع — بعد الاندماج في القانون الداخلي تُعامل نصوصها معاملة النص التشريعي في التطبيق القضائي",
-      "constitutional_review_venue": "المحكمة الدستورية العليا — بنفس الآلية الشرطية غير المباشرة (إحالة أو دفع فرعي) المطبقة على القوانين، وليست جهة طعن مباشرة",
-      "statuses": [
-        "ratified",
-        "signed",
-        "in_force",
-        "suspended"
-      ],
-      "issuing_authorities": [
-        "رئيس الجمهورية",
-        "وزير الخارجية",
-        "مجلس النواب"
-      ],
-      "keywords": [
-        "معاهدة",
-        "اتفاق",
-        "بروتوكول",
-        "دولي",
-        "موثق"
-      ],
-      "fidelity_levels": [
-        "official",
-        "semi_official",
-        "compiled"
-      ]
+      "hierarchy": {
+        "level": 2,
+        "name": "معاهدي",
+        "cannot_contradict": ["constitution"],
+        "can_be_repealed_by": ["constitution"],
+        "repeals": ["law", "decree_law", "regulation", "administrative_decision"]
+      },
+      "issuing_authority": {
+        "authority_type_ids": ["AUTH-TYPE-001", "AUTH-TYPE-002"],
+        "note": "البرلمان (تصديق) + السلطة التنفيذية (تفاوض وتوقيع)"
+      },
+      "id_scheme": {
+        "format": "TREATY-{NUMBER}-{YEAR}",
+        "components": {
+          "NUMBER": "رقم المعاهدة",
+          "YEAR": "سنة الإصدار"
+        },
+        "example": "TREATY-15-2020",
+        "note": "لا يحتاج كود جهة"
+      }
     },
+
+    "law": {
+      "name_ar": "قانون",
+      "name_en": "Law",
+      "description": "نصوص تشريعية صادرة عن السلطة التشريعية (مجلس النواب/الرئيس او من يقوم مقامه في حالات غياب مجلس النواب) وموقعة من رئيس الجمهورية",
+      "hierarchy": {
+        "level": 3,
+        "name": "تشريعي أصيل",
+        "cannot_contradict": ["constitution", "treaty"],
+        "can_be_repealed_by": ["constitution", "treaty", "law", "decree_law"],
+        "repeals": ["law", "decree_law", "regulation", "administrative_decision"]
+      },
+      "issuing_authority": {
+        "authority_type_ids": ["AUTH-TYPE-001"],
+        "note": "السلطة التشريعية (مجلس النواب + رئيس الجمهورية للتصديق)"
+      },
+      "id_scheme": {
+        "format": "LAW-{NUMBER}-{YEAR}",
+        "components": {
+          "NUMBER": "رقم القانون",
+          "YEAR": "سنة الإصدار"
+        },
+        "example": "LAW-174-2025",
+        "note": "رقم القانون فريد داخل السنة — لا يحتاج كود جهة"
+      }
+    },
+
+    "decree_law": {
+      "name_ar": "مرسوم بقانون",
+      "name_en": "Decree-Law",
+      "description": "تشريع استثنائي مؤقت يصدره رئيس الجمهورية في غيبة مجلس النواب أو حالة الضرورة، له قوة القانون فور صدوره، ويجب عرضه على المجلس خلال 15 يوماً من أول اجتماع تال وإلا زال بأثر رجعي (م.156 دستور 2014)",
+      "hierarchy": {
+        "level": 3,
+        "name": "تشريعي أصيل",
+        "cannot_contradict": ["constitution", "treaty"],
+        "can_be_repealed_by": ["constitution", "treaty", "law", "decree_law"],
+        "repeals": ["law", "decree_law", "regulation", "administrative_decision"],
+        "note": "نفس مستوى القانون — لكن له شرط استمرار (عرض على البرلمان)"
+      },
+      "issuing_authority": {
+        "authority_type_ids": ["AUTH-TYPE-002"],
+        "note": "السلطة التنفيذية (رئيس الجمهورية) — في غيبة مجلس النواب"
+      },
+      "id_scheme": {
+        "format": "DL-{NUMBER}-{YEAR}",
+        "components": {
+          "NUMBER": "رقم المرسوم",
+          "YEAR": "سنة الإصدار"
+        },
+        "example": "DL-16-2015",
+        "note": "يصدر من رئيس الجمهورية فقط — لا يحتاج كود جهة"
+      }
+    },
+
+    "regulation": {
+      "name_ar": "لائحة",
+      "name_en": "Regulation",
+      "description": "لوائح تنفيذية وتفصيلية للقوانين — قاعدة عامة مجردة تنظيمية، تختلف عن القرار الإداري الفردي",
+      "hierarchy": {
+        "level": 4,
+        "name": "تنظيمي",
+        "cannot_contradict": ["constitution", "treaty", "law", "decree_law"],
+        "can_be_repealed_by": ["constitution", "treaty", "law", "decree_law", "regulation"],
+        "repeals": ["regulation", "administrative_decision"]
+      },
+      "issuing_authority": {
+        "authority_type_ids": ["AUTH-TYPE-002"],
+        "note": "السلطة التنفيذية (رئيس الجمهورية / رئيس الوزراء / الوزراء / مجالس إدارات الهيئات)"
+      },
+      "id_scheme": {
+        "format": "REG-{ISSUER_CODE}-{NUMBER}-{YEAR}",
+        "components": {
+          "ISSUER_CODE": "كود الجهة المُصدِرة من doc_codes.json",
+          "NUMBER": "رقم اللائحة",
+          "YEAR": "سنة الإصدار"
+        },
+        "example": "REG-MOF-15-2020",
+        "note": "ضروري كود الجهة للتمييز"
+      }
+    },
+
+    "administrative_decision": {
+      "name_ar": "قرار إداري",
+      "name_en": "Administrative Decision",
+      "description": "قرار إداري فردي أو تنظيمي (جمهوري، أو صادر عن رئيس مجلس الوزراء، أو وزاري) لا يرقى لمرتبة التشريع ولا يخضع لشرط العرض البرلماني — مثل التعيينات والتصديق على المعاهدات والإعلانات الفردية",
+      "hierarchy": {
+        "level": 5,
+        "name": "إداري",
+        "cannot_contradict": ["constitution", "treaty", "law", "decree_law", "regulation"],
+        "can_be_repealed_by": ["constitution", "treaty", "law", "decree_law", "regulation", "administrative_decision"],
+        "repeals": ["administrative_decision"]
+      },
+      "issuing_authority": {
+        "authority_type_ids": ["AUTH-TYPE-002"],
+        "note": "السلطة التنفيذية (رئيس الجمهورية / رئيس الوزراء / الوزراء)"
+      },
+      "id_scheme": {
+        "format": "ADM-{ISSUER_CODE}-{NUMBER}-{YEAR}",
+        "components": {
+          "ISSUER_CODE": "كود الجهة المُصدِرة من doc_codes.json",
+          "NUMBER": "رقم القرار",
+          "YEAR": "سنة الإصدار"
+        },
+        "example": "ADM-MOJ-15-2020",
+        "note": "ضروري كود الجهة لأن القرارات الوزارية بتتداخل (قرار وزير الدفاع 1/2000 ≠ قرار وزير الري 1/2000)"
+      }
+    },
+
     "judgment": {
       "name_ar": "حكم قضائي",
       "name_en": "Judgment",
-      "folder": "judgment",
-      "description": "أحكام صادرة عن المحاكم والهيئات القضائية. المبادئ القانونية المستقرة (الفقه القضائي) تُستخرج تحليلياً من حقل الحيثيات هنا، ولا تُخزَّن كنوع مستند مستقل (انظر jurisprudence_note في _meta)",
-      "legal_effect": "قضائي - فصل في نزاع",
-      "challenge_venue": "الدرجة الأعلى (استئناف/نقض) بحسب الحالة — مسار طعن مباشر ضمن نفس السلم القضائي",
-      "statuses": [
-        "final",
-        "appealable",
-        "executed",
-        "published"
-      ],
-      "issuing_authorities": [
-        "محكمة النقض",
-        "محكمة استئناف",
-        "محكمة ابتدائية",
-        "مجلس الدولة",
-        "المحكمة الدستورية العليا"
-      ],
-      "keywords": [
-        "حكم",
-        "قضية",
-        "محكمة",
-        "طعن",
-        "نقض",
-        "استئناف"
-      ],
-      "fidelity_levels": [
-        "official",
-        "semi_official",
-        "compiled"
-      ]
+      "description": "أحكام صادرة عن المحاكم والهيئات القضائية. المبادئ القانونية المستقرة (الفقه القضائي) تُستخرج تحليلياً من حقل الحيثيات هنا، ولا تُخزَّن كنوع مستند مستقل",
+      "hierarchy": {
+        "level": null,
+        "name": "قضائي (رقابة تابعة — مش مصدر تشريعي)",
+        "relation_type": "supervisory",
+        "cannot_contradict": ["constitution"],
+        "can_be_repealed_by": [],
+        "repeals": [],
+        "note": "الحكم القضائي مش مصدر تشريعي — هو آلية رقابية بتخضع لقانون آخر (قانون المرافعات / الإجراءات / مجلس الدولة) في نطاقها الإمكاني والنوعي. مش بيلغي المستندات — بيطبقها أو بيحكم بعدم دستوريتها عبر علاقة unconstitutionality_ruling"
+      },
+      "issuing_authority": {
+        "authority_type_ids": ["AUTH-TYPE-003"],
+        "note": "السلطة القضائية (محكمة النقض / الاستئناف / الابتدائية / مجلس الدولة / المحكمة الدستورية العليا / المحاكم الاقتصادية / القضاء العسكري)"
+      },
+      "id_scheme": {
+        "format": "JUDG-{COURT_CODE}-{CASE_NUMBER}-{CIRCUIT_YEAR}",
+        "components": {
+          "COURT_CODE": "كود المحكمة من doc_codes.json (SCC, CASS, SC-ADMIN, SC-HIGH, SC-DISC, ECON, APPEAL, PRIM, MIL)",
+          "CASE_NUMBER": "رقم القضية/الدعوى",
+          "CIRCUIT_YEAR": "سنة القيد في الجدول (وليس سنة الحكم)"
+        },
+        "examples": [
+          "JUDG-SCC-5-31",
+          "JUDG-CASS-1234-2020",
+          "JUDG-SC-ADMIN-67162-69",
+          "JUDG-ECON-123-2020"
+        ],
+        "note": "سنة القيد في الجدول إلزامية لأنها النظام الرسمي في مصر. المحكمة الدستورية العليا ليها أرشيف خاص: JUDG-SCC-{CASE_NUMBER}-{CIRCUIT_YEAR}"
+      }
     },
-    "legal_doctrine": {
-      "name_ar": "فقه قانوني (أكاديمي)",
-      "name_en": "Legal Doctrine / Scholarship",
-      "folder": "doctrine",
-      "description": "مصنفات ودراسات وأبحاث قانونية صادرة عن أساتذة الجامعات والباحثين والمحامين، تمثل رأياً علمياً استرشادياً في تفسير النصوص القانونية وتحليلها، وليست ملزمة للقضاء أو الإدارة",
-      "legal_effect": "استرشادي (مصدر تفسيري ثانوي غير ملزم)",
-      "challenge_venue": null,
-      "statuses": [
-        "published",
-        "draft",
-        "peer_reviewed",
-        "compiled"
-      ],
-      "author_types": [
-        "أستاذ جامعي",
-        "باحث قانوني",
-        "محامٍ",
-        "مستشار سابق"
-      ],
-      "keywords": [
-        "فقه",
-        "شرح",
-        "تعليق",
-        "دراسة قانونية",
-        "بحث",
-        "مؤلَّف",
-        "مرجع",
-        "أطروحة",
-        "رسالة دكتوراه"
-      ],
-      "fidelity_levels": [
-        "official",
-        "semi_official",
-        "compiled",
-        "draft"
-      ]
-    },
+
     "fatwa_legislative": {
       "name_ar": "فتوى تشريعية",
       "name_en": "Legislative Fatwa",
-      "folder": "fatwa",
       "description": "آراء قانونية وتشريعية صادرة عن الجهات القانونية المختصة (مجلس الدولة - هيئة مفوضي الدولة - الجمعية العمومية) — استشارية قبلية وليست تدخلاً لاحقاً",
+      "hierarchy": {
+        "level": null,
+        "name": "استرشادي",
+        "relation_type": "advisory",
+        "note": "خارج الهرم — إلا في المنازعات بين الجهات الإدارية (م.66-د) حيث يكون ملزماً"
+      },
       "legal_effect": "استشاري بالأصل، ملزم استثناءً في حالة الفصل بمنازعات الجهات الإدارية",
-      "challenge_venue": null,
       "binding_basis": "استشاري (م.66 فقرات أ،ب،ج من قانون مجلس الدولة 47/1972) إلا في المنازعات بين الجهات الإدارية المحالة بموجب الفقرة (د) من نفس المادة، حيث يكون الرأي ملزماً للطرفين نصاً",
       "referral_basis_options": [
         "66-أ (مسألة مهمة محالة لأهميتها)",
@@ -335,112 +245,97 @@
         "66-ج (إحالة لأهمية المسألة)",
         "66-د (نزاع بين جهات إدارية - ملزم للطرفين)"
       ],
-      "statuses": [
-        "valid",
-        "superseded",
-        "reviewed",
-        "draft"
-      ],
-      "issuing_authorities": [
-        "مجلس الدولة",
-        "هيئة مفوضي الدولة",
-        "الجمعية العمومية لقسمي الفتوى والتشريع",
-        "قسم الفتوى والتشريع بمجلس الدولة",
-        "مفوض الدولة",
-        "النيابة الإدارية",
-        "هيئة قضايا الدولة"
-      ],
-      "keywords": [
-        "فتوى",
-        "تشريعي",
-        "مجلس الدولة",
-        "هيئة مفوضي الدولة",
-        "قسم الفتوى",
-        "رأي قانوني",
-        "استشارة",
-        "إفتاء"
-      ],
-      "fidelity_levels": [
-        "official",
-        "semi_official",
-        "compiled",
-        "draft"
-      ]
+      "issuing_authority": {
+        "authority_type_ids": ["AUTH-TYPE-003"],
+        "note": "السلطة القضائية (مجلس الدولة — قسم الفتوى والتشريع / هيئة مفوضي الدولة / الجمعية العمومية)"
+      },
+      "id_scheme": {
+        "format": "FATWA-{BULLETIN_NUMBER}-{YEAR}",
+        "components": {
+          "BULLETIN_NUMBER": "رقم التبليغ",
+          "YEAR": "سنة الإصدار"
+        },
+        "example": "FATWA-818-2021",
+        "note": "رقم التبليغ هو المعرّف الأساسي في الفتاوى. لو فيه تكرار، يُضاف رقم الملف لاحقاً"
+      }
     },
+
+    "report": {
+      "name_ar": "تقرير",
+      "name_en": "Report",
+      "description": "تقارير رسمية أو دراسات متخصصة",
+      "hierarchy": {
+        "level": null,
+        "name": "استرشادي",
+        "relation_type": "advisory",
+        "note": "خارج الهرم"
+      },
+      "legal_effect": "استرشادي/توثيقي",
+      "issuing_authority": {
+        "authority_type_ids": [],
+        "note": "جهات متعددة — لجنة / وزارة / منظمة / هيئة / مجلس الدولة / هيئة مفوضي الدولة"
+      },
+      "id_scheme": {
+        "format": "REP-{ISSUER_CODE}-{NUMBER}-{YEAR}",
+        "components": {
+          "ISSUER_CODE": "كود الجهة المُصدِرة من doc_codes.json",
+          "NUMBER": "رقم التقرير",
+          "YEAR": "سنة الإصدار"
+        },
+        "example": "REP-CAB-5-2023",
+        "note": "ضروري كود الجهة للتمييز"
+      }
+    },
+
+    "legal_doctrine": {
+      "name_ar": "فقه قانوني (أكاديمي)",
+      "name_en": "Legal Doctrine / Scholarship",
+      "description": "مصنفات ودراسات وأبحاث قانونية صادرة عن أساتذة الجامعات والباحثين والمحامين، تمثل رأياً علمياً استرشادياً في تفسير النصوص القانونية وتحليلها، وليست ملزمة للقضاء أو الإدارة",
+      "hierarchy": {
+        "level": null,
+        "name": "استرشادي",
+        "relation_type": "advisory",
+        "note": "خارج الهرم"
+      },
+      "legal_effect": "استرشادي (مصدر تفسيري ثانوي غير ملزم)",
+      "issuing_authority": {
+        "authority_type_ids": [],
+        "note": "أفراد — أساتذة جامعات / باحثين / محامين / مستشارين سابقين"
+      },
+      "id_scheme": {
+        "format": "DOC-{AUTHOR_CODE}-{YEAR}",
+        "components": {
+          "AUTHOR_CODE": "كود المؤلف (يُضاف لاحقاً في doc_codes.json)",
+          "YEAR": "سنة النشر"
+        },
+        "example": "DOC-001-2020",
+        "note": "AUTHOR_CODE يُضاف تدريجياً"
+      }
+    },
+
     "draft_discussion": {
       "name_ar": "مسودة نقاشية",
       "name_en": "Discussion Draft",
-      "folder": "draft",
       "description": "مسودات قوانين مطروحة للنقاش في البرلمان أو الجهات التشريعية (سواء بمبادرة حكومية أو نيابية)، تتضمن الملاحظات والاعتراضات والتعديلات من الأعضاء، وصولاً إلى الإقرار النهائي بالتصويت",
+      "hierarchy": {
+        "level": null,
+        "name": "تحضيري",
+        "relation_type": "preparatory",
+        "note": "خارج الهرم — لكن يُستأنس به في التفسير القضائي"
+      },
       "legal_effect": "تحضيري (لا قوة قانونية بذاته، لكن يُستأنس به في التفسير القضائي كـ'أعمال تحضيرية')",
-      "challenge_venue": null,
-      "statuses": [
-        "under_discussion",
-        "amended",
-        "withdrawn",
-        "adopted",
-        "rejected",
-        "draft"
-      ],
-      "issuing_authorities": [
-        "رئيس الجمهورية",
-        "مجلس الوزراء",
-        "مجلس النواب",
-        "مجلس الشيوخ",
-        "اللجنة التشريعية",
-        "اللجنة الدستورية والتشريعية",
-        "اللجنة المختصة بالمقترحات",
-        "هيئة مكتب المجلس",
-        "رئيس المجلس",
-        "نائب رئيس المجلس"
-      ],
-      "keywords": [
-        "مسودة",
-        "مشروع",
-        "نقاش",
-        "اعتراض",
-        "ملاحظة",
-        "تعديل",
-        "مقترح",
-        "رأي",
-        "برلمان",
-        "نواب",
-        "لجنة",
-        "جلسة",
-        "مناقشة",
-        "تسجيل",
-        "مضبطة",
-        "محضر",
-        "تصويت",
-        "إقرار"
-      ],
-      "fidelity_levels": [
-        "draft",
-        "compiled",
-        "semi_official"
-      ],
       "sub_types": [
         {
           "name_ar": "مشروع قانون",
-          "description": "مشروع قانون مقدم من الحكومة (أو رئيس الجمهورية عبرها عملياً)، يُحال مباشرة إلى اللجنة النوعية المختصة بمجلس النواب دون بوابة فلترة (م.122 دستور 2014)",
-          "originator": "الحكومة / رئيس الجمهورية",
-          "procedural_path": "إحالة مباشرة للجنة النوعية"
+          "description": "مشروع قانون مقدم من الحكومة (أو رئيس الجمهورية عبرها عملياً)، يُحال مباشرة إلى اللجنة النوعية المختصة بمجلس النواب دون بوابة فلترة (م.122 دستور 2014)"
         },
         {
           "name_ar": "اقتراح بقانون",
-          "description": "مقترح تشريعي مقدم من عضو أو أكثر بمجلس النواب (بتوقيع عُشر الأعضاء على الأقل)، في صورة مشروع متكامل ومسبب، يمر أولاً على اللجنة المختصة بالمقترحات كبوابة فلترة قبل إحالته للجنة النوعية؛ رفض اللجنة له يجب أن يكون مسبباً",
-          "originator": "عضو/أعضاء مجلس النواب",
-          "procedural_path": "بوابة اللجنة المختصة بالمقترحات ← اللجنة النوعية"
+          "description": "مقترح تشريعي مقدم من عضو أو أكثر بمجلس النواب (بتوقيع عُشر الأعضاء على الأقل)، في صورة مشروع متكامل ومسبب، يمر أولاً على اللجنة المختصة بالمقترحات كبوابة فلترة قبل إحالته للجنة النوعية؛ رفض اللجنة له يجب أن يكون مسبباً"
         },
         {
           "name_ar": "تقرير اللجنة",
-          "description": "تقرير اللجنة المختصة عن مشروع القانون أثناء مرحلة المناقشة",
-          "amendment_scope": [
-            "إصدار قانون جديد",
-            "تعديل قانون قائم (مادة أو أكثر)",
-            "إلغاء قانون قائم",
-            "تعديل الدستور"
-          ]
+          "description": "تقرير اللجنة المختصة عن مشروع القانون أثناء مرحلة المناقشة"
         },
         {
           "name_ar": "تعديل مقترح",
@@ -448,77 +343,54 @@
         },
         {
           "name_ar": "رأي مخالف",
-          "description": "آراء وأعتراضات الأعضاء المخالفين"
+          "description": "آراء واعتراضات الأعضاء المخالفين"
         },
         {
           "name_ar": "مذكرة إيضاحية",
           "description": "مذكرة تشرح أهداف ومبررات المشروع"
         }
       ],
-      "not_included_note": "اقتراح برغبة (طلب/توصية غير ملزمة من عضو للحكومة باتخاذ إجراء، بلا نص تشريعي مرفق) غير مُدرَج حالياً كـ sub_type لأنه ليس مساراً تشريعياً فعلياً — قرار إدراجه من عدمه مرجّح لاحقاً"
+      "not_included_note": "اقتراح برغبة (طلب/توصية غير ملزمة من عضو للحكومة باتخاذ إجراء، بلا نص تشريعي مرفق) غير مُدرَج حالياً كـ sub_type لأنه ليس مساراً تشريعياً فعلياً — قرار إدراجه من عدمه مرجّح لاحقاً",
+      "issuing_authority": {
+        "authority_type_ids": ["AUTH-TYPE-001"],
+        "note": "السلطة التشريعية (مجلس النواب / مجلس الشيوخ / اللجان النوعية / الحكومة عبر رئيس الجمهورية)"
+      },
+      "id_scheme": {
+        "format": "DRAFT-{NUMBER}-{YEAR}",
+        "components": {
+          "NUMBER": "رقم المشروع/المقترح",
+          "YEAR": "سنة الإصدار"
+        },
+        "example": "DRAFT-5-2025",
+        "note": "لا يحتاج كود جهة"
+      }
     },
+
     "deliberation_minutes": {
       "name_ar": "مضابط مناقشات",
       "name_en": "Deliberation Minutes",
-      "folder": "minutes",
       "description": "محاضر ومضابط جلسات المناقشة حول تشريع أو سياسة عامة، سواء داخل الغرف التشريعية (مجلس النواب/الشيوخ) أو خارجها (نقاشات حزبية أو مجتمعية)",
+      "hierarchy": {
+        "level": null,
+        "name": "تحضيري/توثيقي",
+        "relation_type": "preparatory",
+        "note": "خارج الهرم — يُستأنس به في التفسير القضائي"
+      },
       "legal_effect": "متفاوت حسب official_status: توثيقي/تحضيري رسمي لمضابط مجلس النواب والشيوخ (قد يُستأنس به قضائياً كعمل تحضيري)، مقابل استرشادي بلا أي قوة قانونية لمضابط النقاشات الحزبية والمجتمعية",
-      "challenge_venue": null,
-      "statuses": [
-        "official",
-        "amended",
-        "archived"
-      ],
-      "issuing_authorities": [
-        "مجلس النواب",
-        "مجلس الشيوخ",
-        "اللجان النوعية",
-        "حزب سياسي",
-        "منظمة مجتمع مدني"
-      ],
-      "venue_category": [
-        "مجلس النواب",
-        "مجلس الشيوخ",
-        "لجنة نيابية",
-        "حزب سياسي",
-        "منظمة مجتمع مدني"
-      ],
-      "official_status": [
-        "رسمي - جزء من الأعمال التحضيرية",
-        "استرشادي - بلا قوة قانونية"
-      ],
-      "session_types": [
-        "مناقشة عامة",
-        "استجواب",
-        "تصويت نهائي على مشروع قانون",
-        "انتخاب هيئة مكتب",
-        "ميزانية",
-        "موقف حزبي/مجتمعي"
-      ],
-      "vote_fields_hint": [
-        "vote_date",
-        "votes_for",
-        "votes_against",
-        "abstain",
-        "quorum_met",
-        "member_names",
-        "session_number"
-      ],
-      "keywords": [
-        "محضر",
-        "مضبطة",
-        "جلسة",
-        "برلمان",
-        "نواب",
-        "مناقشة",
-        "تصويت",
-        "حزب",
-        "مجتمع مدني"
-      ],
-      "fidelity_levels": [
-        "official",
-        "semi_official"
-      ]
+      "issuing_authority": {
+        "authority_type_ids": ["AUTH-TYPE-001"],
+        "note": "السلطة التشريعية (مجلس النواب / مجلس الشيوخ / اللجان النوعية)"
+      },
+      "id_scheme": {
+        "format": "MIN-{ISSUER_CODE}-{NUMBER}-{YEAR}",
+        "components": {
+          "ISSUER_CODE": "كود الجهة المُصدِرة من doc_codes.json",
+          "NUMBER": "رقم المضبطة",
+          "YEAR": "سنة الإصدار"
+        },
+        "example": "MIN-PARL-12-2024",
+        "note": "ضروري كود الجهة للتمييز"
+      }
     }
   }
 }
