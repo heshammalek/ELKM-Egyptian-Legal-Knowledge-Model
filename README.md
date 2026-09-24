@@ -43,9 +43,50 @@
 
 ## Why ELKM?
 
-Egyptian legal text is **hyper-precision**: a single letter can redefine criminal liability. The passive *"يُعاقَب"* (liability falls on whoever is proven to have caused the harm) is not the same statement as the active *"يُعاقِب"* (an explicit actor is named) — one character, an entirely different legal consequence. Text alone doesn't represent legal truth, either: truth emerges from the text's interaction with the Constitutional Court (annulment), the Court of Cassation (binding interpretation), and the State Council (fatwa and annulment). Current legal search tools treat all of this as keyword matching.
+The first Arabic attempt to build a knowledge graph and ontology for the legal domain — a pioneering scientific, technical, and economic project.
 
-ELKM solves this by treating Egyptian law not as a text archive, but as a **knowledge graph** — a relationship network connecting every text to everything that affected it or was affected by it, with full historical tracking of each article's status individually.
+Scientific Value
+The first comprehensive, open-source Arabic legal ontology. No equivalent currently exists. Existing efforts are limited to term lists without relationships, or theoretical papers never implemented in software. ELKM builds a knowledge base — not a text archive. The difference: an archive answers what; a knowledge base answers why.
+
+Technical Value
+A knowledge graph connecting every legal text to everything that affected it or was affected by it, with full temporal tracking per article. This enables queries that are impossible in any text search engine or relational database:
+
+Time-Travel: Retrieve the text of an article as it stood on a specific historical date.
+
+Multi-hop Impact: Trace the final effect on Article X after a chain of amendments, rulings, and administrative decisions.
+
+Dependency Map: Find every text that cites a specific constitutional article.
+
+Principle Tracking: Trace how a legal principle evolved across decades of legislation.
+
+Legislative Cycles: Detect principles ruled unconstitutional and later re-enacted in new laws.
+
+Economic Value
+Once interfaces are built, ELKM serves multiple roles: individuals, professionals, research institutions, and authorities. The model: ELKM open-source (knowledge layer) → LexChain Egypt (commercial product layer).
+
+Why Now — Data Is the Differentiator
+When LLMs (GPT, Claude, Gemini) and infrastructure (Neo4j, AWS, Qdrant) converge, the only remaining differentiator is data quality and structure.
+
+VentureBeat Pulse (June–July 2026, 101 companies):
+
+57% of companies reported "confident but wrong" AI agent answers due to missing or inconsistent context
+
+Rose to 68% in July
+
+Companies with governed context layers reported higher error rates (78% vs 20%) — not because their systems are worse, but because they see errors that were previously invisible
+
+The problem is not the model — it is the data. ELKM is the layer for Egyptian law.
+
+Why Egypt
+A unique hybrid: Islamic Sharia, French civil tradition, judicial precedent, State Council fatwa, and the Supreme Constitutional Court. No off-the-shelf Western ontology fits. The only path is purpose-built.
+
+Global Momentum
+Legal tech investment in 2025 exceeded **$5.99 billion**, up 22% year-over-year, with 14 rounds above $100M. Harvey AI raised $818M (valuation $8B). Clio raised $850M and acquired vLex for $1B. ELKM builds this layer for Egyptian law — before anyone else does.
+
+The Egyptian Gap
+Egypt's Supreme Committee for Legislative Reform and National AI Council have made progress. The Egyptian Legal Portal holds 290,000+ laws and 100,000+ judgments. But it remains an archive, not a knowledge layer. ELKM fills this gap.
+
+
 
 ---
 
@@ -91,36 +132,25 @@ No comprehensive, publicly published Arabic legal ontology currently exists. Exi
 
 1. The first comprehensive Arabic legal ontology.
 2. A model for representing Arabic legal text as a knowledge graph.
-3. An EBNF grammar for Arabic legal syntax — currently non-existent anywhere.
-4. A bridge between global standards (Akoma Ntoso, LegalRuleML) and the Arabic legal context.
-5. An Arabic legal Named Entity Recognition (NER) model.
-
-### Why Egypt Specifically
-
-The Egyptian legal system is a unique hybrid unlike any single reference model:
-
-- **Islamic Sharia** — a principal source of legislation (Article 2 of the Constitution)
-- **French civil law tradition** — underlying the civil and commercial fabric
-- **Judicial precedent** — the Court of Cassation plays a broader interpretive role than its French counterpart
-- **State Council fatwa** — a purely Egyptian institution with no Western equivalent
-- **The Supreme Constitutional Court** — exercising posterior review of legislative constitutionality
-
-Any off-the-shelf Western ontology collides with this specificity. The only viable path is a purpose-built one.
+3. A bridge between global standards (Akoma Ntoso, LegalRuleML) and the Arabic legal context.
+4. An Arabic legal Named Entity Recognition (NER) model.
 
 ---
 
 ## Why ELKM Is Different (Competitive Context)
 
-Products already exist offering fast full-text search over Egyptian legislation — most notably **Ansvar Systems** (Sweden), a globally leading company running the same MCP-server template across 80+ countries (SQLite + FTS5). The real difference isn't coverage — it's the **layer**:
+Products already exist offering fast full-text search over Egyptian legislation — most notably Ansvar Systems (Sweden), a globally leading company running the same MCP-server template across 46 jurisdictions (330,000+ national laws). The real difference isn't coverage — it's the layer:
 
-| | Traditional full-text search tools | ELKM |
-|---|---|---|
-| Structure | Simple text indexing | Ontology + graph + explicit relationships |
-| Depth | Generic classification, no fine-grained typing | Distinguishes decree-law from administrative decision, fatwa binding basis (Art. 66), per-article status over time |
-| Scope | Usually statutes only | 13 document types (including rulings, fatwas, minutes, academic doctrine) |
-| Nature | Repeatable technical template across dozens of countries (breadth) | A deep research project dedicated to the Egyptian legal system specifically (depth) |
+|                        | Traditional full-text search tools    | ELKM                                                                                     |
+|------------------------|---------------------------------------|------------------------------------------------------------------------------------------|
+| **Structure**          | Simple text indexing (FTS5 + BM25)    | Ontology + graph + explicit relationships                                                |
+| **Depth**              | Generic classification                | Distinguishes decree-law from administrative decision, fatwa binding basis (Art. 66), per-article status over time |
+| **Scope**              | Usually statutes only                 | 12 document types (including rulings, fatwas, minutes, academic doctrine)                |
+| **Temporal**           | Current snapshot only                 | Time-Travel queries: retrieve any article as it stood on any historical date             |
+| **AI-Ready**           | Unstructured text                     | Structured, contextual data designed for AI reasoning                                    |
+| **Nature**             | Horizontal expansion (breadth)        | Vertical depth in one legal system (depth)                                               |
 
-ELKM aims to intellectually and technically surpass this model — not by competing on the same layer, but by building a deeper one (legal reasoning and a relationship graph) for which no real equivalent currently exists for Egyptian law. Tools like Harvey AI and CoCounsel demonstrate the same lesson from the other direction: powerful LLMs still need a structured knowledge base underneath them to reason reliably over law. ELKM aims to be that base — an open Egyptian equivalent of what Westlaw provides commercially, but published.
+ELKM operates on a different layer — not by competing on text search, but by building a deeper one (legal reasoning and a relationship graph) for which no real equivalent currently exists for Egyptian law. Tools like Harvey AI and CoCounsel demonstrate the same lesson from the other direction: powerful LLMs still need a structured knowledge base underneath them to reason reliably over law. ELKM aims to be that base — an open infrastructure of the kind Westlaw provides commercially, but published.
 
 ---
 
@@ -129,25 +159,60 @@ ELKM aims to intellectually and technically surpass this model — not by compet
 The **extraction and OCR** stage (converting image/PDF to text) runs through external language models following a documented extraction prompt, **entirely outside the project's codebase**. This is deliberate: ELKM's real value lies in the data architecture, ontology, relationship layer, and graph engine — not in an OCR engine that's replaceable by any newer model. Keeping extraction separate keeps the repo focused, lightweight on dependencies, and clear in scope for any contributor or reviewer.
 
 ```mermaid
-flowchart LR
+flowchart TB
     subgraph external ["Outside the project — a documented process, not code"]
         ocr["Extraction + OCR<br/>via external language models<br/>per a documented prompt"]
     end
+
     subgraph project ["Inside the project — code and architecture"]
         direction TB
-        norm["Normalization"] --> onto["Ontology"]
-        onto --> struct["Structured Data"]
-        struct --> rel["Relationship Layer"]
-        rel --> graphdb["Neo4j Graph"]
+
+        norm["Normalization<br/>text_as_is → normalized_txt"]
+
+        subgraph ontology ["Ontology Layer"]
+            direction LR
+            ont1["doc_types.json"]
+            ont2["doc_codes.json"]
+            ont3["subjects.json"]
+            ont4["relation_types.json"]
+            ont5["authority_types.json"]
+        end
+
+        subgraph structured ["Structured Data"]
+            direction LR
+            st1["normalized/json/{doc_id}.json<br/>(articles + instance_references)"]
+            st2["relations/by_document/{instance_id}.json"]
+        end
+
+        subgraph exports ["Exports"]
+            direction LR
+            exp1["jsonl/"]
+            exp2["markdown/"]
+            exp3["sqlite/corpus.db"]
+            exp4["parquet/"]
+            exp5["neo4j/ (primary)"]
+        end
     end
+
     ocr -.raw text.-> norm
+    norm --> ontology
+    ontology --> structured
+    structured --> exports
 
     style ocr fill:#2a2a2a,stroke:#888,color:#ccc,stroke-dasharray: 5 5
     style norm fill:#1a2332,stroke:#4a90d9,color:#fff
-    style onto fill:#1a2332,stroke:#4a90d9,color:#fff
-    style struct fill:#1a2332,stroke:#4a90d9,color:#fff
-    style rel fill:#1a2332,stroke:#f5a623,color:#fff
-    style graphdb fill:#1a2332,stroke:#7ed321,color:#fff
+    style ont1 fill:#1a2332,stroke:#4a90d9,color:#fff
+    style ont2 fill:#1a2332,stroke:#4a90d9,color:#fff
+    style ont3 fill:#1a2332,stroke:#4a90d9,color:#fff
+    style ont4 fill:#1a2332,stroke:#4a90d9,color:#fff
+    style ont5 fill:#1a2332,stroke:#4a90d9,color:#fff
+    style st1 fill:#1a2332,stroke:#f5a623,color:#fff
+    style st2 fill:#1a2332,stroke:#f5a623,color:#fff
+    style exp1 fill:#1a2332,stroke:#7ed321,color:#fff
+    style exp2 fill:#1a2332,stroke:#7ed321,color:#fff
+    style exp3 fill:#1a2332,stroke:#7ed321,color:#fff
+    style exp4 fill:#1a2332,stroke:#7ed321,color:#fff
+    style exp5 fill:#1a2332,stroke:#7ed321,color:#fff
 ```
 
 ---
@@ -158,19 +223,25 @@ flowchart LR
 flowchart TB
     subgraph root ["ELKM/"]
         corpus["corpus/<br/>Structured legal data"]
+        ontology["ontology/<br/>Legal ontology definitions<br/>(elkm_core.ttl · elkm_core.owl)"]
+        graphdir["graph/<br/>Neo4j import/build scripts<br/>(Python + Cypher)"]
         datasets["datasets/<br/>NER + legal terminology"]
-        ontology["ontology/<br/>Legal ontology definitions"]
-        graphdir["graph/<br/>Neo4j import/build scripts"]
-        api["api/<br/>Query interface (planned)"]
         scripts["scripts/<br/>Processing & matching tools"]
+        api["api/<br/>Query interface (planned)"]
+        docs["docs/<br/>Documentation (README.ar.md)"]
+        tests["tests/<br/>Test scripts"]
+        arabicnlp["ArabicLegalNLP/<br/>Sibling Python library"]
     end
 
     style corpus fill:#1a2332,stroke:#4a90d9,color:#fff
-    style datasets fill:#1a2332,stroke:#9013fe,color:#fff
     style ontology fill:#1a2332,stroke:#4a90d9,color:#fff
     style graphdir fill:#1a2332,stroke:#7ed321,color:#fff
-    style api fill:#1a2332,stroke:#888,color:#ccc
+    style datasets fill:#1a2332,stroke:#9013fe,color:#fff
     style scripts fill:#1a2332,stroke:#888,color:#ccc
+    style api fill:#1a2332,stroke:#888,color:#ccc
+    style docs fill:#1a2332,stroke:#888,color:#ccc
+    style tests fill:#1a2332,stroke:#888,color:#ccc
+    style arabicnlp fill:#1a2332,stroke:#9013fe,color:#fff
 ```
 
 ### `datasets/ner/` — Detailed Layout
