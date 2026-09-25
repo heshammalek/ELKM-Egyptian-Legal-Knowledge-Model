@@ -1,6 +1,6 @@
-<div align="center">
-
 # ELKM — Egyptian Legal Knowledge Model
+
+<div align="center">
 
 **The first comprehensive, open-source Arabic legal knowledge graph for Egyptian law**
 
@@ -9,10 +9,9 @@
 [![Python](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://www.python.org/)
 [![Neo4j](https://img.shields.io/badge/Neo4j-5.x-008CC1.svg)](https://neo4j.com/)
 [![Status](https://img.shields.io/badge/status-active%20development-orange.svg)]()
-[![Docs](https://img.shields.io/badge/docs-mkdocs-1E90FF.svg)](https://heshammalek.github.io/ELKM/)
 [![CI](https://img.shields.io/github/actions/workflow/status/heshammalek/ELKM-Egyptian-Legal-Knowledge-Model/ci.yml?branch=main)](https://github.com/heshammalek/ELKM-Egyptian-Legal-Knowledge-Model/actions)
 
-**[نسخة عربية متاحة في `docs/README.ar.md`](docs/README.ar.md)**
+**[نسخة عربية ستكون متاحة في `docs/README.ar.md` (قيد الإعداد)](docs/README.ar.md)**
 
 </div>
 
@@ -31,7 +30,7 @@
 - [Relationship Graph](#relationship-graph)
 - [Segmented Identifier System](#segmented-identifier-system)
 - [Technical Stack](#technical-stack)
-- [Inspired By](#inspired-by)
+- [Intellectual References](#intellectual-references)
 - [Current Status](#-current-status)
 - [Roadmap](#roadmap)
 - [How to Contribute](#-how-to-contribute)
@@ -45,48 +44,47 @@
 
 The first Arabic attempt to build a knowledge graph and ontology for the legal domain — a pioneering scientific, technical, and economic project.
 
-Scientific Value
-The first comprehensive, open-source Arabic legal ontology. No equivalent currently exists. Existing efforts are limited to term lists without relationships, or theoretical papers never implemented in software. ELKM builds a knowledge base — not a text archive. The difference: an archive answers what; a knowledge base answers why.
+### Scientific Value
 
-Technical Value
-A knowledge graph connecting every legal text to everything that affected it or was affected by it, with full temporal tracking per article. This enables queries that are impossible in any text search engine or relational database:
+The first comprehensive, open-source Arabic legal ontology. No equivalent currently exists. Existing efforts are limited to term lists without relationships, or theoretical papers never implemented in software. ELKM builds a **knowledge base** — not a text archive. The difference: an archive answers *what*; a knowledge base answers *why*.
 
-Time-Travel: Retrieve the text of an article as it stood on a specific historical date.
+### Technical Value
 
-Multi-hop Impact: Trace the final effect on Article X after a chain of amendments, rulings, and administrative decisions.
+A **knowledge graph** connecting every legal text to everything that affected it or was affected by it, with full temporal tracking per article. This enables queries that are **impossible** in any text search engine or relational database:
 
-Dependency Map: Find every text that cites a specific constitutional article.
+- **Time-Travel**: Retrieve the text of an article as it stood on a specific historical date.
+- **Multi-hop Impact**: Trace the final effect on Article X after a chain of amendments, rulings, and administrative decisions.
+- **Dependency Map**: Find every text that cites a specific constitutional article.
+- **Principle Tracking**: Trace how a legal principle evolved across decades of legislation.
+- **Legislative Cycles**: Detect principles ruled unconstitutional and later re-enacted in new laws.
 
-Principle Tracking: Trace how a legal principle evolved across decades of legislation.
+### Economic Value
 
-Legislative Cycles: Detect principles ruled unconstitutional and later re-enacted in new laws.
+Once interfaces are built, ELKM serves multiple roles: individuals, professionals, research institutions, and authorities. The model: **ELKM open-source** (knowledge layer) → **LexChain Egypt** (commercial product layer).
 
-Economic Value
-Once interfaces are built, ELKM serves multiple roles: individuals, professionals, research institutions, and authorities. The model: ELKM open-source (knowledge layer) → LexChain Egypt (commercial product layer).
+### Why Now — Data Is the Differentiator
 
-Why Now — Data Is the Differentiator
-When LLMs (GPT, Claude, Gemini) and infrastructure (Neo4j, AWS, Qdrant) converge, the only remaining differentiator is data quality and structure.
+When LLMs (GPT, Claude, Gemini) and infrastructure (Neo4j, AWS, Qdrant) converge, **the only remaining differentiator is data quality and structure**.
 
 VentureBeat Pulse (June–July 2026, 101 companies):
 
-57% of companies reported "confident but wrong" AI agent answers due to missing or inconsistent context
+- **57%** of companies reported "confident but wrong" AI agent answers due to missing or inconsistent context
+- Rose to **68%** in July
+- Companies with **governed context layers** reported *higher* error rates (78% vs 20%) — not because their systems are worse, but because they **see** errors that were previously invisible
 
-Rose to 68% in July
+**The problem is not the model — it is the data.** ELKM is the layer for Egyptian law.
 
-Companies with governed context layers reported higher error rates (78% vs 20%) — not because their systems are worse, but because they see errors that were previously invisible
+### Why Egypt
 
-The problem is not the model — it is the data. ELKM is the layer for Egyptian law.
-
-Why Egypt
 A unique hybrid: Islamic Sharia, French civil tradition, judicial precedent, State Council fatwa, and the Supreme Constitutional Court. No off-the-shelf Western ontology fits. The only path is purpose-built.
 
-Global Momentum
-Legal tech investment in 2025 exceeded **$5.99 billion**, up 22% year-over-year, with 14 rounds above $100M. Harvey AI raised $818M (valuation $8B). Clio raised $850M and acquired vLex for $1B. ELKM builds this layer for Egyptian law — before anyone else does.
+### Global Momentum
 
-The Egyptian Gap
-Egypt's Supreme Committee for Legislative Reform and National AI Council have made progress. The Egyptian Legal Portal holds 290,000+ laws and 100,000+ judgments. But it remains an archive, not a knowledge layer. ELKM fills this gap.
+Legal tech investment in 2025 exceeded **$5.99 billion**, up 22% year-over-year, with 14 rounds above $100M. Harvey AI raised $818M (valuation $8B). Clio raised $850M and acquired vLex for $1B. ELKM builds this layer for Egyptian law — **before anyone else does**.
 
+### The Egyptian Gap
 
+Egypt's Supreme Committee for Legislative Reform and National AI Council have made progress. The Egyptian Legal Portal holds 290,000+ laws and 100,000+ judgments. But it remains an **archive**, not a **knowledge layer**. ELKM fills this gap.
 
 ---
 
@@ -101,12 +99,9 @@ cd ELKM-Egyptian-Legal-Knowledge-Model
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
-
-# Run the corpus build pipeline
-python scripts/build_corpus.py
 ```
 
-> The unified export/build script is still under active development (see [Current Status](#-current-status)) — exact commands and paths will stabilize as `scripts/` is finalized. For detailed setup, see the [Installation Guide](https://heshammalek.github.io/ELKM/installation/).
+> The unified export/build script is still under active development (see [Current Status](#-current-status)) — exact commands and paths will stabilize as `scripts/` is finalized.
 
 ---
 
@@ -132,23 +127,35 @@ No comprehensive, publicly published Arabic legal ontology currently exists. Exi
 
 1. The first comprehensive Arabic legal ontology.
 2. A model for representing Arabic legal text as a knowledge graph.
-3. A bridge between global standards (Akoma Ntoso, LegalRuleML) and the Arabic legal context.
+3. A bridge between global standards and the Arabic legal context.
 4. An Arabic legal Named Entity Recognition (NER) model.
+
+### Why Egypt Specifically
+
+The Egyptian legal system is a unique hybrid unlike any single reference model:
+
+- **Islamic Sharia** — a principal source of legislation (Article 2 of the Constitution)
+- **French civil law tradition** — underlying the civil and commercial fabric
+- **Judicial precedent** — the Court of Cassation plays a broader interpretive role than its French counterpart
+- **State Council fatwa** — a purely Egyptian institution with no Western equivalent
+- **The Supreme Constitutional Court** — exercising posterior review of legislative constitutionality
+
+Any off-the-shelf Western ontology collides with this specificity. The only viable path is a purpose-built one.
 
 ---
 
 ## Why ELKM Is Different (Competitive Context)
 
-Products already exist offering fast full-text search over Egyptian legislation — most notably Ansvar Systems (Sweden), a globally leading company running the same MCP-server template across 46 jurisdictions (330,000+ national laws). The real difference isn't coverage — it's the layer:
+Products already exist offering fast full-text search over Egyptian legislation — most notably **Ansvar Systems** (Sweden), a globally leading company running the same MCP-server template across 46 jurisdictions (330,000+ national laws). The real difference isn't coverage — it's the **layer**:
 
-|                        | Traditional full-text search tools    | ELKM                                                                                     |
-|------------------------|---------------------------------------|------------------------------------------------------------------------------------------|
-| **Structure**          | Simple text indexing (FTS5 + BM25)    | Ontology + graph + explicit relationships                                                |
-| **Depth**              | Generic classification                | Distinguishes decree-law from administrative decision, fatwa binding basis (Art. 66), per-article status over time |
-| **Scope**              | Usually statutes only                 | 12 document types (including rulings, fatwas, minutes, academic doctrine)                |
-| **Temporal**           | Current snapshot only                 | Time-Travel queries: retrieve any article as it stood on any historical date             |
-| **AI-Ready**           | Unstructured text                     | Structured, contextual data designed for AI reasoning                                    |
-| **Nature**             | Horizontal expansion (breadth)        | Vertical depth in one legal system (depth)                                               |
+| | Traditional full-text search tools | ELKM |
+|---|---|---|
+| **Structure** | Simple text indexing (FTS5 + BM25) | Ontology + graph + explicit relationships |
+| **Depth** | Generic classification | Distinguishes decree-law from administrative decision, fatwa binding basis (Art. 66), per-article status over time |
+| **Scope** | Usually statutes only | 12 document types (including rulings, fatwas, minutes, academic doctrine) |
+| **Temporal** | Current snapshot only | Time-Travel queries: retrieve any article as it stood on any historical date |
+| **AI-Ready** | Unstructured text | Structured, contextual data designed for AI reasoning |
+| **Nature** | Horizontal expansion (breadth) | Vertical depth in one legal system (depth) |
 
 ELKM operates on a different layer — not by competing on text search, but by building a deeper one (legal reasoning and a relationship graph) for which no real equivalent currently exists for Egyptian law. Tools like Harvey AI and CoCounsel demonstrate the same lesson from the other direction: powerful LLMs still need a structured knowledge base underneath them to reason reliably over law. ELKM aims to be that base — an open infrastructure of the kind Westlaw provides commercially, but published.
 
@@ -294,24 +301,21 @@ flowchart TB
             njson["json/{category}/<br/>Full structured data"]
         end
 
-        metadata["metadata/<br/>doc_types · subjects<br/>documents_index · id_codes"]
-        relations["relations/<br/>Relations keyed by relation_id<br/>(no internal folder structure)"]
-        diff["diff/<br/>{doc_type}/{doc_id}/<br/>{v_from}_vs_{v_to}.md"]
+        metadata["metadata/<br/>doc_types · doc_codes · subjects<br/>relation_types · authority_types<br/>documents_index"]
+        relations["relations/by_document/<br/>{instance_id}.json"]
 
         subgraph exports ["exports/"]
             direction LR
             jsonl["jsonl/<br/>one file per document"]
             md["markdown/<br/>one file per document"]
-            akn["akn/<br/>one file per document"]
             sqlite["sqlite/<br/>corpus.db<br/>(single central DB)"]
             parquet["parquet/<br/>one file per doc_type"]
-            neodb["neo4j/<br/>(deferred — after relations layer)"]
+            neodb["neo4j/<br/>nodes/ + relationships/"]
         end
     end
 
     raw --> normalized
     normalized --> exports
-    normalized --> diff
     metadata -.classification.-> normalized
     normalized -.feeds.-> relations
     relations -.links.-> exports
@@ -322,23 +326,20 @@ flowchart TB
     style njson fill:#1a2332,stroke:#4a90d9,color:#fff
     style metadata fill:#1a2332,stroke:#f5a623,color:#fff
     style relations fill:#1a2332,stroke:#f5a623,color:#fff
-    style diff fill:#1a2332,stroke:#f5a623,color:#fff
     style jsonl fill:#1a2332,stroke:#7ed321,color:#fff
     style md fill:#1a2332,stroke:#7ed321,color:#fff
-    style akn fill:#1a2332,stroke:#7ed321,color:#fff
     style sqlite fill:#1a2332,stroke:#7ed321,color:#fff
     style parquet fill:#1a2332,stroke:#7ed321,color:#fff
-    style neodb fill:#1a2332,stroke:#555,color:#999,stroke-dasharray: 3 3
+    style neodb fill:#1a2332,stroke:#7ed321,color:#fff
 ```
 
 **Design rationale:**
 
 - **`raw/scanned/{category}/`** and **`raw/text_as_is/{category}/`**: a unified category split that repeats identically inside `normalized/` — knowing a document's path in one folder tells you its path everywhere else instantly.
 - **`text_as_is`** is a verbatim copy (the *Display Path*) for direct user display; **`normalized`** is a simplified copy (the *Search Path*) for **faster search and matching**, not display.
-- **`metadata`**: near-static classification data — document types, subject sectors, the document index, and the authority/court code registry (`id_codes.json`).
-- **`relations`**: deliberately flat — every relation has a unique `relation_id` referenced directly from within the documents it connects, since relations overlap and aren't exclusive to a single party.
-- **`diff/`**: textual comparison between two versions of the same document, built on the `version_from`/`version_to` fields already present in each document's JSON.
-- **`exports/`**: a fully derived layer with storage granularity that differs by format — **jsonl/markdown/akn** one file per document, **sqlite** a single central database (`INSERT OR REPLACE` keyed by `doc_id` to prevent duplication), **parquet** one file per `doc_type` (a columnar format unsuited to thousands of small files), and **neo4j** deferred until the relationship layer is complete, since — unlike the others — it isn't a direct export but requires the ontology to be finished first.
+- **`metadata`**: near-static classification data — document types, authority codes, subject sectors, relation types, authority types, and the document index.
+- **`relations/by_document/`**: every relation is stored as a separate JSON file keyed by its `instance_id`, and referenced directly from within the article it connects via `instance_references`.
+- **`exports/`**: a fully derived layer with storage granularity that differs by format — **jsonl/markdown** one file per document, **sqlite** a single central database (`INSERT OR REPLACE` keyed by `doc_id` to prevent duplication), **parquet** one file per `doc_type` (a columnar format unsuited to thousands of small files), and **neo4j** as the primary output, with `nodes/` and `relationships/` for import.
 
 ### Article Index = the SQLite Export, Not a Separate File
 
@@ -347,7 +348,7 @@ With thousands of documents and hundreds of thousands of articles, a single `doc
 ```sql
 CREATE TABLE articles_index (
   doc_id TEXT, article_number INTEGER, doc_type TEXT,
-  article_status TEXT, judgment_ref TEXT, subjects TEXT, -- JSON array as text
+  subjects TEXT, -- JSON array as text
   text_normalized TEXT
 );
 ```
@@ -362,11 +363,11 @@ This is the direct foundation for queries like *"which articles reference Articl
 graph LR
     L1["LAW-58-1937<br/>Penal Code"]
     L2["LAW-174-2025<br/>Amendment"]
-    J1["JUDG-CONST-15-20<br/>Constitutionality Ruling"]
+    J1["JUDG-SCC-15-20<br/>Constitutionality Ruling"]
     F1["FATWA-88-2021<br/>Interpretive Fatwa"]
 
     L2 -->|partial_repeal| L1
-    J1 -->|ABROGATES| L1
+    J1 -->|unconstitutionality_ruling| L1
     F1 -->|interpretation_fatwa| L2
 
     style L1 fill:#1a2332,stroke:#4a90d9,color:#fff
@@ -381,12 +382,14 @@ Named relation types anchor the graph's semantics, mirroring the authorities tha
 
 | Relation | Meaning |
 |---|---|
-| `DERIVED_FROM` | A regulation is derived from its enabling law |
-| `IMPLEMENTS` | A law implements a constitutional provision |
-| `MUST_NOT_CONTRADICT` | A ministerial decision must not contradict its parent regulation/law |
-| `ABROGATES` | The Supreme Constitutional Court strikes down a provision |
-| `INTERPRETS` / `CLARIFIES` | The Court of Cassation issues a binding interpretation (`Ascertained_Meaning`) |
-| `ANNULS` | The Supreme Administrative Court annuls an administrative decision |
+| `total_repeal` | Complete repeal of a law by a later law |
+| `partial_repeal` | Repeal of a specific article or provision |
+| `amendment` | Modification of an existing legal text |
+| `addition` | Addition of new articles to an existing law |
+| `unconstitutionality_ruling` | Supreme Constitutional Court ruling of unconstitutionality |
+| `interpretation_fatwa` | Interpretive fatwa from the State Council |
+| `referral` | Cross-reference from one text to another |
+| `establishes` | Creation of a new entity or institution |
 
 **Time-Travel queries** — retrieving the law exactly as it stood on a specific historical date — are a first-class capability the graph is designed to support, not an afterthought.
 
@@ -400,14 +403,14 @@ Every document gets a unique, human-readable, automatically generable identifier
 
 ```
 LAW-10-2000                     Law No. 10 of 2000
-DECREE-LAW-20-2001              Decree-Law No. 20 of 2001
-ADMIN-DECISION-PRES-30-2025     Presidential Decision No. 30 of 2025
-ADMIN-DECISION-MIN-AGRIC-5-2024 Minister of Agriculture Decision No. 5 of 2024
-JUDG-CONST-15-20                Supreme Constitutional Court, Case 15 / Judicial Year 20
-JUDG-NAQD-CIVIL-30-40           Court of Cassation, Civil Chamber, Appeal 30 / Judicial Year 40
+DL-20-2001                      Decree-Law No. 20 of 2001
+ADM-PRES-30-2025                Presidential Decision No. 30 of 2025
+ADM-MIN-AGRIC-5-2024            Minister of Agriculture Decision No. 5 of 2024
+JUDG-SCC-15-20                  Supreme Constitutional Court, Case 15 / Judicial Year 20
+JUDG-CASS-CIV-30-40             Court of Cassation, Civil Chamber, Appeal 30 / Judicial Year 40
 ```
 
-`metadata/id_codes.json` is a living, non-exhaustive registry of authorities and courts, holding **the identifier construction pattern itself** alongside it (segment order, which courts require a chamber code) — kept in one file as a single source of truth used by both the extraction prompt and any validation script, rather than separate documentation that risks drifting out of sync. The practical necessity of the registry: entirely different administrative decisions can share the same number and year if issued by different authorities (a minister vs. a governor), so distinguishing by authority is mandatory to avoid identifier collisions.
+`metadata/doc_codes.json` is a living, non-exhaustive registry of authorities and courts, holding **the identifier construction pattern itself** alongside it (segment order, which courts require a chamber code) — kept in one file as a single source of truth used by both the extraction prompt and any validation script, rather than separate documentation that risks drifting out of sync. The practical necessity of the registry: entirely different administrative decisions can share the same number and year if issued by different authorities (a minister vs. a governor), so distinguishing by authority is mandatory to avoid identifier collisions.
 
 ---
 
@@ -417,63 +420,80 @@ JUDG-NAQD-CIVIL-30-40           Court of Cassation, Civil Chamber, Appeal 30 / J
 |---|---|---|
 | Language | **Python 3.12+** | Core implementation language |
 | Graph database | **Neo4j 5.x** | Stores and queries multi-hop relationships between texts, via Cypher |
-| Vector search | **pgvector (PostgreSQL)**, migrating to **Qdrant** | Semantic/vector search over legal text |
+| Vector search | **Qdrant** | Semantic/vector search over legal text (folder reserved; not yet exported) |
 | Text search & indexing | **SQLite (central) + Elasticsearch** | Queryable document/article index, plus fast full-text search on normalized text |
 | Arabic NLP | **CAMeL Tools 1.5+** | Morphological analysis, POS tagging, NER |
-| Grammar parsing | **Lark (EBNF parser)** | Parses Arabic legal-drafting patterns (conditionals, cross-references, definitions) |
-| Ontology | **OWLReady2**, exported as OWL/Turtle (W3C-compatible) | doc_types.json / subjects.json / id_codes.json define the applied classification (13 document types, 6 subject sectors) |
+| Ontology | **OWLReady2**, exported as OWL/Turtle (W3C-compatible) | doc_types.json / doc_codes.json / subjects.json / relation_types.json / authority_types.json define the applied classification (12 document types, 6 subject sectors) |
 | Backend (planned) | **FastAPI** | Public API, data snapshots, or institutional integration |
 | Containers & CI | **Docker + Compose, GitHub Actions, Pytest** | Reproducible environment, automated testing |
-| Documentation | **MkDocs Material** | Published project documentation |
-| LLM integration | **Anthropic/OpenAI SDKs directly** (LangChain added later only if needed) | Reasoning layer on top of the graph |
-| Export standards | **Akoma Ntoso (AKN) + LegalRuleML** | International legal-document and rule-representation standards |
-| Extraction (outside the code) | **LLM-powered extraction via a documented prompt** | Converts image/PDF to `text_as_is` — a documented methodology, not code within the repo |
+| LLM integration | **Anthropic/OpenAI SDKs directly** | Reasoning layer on top of the graph |
 
 ---
 
-## Inspired By
+## Intellectual References
 
-- **Harvard LIL** — the Caselaw Access Project and its document assembly line approach
-- **Stanford CODEX** — the "computable law" concept
-- **Akoma Ntoso** — the UN's international XML standard for legal documents; ELKM's structural inspiration
-- **LegalRuleML** — a standard for logically representing legal rules
-- **LKIF Core Ontology** — an academic reference, not adopted directly since it doesn't fit the Egyptian system
-- **Hohfeld's Fundamental Legal Conceptions** — the theoretical framework underlying legal relationship modeling
-- **McCarty's LLD** — a framework for representing legal norms
-- **Harvey AI, CoCounsel (Casetext)** — the lesson from the other direction: powerful LLMs still need a structured knowledge base to reason reliably over law
+ELKM draws on academic, technical, and conceptual references — none adopted wholesale, each informing a specific design decision.
+
+**Academic & Conceptual**
+
+- **Harvard LIL** — document assembly line approach
+- **Stanford CODEX** — "computable law" concept
+- **Hohfeld** — legal relationship taxonomy
+- **McCarty's LLD** — formal representation of legal norms
+- **LKIF Core Ontology** — legal ontology approach (not its structure; incompatible with the Egyptian system)
+
+**Standards & Frameworks**
+
+- **Akoma Ntoso** — hierarchical document structure (concept, not standard)
+- **LegalRuleML** — logical rule representation (concept, not format)
+- **FOLaw** — legal ontology as a layer separate from text
+
+**Technical Models**
+
+- **Ansvar Systems** — full-text search is not enough; a deeper layer is needed
+- **Harvey AI, CoCounsel** — LLMs need a structured knowledge base underneath
+
+**Arabic Legal Ontologies (Prior Work)**
+
+- **CrimAr (2017)** — Arabic legal ontology is possible, but narrow
+- **Zaidi (2006)** — Arabic legal search needs semantic expansion
+
+**Egyptian Legal Archives**
+
+- **Manshurat (AUC)** — digital archives are a foundation, not an endpoint
 
 ---
 
 ## 📊 Current Status
 
-> Indicative status — percentages are rough estimates aligned with the Roadmap below; update as work progresses.
+> Indicative status — checkboxes will be updated as work progresses.
 
-| Component | Status |
-|---|---|
-| Core Ontology | ✅ Complete (v1.0) |
-| Corpus Architecture | ✅ Complete |
-| Segmented Identifier System | ✅ Complete |
-| Neo4j Import Script | ⏳ Planned |
-| Unified Export Script | ⏳ Planned |
-| NER Dataset | ⏳ Planned |
-| Public API | ⏳ Planned |
+| Component | Planned | In Progress | Complete |
+|---|---|---|---|
+| Core Ontology | ⬜ | ⬜ | ⬜ |
+| Corpus Architecture | ⬜ | ⬜ | ⬜ |
+| Segmented Identifier System | ⬜ | ⬜ | ⬜ |
+| Neo4j Import Script | ⬜ | ⬜ | ⬜ |
+| Unified Export Script | ⬜ | ⬜ | ⬜ |
+| NER Dataset | ⬜ | ⬜ | ⬜ |
+| Public API | ⬜ | ⬜ | ⬜ |
+| Arabic Documentation | ⬜ | ⬜ | ⬜ |
 
 ---
 
 ## Roadmap
 
 **Corpus & Core Architecture**
-- [x] Build the core ontology (document types, subject sectors)
-- [x] Design the corpus architecture (raw / normalized / metadata / relations / diff / exports)
-- [x] Temporal article-status tracking system (`status_history`)
-- [x] Segmented identifier system
+- [ ] Build the core ontology (document types, subject sectors)
+- [ ] Design the corpus architecture (raw / normalized / metadata / relations / exports)
+- [ ] Segmented identifier system
 - [ ] Complete extraction of the core body of laws in force
 - [ ] Build out the full relationship layer and link it to Neo4j
-- [ ] Unified export script (read JSON → automatically route to jsonl/sqlite/parquet/markdown/akn by `doc_type`, with duplicate-export prevention)
-- [ ] EBNF grammar for Arabic legal drafting patterns (Lark), and a regex-based MVP entity extractor grounded in it
+- [ ] Unified export script (read JSON → automatically route to jsonl/markdown/sqlite/parquet/neo4j by `doc_type`)
+- [ ] EBNF grammar for Arabic legal drafting patterns, and a regex-based MVP entity extractor grounded in it
 
 **Enrichment & Analysis**
-- [ ] Enrichment pass: classify each article by subject via `subjects.json`, after full corpus extraction — to track legislative attention and shifts on a given topic over time
+- [ ] Enrichment pass: classify each article by subject via `subjects.json`
 - [ ] Dependency Map via NER `ARTICLE_REF` extraction
 - [ ] Time-Travel query support (retrieve the law as it stood on a given date)
 
@@ -487,13 +507,13 @@ JUDG-NAQD-CIVIL-30-40           Court of Cassation, Civil Chamber, Appeal 30 / J
 - [ ] MCP server on top of ELKM
 - [ ] Docker containers
 - [ ] GitHub repository setup and linking
-- [ ] MkDocs documentation site + CI pipeline
+- [ ] CI pipeline
 
 **After Corpus Completion**
 - [ ] Full ontology and methodology documentation, published as OWL/Turtle
 - [ ] Public query interface (API / semantic search)
-- [ ] **ArabicLegalNLP** — standalone Python library, called by ELKM as an external tool
-- [ ] **LexChain Egypt** — a commercial product layer built on top of the open-source foundation (ELKM = core knowledge layer; LexChain Egypt = ELKM + application layer: LLM, UI, search tools)
+- [ ] **ArabicLegalNLP** — standalone Python library
+- [ ] **LexChain Egypt** — commercial product layer
 
 ---
 
@@ -525,7 +545,6 @@ If any of this fits what you do, opening an issue or reaching out is welcome.
 ## 🙏 Acknowledgments
 
 - **Harvard LIL** for the Caselaw Access Project inspiration
-- **Akoma Ntoso** for the legal document standard
 - **CAMeL Lab** for Arabic NLP tools
 - All contributors and reviewers who helped shape this project
 
