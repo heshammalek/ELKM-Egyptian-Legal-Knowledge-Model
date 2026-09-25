@@ -548,9 +548,7 @@ We are seeking partners who share this vision:
 - Graduate students to help build the corpus.
 - 
 - ### 💰 Funding
-
 A seed grant would allow ELKM to move from prototype to a fully functional, published resource. Funding would cover:
-
 - **Dedicated research time** for the project lead and research assistants.
 - **Server and infrastructure costs** for Neo4j, PostgreSQL/Qdrant, and Elasticsearch.
 - **Conference publication fees** (ICAIL, JURIX, LREC).
@@ -559,12 +557,8 @@ A seed grant would allow ELKM to move from prototype to a fully functional, publ
 - **Establishment of a research entity** dedicated to the project.
 - **Office setup and logistics** for the research team.
 
-**Target funding sources:** University research grants, national research funds, EU Horizon programs, DAAD, and private foundations supporting legal tech and open knowledge.
-
 - ### For Technical and Legal Experts
-
 As the project scales, we will need specialized expertise in areas such as:
-
 - **Arabic NLP**
 - **LLM Engineering**
 - **Security**
