@@ -531,12 +531,44 @@ See `CONTRIBUTING.md` for detailed guidelines.
 
 ## Call for Collaboration
 
-ELKM is an open research effort, and it's stronger with the right partners:
+ELKM is building the **knowledge layer for Egyptian law** — the infrastructure that every legal AI application in Egypt will depend on. This is not just a research project; it is the foundation for a new generation of legal technology.
 
-- **Academic sponsorship** — a university or research center to adopt ELKM as an official research project: academic supervision of the ontology and methodology, publication opportunities (ICAIL, JURIX, LREC), and graduate students to help build the corpus.
-- **Funding** — a seed grant to cover dedicated research time, server costs, and conference publication fees.
-- **Technical partnership** — help building the OCR pipeline for scanned legal texts, and UI development for the future LexChain Egypt product layer.
-- **Legal review** — an Egyptian legal expert (judge, lawyer, or law professor) to review the ontology's accuracy in representing the Egyptian legal system and the correctness of the relationships and interpretations in the knowledge model.
+We are seeking partners who share this vision:
+
+### For Academic Institutions
+
+**What you get:**
+- A pioneering research project publishable at **ICAIL**, **JURIX**, and **LREC**
+- Graduate research opportunities in Arabic legal NLP and knowledge graphs
+- The first published Arabic legal ontology — a scholarly contribution
+
+**What you give:**
+- Academic supervision of the ontology and methodology
+- Publication support and peer review
+- Graduate students to help build the corpus.
+- 
+- ### 💰 Funding
+
+A seed grant would allow ELKM to move from prototype to a fully functional, published resource. Funding would cover:
+
+- **Dedicated research time** for the project lead and research assistants.
+- **Server and infrastructure costs** for Neo4j, PostgreSQL/Qdrant, and Elasticsearch.
+- **Conference publication fees** (ICAIL, JURIX, LREC).
+- **Annotation costs** for the Arabic Legal NER dataset.
+- **Legal review fees** for expert validation of the ontology.
+- **Establishment of a research entity** dedicated to the project.
+- **Office setup and logistics** for the research team.
+
+**Target funding sources:** University research grants, national research funds, EU Horizon programs, DAAD, and private foundations supporting legal tech and open knowledge.
+
+- ### For Technical and Legal Experts
+
+As the project scales, we will need specialized expertise in areas such as:
+
+- **Arabic NLP**
+- **LLM Engineering**
+- **Security**
+- **Legal review** — judges, lawyers, and law professors to validate the ontology and the correctness of the relationships
 
 If any of this fits what you do, opening an issue or reaching out is welcome.
 
