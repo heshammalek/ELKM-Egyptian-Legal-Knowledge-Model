@@ -29,35 +29,53 @@
         "repeals": ["law", "decree_law", "treaty", "regulation", "administrative_decision"]
       },
       "sub_types": [
-        {
-          "name_ar": "دستور دائم",
-          "description": "الوثيقة الدستورية الدائمة المقرة من الشعب عبر استفتاء، تمثل الإطار الأعلى الناظم للدولة بلا أفق زمني محدد",
-          "status": "permanent",
-          "issuing_authority": {
-            "authority_type_ids": [],
-            "note": "الشعب — عبر استفتاء عام"
-          },
-          "id_scheme": {
-            "format": "CONST-{YEAR}",
-            "components": { "YEAR": "سنة الإصدار" },
-            "example": "CONST-2014"
-          }
-        },
-        {
-          "name_ar": "إعلان دستوري",
-          "description": "وثيقة دستورية مؤقتة تصدر في الفترات الانتقالية عند غياب دستور دائم نافذ، تسمو على القوانين العادية وتنظم السلطات لحين وضع دستور دائم أو انتهاء الفترة الانتقالية — مثل إعلانات 2011 و2012 و2013",
-          "status": "transitional",
-          "issuing_authority": {
-            "authority_type_ids": ["AUTH-TYPE-002", "AUTH-TYPE-007"],
-            "note": "جهة مؤقتة — المجلس الأعلى للقوات المسلحة أو رئيس مؤقت"
-          },
-          "id_scheme": {
-            "format": "CONST-TRANS-{YEAR}",
-            "components": { "YEAR": "سنة الإصدار" },
-            "example": "CONST-TRANS-2011"
-          }
-        }
-      ]
+  {
+    "name_ar": "دستور دائم",
+    "description": "الوثيقة الدستورية الدائمة المقرة من الشعب عبر استفتاء، تمثل الإطار الأعلى الناظم للدولة بلا أفق زمني محدد",
+    "status": "permanent",
+    "issuing_authority": {
+      "authority_type_ids": [],
+      "note": "الشعب — عبر استفتاء عام"
+    },
+    "id_scheme": {
+      "format": "CONST-{YEAR}",
+      "components": { "YEAR": "سنة الإصدار" },
+      "example": "CONST-2014"
+    }
+  },
+  {
+    "name_ar": "إعلان دستوري / دستور مؤقت",
+    "description": "وثيقة دستورية مؤقتة تصدر في الفترات الانتقالية عند غياب دستور دائم نافذ، تسمو على القوانين العادية وتنظم السلطات لحين وضع دستور دائم أو انتهاء الفترة الانتقالية — مثل إعلانات 2011 و2012 و2013، ودستور 1958 المؤقت",
+    "status": "transitional",
+    "issuing_authority": {
+      "authority_type_ids": ["AUTH-TYPE-002", "AUTH-TYPE-007"],
+      "note": "جهة مؤقتة — المجلس الأعلى للقوات المسلحة أو رئيس مؤقت"
+    },
+    "id_scheme": {
+      "format": "CONST-TRANS-{YEAR}",
+      "components": { "YEAR": "سنة الإصدار" },
+      "example": "CONST-TRANS-2011"
+    }
+  },
+  {
+    "name_ar": "تعديل دستوري",
+    "description": "مستند يعدّل دستوراً قائماً. يصدر عادةً بموجب إجراء دستوري خاص (استفتاء أو إقرار برلماني)، وليس كقانون عادي",
+    "status": "amendment",
+    "issuing_authority": {
+      "authority_type_ids": ["AUTH-TYPE-001"],
+      "note": "السلطة التشريعية أو الشعب — حسب إجراء التعديل"
+    },
+    "id_scheme": {
+      "format": "CONST-{ORIGINAL_YEAR}-AMD-{AMENDMENT_YEAR}",
+      "components": {
+        "ORIGINAL_YEAR": "سنة الدستور الأصلي",
+        "AMENDMENT_YEAR": "سنة التعديل"
+      },
+      "example": "CONST-1971-AMD-2007",
+      "note": "لو فيه أكتر من تعديل في نفس السنة، يُضاف رقم تسلسلي: CONST-{ORIGINAL_YEAR}-AMD-{AMENDMENT_YEAR}-{SEQUENCE}"
+    }
+  }
+]
     },
 
     "treaty": {
