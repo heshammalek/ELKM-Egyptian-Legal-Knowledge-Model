@@ -1,7 +1,12 @@
 {
   "version": "1.0",
-  "last_updated": "2026-09-23",
-  "description": "أكواد الجهات المُصدِرة للمستندات — مرجع مفتوح، يُضاف إليه تدريجيًا حسب ما يظهر في الكوربس",
+  "last_updated": "2026-09-27",
+  "purpose": "مرجع أكواد الجهات المُصدِرة — يُستخدم حصرياً للتحقق من صحة doc_id وتسمية الملفات داخل المشروع.",
+  "usage": {
+    "primary": "التحقق من صحة doc_id وفق id_scheme",
+    "secondary": "تسمية الملفات داخل corpus/",
+    "not_for": "العلاقات — للعلاقات استخدم entities.json و positions.json"
+  },
   "is_final": false,
 
   "codes": {
