@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-09-27",
+  "purpose": "سجل الكيانات المؤسسية — يُستخدم حصرياً في العلاقات (relations/).",
+  "usage": {
+    "primary": "الربط العلائقي (target.entity_id)",
+    "secondary": "البنية الهرمية للكيانات (ministry → directorate → administration)",
+    "not_for": "تسمية الملفات — للتسمية استخدم doc_codes.json"
+  },
+  "is_final": false,
+  "entities": [
+    {
+      "entity_id": "ENT-MOE",
+      "name_ar": "وزارة التربية والتعليم",
+      "name_en": "Ministry of Education",
+      "entity_type": "ministry",
+      "parent_entity_id": null,
+      "hierarchy_level": 1,
+      "sub_entities": [
+        {
+          "entity_id": "ENT-MOE-CAI",
+          "name_ar": "مديرية التربية والتعليم بالقاهرة",
+          "entity_type": "directorate",
+          "parent_entity_id": "ENT-MOE",
+          "hierarchy_level": 2,
+          "sub_entities": [
+            {
+              "entity_id": "ENT-MOE-CAI-EAST",
+              "name_ar": "إدارة شرق القاهرة التعليمية",
+              "entity_type": "administration",
+              "parent_entity_id": "ENT-MOE-CAI",
+              "hierarchy_level": 3,
+              "sub_entities": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
