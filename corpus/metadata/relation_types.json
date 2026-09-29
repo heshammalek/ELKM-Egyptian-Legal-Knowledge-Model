@@ -1,10 +1,33 @@
 {
   "relation_schema": {
-    "version": "1.5",
+    "version": "1.8",
+    "last_updated": "2026-09-30",
+    "total_types": 26,
+    "version_history": [
+      { "version": "1.5", "date": "2026-09-23", "changes": "إضافة preemptive_repeal" },
+      { "version": "1.6", "date": "2026-09-27", "changes": "إضافة علاقات الكيانات والمناصب" },
+      { "version": "1.7", "date": "2026-09-30", "changes": "إسقاط interpretation_fatwa. تعديل empowers إلى position_or_entity. إضافة metadata." },
+      { "version": "1.8", "date": "2026-09-30", "changes": "إسقاط mentions_entity و mentions_position — ليست علاقات قانونية." }
+    ],
     "is_enum": true,
     "is_final": false,
     "direction_model": "all relation types are directed (source → target)",
-    "core_principle": "كل علاقة تنشأ من مادة (أو فقرة داخل مادة). المصدر دايماً article. الهدف ممكن يكون article أو entity أو position أو whole_document. الاستثناء الوحيد: الأحكام — المصدر فيها منطوق الحكم مش مادة",
+    "core_principle": "كل علاقة تنشأ من مادة (أو فقرة داخل مادة). المصدر دايماً article. الهدف ممكن يكون article أو entity أو position أو whole_document. الاستثناء الوحيد: الأحكام — المصدر فيها منطوق الحكم مش مادة، والأحكام لا ترتبط بكيانات أو مناصب.",
+
+    "excluded_by_design": [
+      {
+        "name": "interpretation_fatwa",
+        "reason": "الفتوى لا تنشئ علاقات مع النصوص القانونية بالشكل الذي يحتاجه المشروع حالياً. قد تُعاد في إصدار مستقبلي إذا لزم الأمر. الفتوى نفسها تبقى مستنداً في doc_types.json تحت fatwa_legislative."
+      },
+      {
+        "name": "mentions_entity",
+        "reason": "مجرد ذكر لكيان في النص ليس علاقة قانونية. العلاقات القانونية هي التي تنشئ أو تلغي أو تدمج أو تفصل أو تعيد تسمية الكيان — وليس مجرد ذكره."
+      },
+      {
+        "name": "mentions_position",
+        "reason": "مجرد ذكر لمنصب في النص ليس علاقة قانونية. العلاقات القانونية هي التي تنشئ أو تلغي أو توسع أو تقيد أو تفوض المنصب — وليس مجرد ذكره."
+      }
+    ],
 
     "categories": [
       {
@@ -111,17 +134,6 @@
       },
       {
         "id": "REL-006",
-        "name": "delegation",
-        "name_ar": "تفويض",
-        "short_code": "DELEG",
-        "category_id": "DOC-POS",
-        "target_scope": "position",
-        "constitutional_basis": "المادة 170",
-        "description": "نص يخول أو يفوض منصباً سلطة إصدار لوائح أو قرارات أو مباشرة اختصاص",
-        "example": "المادة 170 من الدستور تخول رئيس مجلس الوزراء إصدار اللوائح التنفيذية"
-      },
-      {
-        "id": "REL-007",
         "name": "unconstitutionality_ruling",
         "name_ar": "حكم بعدم دستورية",
         "short_code": "UNCONST",
@@ -133,18 +145,7 @@
         "example": "حكم المحكمة الدستورية العليا (JUDG-SCC-5-31) بعدم دستورية المادة 53 من قانون العقوبات"
       },
       {
-        "id": "REL-008",
-        "name": "interpretation_fatwa",
-        "name_ar": "فتوى تفسيرية",
-        "short_code": "INTERP",
-        "category_id": "DOC-DOC",
-        "target_scope": "both",
-        "constitutional_basis": "المادة 190",
-        "description": "فتوى تفسيرية من مجلس الدولة تفسر نص قانوني",
-        "example": "فتوى مجلس الدولة (FATWA-818-2021) تفسر المادة 53 من قانون العقوبات"
-      },
-      {
-        "id": "REL-009",
+        "id": "REL-007",
         "name": "reinstatement",
         "name_ar": "إعادة العمل",
         "short_code": "REINST",
@@ -155,7 +156,7 @@
         "example": "قانون 174 لسنة 2025 (المادة 5) يعيد العمل بالمادة 53 من قانون العقوبات"
       },
       {
-        "id": "REL-010",
+        "id": "REL-008",
         "name": "referral",
         "name_ar": "إحالة",
         "short_code": "REF",
@@ -166,51 +167,7 @@
         "example": "المادة 53 من قانون العقوبات تحيل إلى المادة 12 من قانون الإجراءات الجنائية"
       },
       {
-        "id": "REL-011",
-        "name": "establishes",
-        "name_ar": "ينشئ",
-        "short_code": "EST",
-        "category_id": "DOC-ENT",
-        "target_scope": "entity",
-        "constitutional_basis": "المادة 197",
-        "description": "نص ينشئ هيئة أو مؤسسة أو كياناً جديداً",
-        "example": "قانون 174 لسنة 2025 (المادة 3) ينشئ هيئة النيابة الإدارية"
-      },
-      {
-        "id": "REL-012",
-        "name": "prohibits",
-        "name_ar": "يحظر",
-        "short_code": "PROH",
-        "category_id": "DOC-POS",
-        "target_scope": "position_or_entity",
-        "constitutional_basis": "المادة 74",
-        "description": "نص يحظر على منصب أو جهة فعلاً أو سلوكاً معيناً",
-        "example": "المادة 74 من الدستور تحظر على الأحزاب السياسية إنشاء تشكيلات عسكرية"
-      },
-      {
-        "id": "REL-013",
-        "name": "obligates",
-        "name_ar": "يلزم",
-        "short_code": "OBL",
-        "category_id": "DOC-POS",
-        "target_scope": "position_or_entity",
-        "constitutional_basis": "المادة 170",
-        "description": "نص يلزم منصباً أو جهة بفعل معين",
-        "example": "المادة 170 من الدستور تلزم رئيس مجلس الوزراء بإصدار اللوائح التنفيذية"
-      },
-      {
-        "id": "REL-014",
-        "name": "empowers",
-        "name_ar": "يخول",
-        "short_code": "EMP",
-        "category_id": "DOC-POS",
-        "target_scope": "position",
-        "constitutional_basis": "المادة 192",
-        "description": "نص يخول منصباً سلطة أو اختصاصاً معيناً",
-        "example": "المادة 192 من الدستور تخول المحكمة الدستورية العليا الرقابة على دستورية القوانين"
-      },
-      {
-        "id": "REL-015",
+        "id": "REL-009",
         "name": "acceptance_procedural",
         "name_ar": "قبول شكلي",
         "short_code": "ACCPROC",
@@ -222,7 +179,7 @@
         "example": "قبول الطعن شكلاً في الحكم الصادر من محكمة استئناف القاهرة"
       },
       {
-        "id": "REL-016",
+        "id": "REL-010",
         "name": "acceptance_substantive",
         "name_ar": "قبول موضوعي",
         "short_code": "ACCSUB",
@@ -234,7 +191,7 @@
         "example": "قبول الطعن موضوعاً في الحكم الصادر من محكمة استئناف القاهرة"
       },
       {
-        "id": "REL-017",
+        "id": "REL-011",
         "name": "rejection_procedural",
         "name_ar": "رفض شكلي",
         "short_code": "REJPROC",
@@ -246,7 +203,7 @@
         "example": "رفض الطعن شكلاً في الحكم الصادر من محكمة استئناف القاهرة"
       },
       {
-        "id": "REL-018",
+        "id": "REL-012",
         "name": "rejection_substantive",
         "name_ar": "رفض موضوعي",
         "short_code": "REJSUB",
@@ -258,7 +215,7 @@
         "example": "رفض الطعن موضوعاً في الحكم الصادر من محكمة استئناف القاهرة"
       },
       {
-        "id": "REL-019",
+        "id": "REL-013",
         "name": "preemptive_repeal",
         "name_ar": "إلغاء وقائي",
         "short_code": "PREE",
@@ -269,6 +226,149 @@
         "example": "المادة 2 من قانون الإجراءات الجنائية: 'يلغي كل نص يخالف أحكام هذا القانون'",
         "target_doc_id_required": false,
         "target_resolution": ["pending", "resolved", "unresolvable"]
+      },
+      {
+        "id": "REL-014",
+        "name": "establishes",
+        "name_ar": "ينشئ كيان",
+        "short_code": "EST",
+        "category_id": "DOC-ENT",
+        "target_scope": "entity",
+        "constitutional_basis": "المادة 197",
+        "description": "نص ينشئ هيئة أو مؤسسة أو كياناً جديداً",
+        "example": "قانون 174 لسنة 2025 (المادة 3) ينشئ هيئة النيابة الإدارية"
+      },
+      {
+        "id": "REL-015",
+        "name": "abolishes",
+        "name_ar": "يلغي كيان",
+        "short_code": "ABOL",
+        "category_id": "DOC-ENT",
+        "target_scope": "entity",
+        "constitutional_basis": "المادة 197",
+        "description": "نص يلغي هيئة أو مؤسسة أو كياناً قائماً",
+        "example": "قانون 174 لسنة 2025 (المادة 5) يلغي هيئة النيابة الإدارية"
+      },
+      {
+        "id": "REL-016",
+        "name": "merges",
+        "name_ar": "يدمج كيان",
+        "short_code": "MRG",
+        "category_id": "DOC-ENT",
+        "target_scope": "entity",
+        "constitutional_basis": "المادة 197",
+        "description": "نص يدمج كيانين أو أكثر في كيان واحد",
+        "example": "قانون 174 لسنة 2025 (المادة 5) يدمج هيئتين في هيئة واحدة"
+      },
+      {
+        "id": "REL-017",
+        "name": "splits",
+        "name_ar": "يفصل كيان",
+        "short_code": "SPL",
+        "category_id": "DOC-ENT",
+        "target_scope": "entity",
+        "constitutional_basis": "المادة 197",
+        "description": "نص يفصل كياناً إلى كيانين أو أكثر",
+        "example": "قانون 174 لسنة 2025 (المادة 5) يفصل هيئة إلى هيئتين"
+      },
+      {
+        "id": "REL-018",
+        "name": "renames",
+        "name_ar": "يعيد تسمية كيان",
+        "short_code": "REN",
+        "category_id": "DOC-ENT",
+        "target_scope": "entity",
+        "constitutional_basis": "المادة 197",
+        "description": "نص يعيد تسمية كيان قائم",
+        "example": "قانون 174 لسنة 2025 (المادة 5) يعيد تسمية الهيئة إلى اسم جديد"
+      },
+      {
+        "id": "REL-019",
+        "name": "delegation",
+        "name_ar": "تفويض",
+        "short_code": "DELEG",
+        "category_id": "DOC-POS",
+        "target_scope": "position",
+        "constitutional_basis": "المادة 170",
+        "description": "نص يخول أو يفوض منصباً سلطة إصدار لوائح أو قرارات أو مباشرة اختصاص",
+        "example": "المادة 170 من الدستور تخول رئيس مجلس الوزراء إصدار اللوائح التنفيذية"
+      },
+      {
+        "id": "REL-020",
+        "name": "prohibits",
+        "name_ar": "يحظر",
+        "short_code": "PROH",
+        "category_id": "DOC-POS",
+        "target_scope": "position_or_entity",
+        "constitutional_basis": "المادة 74",
+        "description": "نص يحظر على منصب أو جهة فعلاً أو سلوكاً معيناً",
+        "example": "المادة 74 من الدستور تحظر على الأحزاب السياسية إنشاء تشكيلات عسكرية"
+      },
+      {
+        "id": "REL-021",
+        "name": "obligates",
+        "name_ar": "يلزم",
+        "short_code": "OBL",
+        "category_id": "DOC-POS",
+        "target_scope": "position_or_entity",
+        "constitutional_basis": "المادة 170",
+        "description": "نص يلزم منصباً أو جهة بفعل معين",
+        "example": "المادة 170 من الدستور تلزم رئيس مجلس الوزراء بإصدار اللوائح التنفيذية"
+      },
+      {
+        "id": "REL-022",
+        "name": "empowers",
+        "name_ar": "يخول",
+        "short_code": "EMP",
+        "category_id": "DOC-POS",
+        "target_scope": "position_or_entity",
+        "constitutional_basis": "المادة 192",
+        "description": "نص يخول منصباً أو كياناً سلطة أو اختصاصاً معيناً",
+        "example": "المادة 192 من الدستور تخول المحكمة الدستورية العليا الرقابة على دستورية القوانين"
+      },
+      {
+        "id": "REL-023",
+        "name": "creates_position",
+        "name_ar": "ينشئ منصب",
+        "short_code": "CPOS",
+        "category_id": "DOC-POS",
+        "target_scope": "position",
+        "constitutional_basis": "—",
+        "description": "نص ينشئ منصباً جديداً",
+        "example": "قانون 174 لسنة 2025 (المادة 3) ينشئ منصب رئيس الهيئة"
+      },
+      {
+        "id": "REL-024",
+        "name": "abolishes_position",
+        "name_ar": "يلغي منصب",
+        "short_code": "APOS",
+        "category_id": "DOC-POS",
+        "target_scope": "position",
+        "constitutional_basis": "—",
+        "description": "نص يلغي منصباً قائماً",
+        "example": "قانون 174 لسنة 2025 (المادة 5) يلغي منصب رئيس الهيئة"
+      },
+      {
+        "id": "REL-025",
+        "name": "expands_powers",
+        "name_ar": "يوسع صلاحيات",
+        "short_code": "EXPW",
+        "category_id": "DOC-POS",
+        "target_scope": "position",
+        "constitutional_basis": "—",
+        "description": "نص يوسع صلاحيات منصب قائم",
+        "example": "قانون 174 لسنة 2025 (المادة 7) يوسع صلاحيات وزير العدل"
+      },
+      {
+        "id": "REL-026",
+        "name": "restricts_powers",
+        "name_ar": "يقيد صلاحيات",
+        "short_code": "RESW",
+        "category_id": "DOC-POS",
+        "target_scope": "position",
+        "constitutional_basis": "—",
+        "description": "نص يقيد صلاحيات منصب قائم",
+        "example": "قانون 174 لسنة 2025 (المادة 7) يقيد صلاحيات وزير العدل"
       }
     ]
   }
