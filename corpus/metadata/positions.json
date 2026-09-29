@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-09-27",
+  "purpose": "سجل المناصب الوظيفية — يُستخدم حصرياً في العلاقات (relations/).",
+  "usage": {
+    "primary": "الربط العلائقي (target.position_id)",
+    "secondary": "ربط المنصب بالكيان التابع له",
+    "not_for": "تسمية الملفات — للتسمية استخدم doc_codes.json"
+  },
+  "is_final": false,
+  "positions": [
+    {
+      "position_id": "POS-MOE-MINISTER",
+      "name_ar": "وزير التربية والتعليم",
+      "name_en": "Minister of Education",
+      "position_type": "minister",
+      "entity_id": "ENT-MOE",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-MOE-UNDERSECRETARY",
+      "name_ar": "وكيل وزارة التربية والتعليم",
+      "position_type": "undersecretary",
+      "entity_id": "ENT-MOE",
+      "hierarchy_level": 2,
+      "appointed_by": "POS-MOE-MINISTER"
+    }
+  ]
+}
