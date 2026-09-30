@@ -79,6 +79,10 @@
       "confidence": "optional — ثقة الموديل",
       "reference_text": "optional — النص اللي منه استُخرجت العلاقة"
     },
+    "notes": [
+        "لو العلاقة بين مادة واحدة وعدة مواد (مثل: تعديل مادة واحدة لعدة مواد في قانون آخر)، يتم إنتاج instance منفصل لكل مادة مستهدفة.",
+        "لو العلاقة بين مادة واحدة ونطاق متصل من المواد (مثل: استبدال فصل كامل)، يتم استخدام target.article_number + target.article_number_end مع scope = articles_range."
+      ],
 
     "types": [
       {
