@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "last_updated": "2026-09-27",
+  "version": "2.1",
+  "last_updated": "2026-09-30",
   "purpose": "سجل المناصب الوظيفية — يُستخدم حصرياً في العلاقات (relations/).",
   "usage": {
     "primary": "الربط العلائقي (target.position_id)",
@@ -8,23 +8,119 @@
     "not_for": "تسمية الملفات — للتسمية استخدم doc_codes.json"
   },
   "is_final": false,
+
   "positions": [
+    {
+      "position_id": "POS-PRES",
+      "name_ar": "رئيس الجمهورية",
+      "name_en": "President of the Republic",
+      "entity_id": "ENT-PRES",
+      "hierarchy_level": 1,
+      "appointed_by": null
+    },
+    {
+      "position_id": "POS-PM",
+      "name_ar": "رئيس مجلس الوزراء",
+      "name_en": "Prime Minister",
+      "entity_id": "ENT-CAB",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PRES"
+    },
+    {
+      "position_id": "POS-MOI-MINISTER",
+      "name_ar": "وزير الداخلية",
+      "name_en": "Minister of Interior",
+      "entity_id": "ENT-MOI",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-MOD-MINISTER",
+      "name_ar": "وزير الدفاع والإنتاج الحربي",
+      "name_en": "Minister of Defense",
+      "entity_id": "ENT-MOD",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-MOJ-MINISTER",
+      "name_ar": "وزير العدل",
+      "name_en": "Minister of Justice",
+      "entity_id": "ENT-MOJ",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-MOF-MINISTER",
+      "name_ar": "وزير المالية",
+      "name_en": "Minister of Finance",
+      "entity_id": "ENT-MOF",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PM"
+    },
     {
       "position_id": "POS-MOE-MINISTER",
       "name_ar": "وزير التربية والتعليم",
       "name_en": "Minister of Education",
-      "position_type": "minister",
       "entity_id": "ENT-MOE",
       "hierarchy_level": 1,
       "appointed_by": "POS-PM"
     },
     {
-      "position_id": "POS-MOE-UNDERSECRETARY",
-      "name_ar": "وكيل وزارة التربية والتعليم",
-      "position_type": "undersecretary",
-      "entity_id": "ENT-MOE",
-      "hierarchy_level": 2,
-      "appointed_by": "POS-MOE-MINISTER"
+      "position_id": "POS-CAA-HEAD",
+      "name_ar": "رئيس الجهاز المركزي للمحاسبات",
+      "name_en": "Head of Central Auditing Organization",
+      "entity_id": "ENT-CAA",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PRES"
+    },
+    {
+      "position_id": "POS-ACA-HEAD",
+      "name_ar": "رئيس هيئة الرقابة الإدارية",
+      "name_en": "Head of Administrative Control Authority",
+      "entity_id": "ENT-ACA",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PRES"
+    },
+    {
+      "position_id": "POS-SCC-HEAD",
+      "name_ar": "رئيس المحكمة الدستورية العليا",
+      "name_en": "Chief Justice of the Supreme Constitutional Court",
+      "entity_id": "ENT-SCC",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PRES"
+    },
+    {
+      "position_id": "POS-SC-HEAD",
+      "name_ar": "رئيس مجلس الدولة",
+      "name_en": "President of the State Council",
+      "entity_id": "ENT-SC",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PRES"
+    },
+    {
+      "position_id": "POS-CBE-GOVERNOR",
+      "name_ar": "محافظ البنك المركزي المصري",
+      "name_en": "Governor of the Central Bank of Egypt",
+      "entity_id": "ENT-CBE",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PRES"
+    },
+    {
+      "position_id": "POS-SFE-HEAD",
+      "name_ar": "رئيس صندوق مصر السيادي",
+      "name_en": "Head of the Sovereign Fund of Egypt",
+      "entity_id": "ENT-SFE",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-NEA-HEAD",
+      "name_ar": "رئيس الهيئة الوطنية للانتخابات",
+      "name_en": "Head of the National Elections Authority",
+      "entity_id": "ENT-NEA",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PRES"
     }
   ]
 }
