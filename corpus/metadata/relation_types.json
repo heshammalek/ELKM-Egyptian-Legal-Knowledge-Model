@@ -102,7 +102,7 @@
         "name_ar": "إلغاء جزئي",
         "short_code": "PREP",
         "category_id": "DOC-DOC",
-        "target_scope": "article",
+        "target_scope": "article_or_articles_range",
         "constitutional_basis": "المادة 224",
         "description": "إلغاء جزء محدد من نص قانوني (مادة، فقرة، عبارة) بنص لاحق",
         "example": "قانون 174 لسنة 2025 (المادة 2) يلغي المادة 53 من قانون العقوبات"
@@ -113,7 +113,7 @@
         "name_ar": "تعديل",
         "short_code": "AMD",
         "category_id": "DOC-DOC",
-        "target_scope": "article",
+        "target_scope": "article_or_articles_range",
         "constitutional_basis": "المادة 224",
         "description": "تعديل نص قانوني قائم بنص لاحق (تغيير النص، استبدال، إضافة)",
         "example": "قانون 174 لسنة 2025 (المادة 2) يعدل المادة 53 من قانون العقوبات"
@@ -124,7 +124,7 @@
         "name_ar": "إضافة",
         "short_code": "ADD",
         "category_id": "DOC-DOC",
-        "target_scope": "article",
+        "target_scope": "article_or_articles_range",
         "constitutional_basis": "المادة 224",
         "description": "إضافة مواد أو نصوص جديدة إلى قانون قائم",
         "example": "قانون 174 لسنة 2025 (المادة 2) يضيف المادة 53 مكرر إلى قانون العقوبات"
@@ -135,7 +135,7 @@
         "name_ar": "إعادة ترقيم",
         "short_code": "RENUM",
         "category_id": "DOC-DOC",
-        "target_scope": "article",
+        "target_scope": "article_or_articles_range",
         "constitutional_basis": "المادة 224",
         "description": "إعادة ترقيم مواد قانونية دون تغيير مضمونها",
         "example": "قانون 174 لسنة 2025 (المادة 2) يعيد ترقيم المواد 50-60 لتصبح 55-65"
@@ -169,7 +169,7 @@
         "name_ar": "إحالة",
         "short_code": "REF",
         "category_id": "DOC-DOC",
-        "target_scope": "article",
+        "target_scope": "article_or_articles_range",
         "constitutional_basis": "المادة 224",
         "description": "نص يحيل إلى نص آخر (مادة، فقرة، قانون)",
         "example": "المادة 53 من قانون العقوبات تحيل إلى المادة 12 من قانون الإجراءات الجنائية"
