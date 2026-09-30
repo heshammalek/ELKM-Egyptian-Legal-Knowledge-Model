@@ -40,7 +40,7 @@
         "instance_id_notes": [
               "لو المادة مكررة، تُكتب: {NUMBER}-MKR-{SEQUENCE} (مثال: 419-MKR-8)"
             ],
-        "note": "لو target_article = null (إلغاء كلي)، الصيغة تبقى {short_code}-{source_doc_id}-{source_article}-{target_doc_id}"
+        "note": "لو target_article = null (إلغاء كلي)، الصيغة تبقى {short_code}-{source_doc_id}-ART-{source_article}-{target_doc_id}"
       },
       {
         "id": "DOC-ENT",
