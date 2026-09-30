@@ -67,6 +67,7 @@
       "target": {
         "doc_id": "required (لو target_type = article)",
         "article_number": "optional (null لو whole_document)",
+        "article_number_end": "optional (لو النطاق أكتر من مادة)",
         "scope": "optional (whole_document / article / entity / position)",
         "entity_id": "required (لو target_type = entity)",
         "position_id": "required (لو target_type = position)"
