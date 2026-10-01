@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-LAW-150-1950-ART-550-LAW-58-1937-ART-355",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-150-1950",
+    "article_number": 550,
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-58-1937",
+    "article_number": 355,
+    "article_number_end": 368,
+    "scope": "articles_range",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1950-10-03",
+  "confidence": 0.85,
+  "reference_text": "وفي الجرائم المنصوص عليها في المواد 355 و 356 و 367 و 368 من قانون العقوبات"
+}
