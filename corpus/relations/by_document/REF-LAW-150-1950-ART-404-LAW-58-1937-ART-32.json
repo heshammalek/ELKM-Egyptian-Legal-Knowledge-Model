@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-LAW-150-1950-ART-404-LAW-58-1937-ART-32",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-150-1950",
+    "article_number": 404,
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-58-1937",
+    "article_number": 32,
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1950-10-03",
+  "confidence": 0.98,
+  "reference_text": "في حكم المادة 32 من قانون العقوبات"
+}
