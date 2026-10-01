@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-LAW-150-1950-ART-248-LAW-77-1949-ART-1",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-150-1950",
+    "article_number": 248,
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-77-1949",
+    "article_number": 1,
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1950-10-03",
+  "confidence": 0.95,
+  "reference_text": "وفي سائر حالات الرد المبينة في قانون المرافعات في المواد المدنية والتجارية"
+}
