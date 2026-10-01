@@ -1,0 +1,19 @@
+{
+  "documents": [
+    {
+      "doc_id": "LAW-150-1950",
+      "total_relations": 25,
+      "by_type": {
+        "total_repeal": 6,
+        "preemptive_repeal": 1,
+        "referral": 18
+      },
+      "by_category": {
+        "DOC-DOC": 25,
+        "DOC-ENT": 0,
+        "DOC-POS": 0
+      },
+      "notes": [...]
+    }
+  ]
+}
