@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-LAW-150-1950-ART-3-LAW-58-1937-ART-185",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-150-1950",
+    "article_number": 3,
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-58-1937",
+    "article_number": 185,
+    "article_number_end": 308,
+    "scope": "articles_range",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1950-10-03",
+  "confidence": 0.95,
+  "reference_text": "في الجرائم المنصوص عليها في المواد ١٨٥ و٢٧٤ و٢٧٧ و٢٧٩ و٢٩٢ و٢٩٣ و٣٠٣ و ٣٠٦ و ٣٠٧  و ٣٠٨ من قانون العقوبات"
+}
