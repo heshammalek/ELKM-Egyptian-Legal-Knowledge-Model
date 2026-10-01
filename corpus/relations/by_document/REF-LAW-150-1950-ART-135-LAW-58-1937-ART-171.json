@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-LAW-150-1950-ART-135-LAW-58-1937-ART-171",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-150-1950",
+    "article_number": 135,
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-58-1937",
+    "article_number": 171,
+    "article_number_end": 182,
+    "scope": "articles_range",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1950-10-03",
+  "confidence": 0.90,
+  "reference_text": "أو إذا كانت من الجرائم المنصوص عليها في المواد 171 , 172 , 179 فقرة ثانية , 180, 181, 182 من قانون العقوبات"
+}
