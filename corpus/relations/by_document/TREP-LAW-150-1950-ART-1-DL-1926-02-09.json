@@ -1,0 +1,22 @@
+{
+  "instance_id": "TREP-LAW-150-1950-ART-1-DL-1926-02-09",
+  "type_id": "REL-001",
+  "type_name": "total_repeal",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-150-1950",
+    "article_number": 1,
+    "section": null
+  },
+  "target": {
+    "doc_id": "DL-1926-02-09",
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "whole_document",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1950-10-03",
+  "confidence": 0.98,
+  "reference_text": "المرسوم بقانون الصادر في 9 فبراير سنة 1926 بجعل بعض الجنايات جنحا إذا اقترنت بأعذار قانونية أو ظروف مخففة"
+}
