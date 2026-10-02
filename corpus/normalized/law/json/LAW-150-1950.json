@@ -33,7 +33,7 @@
   },
 
   "full_text": {
-    "raw_path": "raw/text_as_is/law/LAW-150-1950.txt",
+    "original_txt_path": "raw/text_as_is/law/LAW-150-1950.txt",
     "normalized_path": "normalized/law/txt/LAW-150-1950.txt",
     "hash": "sha256:<يُحسب آلياً>"
   },
