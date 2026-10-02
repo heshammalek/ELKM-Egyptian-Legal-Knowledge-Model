@@ -1,376 +1,304 @@
 {
-  "version": "2.2",
-  "last_updated": "2026-09-30",
+  "version": "3.0",
+  "last_updated": "2026-10-02",
   "purpose": "سجل الكيانات المؤسسية — يُستخدم حصرياً في العلاقات (relations/).",
   "usage": {
     "primary": "الربط العلائقي (target.entity_id)",
-    "secondary": "البنية الهرمية للكيانات",
     "not_for": "تسمية الملفات — للتسمية استخدم doc_codes.json"
   },
+  "hierarchy_note": "البنية الهرمية للكيانات (parent/child) مُدارة في مسار مستقل: entities_hierarchy.json — وليست جزءاً من هذا الملف.",
   "is_final": false,
 
   "entities": [
+
     {
       "entity_id": "ENT-PARL",
       "name_ar": "مجلس النواب",
       "name_en": "House of Representatives",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-PARL.json",
-      "sub_entities": []
+      "details_reference": "entities/ENT-PARL.json"
     },
     {
       "entity_id": "ENT-SEN",
       "name_ar": "مجلس الشيوخ",
       "name_en": "Senate",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-SEN.json",
-      "sub_entities": []
+      "details_reference": "entities/ENT-SEN.json"
     },
     {
       "entity_id": "ENT-PRES",
       "name_ar": "رئاسة الجمهورية",
       "name_en": "Presidency of the Republic",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-PRES.json",
-      "sub_entities": []
+      "details_reference": "entities/ENT-PRES.json"
     },
     {
       "entity_id": "ENT-CAB",
       "name_ar": "مجلس الوزراء",
       "name_en": "Council of Ministers",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-CAB.json",
-      "sub_entities": [
-        {
-          "entity_id": "ENT-MOI",
-          "name_ar": "وزارة الداخلية",
-          "name_en": "Ministry of Interior",
-          "parent_entity_id": "ENT-CAB",
-          "hierarchy_level": 2,
-          "details_reference": "entities/ENT-MOI.json",
-          "sub_entities": []
-        },
-        {
-          "entity_id": "ENT-MOD",
-          "name_ar": "وزارة الدفاع والإنتاج الحربي",
-          "name_en": "Ministry of Defense",
-          "parent_entity_id": "ENT-CAB",
-          "hierarchy_level": 2,
-          "details_reference": "entities/ENT-MOD.json",
-          "sub_entities": []
-        },
-        {
-          "entity_id": "ENT-MOJ",
-          "name_ar": "وزارة العدل",
-          "name_en": "Ministry of Justice",
-          "parent_entity_id": "ENT-CAB",
-          "hierarchy_level": 2,
-          "details_reference": "entities/ENT-MOJ.json",
-          "sub_entities": []
-        },
-        {
-          "entity_id": "ENT-MOF",
-          "name_ar": "وزارة المالية",
-          "name_en": "Ministry of Finance",
-          "parent_entity_id": "ENT-CAB",
-          "hierarchy_level": 2,
-          "details_reference": "entities/ENT-MOF.json",
-          "sub_entities": []
-        },
-        {
-          "entity_id": "ENT-MOE",
-          "name_ar": "وزارة التربية والتعليم",
-          "name_en": "Ministry of Education",
-          "parent_entity_id": "ENT-CAB",
-          "hierarchy_level": 2,
-          "details_reference": "entities/ENT-MOE.json",
-          "sub_entities": []
-        }
-      ]
+      "details_reference": "entities/ENT-CAB.json"
     },
+    {
+      "entity_id": "ENT-MOI",
+      "name_ar": "وزارة الداخلية",
+      "name_en": "Ministry of Interior",
+      "details_reference": "entities/ENT-MOI.json"
+    },
+    {
+      "entity_id": "ENT-MOD",
+      "name_ar": "وزارة الدفاع والإنتاج الحربي",
+      "name_en": "Ministry of Defense",
+      "details_reference": "entities/ENT-MOD.json"
+    },
+    {
+      "entity_id": "ENT-MOJ",
+      "name_ar": "وزارة العدل",
+      "name_en": "Ministry of Justice",
+      "details_reference": "entities/ENT-MOJ.json"
+    },
+    {
+      "entity_id": "ENT-MOF",
+      "name_ar": "وزارة المالية",
+      "name_en": "Ministry of Finance",
+      "details_reference": "entities/ENT-MOF.json"
+    },
+    {
+      "entity_id": "ENT-MOE",
+      "name_ar": "وزارة التربية والتعليم",
+      "name_en": "Ministry of Education",
+      "details_reference": "entities/ENT-MOE.json"
+    },
+
     {
       "entity_id": "ENT-SCC",
       "name_ar": "المحكمة الدستورية العليا",
       "name_en": "Supreme Constitutional Court",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-SCC.json",
-      "sub_entities": []
+      "details_reference": "entities/ENT-SCC.json"
     },
     {
       "entity_id": "ENT-CASS",
       "name_ar": "محكمة النقض",
       "name_en": "Court of Cassation",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-CASS.json",
-      "sub_entities": []
+      "details_reference": "entities/ENT-CASS.json"
+    },
+    {
+      "entity_id": "ENT-APPEAL",
+      "name_ar": "محاكم الاستئناف",
+      "name_en": "Courts of Appeal",
+      "details_reference": "entities/ENT-APPEAL.json"
+    },
+    {
+      "entity_id": "ENT-CRIM",
+      "name_ar": "محاكم الجنايات",
+      "name_en": "Criminal Courts (Felonies)",
+      "details_reference": "entities/ENT-CRIM.json"
+    },
+    {
+      "entity_id": "ENT-PRIM",
+      "name_ar": "المحاكم الابتدائية",
+      "name_en": "Primary Courts",
+      "details_reference": "entities/ENT-PRIM.json"
+    },
+    {
+      "entity_id": "ENT-PART",
+      "name_ar": "المحاكم الجزئية",
+      "name_en": "District Courts",
+      "details_reference": "entities/ENT-PART.json"
+    },
+    {
+      "entity_id": "ENT-CHAMBER",
+      "name_ar": "غرفة الاتهام",
+      "name_en": "Indictment Chamber",
+      "details_reference": "entities/ENT-CHAMBER.json"
+    },
+    {
+      "entity_id": "ENT-JUV",
+      "name_ar": "محكمة الأحداث",
+      "name_en": "Juvenile Court",
+      "details_reference": "entities/ENT-JUV.json"
     },
     {
       "entity_id": "ENT-SC",
       "name_ar": "مجلس الدولة",
       "name_en": "State Council",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-SC.json",
-      "sub_entities": [
-        {
-          "entity_id": "ENT-SC-HIGH",
-          "name_ar": "المحكمة الإدارية العليا",
-          "name_en": "Supreme Administrative Court",
-          "parent_entity_id": "ENT-SC",
-          "hierarchy_level": 2,
-          "details_reference": "entities/ENT-SC-HIGH.json",
-          "sub_entities": []
-        },
-        {
-          "entity_id": "ENT-SC-ADMIN",
-          "name_ar": "محكمة القضاء الإداري",
-          "name_en": "Administrative Court",
-          "parent_entity_id": "ENT-SC",
-          "hierarchy_level": 2,
-          "details_reference": "entities/ENT-SC-ADMIN.json",
-          "sub_entities": []
-        },
-        {
-          "entity_id": "ENT-SC-DISC",
-          "name_ar": "المحاكم التأديبية",
-          "name_en": "Disciplinary Courts",
-          "parent_entity_id": "ENT-SC",
-          "hierarchy_level": 2,
-          "details_reference": "entities/ENT-SC-DISC.json",
-          "sub_entities": []
-        },
-        {
-          "entity_id": "ENT-SC-ADM",
-          "name_ar": "المحاكم الإدارية",
-          "name_en": "Administrative Courts",
-          "parent_entity_id": "ENT-SC",
-          "hierarchy_level": 2,
-          "details_reference": "entities/ENT-SC-ADM.json",
-          "sub_entities": []
-        },
-        {
-          "entity_id": "ENT-SC-COM",
-          "name_ar": "هيئة مفوضي الدولة",
-          "name_en": "State Commissioners Authority",
-          "parent_entity_id": "ENT-SC",
-          "hierarchy_level": 2,
-          "details_reference": "entities/ENT-SC-COM.json",
-          "sub_entities": []
-        },
-        {
-          "entity_id": "ENT-ADMPROS",
-          "name_ar": "النيابة الإدارية",
-          "name_en": "Administrative Prosecution",
-          "parent_entity_id": "ENT-SC",
-          "hierarchy_level": 2,
-          "details_reference": "entities/ENT-ADMPROS.json",
-          "sub_entities": []
-        }
-      ]
+      "details_reference": "entities/ENT-SC.json"
+    },
+    {
+      "entity_id": "ENT-SC-HIGH",
+      "name_ar": "المحكمة الإدارية العليا",
+      "name_en": "Supreme Administrative Court",
+      "details_reference": "entities/ENT-SC-HIGH.json"
+    },
+    {
+      "entity_id": "ENT-SC-ADMIN",
+      "name_ar": "محكمة القضاء الإداري",
+      "name_en": "Administrative Court",
+      "details_reference": "entities/ENT-SC-ADMIN.json"
+    },
+    {
+      "entity_id": "ENT-SC-DISC",
+      "name_ar": "المحاكم التأديبية",
+      "name_en": "Disciplinary Courts",
+      "details_reference": "entities/ENT-SC-DISC.json"
+    },
+    {
+      "entity_id": "ENT-SC-ADM",
+      "name_ar": "المحاكم الإدارية",
+      "name_en": "Administrative Courts",
+      "details_reference": "entities/ENT-SC-ADM.json"
+    },
+    {
+      "entity_id": "ENT-SC-COM",
+      "name_ar": "هيئة مفوضي الدولة",
+      "name_en": "State Commissioners Authority",
+      "details_reference": "entities/ENT-SC-COM.json"
+    },
+    {
+      "entity_id": "ENT-ADMPROS",
+      "name_ar": "النيابة الإدارية",
+      "name_en": "Administrative Prosecution",
+      "details_reference": "entities/ENT-ADMPROS.json"
     },
     {
       "entity_id": "ENT-PUBPROS",
       "name_ar": "النيابة العامة",
       "name_en": "Public Prosecution",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-PUBPROS.json",
-      "sub_entities": []
+      "details_reference": "entities/ENT-PUBPROS.json"
     },
     {
       "entity_id": "ENT-SLA",
       "name_ar": "هيئة قضايا الدولة",
       "name_en": "State Lawsuits Authority",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-SLA.json",
-      "sub_entities": []
+      "details_reference": "entities/ENT-SLA.json"
     },
     {
       "entity_id": "ENT-MILJUD",
       "name_ar": "القضاء العسكري",
       "name_en": "Military Judiciary",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-MILJUD.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-NEA",
-      "name_ar": "الهيئة الوطنية للانتخابات",
-      "name_en": "National Elections Authority",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-NEA.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-SCMR",
-      "name_ar": "المجلس الأعلى لتنظيم الإعلام",
-      "name_en": "Supreme Council for Media Regulation",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-SCMR.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-NPA",
-      "name_ar": "الهيئة الوطنية للصحافة",
-      "name_en": "National Press Authority",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-NPA.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-NMA",
-      "name_ar": "الهيئة الوطنية للإعلام",
-      "name_en": "National Media Authority",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-NMA.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-CAA",
-      "name_ar": "الجهاز المركزي للمحاسبات",
-      "name_en": "Central Auditing Organization",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-CAA.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-ACA",
-      "name_ar": "هيئة الرقابة الإدارية",
-      "name_en": "Administrative Control Authority",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-ACA.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-CBE",
-      "name_ar": "البنك المركزي المصري",
-      "name_en": "Central Bank of Egypt",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-CBE.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-FRA",
-      "name_ar": "الهيئة العامة للرقابة المالية",
-      "name_en": "Financial Regulatory Authority",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-FRA.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-NCHR",
-      "name_ar": "المجلس القومي لحقوق الإنسان",
-      "name_en": "National Council for Human Rights",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-NCHR.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-NCW",
-      "name_ar": "المجلس القومي للمرأة",
-      "name_en": "National Council for Women",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-NCW.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-NCCM",
-      "name_ar": "المجلس القومي للطفولة والأمومة",
-      "name_en": "National Council for Childhood and Motherhood",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-NCCM.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-NCPD",
-      "name_ar": "المجلس القومي للأشخاص ذوي الإعاقة",
-      "name_en": "National Council for Persons with Disabilities",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-NCPD.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-NDC",
-      "name_ar": "مجلس الدفاع الوطني",
-      "name_en": "National Defense Council",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-NDC.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-NSC",
-      "name_ar": "مجلس الأمن القومي",
-      "name_en": "National Security Council",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-NSC.json",
-      "sub_entities": []
-    },
-    {
-      "entity_id": "ENT-AZHAR",
-      "name_ar": "الأزهر الشريف",
-      "name_en": "Al-Azhar Al-Sharif",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-AZHAR.json",
-      "sub_entities": []
+      "details_reference": "entities/ENT-MILJUD.json"
     },
     {
       "entity_id": "ENT-SJC",
       "name_ar": "مجلس القضاء الأعلى",
       "name_en": "Supreme Judicial Council",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-SJC.json",
-      "sub_entities": []
+      "details_reference": "entities/ENT-SJC.json"
     },
+    {
+      "entity_id": "ENT-PRISON",
+      "name_ar": "مصلحة السجون",
+      "name_en": "Prisons Authority",
+      "details_reference": "entities/ENT-PRISON.json"
+    },
+
+    {
+      "entity_id": "ENT-NEA",
+      "name_ar": "الهيئة الوطنية للانتخابات",
+      "name_en": "National Elections Authority",
+      "details_reference": "entities/ENT-NEA.json"
+    },
+    {
+      "entity_id": "ENT-SCMR",
+      "name_ar": "المجلس الأعلى لتنظيم الإعلام",
+      "name_en": "Supreme Council for Media Regulation",
+      "details_reference": "entities/ENT-SCMR.json"
+    },
+    {
+      "entity_id": "ENT-NPA",
+      "name_ar": "الهيئة الوطنية للصحافة",
+      "name_en": "National Press Authority",
+      "details_reference": "entities/ENT-NPA.json"
+    },
+    {
+      "entity_id": "ENT-NMA",
+      "name_ar": "الهيئة الوطنية للإعلام",
+      "name_en": "National Media Authority",
+      "details_reference": "entities/ENT-NMA.json"
+    },
+    {
+      "entity_id": "ENT-CAA",
+      "name_ar": "الجهاز المركزي للمحاسبات",
+      "name_en": "Central Auditing Organization",
+      "details_reference": "entities/ENT-CAA.json"
+    },
+    {
+      "entity_id": "ENT-ACA",
+      "name_ar": "هيئة الرقابة الإدارية",
+      "name_en": "Administrative Control Authority",
+      "details_reference": "entities/ENT-ACA.json"
+    },
+    {
+      "entity_id": "ENT-CBE",
+      "name_ar": "البنك المركزي المصري",
+      "name_en": "Central Bank of Egypt",
+      "details_reference": "entities/ENT-CBE.json"
+    },
+    {
+      "entity_id": "ENT-FRA",
+      "name_ar": "الهيئة العامة للرقابة المالية",
+      "name_en": "Financial Regulatory Authority",
+      "details_reference": "entities/ENT-FRA.json"
+    },
+
+    {
+      "entity_id": "ENT-NCHR",
+      "name_ar": "المجلس القومي لحقوق الإنسان",
+      "name_en": "National Council for Human Rights",
+      "details_reference": "entities/ENT-NCHR.json"
+    },
+    {
+      "entity_id": "ENT-NCW",
+      "name_ar": "المجلس القومي للمرأة",
+      "name_en": "National Council for Women",
+      "details_reference": "entities/ENT-NCW.json"
+    },
+    {
+      "entity_id": "ENT-NCCM",
+      "name_ar": "المجلس القومي للطفولة والأمومة",
+      "name_en": "National Council for Childhood and Motherhood",
+      "details_reference": "entities/ENT-NCCM.json"
+    },
+    {
+      "entity_id": "ENT-NCPD",
+      "name_ar": "المجلس القومي للأشخاص ذوي الإعاقة",
+      "name_en": "National Council for Persons with Disabilities",
+      "details_reference": "entities/ENT-NCPD.json"
+    },
+
+    {
+      "entity_id": "ENT-NDC",
+      "name_ar": "مجلس الدفاع الوطني",
+      "name_en": "National Defense Council",
+      "details_reference": "entities/ENT-NDC.json"
+    },
+    {
+      "entity_id": "ENT-NSC",
+      "name_ar": "مجلس الأمن القومي",
+      "name_en": "National Security Council",
+      "details_reference": "entities/ENT-NSC.json"
+    },
+
+    {
+      "entity_id": "ENT-AZHAR",
+      "name_ar": "الأزهر الشريف",
+      "name_en": "Al-Azhar Al-Sharif",
+      "details_reference": "entities/ENT-AZHAR.json"
+    },
+
     {
       "entity_id": "ENT-SFE",
       "name_ar": "صندوق مصر السيادي",
       "name_en": "Sovereign Fund of Egypt",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-SFE.json",
-      "sub_entities": []
+      "details_reference": "entities/ENT-SFE.json"
     },
     {
       "entity_id": "ENT-GAFI",
       "name_ar": "الهيئة العامة للاستثمار والمناطق الحرة",
       "name_en": "General Authority for Investment and Free Zones",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-GAFI.json",
-      "sub_entities": []
+      "details_reference": "entities/ENT-GAFI.json"
     },
     {
       "entity_id": "ENT-NIB",
       "name_ar": "بنك الاستثمار القومي",
       "name_en": "National Investment Bank",
-      "parent_entity_id": null,
-      "hierarchy_level": 1,
-      "details_reference": "entities/ENT-NIB.json",
-      "sub_entities": []
+      "details_reference": "entities/ENT-NIB.json"
     }
+
   ]
 }
