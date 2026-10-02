@@ -1,29 +1,35 @@
 {
-  "doc_id": "LAW-150-1950",
   "doc_type": "law",
-  "sub_type": null,
-  "title_ar": "قانون رقم 150 لسنة 1950 بإصدار قانون الإجراءات الجنائية",
-  "year": 1950,
-  "doc_number": "150",
-  "source": {
-    "gazette_number": "90",
-    "gazette_date": "1951-10-15"
-  },
-  "issuing_authority": "PRES",
-  "subjects": ["عدالة جنائية وشئون أمنية"],
-  "paths": {
-    "scan": "raw/scanned/law/LAW-150-1950.pdf",
-    "original_txt": "raw/text_as_is/law/LAW-150-1950.txt",
-    "normalized_txt": "normalized/law/txt/LAW-150-1950.txt",
-    "json": "normalized/law/json/LAW-150-1950.json"
-  },
-  "stats": {
-    "articles_count": 560,
-    "chapters_count": 58,
-    "sections_count": 5
-  },
-  "processing": {
-    "added_to_index": "2026-10-02T00:00:00",
-    "content_hash": "sha256:<يُحسب آلياً>"
-  }
+  "version": "1.0",
+  "last_updated": "2026-10-02",
+  "count": 1,
+  "documents": [
+    {
+      "doc_id": "LAW-150-1950",
+      "title_ar": "قانون رقم 150 لسنة 1950 بإصدار قانون الإجراءات الجنائية",
+      "year": 1950,
+      "doc_number": "150",
+      "source": {
+        "gazette_number": "90",
+        "gazette_date": "1951-10-15"
+      },
+      "issuing_authority": "PRES",
+      "subjects": ["عدالة جنائية وشئون أمنية"],
+      "paths": {
+        "scan": "raw/scanned/law/LAW-150-1950.pdf",
+        "original_txt": "raw/text_as_is/law/LAW-150-1950.txt",
+        "normalized_txt": "normalized/law/txt/LAW-150-1950.txt",
+        "json": "normalized/law/json/LAW-150-1950.json"
+      },
+      "stats": {
+        "articles_count": 560,
+        "chapters_count": 58,
+        "sections_count": 5
+      },
+      "processing": {
+        "added_to_index": "2026-10-02T00:00:00",
+        "content_hash": "sha256:<يُحسب آلياً>"
+      }
+    }
+  ]
 }
