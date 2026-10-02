@@ -15,6 +15,7 @@
 > **Active Development — Living Ontology**
 >
 > This project is an **ontology in the making** — not a finished product. You may find inconsistencies between components; this is the nature of a living knowledge project.
+> 
 **[نسخة عربية ستكون متاحة في `docs/README.ar.md` (قيد الإعداد)](docs/README.ar.md)**
 
 </div>
