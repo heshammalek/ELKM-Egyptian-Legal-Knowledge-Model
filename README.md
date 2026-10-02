@@ -11,6 +11,10 @@
 [![Status](https://img.shields.io/badge/status-active%20development-orange.svg)]()
 [![CI](https://img.shields.io/github/actions/workflow/status/heshammalek/ELKM-Egyptian-Legal-Knowledge-Model/ci.yml?branch=main)](https://github.com/heshammalek/ELKM-Egyptian-Legal-Knowledge-Model/actions)
 
+> [!WARNING]
+> **Active Development — Living Ontology**
+>
+> This project is an **ontology in the making** — not a finished product. You may find inconsistencies between components; this is the nature of a living knowledge project. See [Note for Developers](#note-for-developers) at the end.
 **[نسخة عربية ستكون متاحة في `docs/README.ar.md` (قيد الإعداد)](docs/README.ar.md)**
 
 </div>
