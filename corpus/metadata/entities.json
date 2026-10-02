@@ -298,7 +298,31 @@
       "name_ar": "بنك الاستثمار القومي",
       "name_en": "National Investment Bank",
       "details_reference": "entities/ENT-NIB.json"
-    }
+    },
+
+      {
+        "entity_id": "ENT-DAR-IFTA",
+        "name_ar": "دار الإفتاء المصرية",
+        "name_en": "Egyptian Dar Al-Ifta",
+        "details_reference": "entities/ENT-DAR-IFTA.json"
+
+    },
+  
+    {
+        "entity_id": "ENT-COPTIC-CHURCH",
+        "name_ar": "الكنيسة القبطية الأرثوذكسية",
+        "name_en": "Coptic Orthodox Church",
+        "details_reference": "entities/ENT-COPTIC-CHURCH.json"
+   
+    },
+
+    {
+        "entity_id": "ENT-AZHAR",
+        "name_ar": "الأزهر الشريف",
+        "name_en": "Al-Azhar Al-Sharif",
+        "details_reference": "entities/ENT-AZHAR.json"
+
+  }
 
   ]
 }
