@@ -30,6 +30,36 @@
         "added_to_index": "2026-10-02T00:00:00",
         "content_hash": "sha256:<يُحسب آلياً>"
       }
-    }
+    },
+
+    {
+  "doc_id": "LAW-1-2024",
+  "doc_type": "law",
+  "sub_type": null,
+  "title_ar": "قانون رقم 1 لسنة 2024 بتعديل بعض أحكام قانون الإجراءات الجنائية",
+  "year": 2024,
+  "doc_number": "1",
+  "source": {
+    "gazette_number": "2 (مكرر)",
+    "gazette_date": "2024-01-16"
+  },
+  "issuing_authority": "PRES",
+  "subjects": ["عدالة جنائية وشئون أمنية"],
+  "paths": {
+    "scan": "raw/scanned/law/LAW-1-2024.pdf",
+    "original_txt": "raw/text_as_is/law/LAW-1-2024.txt",
+    "normalized_txt": "normalized/law/txt/LAW-1-2024.txt",
+    "json": "normalized/law/json/LAW-1-2024.json"
+  },
+  "stats": {
+    "articles_count": 5,
+    "chapters_count": 0,
+    "sections_count": 0
+  },
+  "processing": {
+    "added_to_index": "2026-10-02T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>"
+  }
+}
   ]
 }
