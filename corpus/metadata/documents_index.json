@@ -1,51 +1,67 @@
+{
   "version": "1.0",
-  "last_updated": "2026-08-27",
+  "last_updated": "2026-10-02",
   "total_documents": 0,
   "indices": {
-    "constitutions": {
-      "path": "metadata/index/constitutions.json",
+    "constitution": {
+      "path": "corpus/metadata/index/constitutions.json",
       "count": 0,
       "description": "الدستور والتعديلات الدستورية"
     },
+    "treaty": {
+      "path": "corpus/metadata/index/treaties.json",
+      "count": 0,
+      "description": "المعاهدات والاتفاقيات الدولية"
+    },
     "law": {
-      "path": "metadata/index/laws.json",
+      "path": "corpus/metadata/index/laws.json",
       "count": 0,
       "description": "القوانين الصادرة عن مجلس النواب"
     },
     "decree_law": {
-      "path": "metadata/index/decree_laws.json",
+      "path": "corpus/metadata/index/decree_laws.json",
       "count": 0,
       "description": "قرارات بقانون صادرة عن رئيس الجمهورية"
     },
     "regulation": {
-      "path": "metadata/index/regulations.json",
+      "path": "corpus/metadata/index/regulations.json",
       "count": 0,
-      "description": "اللوائح التنفيذية و التنظيمية"
-    },
-    "treatiy": {
-      "path": "metadata/index/treaties.json",
-      "count": 0,
-      "description": "المعاهدات والاتفاقيات الدولية"
-    },
-    "judgment": {
-      "path": "metadata/index/judgments.json",
-      "count": 0,
-      "description": "الأحكام القضائية (جميع الدرجات)"
-    },
-    "fatwa": {
-      "path": "metadata/index/fatwas.json",
-      "count": 0,
-      "description": "الفتاوى (مجلس الدولة)"
+      "description": "اللوائح التنفيذية والتنظيمية"
     },
     "administrative_decision": {
-      "path": "metadata/index/administrative_decisions.json",
+      "path": "corpus/metadata/index/administrative_decisions.json",
       "count": 0,
       "description": "القرارات الإدارية (وزراء، محافظون، رؤساء هيئات)"
     },
-    "doctrine": {
-      "path": "metadata/index/doctrines.json",
+    "judgment": {
+      "path": "corpus/metadata/index/judgments.json",
       "count": 0,
-      "description": "الفقه القانوني الاكاديميوالمظريات العلمية و البحثية   "
+      "description": "الأحكام القضائية (جميع الدرجات)"
+    },
+    "fatwa_legislative": {
+      "path": "corpus/metadata/index/fatwas.json",
+      "count": 0,
+      "description": "الفتاوى (مجلس الدولة)"
+    },
+    "report": {
+      "path": "corpus/metadata/index/reports.json",
+      "count": 0,
+      "description": "التقارير الرسمية والدراسات المتخصصة"
+    },
+    "legal_doctrine": {
+      "path": "corpus/metadata/index/doctrines.json",
+      "count": 0,
+      "description": "الفقه القانوني الأكاديمي والدراسات البحثية"
+    },
+    "draft_discussion": {
+      "path": "corpus/metadata/index/draft_discussions.json",
+      "count": 0,
+      "description": "المسودات النقاشية ومشروعات القوانين"
+    },
+    "deliberation_minutes": {
+      "path": "corpus/metadata/index/deliberation_minutes.json",
+      "count": 0,
+      "description": "مضابط جلسات المناقشات"
     }
   }
 }
