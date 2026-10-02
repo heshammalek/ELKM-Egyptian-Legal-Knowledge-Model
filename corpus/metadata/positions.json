@@ -1,21 +1,22 @@
 {
-  "version": "2.1",
-  "last_updated": "2026-09-30",
+  "version": "3.0",
+  "last_updated": "2026-10-02",
   "purpose": "سجل المناصب الوظيفية — يُستخدم حصرياً في العلاقات (relations/).",
   "usage": {
     "primary": "الربط العلائقي (target.position_id)",
     "secondary": "ربط المنصب بالكيان التابع له",
     "not_for": "تسمية الملفات — للتسمية استخدم doc_codes.json"
   },
+  "scope_note": "هذا السجل يحصر المناصب الفريدة (Singleton Positions) فقط — أي المناصب التي يشغلها شخص واحد في الدولة في أي وقت. المناصب المتكررة (مثل: رئيس محكمة استئناف، قاضي تحقيق، رئيس محكمة جنايات، رئيس محكمة ابتدائية، عضو النيابة العامة) لا تُدرَج هنا لأنها ليست معرّفاً فريداً للفاعل، ولا تُستخدم كأهداف للعلاقات العلائقية.",
   "is_final": false,
 
   "positions": [
+
     {
       "position_id": "POS-PRES",
       "name_ar": "رئيس الجمهورية",
       "name_en": "President of the Republic",
       "entity_id": "ENT-PRES",
-      "hierarchy_level": 1,
       "appointed_by": null
     },
     {
@@ -23,15 +24,14 @@
       "name_ar": "رئيس مجلس الوزراء",
       "name_en": "Prime Minister",
       "entity_id": "ENT-CAB",
-      "hierarchy_level": 1,
       "appointed_by": "POS-PRES"
     },
+
     {
       "position_id": "POS-MOI-MINISTER",
       "name_ar": "وزير الداخلية",
       "name_en": "Minister of Interior",
       "entity_id": "ENT-MOI",
-      "hierarchy_level": 1,
       "appointed_by": "POS-PM"
     },
     {
@@ -39,7 +39,6 @@
       "name_ar": "وزير الدفاع والإنتاج الحربي",
       "name_en": "Minister of Defense",
       "entity_id": "ENT-MOD",
-      "hierarchy_level": 1,
       "appointed_by": "POS-PM"
     },
     {
@@ -47,7 +46,6 @@
       "name_ar": "وزير العدل",
       "name_en": "Minister of Justice",
       "entity_id": "ENT-MOJ",
-      "hierarchy_level": 1,
       "appointed_by": "POS-PM"
     },
     {
@@ -55,7 +53,6 @@
       "name_ar": "وزير المالية",
       "name_en": "Minister of Finance",
       "entity_id": "ENT-MOF",
-      "hierarchy_level": 1,
       "appointed_by": "POS-PM"
     },
     {
@@ -63,31 +60,21 @@
       "name_ar": "وزير التربية والتعليم",
       "name_en": "Minister of Education",
       "entity_id": "ENT-MOE",
-      "hierarchy_level": 1,
       "appointed_by": "POS-PM"
     },
-    {
-      "position_id": "POS-CAA-HEAD",
-      "name_ar": "رئيس الجهاز المركزي للمحاسبات",
-      "name_en": "Head of Central Auditing Organization",
-      "entity_id": "ENT-CAA",
-      "hierarchy_level": 1,
-      "appointed_by": "POS-PRES"
-    },
-    {
-      "position_id": "POS-ACA-HEAD",
-      "name_ar": "رئيس هيئة الرقابة الإدارية",
-      "name_en": "Head of Administrative Control Authority",
-      "entity_id": "ENT-ACA",
-      "hierarchy_level": 1,
-      "appointed_by": "POS-PRES"
-    },
+
     {
       "position_id": "POS-SCC-HEAD",
       "name_ar": "رئيس المحكمة الدستورية العليا",
       "name_en": "Chief Justice of the Supreme Constitutional Court",
       "entity_id": "ENT-SCC",
-      "hierarchy_level": 1,
+      "appointed_by": "POS-PRES"
+    },
+    {
+      "position_id": "POS-CASS-HEAD",
+      "name_ar": "رئيس محكمة النقض",
+      "name_en": "President of the Court of Cassation",
+      "entity_id": "ENT-CASS",
       "appointed_by": "POS-PRES"
     },
     {
@@ -95,15 +82,44 @@
       "name_ar": "رئيس مجلس الدولة",
       "name_en": "President of the State Council",
       "entity_id": "ENT-SC",
-      "hierarchy_level": 1,
       "appointed_by": "POS-PRES"
     },
+
+    {
+      "position_id": "POS-PROSECUTOR-GEN",
+      "name_ar": "النائب العام",
+      "name_en": "Prosecutor General",
+      "entity_id": "ENT-PUBPROS",
+      "appointed_by": "POS-PRES"
+    },
+
+    {
+      "position_id": "POS-CAA-HEAD",
+      "name_ar": "رئيس الجهاز المركزي للمحاسبات",
+      "name_en": "Head of Central Auditing Organization",
+      "entity_id": "ENT-CAA",
+      "appointed_by": "POS-PRES"
+    },
+    {
+      "position_id": "POS-ACA-HEAD",
+      "name_ar": "رئيس هيئة الرقابة الإدارية",
+      "name_en": "Head of Administrative Control Authority",
+      "entity_id": "ENT-ACA",
+      "appointed_by": "POS-PRES"
+    },
+    {
+      "position_id": "POS-NEA-HEAD",
+      "name_ar": "رئيس الهيئة الوطنية للانتخابات",
+      "name_en": "Head of the National Elections Authority",
+      "entity_id": "ENT-NEA",
+      "appointed_by": "POS-PRES"
+    },
+
     {
       "position_id": "POS-CBE-GOVERNOR",
       "name_ar": "محافظ البنك المركزي المصري",
       "name_en": "Governor of the Central Bank of Egypt",
       "entity_id": "ENT-CBE",
-      "hierarchy_level": 1,
       "appointed_by": "POS-PRES"
     },
     {
@@ -111,16 +127,30 @@
       "name_ar": "رئيس صندوق مصر السيادي",
       "name_en": "Head of the Sovereign Fund of Egypt",
       "entity_id": "ENT-SFE",
-      "hierarchy_level": 1,
       "appointed_by": "POS-PM"
     },
+
     {
-      "position_id": "POS-NEA-HEAD",
-      "name_ar": "رئيس الهيئة الوطنية للانتخابات",
-      "name_en": "Head of the National Elections Authority",
-      "entity_id": "ENT-NEA",
-      "hierarchy_level": 1,
+      "position_id": "POS-AZHAR-HEAD",
+      "name_ar": "شيخ الأزهر",
+      "name_en": "Grand Imam of Al-Azhar",
+      "entity_id": "ENT-AZHAR",
       "appointed_by": "POS-PRES"
+    },
+    {
+      "position_id": "POS-MUFTI",
+      "name_ar": "مفتي الجمهورية",
+      "name_en": "Grand Mufti of the Republic",
+      "entity_id": "ENT-DAR-IFTA",
+      "appointed_by": "POS-PRES"
+    },
+    {
+      "position_id": "POS-POPE",
+      "name_ar": "بابا الإسكندرية وبطريرك الكرازة المرقسية",
+      "name_en": "Pope of Alexandria and Patriarch of the See of St. Mark",
+      "entity_id": "ENT-COPTIC-CHURCH",
+      "appointed_by": null
     }
+
   ]
 }
