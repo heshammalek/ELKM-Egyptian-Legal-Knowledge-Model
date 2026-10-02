@@ -14,7 +14,7 @@
 > [!WARNING]
 > **Active Development — Living Ontology**
 >
-> This project is an **ontology in the making** — not a finished product. You may find inconsistencies between components; this is the nature of a living knowledge project.
+> This project is an **ontology in the making** — not a finished product. This README provides a general overview of the project. It may not reflect the latest additions or refinements. The authoritative reference is the metadata files themselves; this document is intended as a conceptual guide.
 > 
 **[نسخة عربية ستكون متاحة في `docs/README.ar.md` (قيد الإعداد)](docs/README.ar.md)**
 
