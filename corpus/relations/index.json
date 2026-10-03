@@ -14,6 +14,22 @@
         "DOC-POS": 0
       },
       "notes": [ ]
-    }
+    },
+
+    {
+  "doc_id": "LAW-1-2024",
+  "total_relations": 23,
+  "by_type": {
+    "amendment": 21,
+    "addition": 1,
+    "referral": 1
+  },
+  "by_category": {
+    "DOC-DOC": 23,
+    "DOC-ENT": 0,
+    "DOC-POS": 0
+  },
+  "notes": []
+}
   ]
 }
