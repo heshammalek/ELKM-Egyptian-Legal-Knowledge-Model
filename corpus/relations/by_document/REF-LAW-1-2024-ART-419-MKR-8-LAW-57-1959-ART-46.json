@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-LAW-1-2024-ART-419-MKR-8-LAW-57-1959-ART-46",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-1-2024",
+    "article_number": "419-MKR-8",
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-57-1959",
+    "article_number": 46,
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2024-01-17",
+  "confidence": 0.98,
+  "reference_text": "مادة (419 مكرراً 8) : إذا كان الحكم صادراً حضورياً بعقوبة الإعدام، ولم يجر استئنافه خلال الميعاد المقرر قانوناً، وجب على النيابة العامة اتباع حكم المادة 46 من قانون حالات وإجراءات الطعن أمام محكمة النقض الصادر بالقانون رقم 57 لسنة 1959 ."
+}
