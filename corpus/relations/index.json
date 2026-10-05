@@ -30,6 +30,29 @@
     "DOC-POS": 0
   },
   "notes": []
+},
+    {
+  "doc_id": "LAW-174-2025",
+  "total_relations": 17,
+  "by_type": {
+    "total_repeal": 2,
+    "preemptive_repeal": 1,
+    "referral": 11,
+    "delegation": 1,
+    "empowers": 2
+  },
+  "by_category": {
+    "DOC-DOC": 14,
+    "DOC-ENT": 0,
+    "DOC-POS": 3
+  },
+  "notes": [
+    "الإحالات الداخلية (داخل نفس المستند) لم تُستخرج.",
+    "العلاقات التي مصدرها مواد الإصدار (1-5) استُخدم فيها PRE-{NUMBER} بدلاً من ART-{NUMBER} مع section = 'preamble'.",
+    "العلاقتان EMP-LAW-174-2025-ART-1-ENT-PUBPROS و EMP-LAW-174-2025-ART-25-ENT-PUBPROS مصنفتان DOC-POS (حسب relation_types.json لأن empowers ضمن كاتيجوري DOC-POS)، لكن الهدف كيان (ENT-PUBPROS) مش منصب — لأن empowers في relation_types.json مسموح لها بـ position_or_entity.",
+    "الكيان ENT-PUBPROS (النيابة العامة) غير موجود حالياً في entities.json، ويجب إضافته.",
+    "المادة 448 لها علاقتان إحالتان منفصلتان (إلى المادتين 36 مكرر و41 من LAW-57-1959) — وتم إنتاجهما كـ instance منفصلين لكل مادة مستهدفة."
+  ]
 }
   ]
 }
