@@ -1,0 +1,22 @@
+{
+  "instance_id": "EMP-LAW-174-2025-ART-25-ENT-PUBPROS",
+  "type_id": "REL-022",
+  "type_name": "empowers",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "LAW-174-2025",
+    "article_number": "25",
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position_or_entity",
+    "entity_id": "ENT-PUBPROS",
+    "position_id": null
+  },
+  "effective_date": "2026-10-01",
+  "confidence": 0.95,
+  "reference_text": "ويجوز للنائب العام أن يطلب إلى الجهة المختصة النظر في أمر كل من تقع منه مخالفة لواجباته، أو تقصير في عمله، وله أن يطلب إحالته إلى المحاكمة التأديبية"
+}
