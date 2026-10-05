@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-LAW-174-2025-ART-80-LAW-10-2003",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-174-2025",
+    "article_number": "80",
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-10-2003",
+    "article_number": "76",
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2026-10-01",
+  "confidence": 0.95,
+  "reference_text": "والبند / ٢ من المادة ٧٦ من قانون تنظيم الاتصالات الصادر بالقانون رقم ١٠ لسنة ٢٠٠٣"
+}
