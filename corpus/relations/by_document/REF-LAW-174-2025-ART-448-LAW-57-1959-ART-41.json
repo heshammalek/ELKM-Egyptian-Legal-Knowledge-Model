@@ -1,16 +1,16 @@
 {
-  "instance_id": "REF-LAW-174-2025-ART-418-LAW-57-1959",
+  "instance_id": "REF-LAW-174-2025-ART-448-LAW-57-1959-ART-41",
   "type_id": "REL-008",
   "type_name": "referral",
   "category_id": "DOC-DOC",
   "source": {
     "doc_id": "LAW-174-2025",
-    "article_number": "418",
+    "article_number": "448",
     "section": null
   },
   "target": {
     "doc_id": "LAW-57-1959",
-    "article_number": "46",
+    "article_number": "41",
     "article_number_end": null,
     "scope": "article",
     "entity_id": null,
@@ -18,5 +18,5 @@
   },
   "effective_date": "2026-10-01",
   "confidence": 0.95,
-  "reference_text": "حكم المـادة ٤٦ مـن قـانون حـالات وإجراءات الطعن أمام محكمة النقض الصادر بالقانون رقم ٥٧ لسنة ١٩٥٩"
+  "reference_text": "مع مراعاة أحكام المادتين ٣٦ مكررًا، ٤١ من القـانون رقـم ٥٧ لـسنة ١٩٥٩ المشار إليه"
 }
