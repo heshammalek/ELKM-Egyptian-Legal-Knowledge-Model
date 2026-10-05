@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-LAW-174-2025-ART-142-LAW-182-2018",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-174-2025",
+    "article_number": "142",
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-182-2018",
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "whole_document",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2026-10-01",
+  "confidence": 0.95,
+  "reference_text": "قانون تنظيم التعاقدات التي تبرمها الجهات العامة الصادر بالقانون رقم ١٨٢ لسنة ٢٠١٨"
+}
