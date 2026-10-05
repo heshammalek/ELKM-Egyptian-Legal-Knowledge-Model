@@ -1,0 +1,22 @@
+{
+  "instance_id": "DELEG-LAW-174-2025-PRE-5-POS-MOJ-MINISTER",
+  "type_id": "REL-019",
+  "type_name": "delegation",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "LAW-174-2025",
+    "article_number": 5,
+    "section": "preamble"
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position",
+    "entity_id": null,
+    "position_id": "POS-MOJ-MINISTER"
+  },
+  "effective_date": "2026-10-01",
+  "confidence": 0.97,
+  "reference_text": "يُصدر وزير العدل القرارات اللازمة لتنفيذ أحكام هذا القانون والقانون المرافق له"
+}
