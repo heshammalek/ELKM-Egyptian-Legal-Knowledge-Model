@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-LAW-58-1937-ART-122-LAW-PLEADINGS-NAT-1883",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-58-1937",
+    "article_number": 122,
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-PLEADINGS-NAT-1883",
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "whole_document",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1937-10-15",
+  "confidence": 0.92,
+  "reference_text": "بالشروط المبينة في قانون المرافعات في المواد المدنية والتجارية"
+}
