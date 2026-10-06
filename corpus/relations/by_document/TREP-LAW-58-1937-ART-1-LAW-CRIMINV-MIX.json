@@ -1,0 +1,22 @@
+{
+  "instance_id": "TREP-LAW-58-1937-ART-1-LAW-CRIMINV-MIX",
+  "type_id": "REL-001",
+  "type_name": "total_repeal",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-58-1937",
+    "article_number": 1,
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-CRIMINV-MIX",
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "whole_document",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1937-10-15",
+  "confidence": 0.98,
+  "reference_text": "وقانون العقوبات الذى تطبقه المحاكم المختلطة"
+}
