@@ -1362,7 +1362,7 @@
       "section": 5,
       "chapter": null,
       "order": 122,
-      "instance_references": []
+      "instance_references": ["REF-LAW-58-1937-ART-122-LAW-PLEADINGS-NAT-1883"]
     },
     {
       "article_number": "123",
@@ -3242,7 +3242,7 @@
       "section": 7,
       "chapter": null,
       "order": 310,
-      "instance_references": []
+      "instance_references": ["REF-LAW-58-1937-ART-310-LAW-PLEADINGS-NAT-1883-ART-202"]
     },
     {
       "article_number": "311",
@@ -3452,7 +3452,7 @@
       "section": 9,
       "chapter": null,
       "order": 331,
-      "instance_references": []
+      "instance_references": ["REF-LAW-58-1937-ART-331-LAW-COMMERCE-1883-ART-11", "REF-LAW-58-1937-ART-331-LAW-COMMERCE-1883-ART-13", "REF-LAW-58-1937-ART-331-LAW-COMMERCE-1883-ART-198", "REF-LAW-58-1937-ART-331-LAW-COMMERCE-1883-ART-199", "REF-LAW-58-1937-ART-331-LAW-COMMERCE-1883-ART-200"]
     },
     {
       "article_number": "332",
