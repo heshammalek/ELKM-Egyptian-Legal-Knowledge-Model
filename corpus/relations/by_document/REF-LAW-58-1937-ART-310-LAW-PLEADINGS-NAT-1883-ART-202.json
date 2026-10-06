@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-LAW-58-1937-ART-310-LAW-PLEADINGS-NAT-1883-ART-202",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-58-1937",
+    "article_number": 310,
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-PLEADINGS-NAT-1883",
+    "article_number": 202,
+    "article_number_end": 205,
+    "scope": "articles_range",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1937-10-15",
+  "confidence": 0.9,
+  "reference_text": "كالمقرر في المواد ٢٠٢ و٢٠٣ و ٢٠٤ و ٢٠٥ من قانون المرافعات في المواد المدنية والتجارية"
+}
