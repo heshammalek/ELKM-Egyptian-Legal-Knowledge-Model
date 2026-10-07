@@ -77,33 +77,27 @@
       ]
     },
 
-    {
-      "doc_id": "LAW-12-2025",
-      "total_relations": 26,
-      "by_type": {
-        "total_repeal": 1,
-        "partial_repeal": 1,
-        "preemptive_repeal": 1,
-        "referral": 5,
-        "establishes": 2,
-        "abolishes": 1,
-        "delegation": 2,
-        "empowers": 13
-      },
-      "by_category": {
-        "DOC-DOC": 8,
-        "DOC-ENT": 3,
-        "DOC-POS": 15
-      },
-      "notes": [
-        "تم تحديث السجل وفقاً لملف JSON للوثيقة LAW-12-2025 — ملف JSON هو المصدر الوحيد للحقيقة في مرحلة MVP.",
-        "إجمالي العلاقات: 26 (مطابق لعدد instance_references في ملف JSON).",
-        "توزيع العلاقات حسب الكاتيجوري: DOC-DOC (8) + DOC-ENT (3) + DOC-POS (15) = 26.",
-        "ملاحظة: بعض العلاقات موجّهة إلى مناصب مقترحة (POS-MOIS-MINISTER، POS-MOH-MINISTER، POS-MOSPA-MINISTER) لم تُضف بعد إلى positions.json.",
-        "ملاحظة: بعض العلاقات موجّهة إلى كيانات مقترحة (ENT-TAKAFUL-KARAMA-FUND، ENT-SOCIAL-SOLIDARITY-FUND) لم تُضف بعد إلى entities.json.",
-        "الإحالات الخارجية المستخرجة: إلى LAW-18-2019 (مرتين)، LAW-10-2018، LAW-149-2019، LAW-91-2005، LAW-88-2003.",
-        "إحالة داخلية واحدة مُبقاة في ملف JSON (REF-LAW-12-2025-ART-37-LAW-12-2025-ART-2) — سيتم مراجعتها بعد MVP."
-      ]
-    }
+      {
+  "doc_id": "LAW-12-2025",
+  "total_relations": 27,
+  "by_type": {
+    "total_repeal": 1,
+    "partial_repeal": 1,
+    "preemptive_repeal": 1,
+    "referral": 6,
+    "establishes": 2,
+    "abolishes": 1,
+    "delegation": 2,
+    "empowers": 13
+  },
+  "by_category": {
+    "DOC-DOC": 9,
+    "DOC-ENT": 3,
+    "DOC-POS": 15
+  },
+  "notes": [
+    
+  ]
+}
   ]
 }
