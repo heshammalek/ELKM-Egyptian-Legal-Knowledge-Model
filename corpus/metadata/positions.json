@@ -62,6 +62,48 @@
       "entity_id": "ENT-MOE",
       "appointed_by": "POS-PM"
     },
+       {
+      "position_id": "POS-MOIS-MINISTER",
+      "name_ar": "وزير التضامن الاجتماعي",
+      "name_en": "Minister of Social Solidarity",
+      "entity_id": "ENT-MOIS",
+      "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-MOH-MINISTER",
+      "name_ar": "وزير الصحة والسكان",
+      "name_en": "Minister of Health and Population",
+      "entity_id": "ENT-MOH",
+      "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-MOSPA-MINISTER",
+      "name_ar": "وزير التموين والتجارة الداخلية",
+      "name_en": "Minister of Supply and Internal Trade",
+      "entity_id": "ENT-MOSPA",
+      "appointed_by": "POS-PM"
+    },
+        {
+      "position_id": "POS-MOT-MINISTER",
+      "name_ar": "وزير النقل",
+      "name_en": "Minister of Transport",
+      "entity_id": "ENT-MOT",
+      "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-MOHE-MINISTER",
+      "name_ar": "وزير التعليم العالي والبحث العلمي",
+      "name_en": "Minister of Higher Education and Scientific Research",
+      "entity_id": "ENT-MOHE",
+      "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-MOIT-MINISTER",
+      "name_ar": "وزير قطاع الأعمال العام",
+      "name_en": "Minister of Public Business Sector",
+      "entity_id": "ENT-MOIT",
+      "appointed_by": "POS-PM"
+    },
 
     {
       "position_id": "POS-SCC-HEAD",
