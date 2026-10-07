@@ -78,26 +78,24 @@
     },
 
       {
-  "doc_id": "LAW-12-2025",
-  "total_relations": 27,
-  "by_type": {
-    "total_repeal": 1,
-    "partial_repeal": 1,
-    "preemptive_repeal": 1,
-    "referral": 6,
-    "establishes": 2,
-    "abolishes": 1,
-    "delegation": 2,
-    "empowers": 13
-  },
-  "by_category": {
-    "DOC-DOC": 9,
-    "DOC-ENT": 3,
-    "DOC-POS": 15
-  },
-  "notes": [
-    
-  ]
-}
+      "doc_id": "LAW-12-2025",
+      "total_relations": 25,
+      "by_type": {
+        "total_repeal": 1,
+        "partial_repeal": 1,
+        "preemptive_repeal": 1,
+        "referral": 4,
+        "establishes": 2,
+        "abolishes": 1,
+        "delegation": 2,
+        "empowers": 13
+      },
+      "by_category": {
+        "DOC-DOC": 7,
+        "DOC-ENT": 3,
+        "DOC-POS": 15
+      },
+      "notes": []
+    }
   ]
 }
