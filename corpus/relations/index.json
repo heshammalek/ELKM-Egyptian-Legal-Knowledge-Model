@@ -13,90 +13,97 @@
         "DOC-ENT": 0,
         "DOC-POS": 0
       },
-      "notes": [ ]
+      "notes": []
     },
 
     {
-  "doc_id": "LAW-1-2024",
-  "total_relations": 23,
-  "by_type": {
-    "amendment": 21,
-    "addition": 1,
-    "referral": 1
-  },
-  "by_category": {
-    "DOC-DOC": 23,
-    "DOC-ENT": 0,
-    "DOC-POS": 0
-  },
-  "notes": []
-},
+      "doc_id": "LAW-1-2024",
+      "total_relations": 23,
+      "by_type": {
+        "amendment": 21,
+        "addition": 1,
+        "referral": 1
+      },
+      "by_category": {
+        "DOC-DOC": 23,
+        "DOC-ENT": 0,
+        "DOC-POS": 0
+      },
+      "notes": []
+    },
+
     {
-  "doc_id": "LAW-174-2025",
-  "total_relations": 17,
-  "by_type": {
-    "total_repeal": 2,
-    "preemptive_repeal": 1,
-    "referral": 11,
-    "delegation": 1,
-    "empowers": 2
-  },
-  "by_category": {
-    "DOC-DOC": 14,
-    "DOC-ENT": 0,
-    "DOC-POS": 3
-  },
-  "notes": [
-    "الإحالات الداخلية (داخل نفس المستند) لم تُستخرج.",
-    "العلاقات التي مصدرها مواد الإصدار (1-5) استُخدم فيها PRE-{NUMBER} بدلاً من ART-{NUMBER} مع section = 'preamble'.",
-    "العلاقتان EMP-LAW-174-2025-ART-1-ENT-PUBPROS و EMP-LAW-174-2025-ART-25-ENT-PUBPROS مصنفتان DOC-POS (حسب relation_types.json لأن empowers ضمن كاتيجوري DOC-POS)، لكن الهدف كيان (ENT-PUBPROS) مش منصب — لأن empowers في relation_types.json مسموح لها بـ position_or_entity.",
-    "الكيان ENT-PUBPROS (النيابة العامة) غير موجود حالياً في entities.json، ويجب إضافته.",
-    "المادة 448 لها علاقتان إحالتان منفصلتان (إلى المادتين 36 مكرر و41 من LAW-57-1959) — وتم إنتاجهما كـ instance منفصلين لكل مادة مستهدفة."
-  ]
-},
+      "doc_id": "LAW-174-2025",
+      "total_relations": 17,
+      "by_type": {
+        "total_repeal": 2,
+        "preemptive_repeal": 1,
+        "referral": 11,
+        "delegation": 1,
+        "empowers": 2
+      },
+      "by_category": {
+        "DOC-DOC": 14,
+        "DOC-ENT": 0,
+        "DOC-POS": 3
+      },
+      "notes": [
+        "الإحالات الداخلية (داخل نفس المستند) لم تُستخرج.",
+        "العلاقات التي مصدرها مواد الإصدار (1-5) استُخدم فيها PRE-{NUMBER} بدلاً من ART-{NUMBER} مع section = 'preamble'.",
+        "العلاقتان EMP-LAW-174-2025-ART-1-ENT-PUBPROS و EMP-LAW-174-2025-ART-25-ENT-PUBPROS مصنفتان DOC-POS (حسب relation_types.json لأن empowers ضمن كاتيجوري DOC-POS)، لكن الهدف كيان (ENT-PUBPROS) مش منصب — لأن empowers في relation_types.json مسموح لها بـ position_or_entity.",
+        "الكيان ENT-PUBPROS (النيابة العامة) غير موجود حالياً في entities.json، ويجب إضافته.",
+        "المادة 448 لها علاقتان إحالتان منفصلتان (إلى المادتين 36 مكرر و41 من LAW-57-1959) — وتم إنتاجهما كـ instance منفصلين لكل مادة مستهدفة."
+      ]
+    },
+
     {
-  "doc_id": "LAW-58-1937",
-  "total_relations": 10,
-  "by_type": {
-    "total_repeal": 2,
-    "referral": 8
-  },
-  "by_category": {
-    "DOC-DOC": 10,
-    "DOC-ENT": 0,
-    "DOC-POS": 0
-  },
-  "notes": [
-    "الإحالات الداخلية (داخل نفس المستند) لم تُستخرج وفقاً لقاعدة البرومبت: 'الإحالات الداخلية (داخل نفس المستند) لم تُستخرج'.",
-    "الإحالات الخارجية إلى قانون التجارة ١٨٨٣ وقانون المرافعات الأهلي ١٨٨٣ استُخرجت باستخدام معرّفات جديدة مقترحة في proposed_identifiers.",
-    "الإحالة إلى 'قانون المرافعات المختلط ١٨٧٥' لم تُستخرج لعدم وجود نص صريح يحيل إليه في قانون العقوبات ١٩٣٧ (المذكور في المادة ١ هو 'قانون العقوبات' المختلط وليس 'قانون المرافعات' المختلط).",
-    "العلاقة TREP-LAW-58-1937-ART-1-LAW-CRIMINV-NAT و TREP-LAW-58-1937-ART-1-LAW-CRIMINV-MIX تستخدمان معرّفات موجودة مسبقاً في identifiers.json.",
-    "العلاقات REF-...-LAW-COMMERCE-1883-* و REF-...-LAW-PLEADINGS-NAT-1883-* تستخدمان معرّفات جديدة مقترحة (proposed_identifiers)."
-  ]
-},
+      "doc_id": "LAW-58-1937",
+      "total_relations": 10,
+      "by_type": {
+        "total_repeal": 2,
+        "referral": 8
+      },
+      "by_category": {
+        "DOC-DOC": 10,
+        "DOC-ENT": 0,
+        "DOC-POS": 0
+      },
+      "notes": [
+        "الإحالات الداخلية (داخل نفس المستند) لم تُستخرج وفقاً لقاعدة البرومبت: 'الإحالات الداخلية (داخل نفس المستند) لم تُستخرج'.",
+        "الإحالات الخارجية إلى قانون التجارة ١٨٨٣ وقانون المرافعات الأهلي ١٨٨٣ استُخرجت باستخدام معرّفات جديدة مقترحة في proposed_identifiers.",
+        "الإحالة إلى 'قانون المرافعات المختلط ١٨٧٥' لم تُستخرج لعدم وجود نص صريح يحيل إليه في قانون العقوبات ١٩٣٧ (المذكور في المادة ١ هو 'قانون العقوبات' المختلط وليس 'قانون المرافعات' المختلط).",
+        "العلاقة TREP-LAW-58-1937-ART-1-LAW-CRIMINV-NAT و TREP-LAW-58-1937-ART-1-LAW-CRIMINV-MIX تستخدمان معرّفات موجودة مسبقاً في identifiers.json.",
+        "العلاقات REF-...-LAW-COMMERCE-1883-* و REF-...-LAW-PLEADINGS-NAT-1883-* تستخدمان معرّفات جديدة مقترحة (proposed_identifiers)."
+      ]
+    },
+
     {
-  "doc_id": "LAW-12-2025",
-  "total_relations": 13,
-  "by_type": {
-    "total_repeal": 1,
-    "partial_repeal": 1,
-    "preemptive_repeal": 1,
-    "referral": 4,
-    "establishes": 2,
-    "abolishes": 1,
-    "delegation": 1,
-    "empowers": 2
-  },
-  "by_category": {
-    "DOC-DOC": 7,
-    "DOC-ENT": 3,
-    "DOC-POS": 3
-  },
-  "notes": [
-    "تم استبعاد العلاقة OBL-LAW-12-2025-ART-8-POS-MOIS-MINISTER لأن مضمونها تنسيقي فقط بلا دور محدد.",
-    "تم استبعاد الإحالات الداخلية (داخل نفس المستند) وفقاً لقواعد البرومبت — لم تُستخرج أصلاً.",
-    "الإحالات الخارجية المستخرجة: إلى LAW-18-2019، LAW-10-2018، LAW-149-2019، LAW-91-2005."
-  ]
-}
+      "doc_id": "LAW-12-2025",
+      "total_relations": 26,
+      "by_type": {
+        "total_repeal": 1,
+        "partial_repeal": 1,
+        "preemptive_repeal": 1,
+        "referral": 5,
+        "establishes": 2,
+        "abolishes": 1,
+        "delegation": 2,
+        "empowers": 13
+      },
+      "by_category": {
+        "DOC-DOC": 8,
+        "DOC-ENT": 3,
+        "DOC-POS": 15
+      },
+      "notes": [
+        "تم تحديث السجل وفقاً لملف JSON للوثيقة LAW-12-2025 — ملف JSON هو المصدر الوحيد للحقيقة في مرحلة MVP.",
+        "إجمالي العلاقات: 26 (مطابق لعدد instance_references في ملف JSON).",
+        "توزيع العلاقات حسب الكاتيجوري: DOC-DOC (8) + DOC-ENT (3) + DOC-POS (15) = 26.",
+        "ملاحظة: بعض العلاقات موجّهة إلى مناصب مقترحة (POS-MOIS-MINISTER، POS-MOH-MINISTER، POS-MOSPA-MINISTER) لم تُضف بعد إلى positions.json.",
+        "ملاحظة: بعض العلاقات موجّهة إلى كيانات مقترحة (ENT-TAKAFUL-KARAMA-FUND، ENT-SOCIAL-SOLIDARITY-FUND) لم تُضف بعد إلى entities.json.",
+        "الإحالات الخارجية المستخرجة: إلى LAW-18-2019 (مرتين)، LAW-10-2018، LAW-149-2019، LAW-91-2005، LAW-88-2003.",
+        "إحالة داخلية واحدة مُبقاة في ملف JSON (REF-LAW-12-2025-ART-37-LAW-12-2025-ART-2) — سيتم مراجعتها بعد MVP."
+      ]
+    }
   ]
 }
