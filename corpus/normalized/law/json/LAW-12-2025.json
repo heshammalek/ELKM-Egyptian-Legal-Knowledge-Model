@@ -200,7 +200,7 @@
       "section": 2,
       "chapter": 1,
       "order": 14,
-      "instance_references": [ ]
+      "instance_references": []
     },
     {
       "article_number": "9",
@@ -397,7 +397,7 @@
       "section": 3,
       "chapter": null,
       "order": 34,
-      "instance_references": [ ]
+      "instance_references": []
     },
     {
       "article_number": "29",
@@ -487,7 +487,7 @@
       "chapter": null,
       "order": 43,
       "instance_references": [
-        "REF-LAW-12-2025-ART-37-LAW-12-2025-ART-2"
+        
       ]
     },
     {
@@ -527,7 +527,7 @@
       "chapter": null,
       "order": 47,
       "instance_references": [
-        "REF-LAW-12-2025-ART-41-LAW-88-2003"
+        
       ]
     },
     {
