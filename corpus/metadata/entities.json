@@ -314,6 +314,22 @@
         "name_en": "Coptic Orthodox Church",
         "details_reference": "entities/ENT-COPTIC-CHURCH.json"
    
+    },
+     {
+      "entity_id": "ENT-TAKAFUL-KARAMA-FUND",
+      "name_ar": "صندوق تكافل وكرامة",
+      "name_en": "Takaful and Karama Fund",
+      "parent_entity_id": "ENT-MOIS",
+      "hierarchy_level": 3,
+      "details_reference": "entities/ENT-TAKAFUL-KARAMA-FUND.json"
+    },
+    {
+      "entity_id": "ENT-SOCIAL-SOLIDARITY-FUND",
+      "name_ar": "الصندوق المركزي للضمان الاجتماعي",
+      "name_en": "Central Social Solidarity Fund",
+      "parent_entity_id": "ENT-MOIS",
+      "hierarchy_level": 3,
+      "details_reference": "entities/ENT-SOCIAL-SOLIDARITY-FUND.json"
     }
 
 
