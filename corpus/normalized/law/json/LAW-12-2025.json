@@ -200,10 +200,7 @@
       "section": 2,
       "chapter": 1,
       "order": 14,
-      "instance_references": [
-        "OBL-LAW-12-2025-ART-8-POS-MOIS-MINISTER",
-        "OBL-LAW-12-2025-ART-8-POS-MOH-MINISTER"
-      ]
+      "instance_references": [ ]
     },
     {
       "article_number": "9",
@@ -400,12 +397,7 @@
       "section": 3,
       "chapter": null,
       "order": 34,
-      "instance_references": [
-        "REF-LAW-12-2025-ART-28-LAW-12-2025-ART-24",
-        "REF-LAW-12-2025-ART-28-LAW-12-2025-ART-25",
-        "REF-LAW-12-2025-ART-28-LAW-12-2025-ART-26",
-        "REF-LAW-12-2025-ART-28-LAW-12-2025-ART-27"
-      ]
+      "instance_references": [ ]
     },
     {
       "article_number": "29",
