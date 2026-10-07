@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-LAW-12-2025-ART-32-LAW-18-2019",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-12-2025",
+    "article_number": 32,
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-18-2019",
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "whole_document",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2025-07-04",
+  "confidence": 0.95,
+  "reference_text": "ويُحصل وفقاً لأحكام قانون تنظيم استخدام وسائل الدفع غير النقدى المشار إليه"
+}
