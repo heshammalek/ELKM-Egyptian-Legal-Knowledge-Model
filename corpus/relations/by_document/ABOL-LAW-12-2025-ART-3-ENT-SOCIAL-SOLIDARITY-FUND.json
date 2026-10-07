@@ -1,0 +1,22 @@
+{
+  "instance_id": "ABOL-LAW-12-2025-ART-3-ENT-SOCIAL-SOLIDARITY-FUND",
+  "type_id": "REL-015",
+  "type_name": "abolishes",
+  "category_id": "DOC-ENT",
+  "source": {
+    "doc_id": "LAW-12-2025",
+    "article_number": 3,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "entity",
+    "entity_id": "ENT-SOCIAL-SOLIDARITY-FUND",
+    "position_id": null
+  },
+  "effective_date": "2025-07-04",
+  "confidence": 0.95,
+  "reference_text": "يحل صندوق تكافل وكرامة المنشأ بموجب أحكام القانون المرافق محل الصندوق المركزى للضمان الاجتماعى المنشأ بقانون الضمان الاجتماعى الصادر بالقانون رقم 137 لسنة 2010"
+}
