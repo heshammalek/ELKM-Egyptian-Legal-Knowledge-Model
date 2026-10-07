@@ -73,6 +73,30 @@
     "العلاقة TREP-LAW-58-1937-ART-1-LAW-CRIMINV-NAT و TREP-LAW-58-1937-ART-1-LAW-CRIMINV-MIX تستخدمان معرّفات موجودة مسبقاً في identifiers.json.",
     "العلاقات REF-...-LAW-COMMERCE-1883-* و REF-...-LAW-PLEADINGS-NAT-1883-* تستخدمان معرّفات جديدة مقترحة (proposed_identifiers)."
   ]
+},
+    {
+  "doc_id": "LAW-12-2025",
+  "total_relations": 13,
+  "by_type": {
+    "total_repeal": 1,
+    "partial_repeal": 1,
+    "preemptive_repeal": 1,
+    "referral": 4,
+    "establishes": 2,
+    "abolishes": 1,
+    "delegation": 1,
+    "empowers": 2
+  },
+  "by_category": {
+    "DOC-DOC": 7,
+    "DOC-ENT": 3,
+    "DOC-POS": 3
+  },
+  "notes": [
+    "تم استبعاد العلاقة OBL-LAW-12-2025-ART-8-POS-MOIS-MINISTER لأن مضمونها تنسيقي فقط بلا دور محدد.",
+    "تم استبعاد الإحالات الداخلية (داخل نفس المستند) وفقاً لقواعد البرومبت — لم تُستخرج أصلاً.",
+    "الإحالات الخارجية المستخرجة: إلى LAW-18-2019، LAW-10-2018، LAW-149-2019، LAW-91-2005."
+  ]
 }
   ]
 }
