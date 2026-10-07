@@ -1,0 +1,23 @@
+{
+  "instance_id": "PREE-LAW-12-2025-ART-4",
+  "type_id": "REL-013",
+  "type_name": "preemptive_repeal",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-12-2025",
+    "article_number": 4,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "unresolved",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2025-07-04",
+  "confidence": 0.9,
+  "target_resolution": "pending",
+  "reference_text": "كما يُلغى كل حكم يخالف أحكام هذا القانون والقانون المرافق له"
+}
