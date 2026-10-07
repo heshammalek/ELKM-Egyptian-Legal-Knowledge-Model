@@ -1,0 +1,22 @@
+{
+  "instance_id": "EST-LAW-12-2025-ART-3-ENT-TAKAFUL-KARAMA-FUND",
+  "type_id": "REL-014",
+  "type_name": "establishes",
+  "category_id": "DOC-ENT",
+  "source": {
+    "doc_id": "LAW-12-2025",
+    "article_number": 3,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "entity",
+    "entity_id": "ENT-TAKAFUL-KARAMA-FUND",
+    "position_id": null
+  },
+  "effective_date": "2025-07-04",
+  "confidence": 0.95,
+  "reference_text": "يحل صندوق تكافل وكرامة المنشأ بموجب أحكام القانون المرافق محل الصندوق المركزى للضمان الاجتماعى"
+}
