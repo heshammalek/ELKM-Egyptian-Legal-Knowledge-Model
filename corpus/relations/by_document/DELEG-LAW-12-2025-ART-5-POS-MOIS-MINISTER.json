@@ -1,0 +1,22 @@
+{
+  "instance_id": "DELEG-LAW-12-2025-ART-5-POS-MOIS-MINISTER",
+  "type_id": "REL-019",
+  "type_name": "delegation",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "LAW-12-2025",
+    "article_number": 5,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position",
+    "entity_id": null,
+    "position_id": "POS-MOIS-MINISTER"
+  },
+  "effective_date": "2025-07-04",
+  "confidence": 0.95,
+  "reference_text": "يُصدر الوزير المعنى بشئون التضامن الاجتماعى اللائحة التنفيذية للقانون المرافق خلال ستة أشهر من تاريخ العمل به"
+}
