@@ -96,6 +96,23 @@
         "DOC-POS": 15
       },
       "notes": []
-    }
+    },
+    {
+  "doc_id": "LAW-2-2018",
+  "total_relations": 11,
+  "by_type": {
+    "preemptive_repeal": 1,
+    "establishes": 3,
+    "referral": 3,
+    "delegation": 3,
+    "obligates": 1
+  },
+  "by_category": {
+    "DOC-DOC": 4,
+    "DOC-ENT": 3,
+    "DOC-POS": 4
+  },
+  "notes": [ ]
+}
   ]
 }
