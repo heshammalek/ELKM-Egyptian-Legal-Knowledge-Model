@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-LAW-2-2018-ART-1-LAW-2-2018-ART-26",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "LAW-2-2018",
+    "article_number": 1,
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-2-2018",
+    "article_number": 26,
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2018-07-12",
+  "confidence": 0.99,
+  "reference_text": "الهيئة العامة للاعتماد والرقابة الصحية المنشأة بموجب المادة (26) من هذا القانون."
+}
