@@ -1,0 +1,22 @@
+{
+  "instance_id": "EST-LAW-2-2018-ART-4-ENT-HIAC",
+  "type_id": "REL-014",
+  "type_name": "establishes",
+  "category_id": "DOC-ENT",
+  "source": {
+    "doc_id": "LAW-2-2018",
+    "article_number": 4,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "entity",
+    "entity_id": "ENT-HIAC",
+    "position_id": null
+  },
+  "effective_date": "2018-07-12",
+  "confidence": 0.99,
+  "reference_text": "تنشأ هيئة عامة اقتصادية تسمى 'الهيئة العامة للتأمين الصحي الشامل'"
+}
