@@ -192,7 +192,28 @@
       "name_en": "Pope of Alexandria and Patriarch of the See of St. Mark",
       "entity_id": "ENT-COPTIC-CHURCH",
       "appointed_by": null
-    }
+    },
+    {
+    "position_id": "POS-HIAC-HEAD",
+    "name_ar": "رئيس الهيئة العامة للتأمين الصحي الشامل",
+    "name_en": "Head of the General Authority for Comprehensive Health Insurance",
+    "entity_id": "ENT-HIAC",
+    "appointed_by": "POS-PM"
+  },
+  {
+    "position_id": "POS-HCA-HEAD",
+    "name_ar": "رئيس الهيئة العامة للرعاية الصحية",
+    "name_en": "Head of the General Authority for Health Care",
+    "entity_id": "ENT-HCA",
+    "appointed_by": "POS-PM"
+  },
+  {
+    "position_id": "POS-HAHC-HEAD",
+    "name_ar": "رئيس الهيئة العامة للاعتماد والرقابة الصحية",
+    "name_en": "Head of the General Authority for Health Accreditation and Control",
+    "entity_id": "ENT-HAHC",
+    "appointed_by": "POS-PRES"
+  }
 
   ]
 }
