@@ -144,6 +144,51 @@
       "referral": 8
     }
   }
+},
+    {
+  "doc_id": "LAW-2-2018",
+  "doc_type": "law",
+  "sub_type": null,
+  "title_ar": "قانون رقم 2 لسنة 2018 بإصدار قانون نظام التأمين الصحى الشامل",
+  "year": 2018,
+  "doc_number": "2",
+  "source": {
+    "gazette_number": "2 تابع (ب)",
+    "gazette_date": "2018-01-11"
+  },
+  "issuing_authority": "PARL",
+  "subjects": [
+    "الصحة العامة",
+    "الضمان الاجتماعي",
+    "الوظيفة العامة والعاملون المدنيون بالدولة"
+  ],
+  "sub_domains": [],
+  "paths": {
+    "scan": "raw/scanned/law/LAW-2-2018.pdf",
+    "original_txt": "raw/text_as_is/law/LAW-2-2018.txt",
+    "normalized_txt": "normalized/law/txt/LAW-2-2018.txt",
+    "json": "normalized/law/json/LAW-2-2018.json"
+  },
+  "stats": {
+    "articles_count": 67,
+    "preamble_articles_count": 5,
+    "chapters_count": 6,
+    "sections_count": 5
+  },
+  "processing": {
+    "added_to_index": "2026-10-09T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>"
+  },
+  "relations_summary": {
+    "total_relations": 11,
+    "by_type": {
+      "preemptive_repeal": 1,
+      "establishes": 3,
+      "referral": 3,
+      "delegation": 3,
+      "obligates": 1
+    }
+  }
 }
   ]
 }
