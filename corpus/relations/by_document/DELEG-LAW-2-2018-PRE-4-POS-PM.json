@@ -1,0 +1,22 @@
+{
+  "instance_id": "DELEG-LAW-2-2018-PRE-4-POS-PM",
+  "type_id": "REL-019",
+  "type_name": "delegation",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "LAW-2-2018",
+    "article_number": 4,
+    "section": "preamble"
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position",
+    "entity_id": null,
+    "position_id": "POS-PM"
+  },
+  "effective_date": "2018-07-12",
+  "confidence": 0.99,
+  "reference_text": "يصدر رئيس مجلس الوزراء اللائحة التنفيذية للقانون المرافق"
+}
