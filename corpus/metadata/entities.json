@@ -330,7 +330,31 @@
       "parent_entity_id": "ENT-MOIS",
       "hierarchy_level": 3,
       "details_reference": "entities/ENT-SOCIAL-SOLIDARITY-FUND.json"
-    }
+    },
+    {
+    "entity_id": "ENT-HIAC",
+    "name_ar": "الهيئة العامة للتأمين الصحي الشامل",
+    "name_en": "General Authority for Comprehensive Health Insurance",
+    "parent_entity_id": "ENT-CAB",
+    "hierarchy_level": 2,
+    "details_reference": "entities/ENT-HIAC.json"
+  },
+  {
+    "entity_id": "ENT-HCA",
+    "name_ar": "الهيئة العامة للرعاية الصحية",
+    "name_en": "General Authority for Health Care",
+    "parent_entity_id": "ENT-MOH",
+    "hierarchy_level": 2,
+    "details_reference": "entities/ENT-HCA.json"
+  },
+  {
+    "entity_id": "ENT-HAHC",
+    "name_ar": "الهيئة العامة للاعتماد والرقابة الصحية",
+    "name_en": "General Authority for Health Accreditation and Control",
+    "parent_entity_id": "ENT-PRES",
+    "hierarchy_level": 2,
+    "details_reference": "entities/ENT-HAHC.json"
+  }
 
 
 
