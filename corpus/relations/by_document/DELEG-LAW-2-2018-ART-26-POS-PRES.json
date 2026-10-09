@@ -1,0 +1,22 @@
+{
+  "instance_id": "DELEG-LAW-2-2018-ART-26-POS-PRES",
+  "type_id": "REL-019",
+  "type_name": "delegation",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "LAW-2-2018",
+    "article_number": 26,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position",
+    "entity_id": null,
+    "position_id": "POS-PRES"
+  },
+  "effective_date": "2018-07-12",
+  "confidence": 0.97,
+  "reference_text": "ويصدر بنظام العمل بها قرار من رئيس الجمهورية."
+}
