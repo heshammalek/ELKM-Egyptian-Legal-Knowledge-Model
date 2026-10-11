@@ -1,8 +1,8 @@
 {
   "doc_type": "law",
   "version": "1.0",
-  "last_updated": "2026-10-06",
-  "count": 4,
+  "last_updated": "2026-10-10",
+  "count": 6,
   "documents": [
     {
       "doc_id": "LAW-150-1950",
@@ -16,9 +16,7 @@
         "gazette_date": "1951-10-15"
       },
       "issuing_authority": "PRES",
-      "subjects": [
-        "الإجراءات الجنائية"
-      ],
+      "subjects": ["الإجراءات الجنائية"],
       "sub_domains": [],
       "paths": {
         "scan": "raw/scanned/law/LAW-150-1950.pdf",
@@ -30,6 +28,27 @@
         "articles_count": 560,
         "chapters_count": 58,
         "sections_count": 5
+      },
+      "relations_summary": {
+        "total_relations": 25,
+        "by_type": {
+          "total_repeal": 6,
+          "preemptive_repeal": 1,
+          "referral": 18
+        },
+        "by_category": {
+          "DOC-DOC": 25,
+          "DOC-ENT": 0,
+          "DOC-POS": 0
+        },
+        "notes": []
+      },
+      "relations_path": {
+        "directory": "relations/by_document/",
+        "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+        "query_source": "^[A-Z]+-LAW-150-1950-(ART|PRE)-",
+        "query_target": "-LAW-150-1950(-ART-\\d+)?\\.json$",
+        "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
       },
       "processing": {
         "added_to_index": "2026-10-02T00:00:00",
@@ -48,9 +67,7 @@
         "gazette_date": "2024-01-16"
       },
       "issuing_authority": "PRES",
-      "subjects": [
-        "الإجراءات الجنائية"
-      ],
+      "subjects": ["الإجراءات الجنائية"],
       "sub_domains": [],
       "paths": {
         "scan": "raw/scanned/law/LAW-1-2024.pdf",
@@ -62,6 +79,27 @@
         "articles_count": 5,
         "chapters_count": 0,
         "sections_count": 0
+      },
+      "relations_summary": {
+        "total_relations": 23,
+        "by_type": {
+          "amendment": 21,
+          "addition": 1,
+          "referral": 1
+        },
+        "by_category": {
+          "DOC-DOC": 23,
+          "DOC-ENT": 0,
+          "DOC-POS": 0
+        },
+        "notes": []
+      },
+      "relations_path": {
+        "directory": "relations/by_document/",
+        "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+        "query_source": "^[A-Z]+-LAW-1-2024-(ART|PRE)-",
+        "query_target": "-LAW-1-2024(-ART-\\d+)?\\.json$",
+        "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
       },
       "processing": {
         "added_to_index": "2026-10-02T00:00:00",
@@ -98,8 +136,33 @@
         "preamble_articles_count": 6,
         "books_count": 6,
         "chapters_count": 62,
-        "sections_count": 24,
-        "relations_count": 17
+        "sections_count": 24
+      },
+      "relations_summary": {
+        "total_relations": 17,
+        "by_type": {
+          "total_repeal": 2,
+          "preemptive_repeal": 1,
+          "referral": 11,
+          "delegation": 1,
+          "empowers": 2
+        },
+        "by_category": {
+          "DOC-DOC": 14,
+          "DOC-ENT": 0,
+          "DOC-POS": 3
+        },
+        "notes": [
+          "EMP-LAW-174-2025-ART-1-ENT-PUBPROS و EMP-LAW-174-2025-ART-25-ENT-PUBPROS: مصنفتان DOC-POS لكن الهدف كيان (ENT-PUBPROS).",
+          "ENT-PUBPROS (النيابة العامة) غير موجود في entities.json — يجب إضافته."
+        ]
+      },
+      "relations_path": {
+        "directory": "relations/by_document/",
+        "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+        "query_source": "^[A-Z]+-LAW-174-2025-(ART|PRE)-",
+        "query_target": "-LAW-174-2025(-ART-\\d+)?\\.json$",
+        "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
       },
       "processing": {
         "added_to_index": "2026-10-05T00:00:00",
@@ -107,88 +170,177 @@
       }
     },
     {
-  "doc_id": "LAW-58-1937",
-  "doc_type": "law",
-  "sub_type": null,
-  "title_ar": "قانون رقم ٥٨ لسنة ١٩٣٧ بإصدار قانون العقوبات",
-  "title_en": "Criminal Code of Egypt (Law No. 58 of 1937)",
-  "year": 1937,
-  "doc_number": "58",
-  "source": {
-    "gazette_number": "71",
-    "gazette_date": "1937-08-05"
-  },
-  "issuing_authority": "PRES",
-  "subjects": ["الإجراءات الجنائية", "الشرطة والأجهزة الأمنية"],
-  "paths": {
-    "scan": "raw/scanned/law/LAW-58-1937.pdf",
-    "original_txt": "raw/text_as_is/law/LAW-58-1937.txt",
-    "normalized_txt": "normalized/law/txt/LAW-58-1937.txt",
-    "json": "normalized/law/json/LAW-58-1937.json"
-  },
-  "stats": {
-    "articles_count": 395,
-    "books_count": 4,
-    "sections_count": 46,
-    "chapters_count": 0,
-    "preamble_articles_count": 2
-  },
-  "processing": {
-    "added_to_index": "2026-10-07T00:00:00",
-    "content_hash": "sha256:<يُحسب آلياً>"
-  },
-  "relations_summary": {
-    "total_relations": 10,
-    "by_type": {
-      "total_repeal": 2,
-      "referral": 8
-    }
-  }
-},
+      "doc_id": "LAW-58-1937",
+      "doc_type": "law",
+      "sub_type": null,
+      "title_ar": "قانون رقم ٥٨ لسنة ١٩٣٧ بإصدار قانون العقوبات",
+      "title_en": "Criminal Code of Egypt (Law No. 58 of 1937)",
+      "year": 1937,
+      "doc_number": "58",
+      "source": {
+        "gazette_number": "71",
+        "gazette_date": "1937-08-05"
+      },
+      "issuing_authority": "PRES",
+      "subjects": ["الإجراءات الجنائية", "الشرطة والأجهزة الأمنية"],
+      "sub_domains": [],
+      "paths": {
+        "scan": "raw/scanned/law/LAW-58-1937.pdf",
+        "original_txt": "raw/text_as_is/law/LAW-58-1937.txt",
+        "normalized_txt": "normalized/law/txt/LAW-58-1937.txt",
+        "json": "normalized/law/json/LAW-58-1937.json"
+      },
+      "stats": {
+        "articles_count": 395,
+        "books_count": 4,
+        "sections_count": 46,
+        "chapters_count": 0,
+        "preamble_articles_count": 2
+      },
+      "relations_summary": {
+        "total_relations": 10,
+        "by_type": {
+          "total_repeal": 2,
+          "referral": 8
+        },
+        "by_category": {
+          "DOC-DOC": 10,
+          "DOC-ENT": 0,
+          "DOC-POS": 0
+        },
+        "notes": [
+          "الإحالات إلى قانون التجارة ١٨٨٣ وقانون المرافعات الأهلي ١٨٨٣ استُخرجت باستخدام معرّفات جديدة مقترحة.",
+          "الإحالة إلى 'قانون المرافعات المختلط ١٨٧٥' لم تُستخرج لعدم وجود نص صريح يحيل إليه."
+        ]
+      },
+      "relations_path": {
+        "directory": "relations/by_document/",
+        "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+        "query_source": "^[A-Z]+-LAW-58-1937-(ART|PRE)-",
+        "query_target": "-LAW-58-1937(-ART-\\d+)?\\.json$",
+        "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+      },
+      "processing": {
+        "added_to_index": "2026-10-07T00:00:00",
+        "content_hash": "sha256:<يُحسب آلياً>"
+      }
+    },
     {
-  "doc_id": "LAW-2-2018",
-  "doc_type": "law",
-  "sub_type": null,
-  "title_ar": "قانون رقم 2 لسنة 2018 بإصدار قانون نظام التأمين الصحى الشامل",
-  "year": 2018,
-  "doc_number": "2",
-  "source": {
-    "gazette_number": "2 تابع (ب)",
-    "gazette_date": "2018-01-11"
-  },
-  "issuing_authority": "PARL",
-  "subjects": [
-    "الصحة العامة",
-    "الضمان الاجتماعي",
-    "الوظيفة العامة والعاملون المدنيون بالدولة"
-  ],
-  "sub_domains": [],
-  "paths": {
-    "scan": "raw/scanned/law/LAW-2-2018.pdf",
-    "original_txt": "raw/text_as_is/law/LAW-2-2018.txt",
-    "normalized_txt": "normalized/law/txt/LAW-2-2018.txt",
-    "json": "normalized/law/json/LAW-2-2018.json"
-  },
-  "stats": {
-    "articles_count": 67,
-    "preamble_articles_count": 5,
-    "chapters_count": 6,
-    "sections_count": 5
-  },
-  "processing": {
-    "added_to_index": "2026-10-09T00:00:00",
-    "content_hash": "sha256:<يُحسب آلياً>"
-  },
-  "relations_summary": {
-    "total_relations": 11,
-    "by_type": {
-      "preemptive_repeal": 1,
-      "establishes": 3,
-      "referral": 3,
-      "delegation": 3,
-      "obligates": 1
+      "doc_id": "LAW-12-2025",
+      "doc_type": "law",
+      "sub_type": null,
+      "title_ar": "قانون بإصدار قانون الضمان الاجتماعي",
+      "year": 2025,
+      "doc_number": "12",
+      "source": {
+        "gazette_number": "14 (تابع)",
+        "gazette_date": "2025-04-03"
+      },
+      "issuing_authority": "PARL",
+      "subjects": ["الضمان الاجتماعي", "الوظيفة العامة والعاملون المدنيون بالدولة"],
+      "sub_domains": [],
+      "paths": {
+        "scan": "raw/scanned/law/LAW-12-2025.pdf",
+        "original_txt": "raw/text_as_is/law/LAW-12-2025.txt",
+        "normalized_txt": "normalized/law/txt/LAW-12-2025.txt",
+        "json": "normalized/law/json/LAW-12-2025.json"
+      },
+      "stats": {
+        "articles_count": 49,
+        "chapters_count": 3,
+        "sections_count": 6
+      },
+      "relations_summary": {
+        "total_relations": 25,
+        "by_type": {
+          "total_repeal": 1,
+          "partial_repeal": 1,
+          "preemptive_repeal": 1,
+          "referral": 4,
+          "establishes": 2,
+          "abolishes": 1,
+          "delegation": 2,
+          "empowers": 13
+        },
+        "by_category": {
+          "DOC-DOC": 7,
+          "DOC-ENT": 3,
+          "DOC-POS": 15
+        },
+        "notes": []
+      },
+      "relations_path": {
+        "directory": "relations/by_document/",
+        "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+        "query_source": "^[A-Z]+-LAW-12-2025-(ART|PRE)-",
+        "query_target": "-LAW-12-2025(-ART-\\d+)?\\.json$",
+        "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+      },
+      "processing": {
+        "added_to_index": "2026-10-07T00:00:00",
+        "content_hash": "sha256:<يُحسب آلياً>"
+      }
+    },
+    {
+      "doc_id": "LAW-2-2018",
+      "doc_type": "law",
+      "sub_type": null,
+      "title_ar": "قانون رقم 2 لسنة 2018 بإصدار قانون نظام التأمين الصحى الشامل",
+      "year": 2018,
+      "doc_number": "2",
+      "source": {
+        "gazette_number": "2 تابع (ب)",
+        "gazette_date": "2018-01-11"
+      },
+      "issuing_authority": "PARL",
+      "subjects": [
+        "الصحة العامة",
+        "الضمان الاجتماعي",
+        "الوظيفة العامة والعاملون المدنيون بالدولة"
+      ],
+      "sub_domains": [],
+      "paths": {
+        "scan": "raw/scanned/law/LAW-2-2018.pdf",
+        "original_txt": "raw/text_as_is/law/LAW-2-2018.txt",
+        "normalized_txt": "normalized/law/txt/LAW-2-2018.txt",
+        "json": "normalized/law/json/LAW-2-2018.json"
+      },
+      "stats": {
+        "articles_count": 67,
+        "preamble_articles_count": 5,
+        "chapters_count": 6,
+        "sections_count": 5
+      },
+      "relations_summary": {
+        "total_relations": 11,
+        "by_type": {
+          "preemptive_repeal": 1,
+          "establishes": 3,
+          "referral": 3,
+          "delegation": 3,
+          "obligates": 1
+        },
+        "by_category": {
+          "DOC-DOC": 4,
+          "DOC-ENT": 3,
+          "DOC-POS": 4
+        },
+        "notes": [
+          "الكيانات الجديدة: ENT-HIAC، ENT-HCA، ENT-HAHC — يجب إضافتها إلى entities.json.",
+          "المناصب الجديدة: POS-HIAC-HEAD، POS-HCA-HEAD، POS-HAHC-HEAD — يجب إضافتها إلى positions.json."
+        ]
+      },
+      "relations_path": {
+        "directory": "relations/by_document/",
+        "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+        "query_source": "^[A-Z]+-LAW-2-2018-(ART|PRE)-",
+        "query_target": "-LAW-2-2018(-ART-\\d+)?\\.json$",
+        "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+      },
+      "processing": {
+        "added_to_index": "2026-10-09T00:00:00",
+        "content_hash": "sha256:<يُحسب آلياً>"
+      }
     }
-  }
-}
   ]
 }
