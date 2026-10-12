@@ -2,7 +2,7 @@
   "doc_type": "law",
   "version": "1.0",
   "last_updated": "2026-10-10",
-  "count": 6,
+  "count": 7,
   "documents": [
     {
       "doc_id": "LAW-150-1950",
@@ -341,6 +341,59 @@
         "added_to_index": "2026-10-09T00:00:00",
         "content_hash": "sha256:<يُحسب آلياً>"
       }
-    }
+    },
+    {
+  "doc_id": "LAW-137-2010",
+  "doc_type": "law",
+  "sub_type": null,
+  "title_ar": "قانون بإصدار قانون الضمان الاجتماعى",
+  "year": 2010,
+  "doc_number": "137",
+  "source": {
+    "gazette_number": "25 (مكرر)",
+    "gazette_date": "2010-06-27"
+  },
+  "issuing_authority": "PRES",
+  "subjects": ["الضمان الاجتماعي"],
+  "sub_domains": [],
+  "paths": {
+    "scan": "raw/scanned/law/LAW-137-2010.pdf",
+    "original_txt": "raw/text_as_is/law/LAW-137-2010.txt",
+    "normalized_txt": "normalized/law/txt/LAW-137-2010.txt",
+    "json": "normalized/law/json/LAW-137-2010.json"
+  },
+  "stats": {
+    "articles_count": 23,
+    "preamble_articles_count": 5,
+    "chapters_count": 0,
+    "sections_count": 7
+  },
+  "relations_summary": {
+    "total_relations": 9,
+    "by_type": {
+      "total_repeal": 1,
+      "delegation": 5,
+      "obligates": 1,
+      "establishes": 1
+    },
+    "by_category": {
+      "DOC-DOC": 1,
+      "DOC-ENT": 1,
+      "DOC-POS": 7
+    },
+    "notes": []
+  },
+  "relations_path": {
+    "directory": "relations/by_document/",
+    "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+    "query_source": "^[A-Z]+-LAW-137-2010-(ART|PRE)-",
+    "query_target": "-LAW-137-2010(-ART-\\d+)?\\.json$",
+    "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+  },
+  "processing": {
+    "added_to_index": "2026-10-12T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>"
+  }
+}
   ]
 }
