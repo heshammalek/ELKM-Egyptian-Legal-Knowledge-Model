@@ -314,16 +314,7 @@
     }
   ],
 
-  "proposed_entities": [
-    {
-      "entity_id": "ENT-SOCIAL-SOLIDARITY-FUND",
-      "name_ar": "الصندوق المركزى للضمان الاجتماعى",
-      "name_en": "Central Social Solidarity Fund",
-      "parent_entity_id": "ENT-MOIS",
-      "hierarchy_level": 3,
-      "details_reference": "entities/ENT-SOCIAL-SOLIDARITY-FUND.json"
-    }
-  ],
+  "proposed_entities": [ ],
 
   "proposed_positions": [
     {
