@@ -1,0 +1,22 @@
+{
+  "instance_id": "DELEG-LAW-137-2010-ART-16-POS-PM",
+  "type_id": "REL-019",
+  "type_name": "delegation",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "LAW-137-2010",
+    "article_number": 16,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position",
+    "entity_id": null,
+    "position_id": "POS-PM"
+  },
+  "effective_date": "2010-10-01",
+  "confidence": 0.95,
+  "reference_text": "يصدر بناءً على عرض الوزير قرار من رئيس مجلس الوزراء بمعايير توزيع اعتمادات مساعدات الضمان الاجتماعى"
+}
