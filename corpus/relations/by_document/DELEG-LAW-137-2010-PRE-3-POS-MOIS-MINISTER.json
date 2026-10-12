@@ -1,0 +1,22 @@
+{
+  "instance_id": "DELEG-LAW-137-2010-PRE-3-POS-MOIS-MINISTER",
+  "type_id": "REL-019",
+  "type_name": "delegation",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "LAW-137-2010",
+    "article_number": 3,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position",
+    "entity_id": null,
+    "position_id": "POS-MOIS-MINISTER"
+  },
+  "effective_date": "2010-10-01",
+  "confidence": 0.95,
+  "reference_text": "يصدر الوزير المختص بالتضامن الاجتماعى اللائحة التنفيذية للقانون المرافق"
+}
