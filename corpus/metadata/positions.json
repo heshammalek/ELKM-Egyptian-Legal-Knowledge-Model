@@ -213,7 +213,14 @@
     "name_en": "Head of the General Authority for Health Accreditation and Control",
     "entity_id": "ENT-HAHC",
     "appointed_by": "POS-PRES"
-  }
+  },
+     {
+      "position_id": "POS-GOVERNOR",
+      "name_ar": "المحافظ",
+      "name_en": "Governor",
+      "entity_id": null,
+      "appointed_by": "POS-PRES"
+    }
 
   ]
 }
