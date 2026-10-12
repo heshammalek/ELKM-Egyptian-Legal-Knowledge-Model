@@ -1,0 +1,23 @@
+{
+  "instance_id": "OBL-LAW-137-2010-ART-8-POS-GOVERNOR",
+  "type_id": "REL-021",
+  "type_name": "obligates",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "LAW-137-2010",
+    "article_number": 8,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2010-10-01",
+  "confidence": 0.90,
+  "reference_text": "يصدر المحافظ قراراً بتشكيل لجان الضمان الاجتماعى",
+  
+}
