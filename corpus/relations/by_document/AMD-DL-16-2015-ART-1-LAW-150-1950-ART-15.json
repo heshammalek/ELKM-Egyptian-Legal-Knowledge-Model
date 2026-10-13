@@ -1,0 +1,22 @@
+{
+  "instance_id": "AMD-DL-16-2015-ART-1-LAW-150-1950-ART-15",
+  "type_id": "REL-003",
+  "type_name": "amendment",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "DL-16-2015",
+    "article_number": "1",
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-150-1950",
+    "article_number": "15",
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2015-03-13",
+  "confidence": 0.98,
+  "reference_text": "تستبدل بالفقرة الثالثة من المادة (١٥) من قانون الإجراءات الجنائية الفقرة الآتية : ومع عدم الإخلال بأحكام الفقرتين السابقتين لا تبدأ المدة المسقطة للدعوى الجنائية فى الجرائم المنصوص عليها فى البابين الثالث والرابع من الكتاب الثانى من قانون العقوبات والتى تقع من موظف عام إلا من تاريخ انتهاء الخدمة أو زوال الصفة ما لم يبدأ التحقيق فيها قبل ذلك ."
+}
