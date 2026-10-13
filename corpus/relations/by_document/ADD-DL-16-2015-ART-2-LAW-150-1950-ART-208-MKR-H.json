@@ -1,0 +1,22 @@
+{
+  "instance_id": "ADD-DL-16-2015-ART-2-LAW-150-1950-ART-208-MKR-H",
+  "type_id": "REL-004",
+  "type_name": "addition",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "DL-16-2015",
+    "article_number": "2",
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-150-1950",
+    "article_number": "208-MKR-H",
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2015-03-13",
+  "confidence": 0.98,
+  "reference_text": "تضاف إلى قانون الإجراءات الجنائية مادتان برقمى ١٨ مكرراً (ب)، ٢٠٨ مكرراً (هـ) نصهما كالآتى : ... مادة ٢٠٨ مكرراً (هـ): لا يحول انقضاء الدعوى الجنائية بمضى المدة دون القضاء بأية عقوبات مالية منصوص عليها فى البابين الثالث والرابع من الكتاب الثانى من قانون العقوبات ."
+}
