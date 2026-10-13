@@ -354,6 +354,14 @@
     "parent_entity_id": "ENT-PRES",
     "hierarchy_level": 2,
     "details_reference": "entities/ENT-HAHC.json"
+  },
+      {
+    "entity_id": "ENT-TRA",
+    "name_ar": "جهاز تنظيم مرفق الاتصالات السلكية واللاسلكية",
+    "name_en": "Telecommunications Regulatory Authority",
+    "parent_entity_id": "ENT-MOT",
+    "hierarchy_level": 2,
+    "details_reference": "entities/ENT-TRA.json"
   }
 
 
