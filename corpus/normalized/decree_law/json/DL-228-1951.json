@@ -1,0 +1,112 @@
+{
+  "doc_id": "DL-228-1951",
+  "doc_type": "decree_law",
+  "sub_type": null,
+  "title_ar": "مرسوم بقانون رقم 228 لسنة 1951 بإضافة أحكام وقتية إلى القانون رقم 150 لسنة 1950 بإصدار قانون الإجراءات الجنائية",
+  "title_en": "Decree-Law No. 228 of 1951 Adding Transitional Provisions to Law No. 150 of 1950 Issuing the Code of Criminal Procedure",
+  "year": 1951,
+  "doc_number": "228",
+
+  "source": {
+    "type": "official_gazette",
+    "gazette_number": "105 مكرر",
+    "gazette_date": "1951-11-14",
+    "url": "",
+    "retrieved_date": "2026-10-13T00:00:00"
+  },
+
+  "issuing_authority": "PRES",
+  "hierarchy": {
+    "level": 3,
+    "name": "تشريعي أصيل"
+  },
+
+  "subjects": ["عدالة جنائية وشئون أمنية"],
+  "sub_domains": ["الإجراءات الجنائية"],
+  "keywords": [],
+
+  "paths": {
+    "scan": "raw/scanned/decree_law/DL-228-1951.pdf",
+    "original_txt": "raw/text_as_is/decree_law/DL-228-1951.txt",
+    "normalized_txt": "normalized/decree_law/txt/DL-228-1951.txt",
+    "json": "normalized/decree_law/json/DL-228-1951.json"
+  },
+
+  "full_text": {
+    "original_txt": "raw/text_as_is/decree_law/DL-228-1951.txt",
+    "normalized_path": "normalized/decree_law/txt/DL-228-1951.txt",
+    "hash": "sha256:<يُحسب آلياً>"
+  },
+
+  "stats": {
+    "total_articles": 2,
+    "total_chapters": 0,
+    "total_sections": 0,
+    "word_count": 0,
+    "page_count": 0
+  },
+
+  "relations_summary": {
+    "total_relations": 2,
+    "by_type": {
+      "addition": 1,
+      "obligates": 1
+    },
+    "by_category": {
+      "DOC-DOC": 1,
+      "DOC-ENT": 0,
+      "DOC-POS": 1
+    },
+    "notes": [
+      "الديباجة تشير إلى الدستور (المادة 41) والقانون رقم 178 لسنة 1951 — لم تُستخرج علاقات لهما لعدم وجود علاقة قانونية صريحة قابلة للتصنيف.",
+      "المستند يحتوي على خاتمة كاملة (صدر بقصر القبة + توقيعات الملك ورئيس الوزراء ووزير العدل)."
+    ]
+  },
+
+  "processing": {
+    "added_to_index": "2026-10-13T00:00:00",
+    "extraction_date": "2026-10-13T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>",
+    "id_correction_note": null
+  },
+
+  "structure": {
+    "sections": [],
+    "chapters": []
+  },
+
+  "articles": [
+    {
+      "article_number": "1",
+      "text_raw": "مادة ١ — تضاف إلى المادة الأولى من القانون رقم ١٥٠ لسنة ١٩٥٠ بإصدار قانون الإجراءات الجنائية الفقرة التالية :\n\"تظل القواعد والإجراءات المعمول بها حتى ١٥ نوفمبر سنة ١٩٥١ سارية على الأوامر الجنائية الصادرة فى مواد المخالفات قبل هذا التاريخ\" .",
+      "text_normalized": "ماده 1 — تضاف الي الماده الاولي من القانون رقم 150 لسنه 1950 باصدار قانون الاجراءات الجنائيه الفقره التاليه :\n\"تظل القواعد والاجراءات المعمول بها حتي 15 نوفمبر سنه 1951 ساريه علي الاوامر الجنائيه الصادره في مواد المخالفات قبل هذا التاريخ\" .",
+      "section": null,
+      "chapter": null,
+      "order": 1,
+      "instance_references": [
+        "ADD-DL-228-1951-ART-1-LAW-150-1950-ART-1"
+      ]
+    },
+    {
+      "article_number": "2",
+      "text_raw": "مادة ٢ — على وزير العدل تنفيذ هذا المرسوم بقانون ، ويعمل به من تاريخ نشره فى الجريدة الرسمية .",
+      "text_normalized": "ماده 2 — علي وزير العدل تنفيذ هذا المرسوم بقانون ، ويعمل به من تاريخ نشره في الجريده الرسميه .",
+      "section": null,
+      "chapter": null,
+      "order": 2,
+      "instance_references": [
+        "OBL-DL-228-1951-ART-2-POS-MOJ-MINISTER"
+      ]
+    }
+  ],
+
+  "proposed_entities": [],
+
+  "proposed_positions": [],
+
+  "proposed_identifiers": [],
+
+  "proposed_relation_types": [],
+
+  "proposed_doc_codes": []
+}
