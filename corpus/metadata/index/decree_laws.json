@@ -4,7 +4,7 @@
   "doc_type": "decree_law",
   "version": "1.0",
   "last_updated": "2026-10-13",
-  "count": 3,
+  "count": 4,
   "documents": [
 
   {
@@ -156,6 +156,59 @@
     "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
     "query_source": "^[A-Z]+-DL-228-1951-(ART|PRE)-",
     "query_target": "-DL-228-1951(-ART-\\d+)?\\.json$",
+    "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+  },
+  "processing": {
+    "added_to_index": "2026-10-13T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>"
+  }
+},
+    {
+  "doc_id": "DL-32-2014",
+  "doc_type": "decree_law",
+  "sub_type": null,
+  "title_ar": "قرار رئيس جمهورية مصر العربية بالقانون رقم 32 لسنة 2014 بتنظيم بعض إجراءات الطعن على عقود الدولة",
+  "year": 2014,
+  "doc_number": "32",
+  "source": {
+    "gazette_number": "16 مكرر (ح)",
+    "gazette_date": "2014-04-22"
+  },
+  "issuing_authority": "PRES",
+  "subjects": ["تنظيم السلطة القضائية", "العقود الإدارية والالتزام والتوريد"],
+  "sub_domains": ["القضاء الإداري (مجلس الدولة)"],
+  "paths": {
+    "scan": "raw/scanned/decree_law/DL-32-2014.pdf",
+    "original_txt": "raw/text_as_is/decree_law/DL-32-2014.txt",
+    "normalized_txt": "normalized/decree_law/txt/DL-32-2014.txt",
+    "json": "normalized/decree_law/json/DL-32-2014.json"
+  },
+  "stats": {
+    "articles_count": 3,
+    "preamble_articles_count": 0,
+    "chapters_count": 0,
+    "sections_count": 0
+  },
+  "relations_summary": {
+    "total_relations": 1,
+    "by_type": {
+      "referral": 1
+    },
+    "by_category": {
+      "DOC-DOC": 1,
+      "DOC-ENT": 0,
+      "DOC-POS": 0
+    },
+    "notes": [
+      "المادة 2 تحيل إلى المادة 1 من نفس القانون — علاقة داخلية لا تُستخرج.",
+      "الديباجة تذكر الدستور المعدل 2014 وقوانين أخرى — إشارات سياقية لا تُستخرج كعلاقات."
+    ]
+  },
+  "relations_path": {
+    "directory": "relations/by_document/",
+    "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+    "query_source": "^[A-Z]+-DL-32-2014-(ART|PRE)-",
+    "query_target": "-DL-32-2014(-ART-\\d+)?\\.json$",
     "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
   },
   "processing": {
