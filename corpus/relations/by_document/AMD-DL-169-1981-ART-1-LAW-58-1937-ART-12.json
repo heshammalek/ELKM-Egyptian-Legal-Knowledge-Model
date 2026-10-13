@@ -1,0 +1,22 @@
+{
+  "instance_id": "AMD-DL-169-1981-ART-1-LAW-58-1937-ART-12",
+  "type_id": "REL-003",
+  "type_name": "amendment",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "DL-169-1981",
+    "article_number": "1",
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-58-1937",
+    "article_number": "12",
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1981-11-05",
+  "confidence": 0.98,
+  "reference_text": "يستبدل بنص المادتين ١١، ١٢ ... من قانون العقوبات النصوص الآتية: \"مادة ١٢ - المخالفات هى الجرائم المعاقب عليها بالغرامة التى لا يزيد أقصى مقدارها على مائة جنيه\"."
+}
