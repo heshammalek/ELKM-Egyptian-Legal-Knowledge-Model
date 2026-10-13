@@ -1,1 +1,117 @@
 
+
+{
+  "doc_type": "decree_law",
+  "version": "1.0",
+  "last_updated": "2026-10-13",
+  "count": 2,
+  "documents": [
+
+  {
+    "doc_id": "DL-169-1981",
+    "doc_type": "decree_law",
+    "sub_type": null,
+    "title_ar": "قرار رئيس جمهورية مصر العربية بالقانون رقم ١٦٩ لسنة ١٩٨١ بشأن تعديل بعض أحكام قانون العقوبات",
+    "year": 1981,
+    "doc_number": "169",
+    "source": {
+      "gazette_number": "٤٤ (مكرر)",
+      "gazette_date": "1981-11-04"
+    },
+    "issuing_authority": "PRES",
+    "subjects": ["عدالة جنائية وشئون أمنية", "الشئون الدستورية"],
+    "sub_domains": ["الإجراءات الجنائية", "الشرطة والأجهزة الأمنية"],
+    "paths": {
+      "scan": "raw/scanned/decree_law/DL-169-1981.pdf",
+      "original_txt": "raw/text_as_is/decree_law/DL-169-1981.txt",
+      "normalized_txt": "normalized/decree_law/txt/DL-169-1981.txt",
+      "json": "normalized/decree_law/json/DL-169-1981.json"
+    },
+    "stats": {
+      "articles_count": 4,
+      "preamble_articles_count": 0,
+      "chapters_count": 0,
+      "sections_count": 0
+    },
+    "relations_summary": {
+      "total_relations": 9,
+      "by_type": {
+        "amendment": 8,
+        "partial_repeal": 1
+      },
+      "by_category": {
+        "DOC-DOC": 9,
+        "DOC-ENT": 0,
+        "DOC-POS": 0
+      },
+      "notes": []
+    },
+    "relations_path": {
+      "directory": "relations/by_document/",
+      "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+      "query_source": "^[A-Z]+-DL-169-1981-(ART|PRE)-",
+      "query_target": "-DL-169-1981(-ART-\\d+)?\\.json$",
+      "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+    },
+    "processing": {
+      "added_to_index": "2026-10-13T00:00:00",
+      "content_hash": "sha256:<يُحسب آلياً>"
+    }
+  },
+  {
+  "doc_id": "DL-16-2015",
+  "doc_type": "decree_law",
+  "sub_type": null,
+  "title_ar": "قرار رئيس جمهورية مصر العربية بالقانون رقم ١٦ لسنة ٢٠١٥ بتعديل بعض أحكام قانون الإجراءات الجنائية الصادر بالقانون رقم ١٥٠ لسنة ١٩٥٠",
+  "year": 2015,
+  "doc_number": "16",
+  "source": {
+    "gazette_number": "١١ (تابع)",
+    "gazette_date": "2015-03-12"
+  },
+  "issuing_authority": "PRES",
+  "subjects": ["عدالة جنائية وشئون أمنية", "الشئون الدستورية"],
+  "sub_domains": ["الإجراءات الجنائية", "الشرطة والأجهزة الأمنية"],
+  "paths": {
+    "scan": "raw/scanned/decree_law/DL-16-2015.pdf",
+    "original_txt": "raw/text_as_is/decree_law/DL-16-2015.txt",
+    "normalized_txt": "normalized/decree_law/txt/DL-16-2015.txt",
+    "json": "normalized/decree_law/json/DL-16-2015.json"
+  },
+  "stats": {
+    "articles_count": 3,
+    "preamble_articles_count": 0,
+    "chapters_count": 0,
+    "sections_count": 0
+  },
+  "relations_summary": {
+    "total_relations": 3,
+    "by_type": {
+      "amendment": 1,
+      "addition": 2
+    },
+    "by_category": {
+      "DOC-DOC": 3,
+      "DOC-ENT": 0,
+      "DOC-POS": 0
+    },
+    "notes": []
+  },
+  "relations_path": {
+    "directory": "relations/by_document/",
+    "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+    "query_source": "^[A-Z]+-DL-16-2015-(ART|PRE)-",
+    "query_target": "-DL-16-2015(-ART-\\d+)?\\.json$",
+    "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+  },
+  "processing": {
+    "added_to_index": "2026-10-13T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>"
+  }
+}
+
+
+
+  ]
+}
+
