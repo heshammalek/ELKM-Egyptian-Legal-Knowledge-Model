@@ -1,0 +1,22 @@
+{
+  "instance_id": "AMD-DL-169-1981-ART-1-LAW-58-1937-ART-306-MKR-A",
+  "type_id": "REL-003",
+  "type_name": "amendment",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "DL-169-1981",
+    "article_number": "1",
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-58-1937",
+    "article_number": "306-MKR-A",
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1981-11-05",
+  "confidence": 0.98,
+  "reference_text": "يستبدل بنص ... والفقرة الأولى من المادة ٣٠٦ مكرراً (أ) من قانون العقوبات النصوص الآتية: \"مادة ٣٠٦ مكرراً (أ) - يعاقب بالحبس مدة لا تزيد على شهر كل من تعرض لأنثى على وجه يخدش حياءها بالقول أو بالفعل فى طريق عام أو مكان مطروق\"."
+}
