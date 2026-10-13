@@ -1,0 +1,22 @@
+{
+  "instance_id": "PREP-DL-169-1981-ART-3-LAW-58-1937-ART-381-395",
+  "type_id": "REL-002",
+  "type_name": "partial_repeal",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "DL-169-1981",
+    "article_number": "3",
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-58-1937",
+    "article_number": "381",
+    "article_number_end": "395",
+    "scope": "articles_range",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1981-11-05",
+  "confidence": 0.98,
+  "reference_text": "تلغى المواد من ٣٨١ إلى ٣٩٥ من قانون العقوبات."
+}
