@@ -4,7 +4,7 @@
   "doc_type": "decree_law",
   "version": "1.0",
   "last_updated": "2026-10-13",
-  "count": 2,
+  "count": 3,
   "documents": [
 
   {
@@ -102,6 +102,60 @@
     "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
     "query_source": "^[A-Z]+-DL-16-2015-(ART|PRE)-",
     "query_target": "-DL-16-2015(-ART-\\d+)?\\.json$",
+    "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+  },
+  "processing": {
+    "added_to_index": "2026-10-13T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>"
+  }
+},
+    {
+  "doc_id": "DL-228-1951",
+  "doc_type": "decree_law",
+  "sub_type": null,
+  "title_ar": "مرسوم بقانون رقم 228 لسنة 1951 بإضافة أحكام وقتية إلى القانون رقم 150 لسنة 1950 بإصدار قانون الإجراءات الجنائية",
+  "year": 1951,
+  "doc_number": "228",
+  "source": {
+    "gazette_number": "105 مكرر",
+    "gazette_date": "1951-11-14"
+  },
+  "issuing_authority": "PRES",
+  "subjects": ["عدالة جنائية وشئون أمنية"],
+  "sub_domains": ["الإجراءات الجنائية"],
+  "paths": {
+    "scan": "raw/scanned/decree_law/DL-228-1951.pdf",
+    "original_txt": "raw/text_as_is/decree_law/DL-228-1951.txt",
+    "normalized_txt": "normalized/decree_law/txt/DL-228-1951.txt",
+    "json": "normalized/decree_law/json/DL-228-1951.json"
+  },
+  "stats": {
+    "articles_count": 2,
+    "preamble_articles_count": 0,
+    "chapters_count": 0,
+    "sections_count": 0
+  },
+  "relations_summary": {
+    "total_relations": 2,
+    "by_type": {
+      "addition": 1,
+      "obligates": 1
+    },
+    "by_category": {
+      "DOC-DOC": 1,
+      "DOC-ENT": 0,
+      "DOC-POS": 1
+    },
+    "notes": [
+      "الديباجة تشير إلى الدستور (المادة 41) والقانون رقم 178 لسنة 1951 — لم تُستخرج علاقات لهما لعدم وجود علاقة قانونية صريحة قابلة للتصنيف.",
+      "المستند يحتوي على خاتمة كاملة (صدر بقصر القبة + توقيعات الملك ورئيس الوزراء ووزير العدل)."
+    ]
+  },
+  "relations_path": {
+    "directory": "relations/by_document/",
+    "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+    "query_source": "^[A-Z]+-DL-228-1951-(ART|PRE)-",
+    "query_target": "-DL-228-1951(-ART-\\d+)?\\.json$",
     "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
   },
   "processing": {
