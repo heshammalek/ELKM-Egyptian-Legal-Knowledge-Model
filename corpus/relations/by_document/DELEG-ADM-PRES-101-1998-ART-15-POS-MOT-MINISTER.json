@@ -1,0 +1,22 @@
+{
+  "instance_id": "DELEG-ADM-PRES-101-1998-ART-15-POS-MOT-MINISTER",
+  "type_id": "REL-019",
+  "type_name": "delegation",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "ADM-PRES-101-1998",
+    "article_number": "15",
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position",
+    "entity_id": null,
+    "position_id": "POS-MOT-MINISTER"
+  },
+  "effective_date": "1998-04-05",
+  "confidence": 0.95,
+  "reference_text": "يتولى وزير النقل والمواصلات مباشرة الاختصاصات المقررة لجهاز تنظيم مرفق الاتصالات وفقا لأحكام هذا القرار ، وذلك لحين الانتهاء من تشكيل مجلس إدارة الجهاز"
+}
