@@ -1,0 +1,22 @@
+{
+  "instance_id": "ADD-DL-228-1951-ART-1-LAW-150-1950-ART-1",
+  "type_id": "REL-004",
+  "type_name": "addition",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "DL-228-1951",
+    "article_number": "1",
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-150-1950",
+    "article_number": "1",
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1951-11-14",
+  "confidence": 0.98,
+  "reference_text": "تضاف إلى المادة الأولى من القانون رقم ١٥٠ لسنة ١٩٥٠ بإصدار قانون الإجراءات الجنائية الفقرة التالية : \"تظل القواعد والإجراءات المعمول بها حتى ١٥ نوفمبر سنة ١٩٥١ سارية على الأوامر الجنائية الصادرة فى مواد المخالفات قبل هذا التاريخ\" ."
+}
