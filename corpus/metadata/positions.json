@@ -220,7 +220,15 @@
       "name_en": "Governor",
       "entity_id": null,
       "appointed_by": "POS-PRES"
-    }
+    },
+    {
+    "position_id": "POS-TRA-EXEC-DIR",
+    "name_ar": "المدير التنفيذي لجهاز تنظيم مرفق الاتصالات السلكية واللاسلكية",
+    "name_en": "Executive Director of the Telecommunications Regulatory Authority",
+    "entity_id": "ENT-TRA",
+    "hierarchy_level": 2,
+    "appointed_by": "POS-PM"
+  }
 
   ]
 }
