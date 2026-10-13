@@ -1,0 +1,22 @@
+{
+  "instance_id": "AMD-DL-169-1981-ART-2-LAW-58-1937-ART-377",
+  "type_id": "REL-003",
+  "type_name": "amendment",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "DL-169-1981",
+    "article_number": "2",
+    "section": null
+  },
+  "target": {
+    "doc_id": "LAW-58-1937",
+    "article_number": "377",
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "1981-11-05",
+  "confidence": 0.98,
+  "reference_text": "يستبدل بنصوص المواد من ٣٧٦ إلى ٣٨٠ من قانون العقوبات النصوص التالية: \"مادة ٣٧٧ - يعاقب بغرامة لا تجاوز مائة جنيه...\""
+}
