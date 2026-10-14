@@ -268,7 +268,16 @@
       "entity_id": "ENT-SEN",
       "hierarchy_level": 1,
       "appointed_by": null
-    }
+    },
+    {
+  "position_id": "POS-HEC-HEAD",
+  "name_ar": "رئيس اللجنة العليا للانتخابات",
+  "name_en": "Head of the High Elections Committee",
+  "entity_id": "ENT-HEC",
+  "hierarchy_level": 1,
+  "appointed_by": "POS-PRES",
+  "note": "منصب مؤقت — انتهى بإنشاء الهيئة الوطنية للانتخابات وفقاً لدستور 2014"
+}
 
   ]
 }
