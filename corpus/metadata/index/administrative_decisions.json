@@ -2,7 +2,7 @@
   "doc_type": "administrative_decision",
   "version": "1.0",
   "last_updated": "2026-10-14",
-  "count": 1,
+  "count": 2,
   "documents": [
     {
   "doc_id": "ADM-PRES-101-1998",
@@ -59,11 +59,70 @@
     "content_hash": "sha256:<يُحسب آلياً>",
     "id_correction_note": "تم تصحيح doc_id من DL-101-1998 إلى ADM-PRES-101-1998 — المستند قرار جمهوري وليس مرسوماً بقانون."
   }
+},
+{
+  "doc_id": "ADM-CAB-PM-555-2019",
+  "doc_type": "administrative_decision",
+  "sub_type": null,
+  "title_ar": "قرار رئيس مجلس الوزراء رقم 555 لسنة 2019 بإصدار النظام الأساسي لصندوق مصر",
+  "year": 2019,
+  "doc_number": "555",
+  "source": {
+    "gazette_number": "9 تابع",
+    "gazette_date": "2019-02-28"
+  },
+  "issuing_authority": "CAB",
+  "subjects": ["التجارة والاستثمار والصناعة", "القطاع المصرفي وسوق المال", "الجهات الرقابية والمجالس"],
+  "sub_domains": ["الصناديق السيادية", "إدارة الاستثمار"],
+  "paths": {
+    "scan": "raw/scanned/administrative_decision/ADM-CAB-555-2019.pdf",
+    "original_txt": "raw/text_as_is/administrative_decision/ADM-CAB-555-2019.txt",
+    "normalized_txt": "normalized/administrative_decision/txt/ADM-CAB-555-2019.txt",
+    "json": "normalized/administrative_decision/json/ADM-CAB-555-2019.json"
+  },
+  "stats": {
+    "articles_count": 48,
+    "preamble_articles_count": 2,
+    "chapters_count": 0,
+    "sections_count": 11
+  },
+  "relations_summary": {
+    "total_relations": 3,
+    "by_type": {
+      "referral": 1,
+      "delegation": 1,
+      "creates_position": 1
+    },
+    "by_category": {
+      "DOC-DOC": 1,
+      "DOC-ENT": 0,
+      "DOC-POS": 2
+    },
+    "notes": [
+      "الديباجة تذكر الدستور ومجلس الدولة ووزير التخطيط — إشارات سياقية لا تُستخرج كعلاقات.",
+      "المواد 31-41 تتعلق بالصناديق الفرعية — كيانات محتملة لم تُنشأ بعد.",
+      "المادة 42 تتعلق بالشركات التابعة — كيانات محتملة لم تُنشأ بعد."
+    ]
+  },
+  "relations_path": {
+    "directory": "relations/by_document/",
+    "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+    "query_source": "^[A-Z]+-ADM-CAB-555-2019-(ART|PRE)-",
+    "query_target": "-ADM-CAB-555-2019(-ART-\\d+)?\\.json$",
+    "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+  },
+  "processing": {
+    "added_to_index": "2026-10-13T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>"
+  }
 }
+
+
+
+
 
 
 
 
   ]
 }
-
