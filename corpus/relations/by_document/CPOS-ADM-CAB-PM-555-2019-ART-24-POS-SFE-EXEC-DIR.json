@@ -1,0 +1,22 @@
+{
+  "instance_id": "CPOS-ADM-CAB-PM-555-2019-ART-24-POS-SFE-EXEC-DIR",
+  "type_id": "REL-023",
+  "type_name": "creates_position",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "ADM-CAB-555-2019",
+    "article_number": "24",
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position",
+    "entity_id": null,
+    "position_id": "POS-SFE-EXEC-DIR"
+  },
+  "effective_date": "2019-03-01",
+  "confidence": 0.95,
+  "reference_text": "يكون للصندوق مدير تنفيذي من ذوي الخبرة العملية في مجال الإستثمار وإدارة الإستثمارات متفرغا لإدارته ويصدر بتعيينه وتحديد اختصاصاته ومعاملته المالية قرار من مجلس الإدارة لمدة ثلاث سنوات قابلة للتجديد لمدد أخرى"
+}
