@@ -228,6 +228,30 @@
     "entity_id": "ENT-TRA",
     "hierarchy_level": 2,
     "appointed_by": "POS-PM"
+  },
+     {
+    "position_id": "POS-MOP-MINISTER",
+    "name_ar": "وزير التخطيط والتنمية الاقتصادية",
+    "name_en": "Minister of Planning and Economic Development",
+    "entity_id": "ENT-MOP",
+    "hierarchy_level": 1,
+    "appointed_by": "POS-PM"
+  },
+  {
+    "position_id": "POS-SFE-EXEC-DIR",
+    "name_ar": "المدير التنفيذي لصندوق مصر",
+    "name_en": "Executive Director of the Sovereign Fund of Egypt",
+    "entity_id": "ENT-SFE",
+    "hierarchy_level": 2,
+    "appointed_by": "POS-SFE-BOARD-CHAIR"
+  },
+  {
+    "position_id": "POS-SFE-BOARD-CHAIR",
+    "name_ar": "رئيس مجلس إدارة صندوق مصر",
+    "name_en": "Chairman of the Board of Directors of the Sovereign Fund of Egypt",
+    "entity_id": "ENT-SFE",
+    "hierarchy_level": 2,
+    "appointed_by": "POS-PRES"
   }
 
   ]
