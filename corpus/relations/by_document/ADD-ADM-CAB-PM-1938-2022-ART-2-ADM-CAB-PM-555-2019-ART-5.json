@@ -1,0 +1,22 @@
+{
+  "instance_id": "ADD-ADM-CAB-PM-1938-2022-ART-2-ADM-CAB-PM-555-2019-ART-5",
+  "type_id": "REL-004",
+  "type_name": "addition",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "ADM-CAB-PM-1938-2022",
+    "article_number": "2",
+    "section": null
+  },
+  "target": {
+    "doc_id": "ADM-CAB-PM-555-2019",
+    "article_number": "5",
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2022-06-08",
+  "confidence": 0.98,
+  "reference_text": "يُضاف للمادة (٥) من النظام الأساسى لصندوق مصر السيادى للاستثمار والتنمية الصادر بقرار رئيس مجلس الوزراء رقم ٥٥٥ لسنة ٢٠١٩ المشار إليه بند جديد برقم \"٧\" نصه الآتى : ٧ - إدارة أموال وأصول الجهات والكيانات والشركات المملوكة للدولة أو التابعة لها أو التى تساهم فيها التى يعهد إلى الصندوق بإدارتها ."
+}
