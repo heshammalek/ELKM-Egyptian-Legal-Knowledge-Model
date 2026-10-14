@@ -252,7 +252,23 @@
     "entity_id": "ENT-SFE",
     "hierarchy_level": 2,
     "appointed_by": "POS-PRES"
-  }
+  },
+    {
+      "position_id": "POS-VP",
+      "name_ar": "نائب رئيس الجمهورية",
+      "name_en": "Vice President of the Republic",
+      "entity_id": "ENT-PRES",
+      "hierarchy_level": 1,
+      "appointed_by": "POS-PRES"
+    },
+    {
+      "position_id": "POS-SEN-HEAD",
+      "name_ar": "رئيس مجلس الشيوخ",
+      "name_en": "President of the Senate",
+      "entity_id": "ENT-SEN",
+      "hierarchy_level": 1,
+      "appointed_by": null
+    }
 
   ]
 }
