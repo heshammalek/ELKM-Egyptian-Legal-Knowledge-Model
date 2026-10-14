@@ -362,7 +362,17 @@
     "parent_entity_id": "ENT-MOT",
     "hierarchy_level": 2,
     "details_reference": "entities/ENT-TRA.json"
-  }
+  },
+    {
+  "entity_id": "ENT-HEC",
+  "name_ar": "اللجنة العليا للانتخابات",
+  "name_en": "High Elections Committee",
+  "details_reference": "entities/ENT-HEC.json",
+  "note": "لجنة مؤقتة أنشئت بموجب قرار رئيس الجمهورية رقم 586 لسنة 2013، تولت الإشراف على الاستفتاء على دستور 2014 والانتخابات الرئاسية والتشريعية 2014. تم استبدالها بالهيئة الوطنية للانتخابات (ENT-NEA) وفقاً لدستور 2014 (المادة 208).",
+  "status": "dissolved",
+  "dissolved_by": "CONST-2014",
+  "succeeded_by": "ENT-NEA"
+}
 
 
 
