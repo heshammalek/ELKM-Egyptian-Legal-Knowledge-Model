@@ -1,0 +1,110 @@
+{
+  "doc_id": "ADM-HEC-7-2014",
+  "doc_type": "administrative_decision",
+  "sub_type": null,
+  "title_ar": "قرار اللجنة العليا للانتخابات رقم 7 لسنة 2014 بشأن إعلان نتيجة الاستفتاء على مشروع التعديلات الدستورية على الدستور الصادر سنة 2012",
+  "title_en": "High Elections Committee Decision No. 7 of 2014 Announcing the Result of the Referendum on the Constitutional Amendments to the 2012 Constitution",
+  "year": 2014,
+  "doc_number": "7",
+
+  "source": {
+    "type": "official_gazette",
+    "gazette_number": "14 (تابع)",
+    "gazette_date": "2014-01-19",
+    "url": "",
+    "retrieved_date": "2026-10-15T00:00:00"
+  },
+
+  "issuing_authority": "HEC",
+  "hierarchy": {
+    "level": 5,
+    "name": "إداري"
+  },
+
+  "subjects": ["الانتخابات", "الشئون الدستورية"],
+  "sub_domains": [],
+  "keywords": ["استفتاء", "نتيجة الاستفتاء", "تعديلات دستورية", "دستور 2012", "اللجنة العليا للانتخابات", "2014", "نبيل صليب"],
+
+  "paths": {
+    "scan": "raw/scanned/administrative_decision/ADM-HEC-7-2014.pdf",
+    "original_txt": "raw/text_as_is/administrative_decision/ADM-HEC-7-2014.txt",
+    "normalized_txt": "normalized/administrative_decision/txt/ADM-HEC-7-2014.txt",
+    "json": "normalized/administrative_decision/json/ADM-HEC-7-2014.json"
+  },
+
+  "full_text": {
+    "original_txt": "raw/text_as_is/administrative_decision/ADM-HEC-7-2014.txt",
+    "normalized_path": "normalized/administrative_decision/txt/ADM-HEC-7-2014.txt",
+    "hash": "sha256:<يُحسب آلياً>"
+  },
+
+  "stats": {
+    "total_articles": 0,
+    "total_chapters": 0,
+    "total_sections": 0,
+    "preamble_articles_count": 2,
+    "word_count": 0,
+    "page_count": 0
+  },
+
+  "relations_summary": {
+    "total_relations": 5,
+    "by_type": {
+      "referral": 5
+    },
+    "by_category": {
+      "DOC-DOC": 5,
+      "DOC-ENT": 0,
+      "DOC-POS": 0
+    },
+    "notes": ["القرار يشير إلى 5 مستندات في ديباجته"]
+  },
+
+  "processing": {
+    "added_to_index": "2026-10-15T00:00:00",
+    "extraction_date": "2026-10-15T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>",
+    "id_correction_note": null
+  },
+
+  "structure": {
+    "books": [],
+    "sections": [],
+    "chapters": []
+  },
+
+  "preamble_articles": [
+    {
+      "article_number": "1",
+      "text_raw": "تعلن نتيجة الاستفتاء على مشروع التعديلات الدستورية والذى أجرى يومى 14 ، 2014/1/15 بناءً على قرار رئيس الجمهورية رقم 678 لسنة 2013 بدعوة الناخبين للاستفتاء وذلك للمصريين بداخل البلاد وخارجها على النحو التالى :\n\n1 - جملة الناخبين المدعوين للاستفتاء 53.423.485 ناخبًا متضمنًا قاعدة بيانات المصريين بالخارج .\n2 - جملة الناخبين الذين أدلوا بأصواتهم 20.613.677 ناخبًا .\n3 - جملة الأصوات الصحيحة 20.366.730 صوتًا .\n4 - جملة الأصوات الباطلة 246.947 صوتًا .\n5 - النسبة المئوية للحاضرين 38.6% .\n6 - جملة المصوتين بنعم 19.985.389 ناخبًا .\nبنسبة مئوية 98.1%\n7 - جملة المصوتين بلا 381.341 ناخبًا .\nبنسبة مئوية 1.9%",
+      "text_normalized": "تعلن نتيجه الاستفتاء علي مشروع التعديلات الدستوريه والذي اجري يومي 14 ، 2014/1/15 بناء علي قرار رئيس الجمهوريه رقم 678 لسنه 2013 بدعوه الناخبين للاستفتاء وذلك للمصريين بداخل البلاد وخارجها علي النحو التالي :\n\n1 - جمله الناخبين المدعوين للاستفتاء 53.423.485 ناخبا متضمنا قاعده بيانات المصريين بالخارج .\n2 - جمله الناخبين الذين ادلوا باصواتهم 20.613.677 ناخبا .\n3 - جمله الاصوات الصحيحه 20.366.730 صوتا .\n4 - جمله الاصوات الباطله 246.947 صوتا .\n5 - النسبه المئويه للحاضرين 38.6% .\n6 - جمله المصوتين بنعم 19.985.389 ناخبا .\nبنسبه مئويه 98.1%\n7 - جمله المصوتين بلا 381.341 ناخبا .\nبنسبه مئويه 1.9%",
+      "order": 1,
+      "instance_references": [
+        "REF-ADM-HEC-7-2014-PRE-1-CONST-TRANS-2013-07-08",
+        "REF-ADM-HEC-7-2014-PRE-1-LAW-73-1956",
+        "REF-ADM-HEC-7-2014-PRE-1-ADM-PRES-586-2013",
+        "REF-ADM-HEC-7-2014-PRE-1-ADM-PRES-678-2013",
+        "REF-ADM-HEC-7-2014-PRE-1-CONST-2012"
+      ]
+    },
+    {
+      "article_number": "2",
+      "text_raw": "يُنشر هذا القرار فى الوقائع المصرية .",
+      "text_normalized": "ينشر هذا القرار في الوقائع المصريه .",
+      "order": 2,
+      "instance_references": []
+    }
+  ],
+
+  "articles": [],
+
+  "proposed_entities": [],
+
+  "proposed_positions": [],
+
+  "proposed_identifiers": [],
+
+  "proposed_relation_types": [],
+
+  "proposed_doc_codes": []
+}
