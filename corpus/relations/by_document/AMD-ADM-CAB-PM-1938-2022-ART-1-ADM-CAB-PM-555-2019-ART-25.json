@@ -1,0 +1,22 @@
+{
+  "instance_id": "AMD-ADM-CAB-PM-1938-2022-ART-1-ADM-CAB-PM-555-2019-ART-25",
+  "type_id": "REL-003",
+  "type_name": "amendment",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "ADM-CAB-PM-1938-2022",
+    "article_number": "1",
+    "section": null
+  },
+  "target": {
+    "doc_id": "ADM-CAB-PM-555-2019",
+    "article_number": "25",
+    "article_number_end": null,
+    "scope": "article",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2022-06-08",
+  "confidence": 0.98,
+  "reference_text": "وبنصوص المواد ... (٢٥) ... من النظام الأساسى لصندوق مصر السيادى للاستثمار والتنمية الصادر بقرار رئيس مجلس الوزراء رقم ٥٥٥ لسنة ٢٠١٩"
+}
