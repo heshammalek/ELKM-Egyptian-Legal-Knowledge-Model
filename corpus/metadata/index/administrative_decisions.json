@@ -2,7 +2,7 @@
   "doc_type": "administrative_decision",
   "version": "1.0",
   "last_updated": "2026-10-14",
-  "count": 2,
+  "count": 3,
   "documents": [
     {
   "doc_id": "ADM-PRES-101-1998",
@@ -115,12 +115,62 @@
     "added_to_index": "2026-10-13T00:00:00",
     "content_hash": "sha256:<يُحسب آلياً>"
   }
+},
+    {
+  "doc_id": "ADM-CAB-PM-1938-2022",
+  "doc_type": "administrative_decision",
+  "sub_type": null,
+  "title_ar": "قرار رئيس مجلس الوزراء رقم 1938 لسنة 2022 بتعديل بعض أحكام النظام الأساسى لصندوق مصر السيادى للاستثمار والتنمية الصادر بقرار رئيس مجلس الوزراء رقم 555 لسنة 2019",
+  "year": 2022,
+  "doc_number": "1938",
+  "source": {
+    "gazette_number": "22 مكرر (ب)",
+    "gazette_date": "2022-06-07"
+  },
+  "issuing_authority": "CAB-PM",
+  "subjects": ["التجارة والاستثمار والصناعة", "القطاع المصرفي وسوق المال"],
+  "sub_domains": ["الصناديق السيادية", "إدارة الاستثمار"],
+  "paths": {
+    "scan": "raw/scanned/administrative_decision/ADM-CAB-PM-1938-2022.pdf",
+    "original_txt": "raw/text_as_is/administrative_decision/ADM-CAB-PM-1938-2022.txt",
+    "normalized_txt": "normalized/administrative_decision/txt/ADM-CAB-PM-1938-2022.txt",
+    "json": "normalized/administrative_decision/json/ADM-CAB-PM-1938-2022.json"
+  },
+  "stats": {
+    "articles_count": 3,
+    "preamble_articles_count": 0,
+    "chapters_count": 0,
+    "sections_count": 0
+  },
+  "relations_summary": {
+    "total_relations": 8,
+    "by_type": {
+      "amendment": 7,
+      "addition": 1
+    },
+    "by_category": {
+      "DOC-DOC": 8,
+      "DOC-ENT": 0,
+      "DOC-POS": 0
+    },
+    "notes": [
+      "المادة 1 تعدل 7 مواد في النظام الأساسي لصندوق مصر (ADM-CAB-PM-555-2019): المواد 1، 4، 10، 19، 25، 30، 47.",
+      "المادة 2 تضيف بنداً جديداً (رقم 7) إلى المادة 5 من النظام الأساسي.",
+      "الديباجة تذكر القانون رقم 177 لسنة 2018 — إشارة سياقية لا تُستخرج كعلاقة."
+    ]
+  },
+  "relations_path": {
+    "directory": "relations/by_document/",
+    "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+    "query_source": "^[A-Z]+-ADM-CAB-PM-1938-2022-(ART|PRE)-",
+    "query_target": "-ADM-CAB-PM-1938-2022(-ART-\\d+)?\\.json$",
+    "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+  },
+  "processing": {
+    "added_to_index": "2026-10-13T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>"
+  }
 }
-
-
-
-
-
 
 
 
