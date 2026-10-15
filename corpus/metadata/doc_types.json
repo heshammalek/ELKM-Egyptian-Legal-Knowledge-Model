@@ -54,7 +54,8 @@
     "id_scheme": {
       "format": "CONST-TRANS-{YEAR}",
       "components": { "YEAR": "سنة الإصدار" },
-      "example": "CONST-TRANS-2011"
+      "example": "CONST-TRANS-2011",
+      "exception_note": "إذا صدر أكثر من إعلان دستوري في نفس السنة، يُضاف الشهر واليوم: CONST-TRANS-{YEAR}-{MM}-{DD} — ويُسجَّل في identifiers.json لأن الصيغة الأساسية لا تنتج معرّفاً فريداً."
     }
   },
   {
