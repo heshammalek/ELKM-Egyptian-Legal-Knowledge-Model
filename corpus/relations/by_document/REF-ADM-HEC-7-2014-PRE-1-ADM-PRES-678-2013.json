@@ -1,0 +1,22 @@
+{
+  "instance_id": "REF-ADM-HEC-7-2014-PRE-1-ADM-PRES-678-2013",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "ADM-HEC-7-2014",
+    "article_number": "1",
+    "section": null
+  },
+  "target": {
+    "doc_id": "ADM-PRES-678-2013",
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "whole_document",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2014-01-18",
+  "confidence": 0.95,
+  "reference_text": "وعلى قرار رئيس الجمهورية رقم 678 لسنة 2013 بدعوة الناخبين لإبداء الرأى فى الاستفتاء على مشروع التعديلات الدستورية على الدستور الصادر سنة 2012"
+}
