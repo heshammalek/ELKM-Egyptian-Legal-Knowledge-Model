@@ -3,7 +3,7 @@
   "doc_type": "constitution",
   "version": "1.0",
   "last_updated": "2026-10-13",
-  "count": 1,
+  "count": 2,
   "documents": [
 
 
@@ -57,7 +57,58 @@
         "added_to_index": "2026-10-14T00:00:00",
         "content_hash": "sha256:<يُحسب آلياً>"
       }
-    }
+    },
+    {
+  "doc_id": "CONST-2014",
+  "doc_type": "constitution",
+  "sub_type": "دستور دائم",
+  "title_ar": "دستور جمهورية مصر العربية 2014",
+  "year": 2014,
+  "doc_number": null,
+  "source": {
+    "gazette_number": "3 مكرر (أ)",
+    "gazette_date": "2014-01-18"
+  },
+  "issuing_authority": "PRES",
+  "subjects": ["الشئون الدستورية", "الدولة ونظام الحكم"],
+  "sub_domains": ["تنظيم السلطة التنفيذية", "تنظيم السلطة القضائية", "البرلمان", "الانتخابات", "الشئون العسكرية", "الإدارة المحلية", "الحقوق والحريات العامة"],
+  "paths": {
+    "scan": "raw/scanned/constitution/CONST-2014.pdf",
+    "original_txt": "raw/text_as_is/constitution/CONST-2014.txt",
+    "normalized_txt": "normalized/constitution/txt/CONST-2014.txt",
+    "json": "normalized/constitution/json/CONST-2014.json"
+  },
+  "stats": {
+    "articles_count": 247,
+    "preamble_articles_count": 0,
+    "chapters_count": 2,
+    "sections_count": 11,
+    "books_count": 6
+  },
+  "relations_summary": {
+    "total_relations": 3,
+    "by_type": {
+      "total_repeal": 3
+    },
+    "by_category": {
+      "DOC-DOC": 3,
+      "DOC-ENT": 0,
+      "DOC-POS": 0
+    },
+    "notes": ["الدستور يلغي الإعلانات الدستورية لعام 2013 ودستور 2012 (النصوص غير المتناولة)"]
+  },
+  "relations_path": {
+    "directory": "relations/by_document/",
+    "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+    "query_source": "^TREP-CONST-2014-",
+    "query_target": "-CONST-2014(-ART-\\d+)?\\.json$",
+    "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+  },
+  "processing": {
+    "added_to_index": "2026-10-16T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>"
+  }
+}
 
   
   ]
