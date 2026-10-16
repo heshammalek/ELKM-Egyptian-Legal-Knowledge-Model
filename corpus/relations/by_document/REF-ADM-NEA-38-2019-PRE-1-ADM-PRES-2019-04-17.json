@@ -1,0 +1,23 @@
+{
+  "instance_id": "REF-ADM-NEA-38-2019-PRE-1-ADM-PRES-2019-04-17",
+  "type_id": "REL-008",
+  "type_name": "referral",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "ADM-NEA-38-2019",
+    "article_number": "1",
+    "section": null
+  },
+  "target": {
+    "doc_id": "ADM-PRES-2019-04-17",
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "whole_document",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2019-04-23",
+  "confidence": 0.90,
+  "reference_text": "وعلى كتاب السيد رئيس الجمهورية المؤرخ 17/4/2019 والمرفق به قرار مجلس النواب بتعديل بعض أحكام الدستور والصادر بجلسته المعقودة بتاريخ 16/4/2019",
+  "note": "المستند ليس له رقم — يُعرَّف بالتاريخ"
+}
