@@ -2,7 +2,7 @@
   "doc_type": "administrative_decision",
   "version": "1.0",
   "last_updated": "2026-10-14",
-  "count": 4,
+  "count": 5,
   "documents": [
     {
   "doc_id": "ADM-PRES-101-1998",
@@ -214,6 +214,56 @@
     "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
     "query_source": "^REF-ADM-HEC-7-2014-",
     "query_target": "-ADM-HEC-7-2014(-ART-\\d+)?\\.json$",
+    "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+  },
+  "processing": {
+    "added_to_index": "2026-10-16T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>"
+  }
+},
+    {
+  "doc_id": "ADM-NEA-38-2019",
+  "doc_type": "administrative_decision",
+  "sub_type": null,
+  "title_ar": "قرار الهيئة الوطنية للانتخابات رقم 38 لسنة 2019 بإعلان نتيجة الاستفتاء على تعديل بعض مواد الدستور",
+  "year": 2019,
+  "doc_number": "38",
+  "source": {
+    "gazette_number": "16 مكرر (و)",
+    "gazette_date": "2019-04-23"
+  },
+  "issuing_authority": "NEA",
+  "subjects": ["الانتخابات", "الشئون الدستورية"],
+  "sub_domains": [],
+  "paths": {
+    "scan": "raw/scanned/administrative_decision/ADM-NEA-38-2019.pdf",
+    "original_txt": "raw/text_as_is/administrative_decision/ADM-NEA-38-2019.txt",
+    "normalized_txt": "normalized/administrative_decision/txt/ADM-NEA-38-2019.txt",
+    "json": "normalized/administrative_decision/json/ADM-NEA-38-2019.json"
+  },
+  "stats": {
+    "articles_count": 0,
+    "preamble_articles_count": 2,
+    "chapters_count": 0,
+    "sections_count": 0
+  },
+  "relations_summary": {
+    "total_relations": 6,
+    "by_type": {
+      "referral": 6
+    },
+    "by_category": {
+      "DOC-DOC": 6,
+      "DOC-ENT": 0,
+      "DOC-POS": 0
+    },
+    "notes": ["القرار يشير إلى 6 مستندات في ديباجته"]
+  },
+  "relations_path": {
+    "directory": "relations/by_document/",
+    "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+    "query_source": "^REF-ADM-NEA-38-2019-",
+    "query_target": "-ADM-NEA-38-2019(-ART-\\d+)?\\.json$",
     "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
   },
   "processing": {
