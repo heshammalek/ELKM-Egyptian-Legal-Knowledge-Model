@@ -1,0 +1,121 @@
+{
+  "doc_id": "ADM-NEA-38-2019",
+  "doc_type": "administrative_decision",
+  "sub_type": null,
+  "title_ar": "قرار الهيئة الوطنية للانتخابات رقم 38 لسنة 2019 بإعلان نتيجة الاستفتاء على تعديل بعض مواد الدستور",
+  "title_en": "National Elections Authority Decision No. 38 of 2019 Announcing the Result of the Referendum on Amending Certain Articles of the Constitution",
+  "year": 2019,
+  "doc_number": "38",
+
+  "source": {
+    "type": "official_gazette",
+    "gazette_number": "16 مكرر (و)",
+    "gazette_date": "2019-04-23",
+    "url": "",
+    "retrieved_date": "2026-10-16T00:00:00"
+  },
+
+  "issuing_authority": "NEA",
+  "hierarchy": {
+    "level": 5,
+    "name": "إداري"
+  },
+
+  "subjects": ["الانتخابات", "الشئون الدستورية"],
+  "sub_domains": [],
+  "keywords": ["استفتاء", "نتيجة الاستفتاء", "تعديلات دستورية", "دستور 2014", "الهيئة الوطنية للانتخابات", "2019", "لاشين إبراهيم", "تعديل الدستور 2019"],
+
+  "paths": {
+    "scan": "raw/scanned/administrative_decision/ADM-NEA-38-2019.pdf",
+    "original_txt": "raw/text_as_is/administrative_decision/ADM-NEA-38-2019.txt",
+    "normalized_txt": "normalized/administrative_decision/txt/ADM-NEA-38-2019.txt",
+    "json": "normalized/administrative_decision/json/ADM-NEA-38-2019.json"
+  },
+
+  "full_text": {
+    "original_txt": "raw/text_as_is/administrative_decision/ADM-NEA-38-2019.txt",
+    "normalized_path": "normalized/administrative_decision/txt/ADM-NEA-38-2019.txt",
+    "hash": "sha256:<يُحسب آلياً>"
+  },
+
+  "stats": {
+    "total_articles": 0,
+    "total_chapters": 0,
+    "total_sections": 0,
+    "preamble_articles_count": 2,
+    "word_count": 0,
+    "page_count": 0
+  },
+
+  "relations_summary": {
+    "total_relations": 6,
+    "by_type": {
+      "referral": 6
+    },
+    "by_category": {
+      "DOC-DOC": 6,
+      "DOC-ENT": 0,
+      "DOC-POS": 0
+    },
+    "notes": ["القرار يشير إلى 6 مستندات في ديباجته"]
+  },
+
+  "processing": {
+    "added_to_index": "2026-10-16T00:00:00",
+    "extraction_date": "2026-10-16T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>",
+    "id_correction_note": null
+  },
+
+  "structure": {
+    "books": [],
+    "sections": [],
+    "chapters": []
+  },
+
+  "preamble_articles": [
+    {
+      "article_number": "1",
+      "text_raw": "تعلن نتيجة الاستفتاء على تعديل بعض مواد الدستور والذى أجرى خارج البلاد أيام الجمعة والسبت والأحد 19 ، 20 ، 21/4/2019 ، وأجرى داخل البلاد أيام السبت والأحد والإثنين 20 ، 21 ، 22/4/2019 على النحو التالى :\n\nجملة الناخبين المدعوين للاستفتاء : 61.344.503 ناخبًا .\nجملة الناخبين الذين أدلوا بأصواتهم : 27.193.593 ناخبًا بنسبة (44.33%) .\nجملة الأصوات الصحيحة : 26.362.421 صوتًا بنسبة (96.94%) .\nجملة الأصوات الباطلة : 831.172 صوتًا بنسبة (3.06%) .\nجملة المصوتين بالموافقة : 23.416.741 ناخبًا بنسبة (88.83%) .\nجملة المصوتين بعدم الموافقة : 2.945.680 ناخبًا بنسبة (11.17%) .",
+      "text_normalized": "تعلن نتيجه الاستفتاء علي تعديل بعض مواد الدستور والذي اجري خارج البلاد ايام الجمعه والسبت والاحد 19 ، 20 ، 21/4/2019 ، واجري داخل البلاد ايام السبت والاحد والاثنين 20 ، 21 ، 22/4/2019 علي النحو التالي :\n\nجمله الناخبين المدعوين للاستفتاء : 61.344.503 ناخبا .\nجمله الناخبين الذين ادلوا باصواتهم : 27.193.593 ناخبا بنسبه (44.33%) .\nجمله الاصوات الصحيحه : 26.362.421 صوتا بنسبه (96.94%) .\nجمله الاصوات الباطله : 831.172 صوتا بنسبه (3.06%) .\nجمله المصوتين بالموافقه : 23.416.741 ناخبا بنسبه (88.83%) .\nجمله المصوتين بعدم الموافقه : 2.945.680 ناخبا بنسبه (11.17%) .",
+      "order": 1,
+      "instance_references": [
+        "REF-ADM-NEA-38-2019-PRE-1-CONST-2014",
+        "REF-ADM-NEA-38-2019-PRE-1-LAW-45-2014",
+        "REF-ADM-NEA-38-2019-PRE-1-LAW-198-2017",
+        "REF-ADM-NEA-38-2019-PRE-1-ADM-PRES-2019-04-17",
+        "REF-ADM-NEA-38-2019-PRE-1-ADM-NEA-26-2019",
+        "REF-ADM-NEA-38-2019-PRE-1-ADM-NEA-27-2019"
+      ]
+    },
+    {
+      "article_number": "2",
+      "text_raw": "ينشر هذا القرار فى الجريدة الرسمية .",
+      "text_normalized": "ينشر هذا القرار في الجريده الرسميه .",
+      "order": 2,
+      "instance_references": []
+    }
+  ],
+
+  "articles": [],
+
+  "proposed_entities": [],
+
+  "proposed_positions": [],
+
+  "proposed_identifiers": [
+    {
+      "identifier": "ADM-PRES-2019-04-17",
+      "name_ar": "كتاب السيد رئيس الجمهورية المؤرخ 17 أبريل 2019 بشأن تعديل بعض أحكام الدستور",
+      "aliases": [
+        "كتاب رئيس الجمهورية 17/4/2019",
+        "كتاب رئيس الجمهورية بشأن تعديل الدستور 2019"
+      ],
+      "note": "المستند ليس له رقم — يُعرَّف بالتاريخ. مرفق به قرار مجلس النواب بتعديل بعض أحكام الدستور الصادر بجلسة 16/4/2019."
+    }
+  ],
+
+  "proposed_relation_types": [],
+
+  "proposed_doc_codes": []
+}
