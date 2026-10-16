@@ -1,0 +1,22 @@
+{
+    "instance_id": "TREP-CONST-2014-ART-246-CONST-2012",
+    "type_id": "REL-001",
+    "type_name": "total_repeal",
+    "category_id": "DOC-DOC",
+    "source": {
+      "doc_id": "CONST-2014",
+      "article_number": "246",
+      "section": null
+    },
+    "target": {
+      "doc_id": "CONST-2012",
+      "article_number": null,
+      "article_number_end": null,
+      "scope": "whole_document",
+      "entity_id": null,
+      "position_id": null
+    },
+    "effective_date": "2014-01-18",
+    "confidence": 0.90,
+    "reference_text": "وأى نصوص دستورية أو أحكام وردت في الدستور الصادر سنة 2012 ولم تتناولها هذه الوثيقة تعتبر ملغاة من تاريخ العمل بها"
+  }
