@@ -3,7 +3,7 @@
   "doc_type": "constitution",
   "version": "1.0",
   "last_updated": "2026-10-13",
-  "count": 2,
+  "count": 3,
   "documents": [
 
 
@@ -106,6 +106,80 @@
   },
   "processing": {
     "added_to_index": "2026-10-16T00:00:00",
+    "content_hash": "sha256:<يُحسب آلياً>"
+  }
+},
+    {
+  "doc_id": "CONST-2012",
+  "doc_type": "constitution",
+  "sub_type": "دستور دائم",
+  "title_ar": "دستور جمهورية مصر العربية 2012",
+  "year": 2012,
+  "doc_number": null,
+  "source": {
+    "gazette_number": "51 مكرر (ب)",
+    "gazette_date": "2012-12-25"
+  },
+  "issuing_authority": "PRES",
+  "subjects": [
+    "الشئون الدستورية",
+    "تنظيم السلطة التنفيذية",
+    "تنظيم السلطة القضائية",
+    "البرلمان",
+    "الحقوق والحريات العامة",
+    "الانتخابات",
+    "الشئون العسكرية",
+    "الإدارة المحلية",
+    "الجهات الرقابية والمجالس",
+    "الوظيفة العامة والعاملون المدنيون بالدولة"
+  ],
+  "sub_domains": [
+    "القضاء العادي (مدني وجنائي)",
+    "القضاء الإداري (مجلس الدولة)",
+    "القضاء الدستوري",
+    "النيابة العامة",
+    "النيابة الإدارية",
+    "هيئة قضايا الدولة"
+  ],
+  "paths": {
+    "scan": "raw/scanned/constitution/CONST-2012.pdf",
+    "original_txt": "raw/text_as_is/constitution/CONST-2012.txt",
+    "normalized_txt": "normalized/constitution/txt/CONST-2012.txt",
+    "json": "normalized/constitution/json/CONST-2012.json"
+  },
+  "stats": {
+    "articles_count": 236,
+    "preamble_articles_count": 0,
+    "chapters_count": 5,
+    "sections_count": 20
+  },
+  "relations_summary": {
+    "total_relations": 11,
+    "by_type": {
+      "total_repeal": 9,
+      "abolishes": 1,
+      "establishes": 1
+    },
+    "by_category": {
+      "DOC-DOC": 9,
+      "DOC-ENT": 2,
+      "DOC-POS": 0
+    },
+    "notes": [
+      "المادة 236 تلغي 9 إعلانات دستورية صادرة من المجلس الأعلى للقوات المسلحة ورئيس الجمهورية منذ 11 فبراير 2011 وحتى تاريخ العمل بالدستور.",
+      "المادة 228 تُلغي اللجنة العليا للانتخابات (ENT-HEC) وتنشئ المفوضية الوطنية للانتخابات (ENT-NATIONAL-ELECTIONS-COMMISSION-2012).",
+      "المادة 233 تُعيد تشكيل المحكمة الدستورية العليا (renames)."
+    ]
+  },
+  "relations_path": {
+    "directory": "relations/by_document/",
+    "naming_pattern": "{short_code}-{source_doc_id}-{source_scope}-{target_id}.json",
+    "query_source": "^[A-Z]+-CONST-2012-(ART|PRE)-",
+    "query_target": "-CONST-2012(-ART-\\d+)?\\.json$",
+    "note": "query_source دقيق 100%. query_target فلترة أولية — التحقق النهائي بقراءة target.doc_id جوه كل ملف."
+  },
+  "processing": {
+    "added_to_index": "2026-10-17T00:00:00",
     "content_hash": "sha256:<يُحسب آلياً>"
   }
 }
