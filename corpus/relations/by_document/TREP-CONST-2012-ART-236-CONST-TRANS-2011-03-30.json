@@ -1,0 +1,22 @@
+{
+  "instance_id": "TREP-CONST-2012-ART-236-CONST-TRANS-2011-03-30",
+  "type_id": "REL-001",
+  "type_name": "total_repeal",
+  "category_id": "DOC-DOC",
+  "source": {
+    "doc_id": "CONST-2012",
+    "article_number": 236,
+    "section": null
+  },
+  "target": {
+    "doc_id": "CONST-TRANS-2011-03-30",
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "whole_document",
+    "entity_id": null,
+    "position_id": null
+  },
+  "effective_date": "2012-12-25",
+  "confidence": 0.95,
+  "reference_text": "تلغى جميع الإعلانات الدستورية الصادرة من المجلس الأعلى للقوات المسلحة ورئيس الجمهورية منذ الحادى عشر من فبراير سنة ٢٠١١ وحتى تاريخ العمل بالدستور"
+}
