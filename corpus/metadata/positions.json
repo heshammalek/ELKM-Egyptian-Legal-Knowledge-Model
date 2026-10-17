@@ -1,13 +1,13 @@
 {
-  "version": "3.0",
-  "last_updated": "2026-10-02",
+  "version": "3.1",
+  "last_updated": "2026-10-17",
   "purpose": "سجل المناصب الوظيفية — يُستخدم حصرياً في العلاقات (relations/).",
   "usage": {
     "primary": "الربط العلائقي (target.position_id)",
     "secondary": "ربط المنصب بالكيان التابع له",
     "not_for": "تسمية الملفات — للتسمية استخدم doc_codes.json"
   },
-  "scope_note": "هذا السجل يحصر المناصب الفريدة (Singleton Positions) فقط — أي المناصب التي يشغلها شخص واحد في الدولة في أي وقت. المناصب المتكررة (مثل: رئيس محكمة استئناف، قاضي تحقيق، رئيس محكمة جنايات، رئيس محكمة ابتدائية، عضو النيابة العامة) لا تُدرَج هنا لأنها ليست معرّفاً فريداً للفاعل، ولا تُستخدم كأهداف للعلاقات العلائقية.",
+  "scope_note": "هذا السجل يحصر المناصب الفريدة (Singleton Positions) فقط — أي المناصب التي يشغلها شخص واحد في الدولة في أي وقت. المناصب المتكررة لا تُدرَج هنا.",
   "is_final": false,
 
   "positions": [
@@ -18,6 +18,14 @@
       "name_en": "President of the Republic",
       "entity_id": "ENT-PRES",
       "appointed_by": null
+    },
+    {
+      "position_id": "POS-VP",
+      "name_ar": "نائب رئيس الجمهورية",
+      "name_en": "Vice President of the Republic",
+      "entity_id": "ENT-PRES",
+      "appointed_by": "POS-PRES",
+      "hierarchy_level": 1
     },
     {
       "position_id": "POS-PM",
@@ -62,7 +70,7 @@
       "entity_id": "ENT-MOE",
       "appointed_by": "POS-PM"
     },
-       {
+    {
       "position_id": "POS-MOIS-MINISTER",
       "name_ar": "وزير التضامن الاجتماعي",
       "name_en": "Minister of Social Solidarity",
@@ -83,7 +91,7 @@
       "entity_id": "ENT-MOSPA",
       "appointed_by": "POS-PM"
     },
-        {
+    {
       "position_id": "POS-MOT-MINISTER",
       "name_ar": "وزير النقل",
       "name_en": "Minister of Transport",
@@ -103,6 +111,14 @@
       "name_en": "Minister of Public Business Sector",
       "entity_id": "ENT-MOIT",
       "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-MOP-MINISTER",
+      "name_ar": "وزير التخطيط والتنمية الاقتصادية",
+      "name_en": "Minister of Planning and Economic Development",
+      "entity_id": "ENT-MOP",
+      "appointed_by": "POS-PM",
+      "hierarchy_level": 1
     },
 
     {
@@ -126,7 +142,6 @@
       "entity_id": "ENT-SC",
       "appointed_by": "POS-PRES"
     },
-
     {
       "position_id": "POS-PROSECUTOR-GEN",
       "name_ar": "النائب العام",
@@ -156,7 +171,6 @@
       "entity_id": "ENT-NEA",
       "appointed_by": "POS-PRES"
     },
-
     {
       "position_id": "POS-CBE-GOVERNOR",
       "name_ar": "محافظ البنك المركزي المصري",
@@ -170,6 +184,22 @@
       "name_en": "Head of the Sovereign Fund of Egypt",
       "entity_id": "ENT-SFE",
       "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-SFE-BOARD-CHAIR",
+      "name_ar": "رئيس مجلس إدارة صندوق مصر",
+      "name_en": "Chairman of the Board of Directors of the Sovereign Fund of Egypt",
+      "entity_id": "ENT-SFE",
+      "appointed_by": "POS-PRES",
+      "hierarchy_level": 2
+    },
+    {
+      "position_id": "POS-SFE-EXEC-DIR",
+      "name_ar": "المدير التنفيذي لصندوق مصر",
+      "name_en": "Executive Director of the Sovereign Fund of Egypt",
+      "entity_id": "ENT-SFE",
+      "appointed_by": "POS-SFE-BOARD-CHAIR",
+      "hierarchy_level": 2
     },
 
     {
@@ -193,28 +223,29 @@
       "entity_id": "ENT-COPTIC-CHURCH",
       "appointed_by": null
     },
+
     {
-    "position_id": "POS-HIAC-HEAD",
-    "name_ar": "رئيس الهيئة العامة للتأمين الصحي الشامل",
-    "name_en": "Head of the General Authority for Comprehensive Health Insurance",
-    "entity_id": "ENT-HIAC",
-    "appointed_by": "POS-PM"
-  },
-  {
-    "position_id": "POS-HCA-HEAD",
-    "name_ar": "رئيس الهيئة العامة للرعاية الصحية",
-    "name_en": "Head of the General Authority for Health Care",
-    "entity_id": "ENT-HCA",
-    "appointed_by": "POS-PM"
-  },
-  {
-    "position_id": "POS-HAHC-HEAD",
-    "name_ar": "رئيس الهيئة العامة للاعتماد والرقابة الصحية",
-    "name_en": "Head of the General Authority for Health Accreditation and Control",
-    "entity_id": "ENT-HAHC",
-    "appointed_by": "POS-PRES"
-  },
-     {
+      "position_id": "POS-HIAC-HEAD",
+      "name_ar": "رئيس الهيئة العامة للتأمين الصحي الشامل",
+      "name_en": "Head of the General Authority for Comprehensive Health Insurance",
+      "entity_id": "ENT-HIAC",
+      "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-HCA-HEAD",
+      "name_ar": "رئيس الهيئة العامة للرعاية الصحية",
+      "name_en": "Head of the General Authority for Health Care",
+      "entity_id": "ENT-HCA",
+      "appointed_by": "POS-PM"
+    },
+    {
+      "position_id": "POS-HAHC-HEAD",
+      "name_ar": "رئيس الهيئة العامة للاعتماد والرقابة الصحية",
+      "name_en": "Head of the General Authority for Health Accreditation and Control",
+      "entity_id": "ENT-HAHC",
+      "appointed_by": "POS-PRES"
+    },
+    {
       "position_id": "POS-GOVERNOR",
       "name_ar": "المحافظ",
       "name_en": "Governor",
@@ -222,62 +253,133 @@
       "appointed_by": "POS-PRES"
     },
     {
-    "position_id": "POS-TRA-EXEC-DIR",
-    "name_ar": "المدير التنفيذي لجهاز تنظيم مرفق الاتصالات السلكية واللاسلكية",
-    "name_en": "Executive Director of the Telecommunications Regulatory Authority",
-    "entity_id": "ENT-TRA",
-    "hierarchy_level": 2,
-    "appointed_by": "POS-PM"
-  },
-     {
-    "position_id": "POS-MOP-MINISTER",
-    "name_ar": "وزير التخطيط والتنمية الاقتصادية",
-    "name_en": "Minister of Planning and Economic Development",
-    "entity_id": "ENT-MOP",
-    "hierarchy_level": 1,
-    "appointed_by": "POS-PM"
-  },
-  {
-    "position_id": "POS-SFE-EXEC-DIR",
-    "name_ar": "المدير التنفيذي لصندوق مصر",
-    "name_en": "Executive Director of the Sovereign Fund of Egypt",
-    "entity_id": "ENT-SFE",
-    "hierarchy_level": 2,
-    "appointed_by": "POS-SFE-BOARD-CHAIR"
-  },
-  {
-    "position_id": "POS-SFE-BOARD-CHAIR",
-    "name_ar": "رئيس مجلس إدارة صندوق مصر",
-    "name_en": "Chairman of the Board of Directors of the Sovereign Fund of Egypt",
-    "entity_id": "ENT-SFE",
-    "hierarchy_level": 2,
-    "appointed_by": "POS-PRES"
-  },
-    {
-      "position_id": "POS-VP",
-      "name_ar": "نائب رئيس الجمهورية",
-      "name_en": "Vice President of the Republic",
-      "entity_id": "ENT-PRES",
-      "hierarchy_level": 1,
-      "appointed_by": "POS-PRES"
+      "position_id": "POS-TRA-EXEC-DIR",
+      "name_ar": "المدير التنفيذي لجهاز تنظيم مرفق الاتصالات السلكية واللاسلكية",
+      "name_en": "Executive Director of the Telecommunications Regulatory Authority",
+      "entity_id": "ENT-TRA",
+      "appointed_by": "POS-PM",
+      "hierarchy_level": 2
     },
+
     {
       "position_id": "POS-SEN-HEAD",
       "name_ar": "رئيس مجلس الشيوخ",
       "name_en": "President of the Senate",
       "entity_id": "ENT-SEN",
+      "appointed_by": null,
+      "hierarchy_level": 1
+    },
+
+    {
+      "position_id": "POS-HEC-HEAD",
+      "name_ar": "رئيس اللجنة العليا للانتخابات",
+      "name_en": "Head of the High Elections Committee",
+      "entity_id": "ENT-HEC",
+      "appointed_by": "POS-PRES",
       "hierarchy_level": 1,
-      "appointed_by": null
+      "status": "dissolved",
+      "note": "منصب مؤقت — انتهى بإنشاء الهيئة الوطنية للانتخابات وفقاً لدستور 2014"
+    },
+
+    {
+      "position_id": "POS-SHURA-HEAD",
+      "name_ar": "رئيس مجلس الشورى",
+      "name_en": "President of the Shura Council",
+      "entity_id": "ENT-SHURA-COUNCIL",
+      "appointed_by": null,
+      "status": "dissolved",
+      "note": "منصب رئيس مجلس الشورى — مذكور في المواد 97، 98، 193، 197 من دستور 2012. تم إلغاؤه بموجب دستور 2014."
     },
     {
-  "position_id": "POS-HEC-HEAD",
-  "name_ar": "رئيس اللجنة العليا للانتخابات",
-  "name_en": "Head of the High Elections Committee",
-  "entity_id": "ENT-HEC",
-  "hierarchy_level": 1,
-  "appointed_by": "POS-PRES",
-  "note": "منصب مؤقت — انتهى بإنشاء الهيئة الوطنية للانتخابات وفقاً لدستور 2014"
-}
+      "position_id": "POS-SHURA-DEPUTY-SPEAKER",
+      "name_ar": "وكيل مجلس الشورى",
+      "name_en": "Deputy Speaker of the Shura Council",
+      "entity_id": "ENT-SHURA-COUNCIL",
+      "appointed_by": null,
+      "status": "dissolved",
+      "note": "منصب وكيل مجلس الشورى — مذكور في المادة 97 من دستور 2012. تم إلغاؤه بموجب دستور 2014."
+    },
+    {
+      "position_id": "POS-NATIONAL-ELECTIONS-COMMISSION-HEAD-2012",
+      "name_ar": "رئيس المفوضية الوطنية للانتخابات",
+      "name_en": "Head of the National Elections Commission",
+      "entity_id": "ENT-NATIONAL-ELECTIONS-COMMISSION-2012",
+      "appointed_by": null,
+      "status": "dissolved",
+      "note": "منصب رئيس المفوضية الوطنية للانتخابات — مذكور في المادة 209 من دستور 2012. رئيسها يكون أقدم أعضائها من محكمة النقض. تم إلغاؤه بموجب دستور 2014."
+    },
+    {
+      "position_id": "POS-ANTI-CORRUPTION-AUTHORITY-HEAD-2012",
+      "name_ar": "رئيس المفوضية الوطنية لمكافحة الفساد",
+      "name_en": "Head of the National Anti-Corruption Commission",
+      "entity_id": "ENT-ANTI-CORRUPTION-AUTHORITY-2012",
+      "appointed_by": "POS-PRES",
+      "status": "never_established",
+      "note": "منصب رئيس المفوضية الوطنية لمكافحة الفساد — مذكور في المادة 204 من دستور 2012. لم يُنشأ فعلياً."
+    },
+    {
+      "position_id": "POS-NATIONAL-MEDIA-COUNCIL-HEAD",
+      "name_ar": "رئيس المجلس الوطني للإعلام",
+      "name_en": "Head of the National Media Council",
+      "entity_id": "ENT-NATIONAL-MEDIA-COUNCIL",
+      "appointed_by": "POS-PRES",
+      "status": "never_established",
+      "note": "منصب رئيس المجلس الوطني للإعلام — مذكور في المادة 215 من دستور 2012. لم يُنشأ فعلياً."
+    },
+    {
+      "position_id": "POS-NATIONAL-PRESS-MEDIA-AUTHORITY-HEAD",
+      "name_ar": "رئيس الهيئة الوطنية للصحافة والإعلام",
+      "name_en": "Head of the National Press and Media Authority",
+      "entity_id": "ENT-NATIONAL-PRESS-MEDIA-AUTHORITY",
+      "appointed_by": "POS-PRES",
+      "status": "never_established",
+      "note": "منصب رئيس الهيئة الوطنية للصحافة والإعلام — مذكور في المادة 216 من دستور 2012. لم يُنشأ فعلياً."
+    },
+    {
+      "position_id": "POS-SUPREME-COUNCIL-WAQF-HEAD",
+      "name_ar": "رئيس الهيئة العليا لشئون الوقف",
+      "name_en": "Head of the Supreme Authority for Endowments Affairs",
+      "entity_id": "ENT-SUPREME-COUNCIL-WAQF",
+      "appointed_by": "POS-PRES",
+      "status": "never_established",
+      "note": "منصب رئيس الهيئة العليا لشئون الوقف — مذكور في المادة 212 من دستور 2012. لم يُنشأ فعلياً."
+    },
+    {
+      "position_id": "POS-SUPREME-HERITAGE-COUNCIL-HEAD",
+      "name_ar": "رئيس الهيئة العليا لحفظ التراث",
+      "name_en": "Head of the Supreme Council for Heritage Preservation",
+      "entity_id": "ENT-SUPREME-HERITAGE-COUNCIL",
+      "appointed_by": "POS-PRES",
+      "status": "never_established",
+      "note": "منصب رئيس الهيئة العليا لحفظ التراث — مذكور في المادة 213 من دستور 2012. لم يُنشأ فعلياً."
+    },
+    {
+      "position_id": "POS-NATIONAL-EDU-RESEARCH-COUNCIL-HEAD",
+      "name_ar": "رئيس المجلس الوطني للتعليم والبحث العلمي",
+      "name_en": "Head of the National Council for Education and Scientific Research",
+      "entity_id": "ENT-NATIONAL-COUNCIL-EDU-RESEARCH",
+      "appointed_by": "POS-PRES",
+      "status": "never_established",
+      "note": "منصب رئيس المجلس الوطني للتعليم والبحث العلمي — مذكور في المادة 214 من دستور 2012. لم يُنشأ فعلياً."
+    },
+    {
+      "position_id": "POS-NATIONAL-ECONOMIC-SOCIAL-COUNCIL-HEAD",
+      "name_ar": "رئيس المجلس الاقتصادي والاجتماعي",
+      "name_en": "Head of the National Economic and Social Council",
+      "entity_id": "ENT-NATIONAL-ECONOMIC-SOCIAL-COUNCIL",
+      "appointed_by": null,
+      "status": "never_established",
+      "note": "منصب رئيس المجلس الاقتصادي والاجتماعي — مذكور في المادة 207 من دستور 2012. يُنتخب من أعضاء المجلس. لم يُنشأ فعلياً."
+    },
+    {
+      "position_id": "POS-SUPREME-ARMED-COUNCIL-HEAD",
+      "name_ar": "رئيس المجلس الأعلى للقوات المسلحة",
+      "name_en": "Head of the Supreme Council of the Armed Forces",
+      "entity_id": "ENT-SUPREME-ARMED-COUNCIL",
+      "appointed_by": null,
+      "status": "active",
+      "note": "منصب رئيس المجلس الأعلى للقوات المسلحة — مذكور في المادة 194 من دستور 2012. يرأسه وزير الدفاع (القائد العام للقوات المسلحة) بحكم منصبه."
+    }
 
   ]
 }
