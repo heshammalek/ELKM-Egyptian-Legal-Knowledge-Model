@@ -1,6 +1,6 @@
 {
-  "version": "3.0",
-  "last_updated": "2026-10-02",
+  "version": "3.1",
+  "last_updated": "2026-10-17",
   "purpose": "سجل الكيانات المؤسسية — يُستخدم حصرياً في العلاقات (relations/).",
   "usage": {
     "primary": "الربط العلائقي (target.entity_id)",
@@ -64,6 +64,48 @@
       "name_ar": "وزارة التربية والتعليم",
       "name_en": "Ministry of Education",
       "details_reference": "entities/ENT-MOE.json"
+    },
+    {
+      "entity_id": "ENT-MOIS",
+      "name_ar": "وزارة التضامن الاجتماعي",
+      "name_en": "Ministry of Social Solidarity",
+      "details_reference": "entities/ENT-MOIS.json"
+    },
+    {
+      "entity_id": "ENT-MOH",
+      "name_ar": "وزارة الصحة والسكان",
+      "name_en": "Ministry of Health and Population",
+      "details_reference": "entities/ENT-MOH.json"
+    },
+    {
+      "entity_id": "ENT-MOSPA",
+      "name_ar": "وزارة التموين والتجارة الداخلية",
+      "name_en": "Ministry of Supply and Internal Trade",
+      "details_reference": "entities/ENT-MOSPA.json"
+    },
+    {
+      "entity_id": "ENT-MOT",
+      "name_ar": "وزارة النقل",
+      "name_en": "Ministry of Transport",
+      "details_reference": "entities/ENT-MOT.json"
+    },
+    {
+      "entity_id": "ENT-MOHE",
+      "name_ar": "وزارة التعليم العالي والبحث العلمي",
+      "name_en": "Ministry of Higher Education and Scientific Research",
+      "details_reference": "entities/ENT-MOHE.json"
+    },
+    {
+      "entity_id": "ENT-MOIT",
+      "name_ar": "وزارة قطاع الأعمال العام",
+      "name_en": "Ministry of Public Business Sector",
+      "details_reference": "entities/ENT-MOIT.json"
+    },
+    {
+      "entity_id": "ENT-MOP",
+      "name_ar": "وزارة التخطيط والتنمية الاقتصادية",
+      "name_en": "Ministry of Planning and Economic Development",
+      "details_reference": "entities/ENT-MOP.json"
     },
 
     {
@@ -280,6 +322,18 @@
       "name_en": "Al-Azhar Al-Sharif",
       "details_reference": "entities/ENT-AZHAR.json"
     },
+    {
+      "entity_id": "ENT-DAR-IFTA",
+      "name_ar": "دار الإفتاء المصرية",
+      "name_en": "Egyptian Dar Al-Ifta",
+      "details_reference": "entities/ENT-DAR-IFTA.json"
+    },
+    {
+      "entity_id": "ENT-COPTIC-CHURCH",
+      "name_ar": "الكنيسة القبطية الأرثوذكسية",
+      "name_en": "Coptic Orthodox Church",
+      "details_reference": "entities/ENT-COPTIC-CHURCH.json"
+    },
 
     {
       "entity_id": "ENT-SFE",
@@ -300,22 +354,7 @@
       "details_reference": "entities/ENT-NIB.json"
     },
 
-      {
-        "entity_id": "ENT-DAR-IFTA",
-        "name_ar": "دار الإفتاء المصرية",
-        "name_en": "Egyptian Dar Al-Ifta",
-        "details_reference": "entities/ENT-DAR-IFTA.json"
-
-    },
-  
     {
-        "entity_id": "ENT-COPTIC-CHURCH",
-        "name_ar": "الكنيسة القبطية الأرثوذكسية",
-        "name_en": "Coptic Orthodox Church",
-        "details_reference": "entities/ENT-COPTIC-CHURCH.json"
-   
-    },
-     {
       "entity_id": "ENT-TAKAFUL-KARAMA-FUND",
       "name_ar": "صندوق تكافل وكرامة",
       "name_en": "Takaful and Karama Fund",
@@ -332,163 +371,157 @@
       "details_reference": "entities/ENT-SOCIAL-SOLIDARITY-FUND.json"
     },
     {
-    "entity_id": "ENT-HIAC",
-    "name_ar": "الهيئة العامة للتأمين الصحي الشامل",
-    "name_en": "General Authority for Comprehensive Health Insurance",
-    "parent_entity_id": "ENT-CAB",
-    "hierarchy_level": 2,
-    "details_reference": "entities/ENT-HIAC.json"
-  },
-  {
-    "entity_id": "ENT-HCA",
-    "name_ar": "الهيئة العامة للرعاية الصحية",
-    "name_en": "General Authority for Health Care",
-    "parent_entity_id": "ENT-MOH",
-    "hierarchy_level": 2,
-    "details_reference": "entities/ENT-HCA.json"
-  },
-  {
-    "entity_id": "ENT-HAHC",
-    "name_ar": "الهيئة العامة للاعتماد والرقابة الصحية",
-    "name_en": "General Authority for Health Accreditation and Control",
-    "parent_entity_id": "ENT-PRES",
-    "hierarchy_level": 2,
-    "details_reference": "entities/ENT-HAHC.json"
-  },
-      {
-    "entity_id": "ENT-TRA",
-    "name_ar": "جهاز تنظيم مرفق الاتصالات السلكية واللاسلكية",
-    "name_en": "Telecommunications Regulatory Authority",
-    "parent_entity_id": "ENT-MOT",
-    "hierarchy_level": 2,
-    "details_reference": "entities/ENT-TRA.json"
-  },
+      "entity_id": "ENT-HIAC",
+      "name_ar": "الهيئة العامة للتأمين الصحي الشامل",
+      "name_en": "General Authority for Comprehensive Health Insurance",
+      "parent_entity_id": "ENT-CAB",
+      "hierarchy_level": 2,
+      "details_reference": "entities/ENT-HIAC.json"
+    },
     {
-  "entity_id": "ENT-HEC",
-  "name_ar": "اللجنة العليا للانتخابات",
-  "name_en": "High Elections Committee",
-  "details_reference": "entities/ENT-HEC.json",
-  "note": "لجنة مؤقتة أنشئت بموجب قرار رئيس الجمهورية رقم 586 لسنة 2013، تولت الإشراف على الاستفتاء على دستور 2014 والانتخابات الرئاسية والتشريعية 2014. تم استبدالها بالهيئة الوطنية للانتخابات (ENT-NEA) وفقاً لدستور 2014 (المادة 208).",
-  "status": "dissolved",
-  "dissolved_by": "CONST-2014",
-  "succeeded_by": "ENT-NEA"
-},
+      "entity_id": "ENT-HCA",
+      "name_ar": "الهيئة العامة للرعاية الصحية",
+      "name_en": "General Authority for Health Care",
+      "parent_entity_id": "ENT-MOH",
+      "hierarchy_level": 2,
+      "details_reference": "entities/ENT-HCA.json"
+    },
     {
-  "entity_id": "ENT-SHURA-COUNCIL",
-  "name_ar": "مجلس الشورى",
-  "name_en": "Shura Council",
-  "parent_entity_id": null,
-  "hierarchy_level": 1,
-  "details_reference": "entities/ENT-SHURA-COUNCIL.json",
-  "note": "مجلس تشريعي ثانٍ بموجب دستور 2012 (المواد 82، 128-131). تم إلغاؤه بموجب دستور 2014 واستُبدل بمجلس الشيوخ (ENT-SEN)."
-},
-{
-  "entity_id": "ENT-HEC-2012",
-  "name_ar": "اللجنة العليا للانتخابات",
-  "name_en": "High Elections Committee",
-  "parent_entity_id": null,
-  "hierarchy_level": 1,
-  "details_reference": "entities/ENT-HEC-2012.json",
-  "note": "اللجنة العليا للانتخابات القائمة في تاريخ العمل بدستور 2012 (المادة 228). تم استبدالها بالمفوضية الوطنية للانتخابات (ENT-NATIONAL-ELECTIONS-COMMISSION-2012) بموجب المادة 228، ثم بالهيئة الوطنية للانتخابات (ENT-NEA) بموجب دستور 2014.",
-  "status": "dissolved",
-  "dissolved_by": "CONST-2012",
-  "succeeded_by": "ENT-NATIONAL-ELECTIONS-COMMISSION-2012"
-},
-{
-  "entity_id": "ENT-NATIONAL-ELECTIONS-COMMISSION-2012",
-  "name_ar": "المفوضية الوطنية للانتخابات",
-  "name_en": "National Elections Commission",
-  "parent_entity_id": null,
-  "hierarchy_level": 1,
-  "details_reference": "entities/ENT-NATIONAL-ELECTIONS-COMMISSION-2012.json",
-  "note": "هيئة مستقلة منشأة بموجب المادة 208 من دستور 2012. تم استبدالها بالهيئة الوطنية للانتخابات (ENT-NEA) بموجب دستور 2014.",
-  "status": "dissolved",
-  "dissolved_by": "CONST-2014",
-  "succeeded_by": "ENT-NEA"
-},
-{
-  "entity_id": "ENT-ANTI-CORRUPTION-AUTHORITY-2012",
-  "name_ar": "المفوضية الوطنية لمكافحة الفساد",
-  "name_en": "National Anti-Corruption Commission",
-  "parent_entity_id": null,
-  "hierarchy_level": 1,
-  "details_reference": "entities/ENT-ANTI-CORRUPTION-AUTHORITY-2012.json",
-  "note": "جهاز رقابي منشأ بموجب المادة 204 من دستور 2012. لم يُنشأ فعلياً — تم استبداله بهيئة الرقابة الإدارية (ENT-ACA) في دستور 2014.",
-  "status": "dissolved",
-  "dissolved_by": "CONST-2014",
-  "succeeded_by": "ENT-ACA"
-},
-{
-  "entity_id": "ENT-SUPREME-COUNCIL-WAQF",
-  "name_ar": "الهيئة العليا لشئون الوقف",
-  "name_en": "Supreme Authority for Endowments Affairs",
-  "parent_entity_id": null,
-  "hierarchy_level": 1,
-  "details_reference": "entities/ENT-SUPREME-COUNCIL-WAQF.json",
-  "note": "هيئة مستقلة منشأة بموجب المادة 212 من دستور 2012. لم تُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيلها."
-},
-{
-  "entity_id": "ENT-SUPREME-HERITAGE-COUNCIL",
-  "name_ar": "الهيئة العليا لحفظ التراث",
-  "name_en": "Supreme Council for Heritage Preservation",
-  "parent_entity_id": null,
-  "hierarchy_level": 1,
-  "details_reference": "entities/ENT-SUPREME-HERITAGE-COUNCIL.json",
-  "note": "هيئة مستقلة منشأة بموجب المادة 213 من دستور 2012. لم تُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيلها."
-},
-{
-  "entity_id": "ENT-NATIONAL-COUNCIL-EDU-RESEARCH",
-  "name_ar": "المجلس الوطني للتعليم والبحث العلمي",
-  "name_en": "National Council for Education and Scientific Research",
-  "parent_entity_id": null,
-  "hierarchy_level": 1,
-  "details_reference": "entities/ENT-NATIONAL-COUNCIL-EDU-RESEARCH.json",
-  "note": "هيئة مستقلة منشأة بموجب المادة 214 من دستور 2012. لم تُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيلها."
-},
-{
-  "entity_id": "ENT-NATIONAL-MEDIA-COUNCIL",
-  "name_ar": "المجلس الوطني للإعلام",
-  "name_en": "National Media Council",
-  "parent_entity_id": null,
-  "hierarchy_level": 1,
-  "details_reference": "entities/ENT-NATIONAL-MEDIA-COUNCIL.json",
-  "note": "هيئة مستقلة منشأة بموجب المادة 215 من دستور 2012. تم استبداله بالمجلس الأعلى لتنظيم الإعلام (ENT-SCMR) بموجب دستور 2014.",
-  "status": "dissolved",
-  "dissolved_by": "CONST-2014",
-  "succeeded_by": "ENT-SCMR"
-},
-{
-  "entity_id": "ENT-NATIONAL-PRESS-MEDIA-AUTHORITY",
-  "name_ar": "الهيئة الوطنية للصحافة والإعلام",
-  "name_en": "National Press and Media Authority",
-  "parent_entity_id": null,
-  "hierarchy_level": 1,
-  "details_reference": "entities/ENT-NATIONAL-PRESS-MEDIA-AUTHORITY.json",
-  "note": "هيئة مستقلة منشأة بموجب المادة 216 من دستور 2012. تم استبدالها بالهيئة الوطنية للصحافة (ENT-NPA) والهيئة الوطنية للإعلام (ENT-NMA) بموجب دستور 2014.",
-  "status": "dissolved",
-  "dissolved_by": "CONST-2014",
-  "succeeded_by": ["ENT-NPA", "ENT-NMA"]
-},
-{
-  "entity_id": "ENT-SUPREME-ARMED-COUNCIL",
-  "name_ar": "المجلس الأعلى للقوات المسلحة",
-  "name_en": "Supreme Council of the Armed Forces",
-  "parent_entity_id": "ENT-AF",
-  "hierarchy_level": 2,
-  "details_reference": "entities/ENT-SUPREME-ARMED-COUNCIL.json",
-  "note": "المجلس الأعلى للقوات المسلحة — مذكور في المادة 194 من دستور 2012 (مجلس أعلى للقوات المسلحة) والمادة 236 (مصدر الإعلانات الدستورية الملغاة)."
-},
-{
-  "entity_id": "ENT-NATIONAL-ECONOMIC-SOCIAL-COUNCIL",
-  "name_ar": "المجلس الاقتصادي والاجتماعي",
-  "name_en": "National Economic and Social Council",
-  "parent_entity_id": null,
-  "hierarchy_level": 1,
-  "details_reference": "entities/ENT-NATIONAL-ECONOMIC-SOCIAL-COUNCIL.json",
-  "note": "مجلس منشأ بموجب المادة 207 من دستور 2012. لم يُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيله."
-}
+      "entity_id": "ENT-HAHC",
+      "name_ar": "الهيئة العامة للاعتماد والرقابة الصحية",
+      "name_en": "General Authority for Health Accreditation and Control",
+      "parent_entity_id": "ENT-PRES",
+      "hierarchy_level": 2,
+      "details_reference": "entities/ENT-HAHC.json"
+    },
+    {
+      "entity_id": "ENT-TRA",
+      "name_ar": "جهاز تنظيم مرفق الاتصالات السلكية واللاسلكية",
+      "name_en": "Telecommunications Regulatory Authority",
+      "parent_entity_id": "ENT-MOT",
+      "hierarchy_level": 2,
+      "details_reference": "entities/ENT-TRA.json"
+    },
 
+    {
+      "entity_id": "ENT-AF",
+      "name_ar": "القوات المسلحة",
+      "name_en": "Armed Forces",
+      "details_reference": "entities/ENT-AF.json"
+    },
 
+    {
+      "entity_id": "ENT-HEC",
+      "name_ar": "اللجنة العليا للانتخابات",
+      "name_en": "High Elections Committee",
+      "details_reference": "entities/ENT-HEC.json",
+      "status": "dissolved",
+      "dissolved_by": "CONST-2014",
+      "succeeded_by": "ENT-NEA",
+      "note": "لجنة مؤقتة أُنشئت بموجب قرار رئيس الجمهورية رقم 586 لسنة 2013، تولت الإشراف على الاستفتاء على دستور 2014 والانتخابات الرئاسية والتشريعية 2014. تم استبدالها بالهيئة الوطنية للانتخابات (ENT-NEA) وفقاً لدستور 2014 (المادة 208)."
+    },
+    {
+      "entity_id": "ENT-HEC-2012",
+      "name_ar": "اللجنة العليا للانتخابات (2012)",
+      "name_en": "High Elections Committee (2012)",
+      "details_reference": "entities/ENT-HEC-2012.json",
+      "status": "dissolved",
+      "dissolved_by": "CONST-2012",
+      "succeeded_by": "ENT-NATIONAL-ELECTIONS-COMMISSION-2012",
+      "note": "اللجنة العليا للانتخابات القائمة في تاريخ العمل بدستور 2012 (المادة 228). تم استبدالها بالمفوضية الوطنية للانتخابات (ENT-NATIONAL-ELECTIONS-COMMISSION-2012) بموجب المادة 228 من دستور 2012."
+    },
+    {
+      "entity_id": "ENT-SHURA-COUNCIL",
+      "name_ar": "مجلس الشورى",
+      "name_en": "Shura Council",
+      "details_reference": "entities/ENT-SHURA-COUNCIL.json",
+      "status": "dissolved",
+      "dissolved_by": "CONST-2014",
+      "succeeded_by": "ENT-SEN",
+      "note": "مجلس تشريعي ثانٍ بموجب دستور 2012 (المواد 82، 128-131). تم إلغاؤه بموجب دستور 2014 واستُبدل بمجلس الشيوخ (ENT-SEN)."
+    },
+    {
+      "entity_id": "ENT-NATIONAL-ELECTIONS-COMMISSION-2012",
+      "name_ar": "المفوضية الوطنية للانتخابات",
+      "name_en": "National Elections Commission",
+      "details_reference": "entities/ENT-NATIONAL-ELECTIONS-COMMISSION-2012.json",
+      "status": "dissolved",
+      "dissolved_by": "CONST-2014",
+      "succeeded_by": "ENT-NEA",
+      "note": "هيئة مستقلة منشأة بموجب المادة 208 من دستور 2012. تم استبدالها بالهيئة الوطنية للانتخابات (ENT-NEA) بموجب دستور 2014."
+    },
+    {
+      "entity_id": "ENT-ANTI-CORRUPTION-AUTHORITY-2012",
+      "name_ar": "المفوضية الوطنية لمكافحة الفساد",
+      "name_en": "National Anti-Corruption Commission",
+      "details_reference": "entities/ENT-ANTI-CORRUPTION-AUTHORITY-2012.json",
+      "status": "never_established",
+      "dissolved_by": "CONST-2014",
+      "succeeded_by": "ENT-ACA",
+      "note": "جهاز رقابي منشأ بموجب المادة 204 من دستور 2012. لم يُنشأ فعلياً — تم استبداله بهيئة الرقابة الإدارية (ENT-ACA) في دستور 2014."
+    },
+    {
+      "entity_id": "ENT-SUPREME-COUNCIL-WAQF",
+      "name_ar": "الهيئة العليا لشئون الوقف",
+      "name_en": "Supreme Authority for Endowments Affairs",
+      "details_reference": "entities/ENT-SUPREME-COUNCIL-WAQF.json",
+      "status": "never_established",
+      "note": "هيئة مستقلة منشأة بموجب المادة 212 من دستور 2012. لم تُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيلها."
+    },
+    {
+      "entity_id": "ENT-SUPREME-HERITAGE-COUNCIL",
+      "name_ar": "الهيئة العليا لحفظ التراث",
+      "name_en": "Supreme Council for Heritage Preservation",
+      "details_reference": "entities/ENT-SUPREME-HERITAGE-COUNCIL.json",
+      "status": "never_established",
+      "note": "هيئة مستقلة منشأة بموجب المادة 213 من دستور 2012. لم تُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيلها."
+    },
+    {
+      "entity_id": "ENT-NATIONAL-COUNCIL-EDU-RESEARCH",
+      "name_ar": "المجلس الوطني للتعليم والبحث العلمي",
+      "name_en": "National Council for Education and Scientific Research",
+      "details_reference": "entities/ENT-NATIONAL-COUNCIL-EDU-RESEARCH.json",
+      "status": "never_established",
+      "note": "هيئة مستقلة منشأة بموجب المادة 214 من دستور 2012. لم تُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيلها."
+    },
+    {
+      "entity_id": "ENT-NATIONAL-MEDIA-COUNCIL",
+      "name_ar": "المجلس الوطني للإعلام",
+      "name_en": "National Media Council",
+      "details_reference": "entities/ENT-NATIONAL-MEDIA-COUNCIL.json",
+      "status": "never_established",
+      "dissolved_by": "CONST-2014",
+      "succeeded_by": "ENT-SCMR",
+      "note": "هيئة مستقلة منشأة بموجب المادة 215 من دستور 2012. تم استبداله بالمجلس الأعلى لتنظيم الإعلام (ENT-SCMR) بموجب دستور 2014."
+    },
+    {
+      "entity_id": "ENT-NATIONAL-PRESS-MEDIA-AUTHORITY",
+      "name_ar": "الهيئة الوطنية للصحافة والإعلام",
+      "name_en": "National Press and Media Authority",
+      "details_reference": "entities/ENT-NATIONAL-PRESS-MEDIA-AUTHORITY.json",
+      "status": "never_established",
+      "dissolved_by": "CONST-2014",
+      "succeeded_by": ["ENT-NPA", "ENT-NMA"],
+      "note": "هيئة مستقلة منشأة بموجب المادة 216 من دستور 2012. تم استبدالها بالهيئة الوطنية للصحافة (ENT-NPA) والهيئة الوطنية للإعلام (ENT-NMA) بموجب دستور 2014."
+    },
+    {
+      "entity_id": "ENT-SUPREME-ARMED-COUNCIL",
+      "name_ar": "المجلس الأعلى للقوات المسلحة",
+      "name_en": "Supreme Council of the Armed Forces",
+      "parent_entity_id": "ENT-AF",
+      "hierarchy_level": 2,
+      "details_reference": "entities/ENT-SUPREME-ARMED-COUNCIL.json",
+      "status": "active",
+      "note": "المجلس الأعلى للقوات المسلحة — مذكور في المادة 194 من دستور 2012 (مجلس أعلى للقوات المسلحة) والمادة 236 (مصدر الإعلانات الدستورية الملغاة)."
+    },
+    {
+      "entity_id": "ENT-NATIONAL-ECONOMIC-SOCIAL-COUNCIL",
+      "name_ar": "المجلس الاقتصادي والاجتماعي",
+      "name_en": "National Economic and Social Council",
+      "details_reference": "entities/ENT-NATIONAL-ECONOMIC-SOCIAL-COUNCIL.json",
+      "status": "never_established",
+      "note": "مجلس منشأ بموجب المادة 207 من دستور 2012. لم يُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيله."
+    }
 
   ]
 }
