@@ -35,6 +35,7 @@
       "name_en": "Council of Ministers",
       "details_reference": "entities/ENT-CAB.json"
     },
+
     {
       "entity_id": "ENT-MOI",
       "name_ar": "وزارة الداخلية",
@@ -106,6 +107,114 @@
       "name_ar": "وزارة التخطيط والتنمية الاقتصادية",
       "name_en": "Ministry of Planning and Economic Development",
       "details_reference": "entities/ENT-MOP.json"
+    },
+    {
+      "entity_id": "ENT-MFA",
+      "name_ar": "وزارة الخارجية والتعاون الدولي وشؤون المصريين بالخارج",
+      "name_en": "Ministry of Foreign Affairs",
+      "details_reference": "entities/ENT-MFA.json"
+    },
+    {
+      "entity_id": "ENT-MWRI",
+      "name_ar": "وزارة الموارد المائية والري",
+      "name_en": "Ministry of Water Resources and Irrigation",
+      "details_reference": "entities/ENT-MWRI.json"
+    },
+    {
+      "entity_id": "ENT-MOA",
+      "name_ar": "وزارة الزراعة واستصلاح الأراضي",
+      "name_en": "Ministry of Agriculture and Land Reclamation",
+      "details_reference": "entities/ENT-MOA.json"
+    },
+    {
+      "entity_id": "ENT-MOTA",
+      "name_ar": "وزارة السياحة والآثار",
+      "name_en": "Ministry of Tourism and Antiquities",
+      "details_reference": "entities/ENT-MOTA.json"
+    },
+    {
+      "entity_id": "ENT-MOC",
+      "name_ar": "وزارة الثقافة",
+      "name_en": "Ministry of Culture",
+      "details_reference": "entities/ENT-MOC.json"
+    },
+    {
+      "entity_id": "ENT-MOHU",
+      "name_ar": "وزارة الإسكان والمرافق والمجتمعات العمرانية",
+      "name_en": "Ministry of Housing, Utilities and Urban Communities",
+      "details_reference": "entities/ENT-MOHU.json"
+    },
+    {
+      "entity_id": "ENT-MOCIT",
+      "name_ar": "وزارة الاتصالات وتكنولوجيا المعلومات",
+      "name_en": "Ministry of Communications and Information Technology",
+      "details_reference": "entities/ENT-MOCIT.json"
+    },
+    {
+      "entity_id": "ENT-MOIIT",
+      "name_ar": "وزارة الصناعة",
+      "name_en": "Ministry of Industry",
+      "details_reference": "entities/ENT-MOIIT.json"
+    },
+    {
+      "entity_id": "ENT-MOIFF",
+      "name_ar": "وزارة الاستثمار والتجارة الخارجية",
+      "name_en": "Ministry of Investment and Foreign Trade",
+      "details_reference": "entities/ENT-MOIFF.json"
+    },
+    {
+      "entity_id": "ENT-MOL",
+      "name_ar": "وزارة العمل",
+      "name_en": "Ministry of Labour",
+      "details_reference": "entities/ENT-MOL.json"
+    },
+    {
+      "entity_id": "ENT-MOPP",
+      "name_ar": "وزارة البترول والثروة المعدنية",
+      "name_en": "Ministry of Petroleum and Mineral Resources",
+      "details_reference": "entities/ENT-MOPP.json"
+    },
+    {
+      "entity_id": "ENT-MOCA",
+      "name_ar": "وزارة الطيران المدني",
+      "name_en": "Ministry of Civil Aviation",
+      "details_reference": "entities/ENT-MOCA.json"
+    },
+    {
+      "entity_id": "ENT-MOY",
+      "name_ar": "وزارة الشباب والرياضة",
+      "name_en": "Ministry of Youth and Sports",
+      "details_reference": "entities/ENT-MOY.json"
+    },
+    {
+      "entity_id": "ENT-MOLD",
+      "name_ar": "وزارة التنمية المحلية والبيئة",
+      "name_en": "Ministry of Local Development and Environment",
+      "details_reference": "entities/ENT-MOLD.json"
+    },
+    {
+      "entity_id": "ENT-MOSM",
+      "name_ar": "وزارة الدولة للإنتاج الحربي",
+      "name_en": "Ministry of State for Military Production",
+      "details_reference": "entities/ENT-MOSM.json"
+    },
+    {
+      "entity_id": "ENT-MOM",
+      "name_ar": "وزارة الدولة للإعلام",
+      "name_en": "Ministry of State for Media",
+      "details_reference": "entities/ENT-MOM.json"
+    },
+    {
+      "entity_id": "ENT-MOSPL",
+      "name_ar": "وزارة شؤون المجالس النيابية والقانونية والتواصل السياسي",
+      "name_en": "Ministry of Parliamentary Affairs",
+      "details_reference": "entities/ENT-MOSPL.json"
+    },
+    {
+      "entity_id": "ENT-MOAW",
+      "name_ar": "وزارة الأوقاف",
+      "name_en": "Ministry of Awqaf",
+      "details_reference": "entities/ENT-MOAW.json"
     },
 
     {
@@ -191,6 +300,12 @@
       "name_ar": "هيئة مفوضي الدولة",
       "name_en": "State Commissioners Authority",
       "details_reference": "entities/ENT-SC-COM.json"
+    },
+    {
+      "entity_id": "ENT-ECON",
+      "name_ar": "المحاكم الاقتصادية",
+      "name_en": "Economic Courts",
+      "details_reference": "entities/ENT-ECON.json"
     },
     {
       "entity_id": "ENT-ADMPROS",
@@ -317,6 +432,19 @@
     },
 
     {
+      "entity_id": "ENT-AF",
+      "name_ar": "القوات المسلحة",
+      "name_en": "Armed Forces",
+      "details_reference": "entities/ENT-AF.json"
+    },
+    {
+      "entity_id": "ENT-POL",
+      "name_ar": "الشرطة",
+      "name_en": "Police",
+      "details_reference": "entities/ENT-POL.json"
+    },
+
+    {
       "entity_id": "ENT-AZHAR",
       "name_ar": "الأزهر الشريف",
       "name_en": "Al-Azhar Al-Sharif",
@@ -404,10 +532,11 @@
     },
 
     {
-      "entity_id": "ENT-AF",
-      "name_ar": "القوات المسلحة",
-      "name_en": "Armed Forces",
-      "details_reference": "entities/ENT-AF.json"
+      "entity_id": "ENT-ECESR",
+      "name_ar": "المركز المصري للحقوق الاقتصادية والاجتماعية",
+      "name_en": "Egyptian Center for Economic and Social Rights",
+      "details_reference": "entities/ENT-ECESR.json",
+      "note": "منظمة مجتمع مدني — جهة إصدار تقارير (report) وليست جهة تشريعية."
     },
 
     {
