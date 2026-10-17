@@ -1,0 +1,22 @@
+{
+  "instance_id": "EMP-CONST-2012-ART-132-POS-PRES",
+  "type_id": "REL-022",
+  "type_name": "empowers",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "CONST-2012",
+    "article_number": 132,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position",
+    "entity_id": null,
+    "position_id": "POS-PRES"
+  },
+  "effective_date": "2012-12-25",
+  "confidence": 0.95,
+  "reference_text": "رئيس الجمهورية هو رئيس الدولة، ورئيس السلطة التنفيذية..."
+}
