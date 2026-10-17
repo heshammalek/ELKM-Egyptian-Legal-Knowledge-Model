@@ -372,6 +372,120 @@
   "status": "dissolved",
   "dissolved_by": "CONST-2014",
   "succeeded_by": "ENT-NEA"
+},
+    {
+  "entity_id": "ENT-SHURA-COUNCIL",
+  "name_ar": "مجلس الشورى",
+  "name_en": "Shura Council",
+  "parent_entity_id": null,
+  "hierarchy_level": 1,
+  "details_reference": "entities/ENT-SHURA-COUNCIL.json",
+  "note": "مجلس تشريعي ثانٍ بموجب دستور 2012 (المواد 82، 128-131). تم إلغاؤه بموجب دستور 2014 واستُبدل بمجلس الشيوخ (ENT-SEN)."
+},
+{
+  "entity_id": "ENT-HEC-2012",
+  "name_ar": "اللجنة العليا للانتخابات",
+  "name_en": "High Elections Committee",
+  "parent_entity_id": null,
+  "hierarchy_level": 1,
+  "details_reference": "entities/ENT-HEC-2012.json",
+  "note": "اللجنة العليا للانتخابات القائمة في تاريخ العمل بدستور 2012 (المادة 228). تم استبدالها بالمفوضية الوطنية للانتخابات (ENT-NATIONAL-ELECTIONS-COMMISSION-2012) بموجب المادة 228، ثم بالهيئة الوطنية للانتخابات (ENT-NEA) بموجب دستور 2014.",
+  "status": "dissolved",
+  "dissolved_by": "CONST-2012",
+  "succeeded_by": "ENT-NATIONAL-ELECTIONS-COMMISSION-2012"
+},
+{
+  "entity_id": "ENT-NATIONAL-ELECTIONS-COMMISSION-2012",
+  "name_ar": "المفوضية الوطنية للانتخابات",
+  "name_en": "National Elections Commission",
+  "parent_entity_id": null,
+  "hierarchy_level": 1,
+  "details_reference": "entities/ENT-NATIONAL-ELECTIONS-COMMISSION-2012.json",
+  "note": "هيئة مستقلة منشأة بموجب المادة 208 من دستور 2012. تم استبدالها بالهيئة الوطنية للانتخابات (ENT-NEA) بموجب دستور 2014.",
+  "status": "dissolved",
+  "dissolved_by": "CONST-2014",
+  "succeeded_by": "ENT-NEA"
+},
+{
+  "entity_id": "ENT-ANTI-CORRUPTION-AUTHORITY-2012",
+  "name_ar": "المفوضية الوطنية لمكافحة الفساد",
+  "name_en": "National Anti-Corruption Commission",
+  "parent_entity_id": null,
+  "hierarchy_level": 1,
+  "details_reference": "entities/ENT-ANTI-CORRUPTION-AUTHORITY-2012.json",
+  "note": "جهاز رقابي منشأ بموجب المادة 204 من دستور 2012. لم يُنشأ فعلياً — تم استبداله بهيئة الرقابة الإدارية (ENT-ACA) في دستور 2014.",
+  "status": "dissolved",
+  "dissolved_by": "CONST-2014",
+  "succeeded_by": "ENT-ACA"
+},
+{
+  "entity_id": "ENT-SUPREME-COUNCIL-WAQF",
+  "name_ar": "الهيئة العليا لشئون الوقف",
+  "name_en": "Supreme Authority for Endowments Affairs",
+  "parent_entity_id": null,
+  "hierarchy_level": 1,
+  "details_reference": "entities/ENT-SUPREME-COUNCIL-WAQF.json",
+  "note": "هيئة مستقلة منشأة بموجب المادة 212 من دستور 2012. لم تُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيلها."
+},
+{
+  "entity_id": "ENT-SUPREME-HERITAGE-COUNCIL",
+  "name_ar": "الهيئة العليا لحفظ التراث",
+  "name_en": "Supreme Council for Heritage Preservation",
+  "parent_entity_id": null,
+  "hierarchy_level": 1,
+  "details_reference": "entities/ENT-SUPREME-HERITAGE-COUNCIL.json",
+  "note": "هيئة مستقلة منشأة بموجب المادة 213 من دستور 2012. لم تُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيلها."
+},
+{
+  "entity_id": "ENT-NATIONAL-COUNCIL-EDU-RESEARCH",
+  "name_ar": "المجلس الوطني للتعليم والبحث العلمي",
+  "name_en": "National Council for Education and Scientific Research",
+  "parent_entity_id": null,
+  "hierarchy_level": 1,
+  "details_reference": "entities/ENT-NATIONAL-COUNCIL-EDU-RESEARCH.json",
+  "note": "هيئة مستقلة منشأة بموجب المادة 214 من دستور 2012. لم تُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيلها."
+},
+{
+  "entity_id": "ENT-NATIONAL-MEDIA-COUNCIL",
+  "name_ar": "المجلس الوطني للإعلام",
+  "name_en": "National Media Council",
+  "parent_entity_id": null,
+  "hierarchy_level": 1,
+  "details_reference": "entities/ENT-NATIONAL-MEDIA-COUNCIL.json",
+  "note": "هيئة مستقلة منشأة بموجب المادة 215 من دستور 2012. تم استبداله بالمجلس الأعلى لتنظيم الإعلام (ENT-SCMR) بموجب دستور 2014.",
+  "status": "dissolved",
+  "dissolved_by": "CONST-2014",
+  "succeeded_by": "ENT-SCMR"
+},
+{
+  "entity_id": "ENT-NATIONAL-PRESS-MEDIA-AUTHORITY",
+  "name_ar": "الهيئة الوطنية للصحافة والإعلام",
+  "name_en": "National Press and Media Authority",
+  "parent_entity_id": null,
+  "hierarchy_level": 1,
+  "details_reference": "entities/ENT-NATIONAL-PRESS-MEDIA-AUTHORITY.json",
+  "note": "هيئة مستقلة منشأة بموجب المادة 216 من دستور 2012. تم استبدالها بالهيئة الوطنية للصحافة (ENT-NPA) والهيئة الوطنية للإعلام (ENT-NMA) بموجب دستور 2014.",
+  "status": "dissolved",
+  "dissolved_by": "CONST-2014",
+  "succeeded_by": ["ENT-NPA", "ENT-NMA"]
+},
+{
+  "entity_id": "ENT-SUPREME-ARMED-COUNCIL",
+  "name_ar": "المجلس الأعلى للقوات المسلحة",
+  "name_en": "Supreme Council of the Armed Forces",
+  "parent_entity_id": "ENT-AF",
+  "hierarchy_level": 2,
+  "details_reference": "entities/ENT-SUPREME-ARMED-COUNCIL.json",
+  "note": "المجلس الأعلى للقوات المسلحة — مذكور في المادة 194 من دستور 2012 (مجلس أعلى للقوات المسلحة) والمادة 236 (مصدر الإعلانات الدستورية الملغاة)."
+},
+{
+  "entity_id": "ENT-NATIONAL-ECONOMIC-SOCIAL-COUNCIL",
+  "name_ar": "المجلس الاقتصادي والاجتماعي",
+  "name_en": "National Economic and Social Council",
+  "parent_entity_id": null,
+  "hierarchy_level": 1,
+  "details_reference": "entities/ENT-NATIONAL-ECONOMIC-SOCIAL-COUNCIL.json",
+  "note": "مجلس منشأ بموجب المادة 207 من دستور 2012. لم يُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيله."
 }
 
 
