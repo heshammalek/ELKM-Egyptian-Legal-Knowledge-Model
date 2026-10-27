@@ -1,0 +1,21 @@
+{
+  "instance_id": "EST-CONST-1971-ART-182-ENT-NDC",
+  "type_id": "REL-014",
+  "type_name": "establishes",
+  "category_id": "DOC-ENT",
+  "source": {
+    "doc_id": "CONST-1971",
+    "article_number": 182,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "entity",
+    "entity_id": "ENT-NDC"
+  },
+  "effective_date": "1971-09-11",
+  "confidence": 0.95,
+  "reference_text": "ينشأ مجلس يسمى \"مجلس الدفاع الوطني\" ويتولى رئيس الجمهورية رئاسته..."
+}
