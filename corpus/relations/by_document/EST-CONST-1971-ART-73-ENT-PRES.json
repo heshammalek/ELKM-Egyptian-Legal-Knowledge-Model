@@ -1,0 +1,21 @@
+{
+  "instance_id": "EST-CONST-1971-ART-73-ENT-PRES",
+  "type_id": "REL-014",
+  "type_name": "establishes",
+  "category_id": "DOC-ENT",
+  "source": {
+    "doc_id": "CONST-1971",
+    "article_number": 73,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "entity",
+    "entity_id": "ENT-PRES"
+  },
+  "effective_date": "1971-09-11",
+  "confidence": 0.95,
+  "reference_text": "رئيس الدولة هو رئيس الجمهورية، ويسهر على تأكيد سيادة الشعب..."
+}
