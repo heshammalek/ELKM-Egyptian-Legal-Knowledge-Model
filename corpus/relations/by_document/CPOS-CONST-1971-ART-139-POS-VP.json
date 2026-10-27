@@ -1,0 +1,21 @@
+{
+  "instance_id": "CPOS-CONST-1971-ART-139-POS-VP",
+  "type_id": "REL-023",
+  "type_name": "creates_position",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "CONST-1971",
+    "article_number": 139,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position",
+    "position_id": "POS-VP"
+  },
+  "effective_date": "1971-09-11",
+  "confidence": 0.95,
+  "reference_text": "لرئيس الجمهورية أن يعين نائبا له أو أكثر، ويحدد اختصاصاتهم، ويعفيهم من مناصبهم."
+}
