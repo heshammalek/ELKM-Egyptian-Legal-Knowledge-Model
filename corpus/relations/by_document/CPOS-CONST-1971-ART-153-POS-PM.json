@@ -1,0 +1,21 @@
+{
+  "instance_id": "CPOS-CONST-1971-ART-153-POS-PM",
+  "type_id": "REL-023",
+  "type_name": "creates_position",
+  "category_id": "DOC-POS",
+  "source": {
+    "doc_id": "CONST-1971",
+    "article_number": 153,
+    "section": null
+  },
+  "target": {
+    "doc_id": null,
+    "article_number": null,
+    "article_number_end": null,
+    "scope": "position",
+    "position_id": "POS-PM"
+  },
+  "effective_date": "1971-09-11",
+  "confidence": 0.95,
+  "reference_text": "وتتكون الحكومة من رئيس مجلس الوزراء ونوابه والوزراء ونوابهم."
+}
