@@ -379,6 +379,42 @@
       "appointed_by": null,
       "status": "active",
       "note": "منصب رئيس المجلس الأعلى للقوات المسلحة — مذكور في المادة 194 من دستور 2012. يرأسه وزير الدفاع (القائد العام للقوات المسلحة) بحكم منصبه."
+    },
+    {
+      "position_id": "POS-PARL-SPEAKER",
+      "name_ar": "رئيس مجلس الشعب",
+      "name_en": "Speaker of the People's Assembly",
+      "entity_id": "ENT-PARL",
+      "appointed_by": null,
+      "hierarchy_level": 1,
+      "note": "منصب جديد أنشأه دستور 1971 (المادة 103). يُنتخب من أعضاء المجلس."
+    },
+    {
+      "position_id": "POS-PARL-DEPUTY-SPEAKER",
+      "name_ar": "وكيل مجلس الشعب",
+      "name_en": "Deputy Speaker of the People's Assembly",
+      "entity_id": "ENT-PARL",
+      "appointed_by": null,
+      "hierarchy_level": 2,
+      "note": "منصب جديد أنشأه دستور 1971 (المادة 103). يُنتخب من أعضاء المجلس."
+    },
+    {
+      "position_id": "POS-SOCIALIST-PROSECUTOR",
+      "name_ar": "المدعي العام الاشتراكي",
+      "name_en": "Socialist Public Prosecutor",
+      "entity_id": "ENT-SOCIALIST-PROSECUTOR",
+      "appointed_by": "POS-PRES",
+      "hierarchy_level": 1,
+      "note": "منصب جديد أنشأه دستور 1971 (المادة 179)."
+    },
+    {
+      "position_id": "POS-SUPREME-COURT-HEAD",
+      "name_ar": "رئيس المحكمة العليا",
+      "name_en": "Chief Justice of the Supreme Court",
+      "entity_id": "ENT-SUPREME-COURT-1971",
+      "appointed_by": "POS-PRES",
+      "hierarchy_level": 1,
+      "note": "منصب مؤقت مذكور في المادة 192."
     }
 
   ]
