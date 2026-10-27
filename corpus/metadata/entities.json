@@ -650,6 +650,33 @@
       "details_reference": "entities/ENT-NATIONAL-ECONOMIC-SOCIAL-COUNCIL.json",
       "status": "never_established",
       "note": "مجلس منشأ بموجب المادة 207 من دستور 2012. لم يُنشأ فعلياً — أُلغي دستور 2012 قبل تفعيله."
+    },
+    {
+      "entity_id": "ENT-SOCIALIST-PROSECUTOR",
+      "name_ar": "المدعي العام الاشتراكي",
+      "name_en": "Socialist Public Prosecutor",
+      "parent_entity_id": null,
+      "hierarchy_level": 1,
+      "details_reference": "entities/ENT-SOCIALIST-PROSECUTOR.json",
+      "note": "كيان جديد أنشأه دستور 1971 (المادة 179). لم يكن موجوداً في entities.json."
+    },
+    {
+      "entity_id": "ENT-SUPREME-COURT-1971",
+      "name_ar": "المحكمة العليا",
+      "name_en": "Supreme Court",
+      "parent_entity_id": null,
+      "hierarchy_level": 1,
+      "details_reference": "entities/ENT-SUPREME-COURT-1971.json",
+      "note": "كيان مؤقت مذكور في المادة 192، تمارس اختصاصاتها حتى يتم تشكيل المحكمة الدستورية العليا."
+    },
+    {
+      "entity_id": "ENT-ARAB-SOCIALIST-UNION",
+      "name_ar": "الاتحاد الاشتراكي العربي",
+      "name_en": "Arab Socialist Union",
+      "parent_entity_id": null,
+      "hierarchy_level": 1,
+      "details_reference": "entities/ENT-ARAB-SOCIALIST-UNION.json",
+      "note": "التنظيم السياسي الوحيد المذكور في المادة 5 من دستور 1971."
     }
 
   ]
