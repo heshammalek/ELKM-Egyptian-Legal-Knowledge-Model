@@ -2,7 +2,7 @@
 
 <div align="center">
 
-**The first comprehensive, open-source Arabic legal knowledge graph for Egyptian law**
+**An open-source, article-level temporal knowledge graph for Egyptian law**
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -33,6 +33,7 @@
 - [Repository Structure](#repository-structure)
 - [Corpus Structure](#corpus-structure-corpus)
 - [Relationship Graph](#relationship-graph)
+- [RDF Export (Linked Data)](#rdf-export-linked-data)
 - [Segmented Identifier System](#segmented-identifier-system)
 - [Technical Stack](#technical-stack)
 - [Intellectual References](#intellectual-references)
@@ -153,17 +154,21 @@ Any off-the-shelf Western ontology collides with this specificity. The only viab
 
 Products already exist offering fast full-text search over Egyptian legislation — most notably **Ansvar Systems** (Sweden), a globally leading company running the same MCP-server template across 46 jurisdictions (330,000+ national laws). The real difference isn't coverage — it's the **layer**:
 
-| | Traditional full-text search tools | ELKM |
-|---|---|---|
-| **Structure** | Simple text indexing (FTS5 + BM25) | Ontology + graph + explicit relationships |
-| **Depth** | Generic classification | Distinguishes decree-law from administrative decision, fatwa binding basis (Art. 66), per-article status over time |
-| **Scope** | Usually statutes only | 12 document types (including rulings, fatwas, minutes, academic doctrine) |
-| **Temporal** | Current snapshot only | Time-Travel queries: retrieve any article as it stood on any historical date |
-| **AI-Ready** | Unstructured text | Structured, contextual data designed for AI reasoning |
-| **Nature** | Horizontal expansion (breadth) | Vertical depth in one legal system (depth) |
+| | Ansvar (MCP) | Dike (API) | ELKM |
+|---|---|---|---|
+| **Nature** | Full-text search tool | Commercial retrieval + reasoning API | Open knowledge graph + ontology |
+| **Structure** | Simple text indexing (FTS5 + BM25) | Hybrid dense + lexical index | Ontology + graph + explicit relationships |
+| **Document type taxonomy** | Not documented — generic classification | Not documented publicly | Explicit `doc_types.json` with per-type force logic |
+| **Relation type taxonomy** | Citation aggregation only | 5 types: cites / amends / repeals / implements / interprets | 8+ named types, including `ABROGATES`, `ANNULS`, `MUST_NOT_CONTRADICT` |
+| **Relation granularity** | Document-level | Document-level (per published docs) | **Article-level** — a relation can target a single article |
+| **Relation metadata** | Not documented | Effective date (per published docs) | Type + effective date + `retroactive` flag + confidence + status |
+| **Status tracking** | Law-level | Per-document status; article-level history not described publicly | Article-level `status_history` with start/end dates |
+| **Time-travel** | Not documented | Not documented | Designed as first-class |
+| **Citation integrity** | Not documented | Model citations checked against retrieved set | `doc_id` + source anchoring (planned in MCP layer) |
+| **Provenance** | Not documented | Source ID + gazette date | source, extraction run, review status per record (being added) |
+| **Openness** | Public repo (license not verified) | Closed API, key required | MIT code, CC BY 4.0 data, RDF export |
 
-ELKM operates on a different layer — not by competing on text search, but by building a deeper one (legal reasoning and a relationship graph) for which no real equivalent currently exists for Egyptian law. Tools like Harvey AI and CoCounsel demonstrate the same lesson from the other direction: powerful LLMs still need a structured knowledge base underneath them to reason reliably over law. ELKM aims to be that base — an open infrastructure of the kind Westlaw provides commercially, but published.
-
+ELKM operates on a different layer — not by competing on text search, but by building a deeper one: a versioned, article-level, openly licensed model of how Egyptian legal texts affect each other over time. Dike provides a commercial retrieval and reasoning API with citation-graph traversal; ELKM complements this by offering an open knowledge layer underneath.
 ---
 
 ## Project Scope: Where the Code Ends
@@ -401,6 +406,33 @@ Named relation types anchor the graph's semantics, mirroring the authorities tha
 **Dependency Map** — *"which laws cite Article 53 of the constitution?"* — isn't a separate component, but a direct result of applying the NER model (specifically the `ARTICLE_REF` label) across the entire corpus to extract every explicit reference to one article inside another document's text, then building the graph from it.
 
 ---
+## RDF Export (Linked Data)
+
+The graph runs in Neo4j and is published as RDF so it can be linked, validated and cited by other projects. This turns ELKM from a private graph database into a piece of the global Linked Data web: each document, each article, and each relation becomes a dereferenceable URI that external tools can query, cross-reference, and reason over.
+corpus/exports/rdf/
+├── {doc_type}.ttl one file per doc_type
+├── relations.ttl each relation is its own node (keyed by relation_id)
+└── void.ttl dataset description (license, version, counts)
+
+ontology/
+├── elkm.ttl classes and properties (OWL/Turtle)
+├── shapes.ttl SHACL validation shapes
+└── context.jsonld JSON-LD context
+
+scripts/
+├── export_rdf.py corpus/normalized/json -> Turtle
+└── validate_rdf.py SHACL report (human review gate before publishing)
+
+**Modeling choices:**
+
+- **URIs:** `<base>/id/{doc_id}`, `<base>/id/{doc_id}/art/{n}`, `<base>/rel/{relation_id}` — every document, article, and relation is individually addressable.
+- **FRBR/ELI alignment:** `doc_id` = Work; each `version_from`/`version_to` = Expression (ELI/FRBR); `text_as_is` / `normalized` / `akn` = Manifestations. This separates the abstract law from its temporal versions and its textual representations.
+- **Relations are nodes, not bare edges:** each relation carries its own type, effective date, `retroactive` flag, and extraction confidence — so a repeal can itself be dated, questioned, or superseded.
+- **Reused standards:** ELI (legislation metadata), SKOS (subjects), PROV-O (source, extraction run, reviewer), Dublin Core (descriptive metadata). ELKM does not reinvent vocabulary where a W3C standard already exists.
+
+**Base URI decision:** Use `w3id.org/elkm` as the canonical base. Submit a request to the W3ID repository to register it. Until registration is approved, use the `github.io` URL as a temporary base. This matters because every published URI must remain stable forever — changing the base later would break every external citation.
+
+**Validation gate:** `validate_rdf.py` runs the SHACL shapes in `ontology/shapes.ttl` against the exported Turtle and produces a human-readable report. Publishing is blocked until the report is reviewed and approved. This is the quality gate before any RDF snapshot is released — the same role a human reviewer plays for the corpus itself.
 
 ## Segmented Identifier System
 
@@ -427,7 +459,8 @@ JUDG-CASS-CIV-30-40             Court of Cassation, Civil Chamber, Appeal 30 / J
 | Graph database | **Neo4j 5.x** | Stores and queries multi-hop relationships between texts, via Cypher |
 | Vector search | **Qdrant** | Semantic/vector search over legal text (folder reserved; not yet exported) |
 | Text search & indexing | **SQLite (central) + Elasticsearch** | Queryable document/article index, plus fast full-text search on normalized text |
-| Arabic NLP | **CAMeL Tools 1.5+** | Morphological analysis, POS tagging, NER |
+| RDF export | **rdflib** | Serialize graph data to Turtle/RDF |
+| RDF validation | **pySHACL** | Validate exported RDF against SHACL shapes |
 | Ontology | **OWLReady2**, exported as OWL/Turtle (W3C-compatible) | doc_types.json / doc_codes.json / subjects.json / relation_types.json / authority_types.json define the applied classification (12 document types, 6 subject sectors) |
 | Backend (planned) | **FastAPI** | Public API, data snapshots, or institutional integration |
 | Containers & CI | **Docker + Compose, GitHub Actions, Pytest** | Reproducible environment, automated testing |
@@ -480,6 +513,8 @@ ELKM draws on academic, technical, and conceptual references — none adopted wh
 | Segmented Identifier System | ⬜ | ⬜ | ⬜ |
 | Neo4j Import Script | ⬜ | ⬜ | ⬜ |
 | Unified Export Script | ⬜ | ⬜ | ⬜ |
+| RDF Export | ⬜ | ⬜ | ⬜ |
+| Studio Page | ⬜ | ⬜ | ⬜ |
 | NER Dataset | ⬜ | ⬜ | ⬜ |
 | Public API | ⬜ | ⬜ | ⬜ |
 | Arabic Documentation | ⬜ | ⬜ | ⬜ |
@@ -520,6 +555,14 @@ ELKM draws on academic, technical, and conceptual references — none adopted wh
 - [ ] **ArabicLegalNLP** — standalone Python library
 - [ ] **LexChain Egypt** — commercial product layer
 
+**RDF & Interoperability**
+- [ ] Export RDF (Turtle) with SHACL validation report
+- [ ] Register `w3id.org/elkm` base URI
+- [ ] Publish `void.ttl` dataset description
+
+**Developer Experience**
+- [ ] Studio page at `/studio` (reads `/openapi.json`)
+- [ ] Benchmark against Ansvar and Dike on identical queries
 ---
 
 ## 🤝 How to Contribute
