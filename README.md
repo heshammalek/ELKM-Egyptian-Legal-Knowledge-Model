@@ -445,7 +445,7 @@ scripts/
 **Base URI decision:** Use `w3id.org/elkm` as the canonical base. Submit a request to the W3ID repository to register it. Until registration is approved, use the `github.io` URL as a temporary base. This matters because every published URI must remain stable forever — changing the base later would break every external citation.
 
 **Validation gate:** `validate_rdf.py` runs the SHACL shapes in `ontology/shapes.ttl` against the exported Turtle and produces a human-readable report. Publishing is blocked until the report is reviewed and approved. This is the quality gate before any RDF snapshot is released — the same role a human reviewer plays for the corpus itself.
----
+
 
 ## Segmented Identifier System
 
