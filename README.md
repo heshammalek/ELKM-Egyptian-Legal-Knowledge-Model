@@ -231,6 +231,7 @@ flowchart TB
     style exp3 fill:#1a2332,stroke:#7ed321,color:#fff
     style exp4 fill:#1a2332,stroke:#7ed321,color:#fff
     style exp5 fill:#1a2332,stroke:#7ed321,color:#fff
+    style exp6 fill:#1a2332,stroke:#7ed321,color:#fff
 ```
 
 ---
@@ -417,19 +418,22 @@ Named relation types anchor the graph's semantics, mirroring the authorities tha
 ## RDF Export (Linked Data)
 
 The graph runs in Neo4j and is published as RDF so it can be linked, validated and cited by other projects. This turns ELKM from a private graph database into a piece of the global Linked Data web: each document, each article, and each relation becomes a dereferenceable URI that external tools can query, cross-reference, and reason over.
+
+```
 corpus/exports/rdf/
-├── {doc_type}.ttl one file per doc_type
-├── relations.ttl each relation is its own node (keyed by relation_id)
-└── void.ttl dataset description (license, version, counts)
+├── {doc_type}.ttl     one file per doc_type
+├── relations.ttl      each relation is its own node (keyed by relation_id)
+└── void.ttl           dataset description (license, version, counts)
 
 ontology/
-├── elkm.ttl classes and properties (OWL/Turtle)
-├── shapes.ttl SHACL validation shapes
-└── context.jsonld JSON-LD context
+├── elkm.ttl           classes and properties (OWL/Turtle)
+├── shapes.ttl         SHACL validation shapes
+└── context.jsonld     JSON-LD context
 
 scripts/
-├── export_rdf.py corpus/normalized/json -> Turtle
-└── validate_rdf.py SHACL report (human review gate before publishing)
+├── export_rdf.py      corpus/normalized/json -> Turtle
+└── validate_rdf.py    SHACL report (human review gate before publishing)
+```
 
 **Modeling choices:**
 
@@ -441,6 +445,7 @@ scripts/
 **Base URI decision:** Use `w3id.org/elkm` as the canonical base. Submit a request to the W3ID repository to register it. Until registration is approved, use the `github.io` URL as a temporary base. This matters because every published URI must remain stable forever — changing the base later would break every external citation.
 
 **Validation gate:** `validate_rdf.py` runs the SHACL shapes in `ontology/shapes.ttl` against the exported Turtle and produces a human-readable report. Publishing is blocked until the report is reviewed and approved. This is the quality gate before any RDF snapshot is released — the same role a human reviewer plays for the corpus itself.
+---
 
 ## Segmented Identifier System
 
@@ -469,7 +474,7 @@ JUDG-CASS-CIV-30-40             Court of Cassation, Civil Chamber, Appeal 30 / J
 | Text search & indexing | **SQLite (central) + Elasticsearch** | Queryable document/article index, plus fast full-text search on normalized text |
 | RDF export | **rdflib** | Serialize graph data to Turtle/RDF |
 | RDF validation | **pySHACL** | Validate exported RDF against SHACL shapes |
-| Ontology | **OWLReady2**, exported as OWL/Turtle (W3C-compatible) | doc_types.json / doc_codes.json / subjects.json / relation_types.json / authority_types.json define the applied classification (12 document types, 6 subject sectors) |
+| Ontology | **OWLReady2**, exported as OWL/Turtle (W3C-compatible) | doc_types.json / doc_codes.json / subjects.json / relation_types.json / authority_types.json define the applied classification (13 document types, 6 subject sectors) |
 | Backend (planned) | **FastAPI** | Public API, data snapshots, or institutional integration |
 | Containers & CI | **Docker + Compose, GitHub Actions, Pytest** | Reproducible environment, automated testing |
 | LLM integration | **Anthropic/OpenAI SDKs directly** | Reasoning layer on top of the graph |
