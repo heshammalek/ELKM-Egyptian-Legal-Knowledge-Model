@@ -160,10 +160,10 @@ Products already exist in two shapes over Egyptian legislation: **Ansvar Systems
 | **Structure** | Simple text indexing (FTS5 + BM25) | Hybrid dense + lexical index | Ontology + graph + explicit relationships |
 | **Document type taxonomy** | Not documented — generic classification | Not documented publicly | Explicit `doc_types.json` with per-type force logic |
 | **Relation type taxonomy** | Citation aggregation only | 5 types: cites / amends / repeals / implements / interprets | **26 named types** across 3 categories (DOC-DOC, DOC-ENT, DOC-POS), with constitutional basis per type |
-| **Relation granularity** | Document-level | Document-level (per published docs) | **Article-level** — a relation can target a single article |
+| **Relation granularity** | Document-level | Document-level (per published docs) | **Article-level source** + target can be `article`, `entity`, `position`, or `whole_document` |
 | **Relation metadata** | Not documented | Effective date (per published docs) | Structured `source`/`target` (doc_id, article_number, section, scope, entity_id, position_id) + `type_id` + `constitutional_basis` + `effective_date` + `confidence` + `reference_text` |
 | **Status tracking** | Law-level | Per-document status; article-level history not described publicly | Article-level `status_history` with start/end dates |
-| **Time-travel** | Not documented | Not documented | Designed as first-class |
+| **Time-travel** | Not documented | Not documented | Computed at query time from effective_date — no static status field |
 | **Citation integrity** | Not documented | Model citations checked against retrieved set | `doc_id` + source anchoring (planned in MCP layer) |
 | **Provenance** | Not documented | Source ID + gazette date | source, extraction run, review status per record (being added) |
 | **Openness** | Public repo (license not verified) | Closed API, key required | MIT code, CC BY 4.0 data, RDF export |
@@ -208,6 +208,7 @@ flowchart TB
             exp3["sqlite/corpus.db"]
             exp4["parquet/"]
             exp5["neo4j/ (primary)"]
+            exp6["rdf/"]
         end
     end
 
@@ -240,22 +241,26 @@ flowchart TB
 flowchart TB
     subgraph root ["ELKM/"]
         corpus["corpus/<br/>Structured legal data"]
-        ontology["ontology/<br/>Legal ontology definitions<br/>(elkm_core.ttl · elkm_core.owl)"]
+        ontology["ontology/<br/>Legal ontology definitions<br/>(elkm_core.ttl · elkm_core.owl<br/>elkm.ttl · shapes.ttl · context.jsonld)"]
         graphdir["graph/<br/>Neo4j import/build scripts<br/>(Python + Cypher)"]
         datasets["datasets/<br/>NER + legal terminology"]
-        scripts["scripts/<br/>Processing & matching tools"]
-        api["api/<br/>Query interface (planned)"]
+        scripts["scripts/<br/>Processing, matching &<br/>RDF export/validation tools"]
+        api["api/<br/>FastAPI application<br/>(serves /openapi.json and /studio)"]
+        web["web/<br/>Static assets<br/>(studio/index.html)<br/>mounted into api/ via StaticFiles"]
         docs["docs/<br/>Documentation (README.ar.md)"]
         tests["tests/<br/>Test scripts"]
         arabicnlp["ArabicLegalNLP/<br/>Sibling Python library"]
     end
+
+    web -.mounted into.-> api
 
     style corpus fill:#1a2332,stroke:#4a90d9,color:#fff
     style ontology fill:#1a2332,stroke:#4a90d9,color:#fff
     style graphdir fill:#1a2332,stroke:#7ed321,color:#fff
     style datasets fill:#1a2332,stroke:#9013fe,color:#fff
     style scripts fill:#1a2332,stroke:#888,color:#ccc
-    style api fill:#1a2332,stroke:#888,color:#ccc
+    style api fill:#1a2332,stroke:#4a90d9,color:#fff
+    style web fill:#1a2332,stroke:#f5a623,color:#fff
     style docs fill:#1a2332,stroke:#888,color:#ccc
     style tests fill:#1a2332,stroke:#888,color:#ccc
     style arabicnlp fill:#1a2332,stroke:#9013fe,color:#fff
@@ -321,6 +326,7 @@ flowchart TB
             sqlite["sqlite/<br/>corpus.db<br/>(single central DB)"]
             parquet["parquet/<br/>one file per doc_type"]
             neodb["neo4j/<br/>nodes/ + relationships/"]
+            rdf["rdf/<br/>{doc_type}.ttl · relations.ttl<br/>void.ttl"]
         end
     end
 
@@ -341,6 +347,7 @@ flowchart TB
     style sqlite fill:#1a2332,stroke:#7ed321,color:#fff
     style parquet fill:#1a2332,stroke:#7ed321,color:#fff
     style neodb fill:#1a2332,stroke:#7ed321,color:#fff
+    style rdf fill:#1a2332,stroke:#7ed321,color:#fff
 ```
 
 **Design rationale:**
@@ -374,19 +381,19 @@ graph LR
     L1["LAW-58-1937<br/>Penal Code"]
     L2["LAW-174-2025<br/>Amendment"]
     J1["JUDG-SCC-15-20<br/>Constitutionality Ruling"]
-    F1["FATWA-88-2021<br/>Interpretive Fatwa"]
+    L3["LAW-200-2024<br/>Reinstatement"]
 
     L2 -->|partial_repeal| L1
     J1 -->|unconstitutionality_ruling| L1
-    F1 -->|interpretation_fatwa| L2
+    L3 -->|reinstatement| L1
 
     style L1 fill:#1a2332,stroke:#4a90d9,color:#fff
     style L2 fill:#1a2332,stroke:#4a90d9,color:#fff
     style J1 fill:#1a2332,stroke:#d0021b,color:#fff
-    style F1 fill:#1a2332,stroke:#9013fe,color:#fff
+    style L3 fill:#1a2332,stroke:#9013fe,color:#fff
 ```
 
-Every relation is recorded with full temporal and legal precision: relation type, effective date, extraction confidence level, and the relation's own status. This distinguishes **prospective repeal** from **retroactive erasure** from **nullity** — distinctions most traditional legal archives ignore entirely.
+Every relation is recorded with full temporal and legal precision: relation type, effective date, extraction confidence level, and reference text. A relation's status at any given date is computed at query time from its effective_date — not stored as a static value. This is what makes time-travel queries possible: the same relation is "active" or "not yet in force" depending on when you ask.
 
 Named relation types anchor the graph's semantics, mirroring the authorities that create legal truth:
 
@@ -428,7 +435,7 @@ scripts/
 
 - **URIs:** `<base>/id/{doc_id}`, `<base>/id/{doc_id}/art/{n}`, `<base>/rel/{relation_id}` — every document, article, and relation is individually addressable.
 - **FRBR/ELI alignment:** `doc_id` = Work; each `version_from`/`version_to` = Expression (ELI/FRBR); `text_as_is` / `normalized` / `akn` = Manifestations. This separates the abstract law from its temporal versions and its textual representations.
-- **Relations are nodes, not bare edges:** each relation carries its own type, effective date, `retroactive` flag, and extraction confidence — so a repeal can itself be dated, questioned, or superseded.
+- Relations are nodes, not bare edges: each relation carries its own type, effective date, extraction confidence, and reference text — so a repeal can itself be dated, questioned, or superseded. Judgment-specific metadata (e.g. retroactive effect) is carried only on relations whose source is a judgment, not as a universal field.
 - **Reused standards:** ELI (legislation metadata), SKOS (subjects), PROV-O (source, extraction run, reviewer), Dublin Core (descriptive metadata). ELKM does not reinvent vocabulary where a W3C standard already exists.
 
 **Base URI decision:** Use `w3id.org/elkm` as the canonical base. Submit a request to the W3ID repository to register it. Until registration is approved, use the `github.io` URL as a temporary base. This matters because every published URI must remain stable forever — changing the base later would break every external citation.
