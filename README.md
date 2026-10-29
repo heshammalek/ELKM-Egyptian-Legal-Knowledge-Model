@@ -161,7 +161,7 @@ Products already exist in two shapes over Egyptian legislation: **Ansvar Systems
 | **Document type taxonomy** | Not documented — generic classification | Not documented publicly | Explicit `doc_types.json` with per-type force logic |
 | **Relation type taxonomy** | Citation aggregation only | 5 types: cites / amends / repeals / implements / interprets | **26 named types** across 3 categories (DOC-DOC, DOC-ENT, DOC-POS), with constitutional basis per type |
 | **Relation granularity** | Document-level | Document-level (per published docs) | **Article-level** — a relation can target a single article |
-| **Relation metadata** | Not documented | Effective date (per published docs) | Type + effective date + `retroactive` flag + confidence + status |
+| **Relation metadata** | Not documented | Effective date (per published docs) | Structured `source`/`target` (doc_id, article_number, section, scope, entity_id, position_id) + `type_id` + `constitutional_basis` + `effective_date` + `confidence` + `reference_text` |
 | **Status tracking** | Law-level | Per-document status; article-level history not described publicly | Article-level `status_history` with start/end dates |
 | **Time-travel** | Not documented | Not documented | Designed as first-class |
 | **Citation integrity** | Not documented | Model citations checked against retrieved set | `doc_id` + source anchoring (planned in MCP layer) |
@@ -169,7 +169,7 @@ Products already exist in two shapes over Egyptian legislation: **Ansvar Systems
 | **Openness** | Public repo (license not verified) | Closed API, key required | MIT code, CC BY 4.0 data, RDF export |
 
 ELKM operates on a different layer — not by competing on text search, but by building a deeper one: a versioned, article-level, openly licensed model of how Egyptian legal texts affect each other over time. Dike provides a commercial retrieval and reasoning API with citation-graph traversal; ELKM complements this by offering an open knowledge layer underneath.
----
+
 
 ## Project Scope: Where the Code Ends
 
