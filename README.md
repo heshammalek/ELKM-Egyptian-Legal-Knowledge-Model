@@ -152,14 +152,14 @@ Any off-the-shelf Western ontology collides with this specificity. The only viab
 
 ## Why ELKM Is Different (Competitive Context)
 
-Products already exist offering fast full-text search over Egyptian legislation — most notably **Ansvar Systems** (Sweden), a globally leading company running the same MCP-server template across 46 jurisdictions (330,000+ national laws). The real difference isn't coverage — it's the **layer**:
+Products already exist in two shapes over Egyptian legislation: **Ansvar Systems** (Sweden), a globally leading company running the same MCP-server template across 46 jurisdictions (330,000+ national laws) for fast full-text search; and **Dike**, a commercial MENA API offering hybrid retrieval with citation-graph traversal. Both are strong retrieval layers. The real difference isn't coverage — it's the **layer**:
 
 | | Ansvar (MCP) | Dike (API) | ELKM |
 |---|---|---|---|
 | **Nature** | Full-text search tool | Commercial retrieval + reasoning API | Open knowledge graph + ontology |
 | **Structure** | Simple text indexing (FTS5 + BM25) | Hybrid dense + lexical index | Ontology + graph + explicit relationships |
 | **Document type taxonomy** | Not documented — generic classification | Not documented publicly | Explicit `doc_types.json` with per-type force logic |
-| **Relation type taxonomy** | Citation aggregation only | 5 types: cites / amends / repeals / implements / interprets | 8+ named types, including `ABROGATES`, `ANNULS`, `MUST_NOT_CONTRADICT` |
+| **Relation type taxonomy** | Citation aggregation only | 5 types: cites / amends / repeals / implements / interprets | **26 named types** across 3 categories (DOC-DOC, DOC-ENT, DOC-POS), with constitutional basis per type |
 | **Relation granularity** | Document-level | Document-level (per published docs) | **Article-level** — a relation can target a single article |
 | **Relation metadata** | Not documented | Effective date (per published docs) | Type + effective date + `retroactive` flag + confidence + status |
 | **Status tracking** | Law-level | Per-document status; article-level history not described publicly | Article-level `status_history` with start/end dates |
@@ -397,7 +397,8 @@ Named relation types anchor the graph's semantics, mirroring the authorities tha
 | `amendment` | Modification of an existing legal text |
 | `addition` | Addition of new articles to an existing law |
 | `unconstitutionality_ruling` | Supreme Constitutional Court ruling of unconstitutionality |
-| `interpretation_fatwa` | Interpretive fatwa from the State Council |
+| `reinstatement` | Reinstatement of a repealed or suspended legal text |
+| `preemptive_repeal` | Blanket repeal of any text conflicting with a new law (target unresolved until matched) |
 | `referral` | Cross-reference from one text to another |
 | `establishes` | Creation of a new entity or institution |
 
