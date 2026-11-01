@@ -7,26 +7,27 @@ DB = "egylaw"
 def init_graph():
     with GraphDatabase.driver(URI, auth=AUTH) as driver:
         with driver.session(database=DB) as session:
-            # Constraints - تضمن uniqueness
             constraints = [
-                "CREATE CONSTRAINT legislation_id IF NOT EXISTS FOR (n:Legislation) REQUIRE n.id IS UNIQUE",
-                "CREATE CONSTRAINT article_id IF NOT EXISTS FOR (n:Article) REQUIRE n.id IS UNIQUE",
-                "CREATE CONSTRAINT definition_id IF NOT EXISTS FOR (n:Definition) REQUIRE n.id IS UNIQUE",
-                "CREATE CONSTRAINT constitutional_ruling_id IF NOT EXISTS FOR (n:Constitutional_Ruling) REQUIRE n.id IS UNIQUE",
-                "CREATE CONSTRAINT cassation_principle_id IF NOT EXISTS FOR (n:Cassation_Principle) REQUIRE n.id IS UNIQUE",
-                "CREATE CONSTRAINT admin_ruling_id IF NOT EXISTS FOR (n:Admin_Ruling) REQUIRE n.id IS UNIQUE",
-                "CREATE CONSTRAINT fatwa_id IF NOT EXISTS FOR (n:Fatwa) REQUIRE n.id IS UNIQUE",
-                "CREATE CONSTRAINT ascertained_meaning_id IF NOT EXISTS FOR (n:Ascertained_Meaning) REQUIRE n.id IS UNIQUE",
+                # Document (أو Legislation) - معرف فريد
+                "CREATE CONSTRAINT doc_id IF NOT EXISTS FOR (n:Document) REQUIRE n.doc_id IS UNIQUE",
+                # Article - معرف فريد مركب (مستند + رقم المادة)
+                "CREATE CONSTRAINT article_id IF NOT EXISTS FOR (n:Article) REQUIRE (n.doc_id, n.article_number) IS UNIQUE",
+                # Entity - معرف فريد
+                "CREATE CONSTRAINT entity_id IF NOT EXISTS FOR (n:Entity) REQUIRE n.entity_id IS UNIQUE",
+                # Position - معرف فريد
+                "CREATE CONSTRAINT position_id IF NOT EXISTS FOR (n:Position) REQUIRE n.position_id IS UNIQUE",
+                # Relation - لضمان عدم تكرار العلاقات
+                "CREATE CONSTRAINT rel_instance_id IF NOT EXISTS FOR ()-[r:RELATION]-() REQUIRE r.instance_id IS UNIQUE"
             ]
             
             for c in constraints:
                 try:
                     session.run(c)
-                    print(f"✅ {c.split('FOR')[0].strip().split(' ')[-1]} constraint created.")
+                    print(f"✅ Constraint created/verified.")
                 except Exception as e:
                     print(f"⚠️  Constraint skipped: {e}")
             
-            print("✅ Graph initialized.")
+            print("✅ Graph initialized successfully for ELKM Schema.")
 
 if __name__ == "__main__":
     init_graph()
