@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "last_updated": "2026-10-02",
-  "total_documents": 3,
+  "total_documents": 20,
   "indices": {
     "constitution": {
       "path": "corpus/metadata/index/constitutions.json",
