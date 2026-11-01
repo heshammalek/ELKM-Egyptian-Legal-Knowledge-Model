@@ -16,8 +16,8 @@
 >
 > This project is an **ontology in the making** — not a finished product. This README provides a general overview of the project. It may not reflect the latest additions or refinements. The authoritative reference is the metadata files themselves; this document is intended as a conceptual guide.
 > 
-**[نسخة عربية ستكون متاحة في `docs/README.ar.md` (قيد الإعداد)](docs/README.ar.md)**
-
+## 📊 Pitch Deck
+[View the interactive pitch deck →](https://heshammalek.github.io/ELKM-Egyptian-Legal-Knowledge-Model/pitch.html)
 </div>
 
 ---
