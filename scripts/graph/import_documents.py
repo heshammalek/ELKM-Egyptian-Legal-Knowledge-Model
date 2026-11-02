@@ -1,6 +1,6 @@
 import json
 import os
-from utils.db import get_driver
+from scripts.utils.db import get_driver
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 NORMALIZED_DIR = os.path.join(BASE_DIR, "corpus", "normalized")
