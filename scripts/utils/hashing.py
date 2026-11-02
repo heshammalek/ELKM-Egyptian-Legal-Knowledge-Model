@@ -2,7 +2,8 @@ import hashlib
 import os
 import json
 
-STATE_FILE = "scripts/incremental_state.json"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+STATE_FILE = os.path.join(BASE_DIR, "scripts", "incremental_state.json")
 
 def get_file_hash(filepath):
     """بيحسب الـ MD5 hash للملف"""
