@@ -45,3 +45,13 @@ def get_related_documents(keyword: str):
             return final_results
     finally:
         driver.close()
+
+def execute_cypher_query(cypher: str):
+    """بينفذ أي Cypher Query ويرجع النتيجة"""
+    driver = get_driver()
+    try:
+        with driver.session() as session:
+            result = session.run(cypher)
+            return [r.data() for r in result]
+    finally:
+        driver.close()
