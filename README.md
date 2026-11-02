@@ -59,7 +59,7 @@ The first comprehensive, open-source Arabic legal ontology. No equivalent curren
 A **knowledge graph** connecting every legal text to everything that affected it or was affected by it, with full temporal tracking per article. This enables queries that are **impossible** in any text search engine or relational database:
 
 - **Time-Travel**: Retrieve the text of an article as it stood on a specific historical date.
-- **Multi-hop Impact**: Trace the final effect on Article X after a chain of amendments, rulings, and administrative decisions.
+- **Multi-hop Impact**: Trace the final effect on Article X after a chain of s, rulings, and administrative decisions.
 - **Dependency Map**: Find every text that cites a specific constitutional article.
 - **Principle Tracking**: Trace how a legal principle evolved across decades of legislation.
 - **Legislative Cycles**: Detect principles ruled unconstitutional and later re-enacted in new laws.
@@ -116,7 +116,7 @@ pip install -r requirements.txt
 
 | # | Challenge | Detail |
 |---|-----------|--------|
-| 1 | **No unified relational structure** | Egyptian laws interweave through total/partial repeal, amendment, addition, and delegation — with no structured, programmatically queryable source linking them |
+| 1 | **No unified relational structure** | Egyptian laws interweave through total/partial repeal, , addition, and delegation — with no structured, programmatically queryable source linking them |
 | 2 | **Overlapping document types** | Laws, decree-laws, administrative decisions, legislative fatwas, judicial rulings, parliamentary minutes — each with different force logic, statuses, and issuing authorities, and easy to misclassify (e.g. every decree-law is titled "Presidential Decision," but not every presidential decision is a decree-law) |
 | 3 | **Arabic legal-text complexity** | Diacritics, hamza variants, Arabic-Indic vs. Western numerals, legal tables — and hyper-precision at the character level, as in the passive/active distinction above |
 | 4 | **The temporal dimension of force** | The same article can be in force, then suspended, then amended, then ruled unconstitutional — each state with its own independent start and end date, requiring precise tracking rather than a single snapshot |
@@ -381,7 +381,7 @@ This is the direct foundation for queries like *"which articles reference Articl
 ```mermaid
 graph LR
     L1["LAW-58-1937<br/>Penal Code"]
-    L2["LAW-174-2025<br/>Amendment"]
+    L2["LAW-174-2025<br/>partial_repeal"]
     J1["JUDG-SCC-15-20<br/>Constitutionality Ruling"]
     L3["LAW-200-2024<br/>Reinstatement"]
 
