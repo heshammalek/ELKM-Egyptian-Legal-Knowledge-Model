@@ -63,12 +63,19 @@ LIMIT 10;
 MATCH (n) DETACH DELETE n;
 // الغرض: بيمسح كل الـ Nodes والعلاقات عشان تبدأ من الأول.
 
-MATCH (d:Document) WHERE NOT EXISTS((d)-[:HAS_ARTICLE]->()) RETURN d.doc_id, d.title_ar
-// وظيفته: بيجيب كل المستندات اللي ملهاش مواد (Articles) خالص. دي غالباً المستندات الوهمية (Placeholders) اللي اتعملت عشان تربط علاقات لمستندات لسه مش موجودة.
+// ==========================================
+// استعلامات إضافية (Graph Cleanup)
+// ==========================================
 
-MATCH (d:Document) WHERE NOT EXISTS((d)-[:HAS_ARTICLE]->()) DETACH DELETE d
-//وظيفته: بيمسح المستندات دي (وكل العلاقات اللي واخدة عليها) عشان ينضف الجراف من العقد الوهمية.
-//⚠️ تحذير: متشغلوش غير لما تكون متأكد إنك مش محتاج العلاقات اللي واخدة على المستندات دي.
+// 1. عرض المستندات الوهمية (Placeholders) اللي ملهاش مواد
+MATCH (d:Document) 
+WHERE NOT EXISTS((d)-[:HAS_ARTICLE]->())
+RETURN d.doc_id, d.title_ar;
+
+// 2. مسح المستندات الوهمية وكل العلاقات المرتبطة بيها (استخدمه بحذر!)
+MATCH (d:Document) 
+WHERE NOT EXISTS((d)-[:HAS_ARTICLE]->())
+DETACH DELETE d;
 
 
 
