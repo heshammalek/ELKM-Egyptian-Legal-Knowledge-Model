@@ -107,6 +107,8 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+> 📖 **للتشغيل الكامل** (إعداد ملف `.env`، تشغيل Neo4j، التحقق من البيانات، بناء الجراف، وإغلاق كل شيء بشكل سليم)، راجع **[دليل التشغيل الكامل - ELKM Setup Guide](./ELKM_SETUP_GUIDE.md)**.
+
 > The unified export/build script is still under active development (see [Current Status](#-current-status)) — exact commands and paths will stabilize as `scripts/` is finalized.
 
 ---
