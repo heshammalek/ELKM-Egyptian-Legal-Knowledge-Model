@@ -16,7 +16,7 @@
 >
 > This project is an **ontology in the making** — not a finished product. This README provides a general overview of the project. It may not reflect the latest additions or refinements. The authoritative reference is the metadata files themselves; this document is intended as a conceptual guide.
 > 
-## 📊 [Pitch Deck](https://heshammalek.github.io/ELKM-Egyptian-Legal-Knowledge-Model/.html)
+## 📊 [ck](https://heshammalek.github.io/ELKM-Egyptian-Legal-Knowledge-Model/.html)
 </div>
 
 ---
@@ -248,7 +248,7 @@ flowchart TB
         scripts["scripts/<br/>Processing, matching &<br/>RDF export/validation tools"]
         api["api/<br/>FastAPI application<br/>(serves /openapi.json and /studio)"]
         web["web/<br/>Static assets<br/>(studio/index.html)<br/>mounted into api/ via StaticFiles"]
-        docs["docs/<br/>Documentation (## 📊 [Pitch Deck])"]
+        docs["docs/<br/>Documentation (📊 Pitch Deck)"]
         tests["tests/<br/>Test scripts"]
         arabicnlp["ArabicLegalNLP/<br/>Sibling Python library"]
     end
