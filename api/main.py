@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api.routers import search, analysis
+from api.routers import graph, search, analysis
 
 app = FastAPI(
     title="ELKM API",
@@ -20,6 +20,7 @@ app.add_middleware(
 # ربط الـ Routers
 app.include_router(search.router, prefix="/api/search", tags=["Search"])
 app.include_router(analysis.router, prefix="/api/analysis", tags=["Analysis"])
+app.include_router(graph.router, prefix="/api/graph", tags=["Graph"])
 
 @app.get("/")
 def read_root():
