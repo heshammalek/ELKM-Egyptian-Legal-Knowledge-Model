@@ -1,3 +1,4 @@
+import json
 import os
 import time
 from dotenv import load_dotenv
@@ -73,3 +74,56 @@ class LLMEngine:
         if cypher.endswith("```"):
             cypher = cypher.rsplit("\n", 1)[0]
         return cypher.strip()
+
+    def format_response(self, question: str, raw_data: list):
+        """بيستخدم الـ AI عشان يكتب إجابة منسقة من البيانات الخام"""
+        if not raw_data:
+            return "مفيش نتايج مطابقة للسؤال ده."
+
+        # تحويل البيانات لصيغة نصية عشان الـ AI يفهمها
+        data_str = json.dumps(raw_data, ensure_ascii=False, indent=2)
+
+        prompt = f"""
+        أنت مساعد قانوني ذكي. المستخدم سأل: "{question}"
+        ونتيجة البحث في الجراف القانوني كانت كالتالي (بيانات خام):
+        {data_str}
+
+        **المهمة:** اكتب إجابة قانونية واضحة ومنظمة باللغة العربية بناءً على البيانات دي.
+        - اذكر أسماء القوانين اللي عدلت القانون المستهدف.
+        - اذكر أنواع التعديلات (تعديل، إلغاء، إضافة).
+        - نظم الإجابة في نقاط أو جدول.
+        - لو البيانات فيها تفاصيل كتير، لخصها في نقاط رئيسية.
+        """
+
+        # 1. محاولة Gemini (مع Retry)
+        if self.gemini_client:
+            for attempt in range(3):
+                try:
+                    response = self.gemini_client.models.generate_content(
+                        model='gemini-3.8-flash', 
+                        contents=prompt
+                    )
+                    return response.text.strip()
+                except Exception as e:
+                    if "503" in str(e) or "UNAVAILABLE" in str(e):
+                        print(f"⏳ Gemini مشغول (محاولة {attempt+1}/3). استنى 5 ثواني...")
+                        time.sleep(5)
+                    else:
+                        print(f"⚠️ Gemini فشل: {e}. جاري تجربة DeepSeek...")
+                        break
+
+        # 2. محاولة DeepSeek (كبديل)
+        if self.deepseek_client:
+            try:
+                print("🔄 جاري تجربة DeepSeek...")
+                response = self.deepseek_client.chat.completions.create(
+                    model="deepseek-chat",
+                    messages=[{"role": "user", "content": prompt}],
+                    stream=False
+                )
+                return response.choices[0].message.content.strip()
+            except Exception as e:
+                print(f"❌ DeepSeek فشل: {e}")
+
+        # 3. لو كله فشل، نرجع نص بسيط
+        return "تم العثور على البيانات، بس مش قادرين ننسقها بسبب ضغط السيرفرات. يرجى المحاولة لاحقاً."
