@@ -13,7 +13,7 @@ def get_related_documents(keyword: str):
     try:
         with driver.session() as session:
             # 1. البحث عن المستندات
-            query = "MATCH (d:Document) WHERE d.title_ar CONTAINS $kw OR d.doc_id CONTAINS $kw RETURN d.doc_id, d.title_ar"
+            query = "MATCH (d:Document) WHERE d.title_ar CONTAINS $kw RETURN d.doc_id, d.title_ar"
             result = session.run(query, kw=keyword)
             docs = [{"doc_id": r["d.doc_id"], "title": r["d.title_ar"]} for r in result]
 
