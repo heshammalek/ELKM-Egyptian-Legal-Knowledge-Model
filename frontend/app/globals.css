@@ -1,1 +1,36 @@
+@import "tailwindcss";
 
+body {
+  background-color: #000000;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  /* منع السكرول */
+}
+
+/* إخفاء لوجو Next.js */
+#next-logo,
+[data-nextjs-toast],
+nextjs-portal {
+  display: none !important;
+}
+
+/* تأثير اللمعان للنص */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.3) 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
