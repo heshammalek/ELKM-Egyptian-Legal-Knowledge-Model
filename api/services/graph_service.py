@@ -8,14 +8,16 @@ sys.path.append(BASE_DIR)
 from scripts.utils.db import get_driver
 
 def get_related_documents(keyword: str):
-    """بيجيب المستندات والعلاقات المرتبطة بالكلمة المفتاحية"""
+    # تقسيم الكلمة المفتاحية لكلمات منفصلة
+    words = keyword.split()
     driver = get_driver()
     try:
         with driver.session() as session:
-            # 1. البحث عن المستندات
-            query = "MATCH (d:Document) WHERE d.title_ar CONTAINS $kw RETURN d.doc_id, d.title_ar"
-            result = session.run(query, kw=keyword)
+            # البحث عن أي مستند فيه أي كلمة
+            query = "MATCH (d:Document) WHERE ANY(word IN $words WHERE d.title_ar CONTAINS word) RETURN d.doc_id, d.title_ar"
+            result = session.run(query, words=words)
             docs = [{"doc_id": r["d.doc_id"], "title": r["d.title_ar"]} for r in result]
+            # ... (باقي الكود زي ما هو)
 
             if not docs:
                 return []
