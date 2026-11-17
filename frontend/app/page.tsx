@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import AuthButtons from "@/components/AuthButtons";
 
 const GithubIcon = () => (
   <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -95,60 +96,110 @@ const AnimatedGraphBackground = () => {
 };
 
 export default function Home() {
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  // الجمل الاحترافية (الميزة + المستخدم المستهدف)
+  const sentences = [
+    "Graph Knowledge & Legal Ontology for Researchers.",
+    "AI-Powered Legal Intelligence for Modern Lawyers.",
+    "Article-Level Precision & Citations for Judges.",
+    "Temporal Tracking of Legal Texts for Historians.",
+    "Legislative Conflict Prediction for Policy Makers.",
+    "Contract Risk Analysis for Corporates.",
+    "Impact Assessment for Legislative Drafters.",
+    "Smart Legal Consultations for Everyday Citizens.",
+    "Real-time Case Analytics for Law Firms.",
+    "Deep Legal Research for Legal Scholars."
+  ];
+
+  useEffect(() => {
+    const currentSentence = sentences[index % sentences.length];
+    const speed = isDeleting ? 30 : 70;
+
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        setText(currentSentence.substring(0, text.length + 1));
+        if (text === currentSentence) {
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        setText(currentSentence.substring(0, text.length - 1));
+        if (text === "") {
+          setIsDeleting(false);
+          setIndex((prev) => prev + 1);
+        }
+      }
+    }, speed);
+
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, index]);
+
   return (
-    <div className="relative w-full h-[calc(100vh-80px)] bg-black overflow-hidden flex flex-col items-center justify-center">
+    <div className="relative w-full h-screen bg-black overflow-hidden flex flex-col items-center justify-center">
       
+      {/* النافبار */}
+      <header className="absolute top-0 left-0 w-full px-6 py-4 flex justify-between items-center z-50">
+        <div className="text-xl font-bold tracking-tighter text-white">LexChain Egypt</div>
+        <AuthButtons />
+      </header>
+
       <AnimatedGraphBackground />
 
       <div className="z-10 flex flex-col items-center justify-center text-center px-4">
         
-                <h1 className="text-8xl md:text-9xl font-extrabold tracking-tighter mb-6 shimmer-text">
-          ELKM
+        <h1 className="text-8xl md:text-9xl font-extrabold tracking-tighter mb-6 shimmer-text">
+          LexChain
         </h1>
         
         <p className="text-xl md:text-2xl mb-12 max-w-2xl font-light shimmer-text">
-          Egyptian Legal Knowledge Model
+          Legal Intelligence Powered by ELKM Ontology
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link 
-            href="/chat" 
-            className="px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors duration-200"
-          >
-            Start Chat
-          </Link>
+        <Link 
+          href="/chat" 
+          className="px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors duration-200"
+        >
+          Start Chat
+        </Link>
 
-          <Link 
-            href="https://github.com/heshammalek/ELKM-Egyptian-Legal-Knowledge-Model" 
-            target="_blank"
-            className="px-8 py-3 bg-transparent border border-gray-700 text-white font-semibold rounded-lg hover:bg-gray-900 hover:border-gray-500 transition-colors duration-200 flex items-center justify-center gap-2"
-          >
-            <GithubIcon />
-            Documentation
-          </Link>
-        </div>
+        <Link 
+          href="/docs" 
+          className="px-8 py-3 bg-transparent border border-gray-700 text-white font-semibold rounded-lg hover:bg-gray-900 hover:border-gray-500 transition-colors duration-200"
+        >
+          Documentation
+        </Link>
+
+        <Link 
+          href="/developers" 
+          className="px-8 py-3 bg-transparent border border-gray-700 text-white font-semibold rounded-lg hover:bg-gray-900 hover:border-gray-500 transition-colors duration-200"
+        >
+          Developer Studio
+        </Link>
+
+        <Link 
+          href="https://github.com/heshammalek/ELKM-Egyptian-Legal-Knowledge-Model" 
+          target="_blank"
+          className="px-8 py-3 bg-transparent border border-gray-700 text-white font-semibold rounded-lg hover:bg-gray-900 hover:border-gray-500 transition-colors duration-200 flex items-center justify-center gap-2"
+        >
+          <GithubIcon />
+          GitHub
+        </Link>
+      </div>
       </div>
 
       <div className="absolute bottom-10 left-10 z-50 flex items-center gap-4">
         <div className="w-16 h-16 bg-[#111] border border-gray-700 rounded-full flex items-center justify-center animate-bounce shadow-xl">
           <span className="text-3xl">🤖</span>
         </div>
-        <div className="text-sm shimmer-text font-medium">
-          Legal Expert Assistant
+        <div className="text-sm text-gray-300 font-medium h-6">
+          {text}
+          <span className="animate-pulse">|</span>
         </div>
       </div>
 
     </div>
   );
 }
-
-      <div className="absolute bottom-10 left-10 z-50 flex items-center gap-4">
-        <div className="w-16 h-16 bg-[#111] border border-gray-700 rounded-full flex items-center justify-center animate-bounce shadow-xl">
-          <span className="text-3xl">🤖</span>
-        </div>
-        <div className="text-sm text-gray-400 shimmer-text font-medium">
-          Legal Expert Assistant
-        </div>
-      </div>
-
-    
