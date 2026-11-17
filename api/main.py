@@ -5,7 +5,10 @@ from api.routers import graph, search, analysis
 app = FastAPI(
     title="ELKM API",
     description="Egyptian Legal Knowledge Model - API",
-    version="1.0.0"
+    version="1.0.0",
+     servers=[
+        {"url": "http://127.0.0.1:8000", "description": "Local server"}
+    ]
 )
 
 # إعداد CORS (عشان الـ Frontend يقدر يتصل)
