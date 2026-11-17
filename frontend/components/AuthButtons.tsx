@@ -2,11 +2,11 @@
 
 export default function AuthButtons() {
   return (
-    <div className="flex gap-4">
-      <button className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition">
+    <div className="flex gap-2">
+      <button className="px-4 py-2 text-sm bg-gray-700 text-white rounded hover:bg-gray-600 transition">
         Sign In
       </button>
-      <button className="px-4 py-2 text-sm font-medium bg-white text-black rounded-md hover:bg-gray-200 transition">
+      <button className="px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-500 transition">
         Register
       </button>
     </div>
