@@ -1,4 +1,3 @@
-
 from fastapi import APIRouter, HTTPException
 from api.services.graph_service import get_related_documents
 
