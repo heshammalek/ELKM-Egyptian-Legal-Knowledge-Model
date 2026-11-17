@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
   /* منع السكرول */
+  font-family: var(--font-inter), var(--font-arabic), system-ui, sans-serif;
 }
 
 /* إخفاء لوجو Next.js */
