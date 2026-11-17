@@ -97,7 +97,7 @@ class LLMEngine:
 
         # 1. محاولة Gemini (مع Retry)
         if self.gemini_client:
-            for attempt in range(3):
+            for attempt in range(2):
                 try:
                     response = self.gemini_client.models.generate_content(
                         model='gemini-3.8-flash', 
@@ -107,7 +107,7 @@ class LLMEngine:
                 except Exception as e:
                     if "503" in str(e) or "UNAVAILABLE" in str(e):
                         print(f"⏳ Gemini مشغول (محاولة {attempt+1}/3). استنى 5 ثواني...")
-                        time.sleep(5)
+                        time.sleep(3)
                     else:
                         print(f"⚠️ Gemini فشل: {e}. جاري تجربة DeepSeek...")
                         break
