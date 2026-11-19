@@ -144,8 +144,23 @@
   .modal-content { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); width: 90%; max-width: 800px; padding: 24px; position: relative; }
   .modal-close { position: absolute; top: 10px; right: 15px; background: none; border: none; color: var(--muted); font-size: 1.5rem; cursor: pointer; }
   .modal-close:hover { color: var(--text); }
-  .modal-video { width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--muted); }
+  .modal-video {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* يحافظ على أبعاد الفيديو */
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden; /* عشان الحواف تطلع نضيفة */
+  position: relative; /* مهم عشان الـ iframe ياخد مساحته صح */
+}
 
+.modal-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
   @media (max-width: 980px) {
     .graph-wrap { grid-template-columns: 1fr; }
     .graph-panel { border-inline-start: none; border-top: 1px solid var(--border); max-height: none; }
