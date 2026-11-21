@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELKM — Egyptian Legal Knowledge Model · Proposal for NCAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --surface-2: #1c2128; --border: #30363d;
+    --text: #e6edf3; --muted: #8b949e; --blue: #58a6ff; --gold: #d29922;
+    --green: #3fb950; --purple: #a371f7; --ncai-blue: #0056b3; --radius: 12px; --radius-sm: 8px;
+    --maxw: 1140px; --font-en: 'Inter', sans-serif; --font-ar: 'Cairo', sans-serif;
+    --transition: 0.22s ease;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-en); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body.lang-ar { font-family: var(--font-ar); }
+  a { color: var(--blue); text-decoration: none; transition: color var(--transition); }
+  a:hover { color: #79b8ff; }
+
+  .topbar { position: sticky; top: 0; z-index: 100; background: rgba(13,17,23,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+  .topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.35rem; color: var(--text); }
+  .brand-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ncai-blue); box-shadow: 0 0 10px rgba(0,86,179,0.7); animation: pulse 2.4s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.55; transform: scale(0.85); } }
+  .lang-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; background: var(--surface); }
+  .lang-toggle button { background: transparent; border: none; color: var(--muted); font-family: inherit; font-size: 0.82rem; font-weight: 700; padding: 8px 16px; cursor: pointer; transition: all var(--transition); }
+  .lang-toggle button.active { background: var(--ncai-blue); color: #fff; }
+
+  .hero { position: relative; padding: 88px 0 64px; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; top: -220px; left: 50%; transform: translateX(-50%); width: 820px; height: 520px; background: radial-gradient(ellipse at center, rgba(0,86,179,0.14), transparent 65%); pointer-events: none; }
+  .hero-inner { position: relative; z-index: 2; }
+  .hero-title { font-size: clamp(2.6rem, 7vw, 4.8rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 10px; background: linear-gradient(120deg, #e6edf3 30%, var(--ncai-blue) 70%, var(--purple)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-sub { font-size: clamp(1rem, 2.2vw, 1.28rem); color: var(--muted); font-weight: 500; margin-bottom: 26px; }
+  .typewriter-line { min-height: 2.4em; font-size: clamp(1.05rem, 2.4vw, 1.45rem); font-weight: 600; color: var(--text); margin-bottom: 34px; display: flex; align-items: center; flex-wrap: wrap; }
+  .typewriter-text { color: var(--gold); }
+  .typewriter-cursor { display: inline-block; width: 2px; height: 1.15em; background: var(--gold); margin-inline-start: 2px; animation: blink 1s steps(2, start) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+  .btn { display: inline-flex; align-items: center; gap: 9px; padding: 12px 22px; border-radius: var(--radius-sm); font-family: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: var(--surface); color: var(--text); transition: all var(--transition); }
+  .btn:hover { transform: translateY(-2px); border-color: var(--muted); background: var(--surface-2); }
+  .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+  .btn-primary { background: var(--ncai-blue); border-color: var(--ncai-blue); color: #fff; }
+  .btn-primary:hover { background: #0066d6; border-color: #0066d6; color: #fff; }
+  .btn-ghost-play { border-color: rgba(210,153,34,0.5); color: var(--gold); }
+
+  .signature { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding-top: 26px; border-top: 1px solid var(--border); max-width: 640px; }
+  .sig-name { font-weight: 700; font-size: 1.02rem; }
+  .sig-divider { width: 1px; height: 34px; background: var(--border); }
+
+  .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  .section { padding: 72px 0; }
+  .grid { display: grid; gap: 18px; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .muted { color: var(--muted); }
+
+  .tabs-nav-wrap { position: sticky; top: 64px; z-index: 90; background: rgba(13,17,23,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+  .tabs-nav { display: flex; align-items: stretch; overflow-x: auto; scrollbar-width: none; }
+  .tab-btn { flex: 0 0 auto; background: transparent; border: none; border-bottom: 2px solid transparent; color: var(--muted); font-family: inherit; font-size: 0.9rem; font-weight: 600; padding: 16px 18px; cursor: pointer; transition: all var(--transition); white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; }
+  .tab-btn .tab-num { font-size: 0.68rem; font-weight: 800; width: 20px; height: 20px; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; }
+  .tab-btn.active { color: var(--ncai-blue); border-bottom-color: var(--ncai-blue); }
+  .tab-btn.active .tab-num { background: var(--ncai-blue); border-color: var(--ncai-blue); color: #fff; }
+  .tab-panel { display: none; animation: fadeUp 0.35s ease; }
+  .tab-panel.active { display: block; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .panel-head { margin-bottom: 36px; max-width: 860px; }
+  .panel-title { font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: 800; margin-bottom: 14px; }
+  .panel-lead { font-size: 1.06rem; color: var(--muted); line-height: 1.7; }
+  .eyebrow { display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ncai-blue); margin-bottom: 14px; }
+  .eyebrow.gold { color: var(--gold); } .eyebrow.green { color: var(--green); } .eyebrow.purple { color: var(--purple); }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: all var(--transition); height: 100%; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
+  .card-icon { width: 40px; height: 40px; border-radius: var(--radius-sm); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px; background: rgba(0,86,179,0.12); color: var(--ncai-blue); font-size: 1.15rem; font-weight: 800; }
+  .card-icon.gold { background: rgba(210,153,34,0.12); color: var(--gold); }
+  .card-icon.green { background: rgba(63,185,80,0.12); color: var(--green); }
+  .card-icon.purple { background: rgba(163,113,247,0.12); color: var(--purple); }
+  .card h3 { font-size: 1.04rem; font-weight: 700; margin-bottom: 8px; }
+  .card p { font-size: 0.9rem; color: var(--muted); }
+
+  .highlight { background: linear-gradient(135deg, rgba(0,86,179,0.10), rgba(163,113,247,0.10)); border: 1px solid rgba(0,86,179,0.30); border-radius: var(--radius); padding: 26px; font-size: 1.15rem; font-weight: 700; margin: 34px 0; }
+  .highlight.gold { background: linear-gradient(135deg, rgba(210,153,34,0.10), rgba(63,185,80,0.08)); border-color: rgba(210,153,34,0.35); }
+  .highlight .hl-accent { color: var(--gold); }
+  .warn-box { display: flex; gap: 14px; background: rgba(210,153,34,0.08); border: 1px solid rgba(210,153,34,0.35); border-radius: var(--radius); padding: 18px; margin-top: 30px; font-size: 0.92rem; color: #f0d999; }
+  .commit-box { background: linear-gradient(135deg, rgba(0,86,179,0.10), rgba(63,185,80,0.06)); border: 1px solid rgba(0,86,179,0.40); border-radius: var(--radius); padding: 26px; margin: 30px 0; }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); margin-bottom: 34px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 640px; }
+  thead th { padding: 14px 18px; background: var(--surface-2); font-weight: 700; font-size: 0.78rem; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); text-align: start; }
+  tbody td { padding: 14px 18px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tbody td:first-child { font-weight: 600; }
+
+  /* Modal Styles for Video */
+  .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center; }
+  .modal-overlay.active { display: flex; }
+  .modal-content { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); width: 90%; max-width: 800px; padding: 24px; position: relative; }
+  .modal-close { position: absolute; top: -40px; right: 0; background: none; border: none; color: var(--muted); font-size: 2rem; cursor: pointer; z-index: 1001; transition: color 0.2s; }
+  .modal-close:hover { color: var(--text); }
+  .modal-video { width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 1.2rem; }
+
+  /* Contact Card */
+  .contact-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-top: 24px; text-align: left; display: none; max-width: 400px; margin: 0 auto; }
+  .contact-card.active { display: block; }
+  .contact-card h4 { margin-bottom: 16px; color: var(--text); font-size: 1.1rem; }
+  .contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 0.95rem; color: var(--muted); }
+  .contact-item a { color: var(--blue); font-weight: 600; }
+  .contact-item svg { width: 18px; height: 18px; color: var(--ncai-blue); }
+  
+  /* Fix for phone number direction */
+  .contact-item .phone-number { direction: ltr; display: inline-block; }
+
+  @media (max-width: 860px) {
+    .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    .section { padding: 52px 0; }
+  }
+  @media (max-width: 620px) {
+    .container { padding: 0 18px; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .hero-actions .btn { justify-content: center; }
+    .topbar-inner { height: 58px; }
+    .tabs-nav-wrap { top: 58px; }
+    .tab-btn { padding: 14px 12px; font-size: 0.82rem; }
+    .modal-content { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="#" class="brand">
+      <span class="brand-dot"></span>
+      <span>ELKM</span>
+    </a>
+    <div class="lang-toggle">
+      <button type="button" id="langBtnEn" class="active">EN</button>
+      <button type="button" id="langBtnAr">AR</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="eyebrow" data-i18n="hero.eyebrow">Proposal for the National AI Council & ECRAI</span>
+    <h1 class="hero-title">ELKM</h1>
+    <p class="hero-sub"><span data-i18n="hero.subtitle">Egyptian Legal Knowledge Model</span></p>
+
+    <div class="typewriter-line" aria-live="polite">
+      <span class="typewriter-text" id="typewriterText"></span>
+      <span class="typewriter-cursor"></span>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://github.com/heshammalek/ELKM-Egyptian-Legal-Knowledge-Model" target="_blank">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        <span data-i18n="hero.github">View on GitHub</span>
+      </a>
+      
+      <!-- Watch Video Button (Opens Modal) -->
+      <button class="btn btn-ghost-play" id="watchVideoBtn" type="button">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4.5 2.3a.5.5 0 0 1 .76-.43l8.5 5.7a.5.5 0 0 1 0 .86l-8.5 5.7a.5.5 0 0 1-.76-.43V2.3Z"/></svg>
+        <span data-i18n="hero.watchVideo">Watch Video</span>
+      </button>
+    </div>
+
+    <div class="signature">
+      <div><div class="sig-name" data-i18n="hero.signature">Hesham Malek — Lawyer · Founder, ELKM</div></div>
+      <div class="sig-divider"></div>
+      <div style="display: flex; flex-direction: column; gap: 4px; direction: ltr; text-align: left;">
+        <a href="mailto:h3malik@gmail.com" style="color: var(--blue); font-size: 0.9rem; font-weight: 600;">h3malik@gmail.com</a>
+        <a href="tel:+201013541925" style="color: var(--muted); font-size: 0.85rem;">+20 101 354 1925</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="tabs-nav-wrap" aria-label="Proposal sections">
+  <div class="container">
+    <div class="tabs-nav" role="tablist">
+      <button class="tab-btn active" role="tab" data-tab="tab2" id="tabBtn2"><span class="tab-num">1</span><span data-i18n="tabs.what">What we are</span></button>
+      <button class="tab-btn" role="tab" data-tab="tab3" id="tabBtn3"><span class="tab-num">2</span><span data-i18n="tabs.why">Why support</span></button>
+      <button class="tab-btn" role="tab" data-tab="tab4" id="tabBtn4"><span class="tab-num">3</span><span data-i18n="tabs.comp">Competitors</span></button>
+      <button class="tab-btn" role="tab" data-tab="tab5" id="tabBtn5"><span class="tab-num">4</span><span data-i18n="tabs.mess">The state of law</span></button>
+      <button class="tab-btn" role="tab" data-tab="tab-ncai" id="tabBtnNcai"><span class="tab-num">5</span><span data-i18n="tabs.ncai">Why NCAI</span></button>
+      <button class="tab-btn" role="tab" data-tab="tab7" id="tabBtn7"><span class="tab-num">6</span><span data-i18n="tabs.start">Get started</span></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============================================================
+       TAB 1 — What we are
+       ============================================================ -->
+  <section class="tab-panel active" id="tab2" role="tabpanel" aria-labelledby="tabBtn2">
+    <div class="container section">
+      <div class="panel-head">
+        <span class="eyebrow" data-i18n="tab2.eyebrow">What we are</span>
+        <h2 class="panel-title" data-i18n="tab2.title">AI-ready legal data + ontology + knowledge graph</h2>
+        <p class="panel-lead" data-i18n="tab2.lead">LLMs read Egyptian law as text. But law is not text — it is relations, rulings that constrain it, jurisprudence that deepens it, constitutional principles it derives from, and institutions built upon it. ELKM is the understanding layer that holds all of that together.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon">01</div>
+          <h3 data-i18n="tab2.card1.title">Raw text is not knowledge</h3>
+          <p data-i18n="tab2.card1.body">Sound familiar? An AI answer cites an article, and nobody can see what the article says. A judgment is quoted from memory, with no court, date or link. Nobody knows which version of the law the answer was based on.<br><br><strong>ELKM fixes this.</strong> A PDF of a statute is data. Knowing that Article 5 amends Article 2, and that Article 2 was repealed — that's knowledge. ELKM builds the layer that makes the AI cite the <em>real</em> Egyptian text, not a hallucination.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon gold">02</div>
+          <h3 data-i18n="tab2.card2.title">A professional relations schema</h3>
+          <p data-i18n="tab2.card2.body">Three typed relation families — document↔document, document↔entity, document↔position — expressed as a structured enum. Open, versioned, non-final: the schema evolves with the law itself.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon purple">03</div>
+          <h3 data-i18n="tab2.card3.title">Built for AI agents</h3>
+          <p data-i18n="tab2.card3.body">Structured, queryable, versioned. Designed so an LLM agent can traverse legal reasoning — not just retrieve a paragraph by keyword. As Neo4j's Emil Eifrem puts it: thinner agents on a smarter substrate. The ontology is the substrate; the agent stays thin.</p>
+        </div>
+      </div>
+      <div class="grid grid-3" style="margin-top: 26px;">
+        <div class="card">
+          <div class="card-icon">DOC ↔ DOC</div>
+          <h3 data-i18n="tab2.rel.docDoc.title">Document to Document</h3>
+          <p style="margin-bottom: 12px; font-size: 0.8rem; color: var(--muted);" data-i18n="tab2.rel.docDoc.desc">Horizontal relations between legal texts.</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.78rem; font-family: monospace; color: var(--blue);">
+            <li>↳ total_repeal</li><li>↳ partial_repeal</li><li>↳ amendment</li><li>↳ addition</li><li>↳ renumbering</li><li>↳ unconstitutionality_ruling</li><li>↳ reinstatement</li><li>↳ referral</li><li>↳ acceptance_procedural</li><li>↳ acceptance_substantive</li><li>↳ rejection_procedural</li><li>↳ rejection_substantive</li><li>↳ preemptive_repeal</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon green">DOC ↔ ENT</div>
+          <h3 data-i18n="tab2.rel.docEnt.title">Document to Entity</h3>
+          <p style="margin-bottom: 12px; font-size: 0.8rem; color: var(--muted);" data-i18n="tab2.rel.docEnt.desc">Establishing, abolishing, or modifying entities.</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.78rem; font-family: monospace; color: var(--green);">
+            <li>↳ establishes</li><li>↳ abolishes</li><li>↳ merges</li><li>↳ splits</li><li>↳ renames</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon purple">DOC ↔ POS</div>
+          <h3 data-i18n="tab2.rel.docPos.title">Document to Position</h3>
+          <p style="margin-bottom: 12px; font-size: 0.8rem; color: var(--muted);" data-i18n="tab2.rel.docPos.desc">Delegating powers, creating roles, and defining duties.</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.78rem; font-family: monospace; color: var(--purple);">
+            <li>↳ delegation</li><li>↳ prohibits</li><li>↳ obligates</li><li>↳ empowers</li><li>↳ creates_position</li><li>↳ abolishes_position</li><li>↳ expands_powers</li><li>↳ restricts_powers</li>
+          </ul>
+        </div>
+      </div>
+      <div class="warn-box">
+        <span class="warn-icon">⚠</span>
+        <span data-i18n="tab2.warn"><strong>Active development</strong> — a living ontology (v1.8). Not a finished product.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TAB 2 — Why support
+       ============================================================ -->
+  <section class="tab-panel" id="tab3" role="tabpanel" aria-labelledby="tabBtn3">
+    <div class="container section">
+      <div class="panel-head">
+        <span class="eyebrow gold" data-i18n="tab3.eyebrow">Why support</span>
+        <h2 class="panel-title" data-i18n="tab3.title">The money is moving. The Egyptian layer is missing.</h2>
+        <p class="panel-lead" data-i18n="tab3.lead">Global legal AI is attracting billions. None of it is building the structured knowledge layer for Egyptian law.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th data-i18n="tab3.table.company">Company / Market</th><th data-i18n="tab3.table.figure">Raised / Size</th><th data-i18n="tab3.table.note">Note</th></tr></thead>
+          <tbody>
+            <tr><td>Harvey</td><td><span style="color: var(--blue); font-weight: 700;">$818M</span></td><td data-i18n="tab3.table.harvey">Legal AI platform (US/UK)</td></tr>
+            <tr><td>Clio</td><td><span style="color: var(--blue); font-weight: 700;">$850M + $1B vLex</span></td><td data-i18n="tab3.table.clio">Legal practice management + vLex acquisition</td></tr>
+            <tr><td data-i18n="tab3.table.lt">Legal tech 2025</td><td><span style="color: var(--green); font-weight: 700;">$5.99B</span> <span style="color: var(--gold); font-weight: 700;">+22%</span></td><td data-i18n="tab3.table.ltnote">Global market, year-over-year growth</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="highlight gold" data-i18n="tab3.highlight">$6B+ in global legal AI funding. <span class="hl-accent">Zero dollars</span> building the Egyptian legal knowledge layer.</div>
+      <div class="grid grid-3" style="margin: 34px 0;">
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--blue); margin-bottom: 8px;">57% → 68%</div>
+          <div style="font-size: 0.84rem; color: var(--muted);" data-i18n="tab3.stat1">Accuracy gain on structured legal reasoning tasks (VentureBeat)</div>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--gold); margin-bottom: 8px;">0</div>
+          <div style="font-size: 0.84rem; color: var(--muted);" data-i18n="tab3.stat2">Arabic legal ontologies in production today</div>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--green); margin-bottom: 8px;">618</div>
+          <div style="font-size: 0.84rem; color: var(--muted);" data-i18n="tab3.stat3">Active Egyptian laws after the 17,049 → 618 cleanup</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TAB 3 — Competitors
+       ============================================================ -->
+  <section class="tab-panel" id="tab4" role="tabpanel" aria-labelledby="tabBtn4">
+    <div class="container section">
+      <div class="panel-head">
+        <span class="eyebrow purple" data-i18n="tab4.eyebrow">Competitors & Inspiration</span>
+        <h2 class="panel-title" data-i18n="tab4.title">Global legal AI models. The Egyptian layer is either ignored or superficial.</h2>
+        <p class="panel-lead" data-i18n="tab4.lead">Global models like Ansvar and Dike either treat Egyptian law as plain text or build a superficial layer on top. They lack the depth, the article-level precision, and the institutional understanding required for a true legal knowledge graph.</p>
+      </div>
+      <div class="grid grid-2" style="margin-bottom: 34px;">
+        <div class="card">
+          <div class="card-icon purple">A</div>
+          <h3 data-i18n="tab4.card1.title">Ansvar — Text Search MCP</h3>
+          <p data-i18n="tab4.card1.body">Ansvar is an MCP server that applies a text search engine across many different jurisdictions. However, it treats Egyptian law merely as text, lacking the deep legal complexity, specific structural layers, and the nuanced relationships required to model Egyptian legal semantics.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon gold">D</div>
+          <h3 data-i18n="tab4.card2.title">Dike — Flat Document States</h3>
+          <p data-i18n="tab4.card2.body">Dike's published dataset on Hugging Face (eg-legal-citation-graph) relies on flat document states, treating entire laws as single entities (canonical_id). Its citation graph lacks semantic meaning, fails to build precise article-level relations, and completely ignores institutional and functional relations.</p>
+        </div>
+      </div>
+      <div class="panel-head" style="margin-bottom: 20px;">
+        <span class="eyebrow green" data-i18n="tab4.diffEyebrow">What ELKM delivers</span>
+        <h2 class="panel-title" style="font-size: clamp(1.3rem, 2.8vw, 1.7rem);" data-i18n="tab4.diffTitle">What we offer that they have not</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 34px;">
+        <div class="card" style="display: flex; gap: 18px; align-items: flex-start;">
+          <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: rgba(63,185,80,0.14); color: var(--green); display: flex; align-items: center; justify-content: center; font-weight: 800;">◆</div>
+          <div>
+            <h4 style="font-size: 0.98rem; font-weight: 700; margin-bottom: 6px;" data-i18n="tab4.diff1.title">The only Egyptian ontology</h4>
+            <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.6;" data-i18n="tab4.diff1.body">A formal ontology for Egyptian law — with its historical depth and legislative diversity — does not exist anywhere else. ELKM is the first to structure it.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; gap: 18px; align-items: flex-start;">
+          <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: rgba(63,185,80,0.14); color: var(--green); display: flex; align-items: center; justify-content: center; font-weight: 800;">◆</div>
+          <div>
+            <h4 style="font-size: 0.98rem; font-weight: 700; margin-bottom: 6px;" data-i18n="tab4.diff2.title">Sector and legal-field classifications</h4>
+            <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.6;" data-i18n="tab4.diff2.body">Documents are classified by subject matter and legal field — not just tagged with keywords. Classification is part of the model, not a layer added later.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; gap: 18px; align-items: flex-start;">
+          <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: rgba(63,185,80,0.14); color: var(--green); display: flex; align-items: center; justify-content: center; font-weight: 800;">◆</div>
+          <div>
+            <h4 style="font-size: 0.98rem; font-weight: 700; margin-bottom: 6px;" data-i18n="tab4.diff3.title">Document types and definitions schema</h4>
+            <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.6;" data-i18n="tab4.diff3.body">A typed schema for each kind of legal document — law, decree, judgment, principle, fatwa, regulation — with its own definition rules and hierarchy levels.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; gap: 18px; align-items: flex-start;">
+          <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: rgba(63,185,80,0.14); color: var(--green); display: flex; align-items: center; justify-content: center; font-weight: 800;">◆</div>
+          <div>
+            <h4 style="font-size: 0.98rem; font-weight: 700; margin-bottom: 6px;" data-i18n="tab4.diff4.title">Identifier system</h4>
+            <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.6;" data-i18n="tab4.diff4.body">Every document, article, entity, position and court principle carries a stable, resolvable identifier (e.g., LAW-12-2025, ENT-CC). Edges never break and citations never drift.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; gap: 18px; align-items: flex-start;">
+          <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: rgba(63,185,80,0.14); color: var(--green); display: flex; align-items: center; justify-content: center; font-weight: 800;">◆</div>
+          <div>
+            <h4 style="font-size: 0.98rem; font-weight: 700; margin-bottom: 6px;" data-i18n="tab4.diff5.title">Multi-format export</h4>
+            <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.6;" data-i18n="tab4.diff5.body">The graph can be exported as JSON, RDF-style triples, CSV adjacency lists, or the native ELKM schema — so it plugs into any downstream AI or analytics pipeline.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; gap: 18px; align-items: flex-start;">
+          <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: rgba(63,185,80,0.14); color: var(--green); display: flex; align-items: center; justify-content: center; font-weight: 800;">◆</div>
+          <div>
+            <h4 style="font-size: 0.98rem; font-weight: 700; margin-bottom: 6px;" data-i18n="tab4.diff6.title">Diverse, precise relations — at the article level</h4>
+            <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.6;" data-i18n="tab4.diff6.body">Relations are not at the document level. They are at the article level, and typed precisely. Every edge carries source, date and confidence metadata.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; gap: 18px; align-items: flex-start;">
+          <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: rgba(63,185,80,0.14); color: var(--green); display: flex; align-items: center; justify-content: center; font-weight: 800;">◆</div>
+          <div>
+            <h4 style="font-size: 0.98rem; font-weight: 700; margin-bottom: 6px;" data-i18n="tab4.diff7.title">Document, institutional and functional relations</h4>
+            <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.6;" data-i18n="tab4.diff7.body">Three relation families in one model — DOC↔DOC, DOC↔ENT, and DOC↔POS. Most existing efforts stop at the first.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TAB 4 — The state of Egyptian law
+       ============================================================ -->
+  <section class="tab-panel" id="tab5" role="tabpanel" aria-labelledby="tabBtn5">
+    <div class="container section">
+      <div class="panel-head">
+        <span class="eyebrow green" data-i18n="tab5.eyebrow">The state of Egyptian law</span>
+        <h2 class="panel-title" data-i18n="tab5.title">Egypt cleaned the corpus. It didn't structure it.</h2>
+        <p class="panel-lead" data-i18n="tab5.lead">Egyptian law is scattered across state-run portals. The Supreme Committee for Legislative Reform produced an inventory and a cleanup of active laws (17,049 → 618): a digital archive, not a knowledge layer. No classifications, no relations, no structure.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon">01</div>
+          <h3 data-i18n="tab5.card1.title">Egyptian Legal Portal</h3>
+          <p data-i18n="tab5.card1.body">290K laws + 100K judgments. Huge, searchable, but flat text — no relations, no status graph.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon gold">02</div>
+          <h3 data-i18n="tab5.card2.title">Court of Cassation</h3>
+          <p data-i18n="tab5.card2.body">650K principles. The reasoning goldmine — locked in PDFs and inconsistent citations.</p>
+          <br>
+          <a href="https://www.cc.gov.eg" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; color: var(--blue); text-decoration: underline;">
+            <span data-i18n="tab5.link.cc">Court of Cassation ↗</span>
+          </a>
+        </div>
+        <div class="card">
+          <div class="card-icon purple">03</div>
+          <h3 data-i18n="tab5.card3.title">Official Gazette</h3>
+          <p data-i18n="tab5.card3.body">The only authoritative source of enactment dates. Manually read, manually cited, not machine-linked.</p>
+          <br>
+          <a href="https://alamiria.com/Sec/Home" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; color: var(--blue); text-decoration: underline;">
+            <span data-i18n="tab5.link.gazette">Official Gazette ↗</span>
+          </a>
+        </div>
+        <div class="card">
+          <div class="card-icon green">04</div>
+          <h3 data-i18n="tab5.card4.title">Manshurat</h3>
+          <p data-i18n="tab5.card4.body">A free digital archive concerned with legal texts in Egypt. A private project by the Law and Society Research Unit, at the School of Global Affairs and Public Policy, The American University in Cairo.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">05</div>
+          <h3 data-i18n="tab5.card5.title">Supreme Committee</h3>
+          <p data-i18n="tab5.card5.body">The latest state effort to refine laws and inventory existing legislation. It is a closed database with no ontology, relations, or time-tracking.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon gold">06</div>
+          <h3 data-i18n="tab5.card6.title">Supreme Constitutional Court</h3>
+          <p data-i18n="tab5.card6.body">Rulings on constitutionality that silently invalidate articles — invisible to keyword search.</p>
+        </div>
+      </div>
+
+      <div class="highlight" data-i18n="tab5.highlight">Egypt is completely disconnected from the proposed vision — on both the official and private levels.</div>
+
+      <div class="warn-box" style="margin-top: 30px; background: rgba(0,86,179,0.08); border-color: rgba(0,86,179,0.3); color: var(--text);">
+        <div style="font-size: 1.5rem; margin-right: 10px;">💡</div>
+        <div>
+          <strong style="color: var(--ncai-blue); display: block; margin-bottom: 8px; font-size: 1.05rem;" data-i18n="tab5.siloTitle">Law is a foundational infrastructure. Fragmented data creates fragmented AI.</strong>
+          <p style="font-size: 0.95rem; line-height: 1.7; color: var(--muted);" data-i18n="tab5.siloBody">Even our conversation right now is governed by a decision, based on a regulation, derived from a law. If every ministry builds its own AI agent with isolated legal data and no awareness of the overarching legal structure, the Ministry of Investment's AI will contradict the Ministry of Communications' AI. ELKM prevents this fragmentation by building a unified, open knowledge layer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TAB 5 — Why NCAI (Consolidated)
+       ============================================================ -->
+  <section class="tab-panel" id="tab-ncai" role="tabpanel" aria-labelledby="tabBtnNcai">
+    <div class="container section">
+      
+      <!-- Header -->
+      <div class="panel-head">
+        <span class="eyebrow" data-i18n="ncai.eyebrow">Why NCAI · Why now</span>
+        <h2 class="panel-title" data-i18n="ncai.title">Aligning ELKM with the National AI Governance Framework</h2>
+        <p class="panel-lead" data-i18n="ncai.lead">Egypt's National AI Governance Framework demands safe, transparent, and reliable AI. But when it comes to the law, current AI models read flat, fragmented texts. They hallucinate legal citations and miss amendments. You cannot govern what you cannot structure. ELKM is the technical backbone that makes responsible legal AI possible.</p>
+      </div>
+
+      <!-- The Challenge -->
+      <div class="panel-head" style="margin-bottom: 20px;">
+        <span class="eyebrow gold" data-i18n="ncai.chalEyebrow">The Challenge</span>
+        <h2 class="panel-title" style="font-size: clamp(1.3rem, 2.8vw, 1.7rem);" data-i18n="ncai.chalTitle">AI needs structured legal data. Right now, it has none.</h2>
+      </div>
+      <div class="grid grid-3" style="margin-bottom: 56px;">
+        <div class="card">
+          <div class="card-icon gold">⚠</div>
+          <h3 data-i18n="ncai.c1.title">The Legal Hallucination Risk</h3>
+          <p data-i18n="ncai.c1.body">When a citizen asks an AI for legal advice, it often invents article numbers or cites repealed laws. This violates the "Safety" and "Accountability" principles of the National Framework. ELKM fixes this by grounding the AI in a verifiable, article-level graph.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon blue">📉</div>
+          <h3 data-i18n="ncai.c2.title">Fragmented Legal Data</h3>
+          <p data-i18n="ncai.c2.body">Egyptian law is scattered across portals as flat text. If every ministry builds its own AI agent based on isolated data, the Ministry of Investment's AI will contradict the Ministry of Communications' AI. A unified open layer is essential for "State as Coordinator".</p>
+        </div>
+        <div class="card">
+          <div class="card-icon purple">🔍</div>
+          <h3 data-i18n="ncai.c3.title">Missing Temporal Tracking</h3>
+          <p data-i18n="ncai.c3.body">Law is not static. Knowing that Article 5 amends Article 2, and that Article 2 was repealed, is knowledge. Current systems don't track time. ELKM introduces "Time-Travel" queries, ensuring the AI always references the valid version of the law.</p>
+        </div>
+      </div>
+
+      <!-- Framework Alignment -->
+      <div class="panel-head" style="margin-bottom: 20px;">
+        <span class="eyebrow green" data-i18n="ncai.alignEyebrow">National Alignment</span>
+        <h2 class="panel-title" style="font-size: clamp(1.3rem, 2.8vw, 1.7rem);" data-i18n="ncai.alignTitle">ELKM implements the 5 Guiding Principles of ECRAI</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th data-i18n="ncai.th1">Guiding Principle (ECRAI)</th><th data-i18n="ncai.th2">What it means</th><th data-i18n="ncai.th3">How ELKM implements it</th></tr></thead>
+          <tbody>
+            <tr>
+              <td data-i18n="ncai.r1c1">1. Beneficence & Collaboration</td>
+              <td data-i18n="ncai.r1c2">AI should benefit society and involve stakeholders.</td>
+              <td data-i18n="ncai.r1c3">ELKM is open-source (MIT/CC BY 4.0). The ontology, schema, and graph are public assets, built collaboratively with legal and academic experts.</td>
+            </tr>
+            <tr>
+              <td data-i18n="ncai.r2c1">2. Safety</td>
+              <td data-i18n="ncai.r2c2">AI must not cause harm or mislead.</td>
+              <td data-i18n="ncai.r2c3">ELKM eliminates legal hallucination. Every AI answer is grounded in a documented article with citation and confidence metadata.</td>
+            </tr>
+            <tr>
+              <td data-i18n="ncai.r3c1">3. Diversity & Inclusion</td>
+              <td data-i18n="ncai.r3c2">AI should serve all segments of society.</td>
+              <td data-i18n="ncai.r3c3">Structured open law allows civil society and legal-aid clinics to build simple-language tools, empowering women, youth, and low-income groups.</td>
+            </tr>
+            <tr>
+              <td data-i18n="ncai.r4c1">4. Transparency & Accountability</td>
+              <td data-i18n="ncai.r4c2">AI decisions must be explainable and traceable.</td>
+              <td data-i18n="ncai.r4c3">Every edge in the ELKM graph has a stable identifier and historical timeline. You can trace exactly why the AI gave a specific legal answer.</td>
+            </tr>
+            <tr>
+              <td data-i18n="ncai.r5c1">5. Sustainability</td>
+              <td data-i18n="ncai.r5c2">AI systems must be viable long-term.</td>
+              <td data-i18n="ncai.r5c3">ELKM is a "Living Ontology." It evolves with every new legislation and court ruling, ensuring continuous, sustainable value without rebuilding from scratch.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Justice Sector -->
+      <div class="panel-head" style="margin: 56px 0 20px;">
+        <span class="eyebrow purple" data-i18n="ncai.justEyebrow">Priority Sector</span>
+        <h2 class="panel-title" style="font-size: clamp(1.3rem, 2.8vw, 1.7rem);" data-i18n="ncai.justTitle">Transforming the Justice Sector with Responsible AI</h2>
+        <p class="panel-lead" data-i18n="ncai.justLead">The National AI Strategy explicitly identifies the "Justice Sector" as a priority area. ELKM is the foundational data infrastructure required to make these applications accurate and safe.</p>
+      </div>
+      <div class="grid grid-2" style="margin-bottom: 56px;">
+        <div class="card">
+          <div class="card-icon green">⚖</div>
+          <h3 data-i18n="ncai.j1.title">AI Legal Research</h3>
+          <p data-i18n="ncai.j1.body">Judges and lawyers need to find how a specific article was amended across 50 years. ELKM's temporal graph makes this a one-second query, reducing judicial burden and accelerating case resolution.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon green">🤖</div>
+          <h3 data-i18n="ncai.j2.title">Virtual Legal Assistants</h3>
+          <p data-i18n="ncai.j2.body">Citizens need accessible legal guidance. An AI assistant powered by ELKM will not hallucinate; it will cite the exact law, the exact article, and the exact date of enforcement, ensuring "Human Oversight" as required by the Generative AI guidelines.</p>
+        </div>
+      </div>
+
+      <!-- Governance & Commitment -->
+      <div class="panel-head" style="margin-bottom: 20px;">
+        <span class="eyebrow blue" data-i18n="ncai.govEyebrow">Governance Model</span>
+        <h2 class="panel-title" style="font-size: clamp(1.3rem, 2.8vw, 1.7rem);" data-i18n="ncai.govTitle">"State as Coordinator" — A unified layer for all ministries</h2>
+      </div>
+      
+      <div class="commit-box">
+        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; color: var(--ncai-blue);" data-i18n="ncai.commitTitle">Our Institutional Commitment</h3>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text);" data-i18n="ncai.commitBody">We recognize that partnering with national bodies requires a legally established entity to ensure sustainability. Therefore, in alignment with the state's vision for responsible governance, <strong>we declare our readiness to implement any requirements set by the Council—including the establishment or legal declaration of a legal entity, in the manner and mechanism it deems appropriate—in the event that the project is accepted and supported.</strong></p>
+      </div>
+
+      <div class="grid grid-3" style="margin-top: 30px;">
+        <div class="card">
+          <div class="card-icon">1</div>
+          <h3 data-i18n="ncai.role1.title">Preventing AI Contradiction</h3>
+          <p data-i18n="ncai.role1.body">By providing a single, centralized legal graph, ELKM ensures that the AI agent of the Ministry of Finance and the AI agent of the Ministry of Trade are reading from the same source of truth.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon gold">2</div>
+          <h3 data-i18n="ncai.role2.title">Standardization</h3>
+          <p data-i18n="ncai.role2.body">ELKM introduces standard legal identifiers (e.g., LAW-12-2025) and 26+ typed relations. This becomes the national standard for all legal-tech companies building AI in Egypt.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon blue">3</div>
+          <h3 data-i18n="ncai.role3.title">Data Sovereignty</h3>
+          <p data-i18n="ncai.role3.body">Instead of relying on foreign proprietary models (like Harvey or Dike) to structure Egyptian law, ELKM keeps the knowledge graph open, sovereign, and owned by an Egyptian non-profit entity.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TAB 6 — Get started / Footer
+       ============================================================ -->
+  <section class="tab-panel" id="tab7" role="tabpanel" aria-labelledby="tabBtn7">
+    <div class="container section">
+      <div style="text-align: center; background: radial-gradient(ellipse at top, rgba(0,86,179,0.12), transparent 70%), var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 56px 32px;">
+        <h2 style="font-size: clamp(1.5rem, 3.6vw, 2.2rem); font-weight: 800; margin-bottom: 14px;" data-i18n="tab7.title">Build the safe, open legal AI layer for Egypt</h2>
+        <p style="color: var(--muted); max-width: 680px; margin: 0 auto 28px; font-size: 1rem;" data-i18n="tab7.body">ELKM is ready to demonstrate. The ontology, the graph, and the schema are public on GitHub. We invite the NCAI to review the architecture, test the prototype, and consider ELKM as a foundational project under the National AI Governance Framework.</p>
+
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
+          <a class="btn btn-primary" href="https://github.com/heshammalek/ELKM-Egyptian-Legal-Knowledge-Model" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            <span data-i18n="tab7.ctaGithub">Open the repo</span>
+          </a>
+          <button class="btn" id="contactToggleBtn">
+            <span data-i18n="tab7.ctaEmail">Contact the founder</span>
+          </button>
+        </div>
+
+        <!-- Contact Card (Hidden by default, toggled by button) -->
+        <div id="contactCard" class="contact-card">
+          <h4 data-i18n="contact.title">Contact Details</h4>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:h3malik@gmail.com">h3malik@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+201013541925" class="phone-number">+20 101 354 1925</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; padding: 20px 0;">
+        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: center; align-items: center; gap: 8px;">
+          <div class="brand" style="font-size: 1.1rem;">
+            <span class="brand-dot" style="width: 8px; height: 8px;"></span>
+            <span>ELKM</span>
+          </div>
+          <span style="color: var(--muted); font-size: 0.82rem;" data-i18n="footer.line"> — Egyptian Legal Knowledge Model · Proposal for NCAI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Modal for Video -->
+<div class="modal-overlay" id="videoModal">
+  <div class="modal-content">
+    <button class="modal-close" id="closeModal">&times;</button>
+    <div class="modal-video" id="videoContainer">
+      <!-- Video Placeholder -->
+      <span>Video will be embedded here soon.</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var I18N = {
+    en: {
+      "hero.eyebrow": "Proposal for the National AI Council & ECRAI",
+      "hero.subtitle": "Egyptian Legal Knowledge Model",
+      "hero.github": "View on GitHub",
+      "hero.watchVideo": "Watch Video",
+      "hero.signature": "Hesham Malek — Lawyer · Founder, ELKM",
+      "tabs.what": "What we are",
+      "tabs.why": "Why support",
+      "tabs.comp": "Competitors",
+      "tabs.mess": "The state of law",
+      "tabs.ncai": "Why NCAI",
+      "tabs.start": "Get started",
+
+      "tab2.eyebrow": "What we are",
+      "tab2.title": "AI-ready legal data + ontology + knowledge graph",
+      "tab2.lead": "LLMs read Egyptian law as text. But law is not text — it is relations, rulings that constrain it, jurisprudence that deepens it, constitutional principles it derives from, and institutions built upon it. ELKM is the understanding layer that holds all of that together.",
+      "tab2.card1.title": "Raw text is not knowledge",
+      "tab2.card1.body": "Sound familiar? An AI answer cites an article, and nobody can see what the article says. A judgment is quoted from memory, with no court, date or link. Nobody knows which version of the law the answer was based on.<br><br><strong>ELKM fixes this.</strong> A PDF of a statute is data. Knowing that Article 5 amends Article 2, and that Article 2 was repealed — that's knowledge. ELKM builds the layer that makes the AI cite the <em>real</em> Egyptian text, not a hallucination.",
+      "tab2.card2.title": "A professional relations schema",
+      "tab2.card2.body": "Three typed relation families — document↔document, document↔entity, document↔position — expressed as a structured enum. Open, versioned, non-final: the schema evolves with the law itself.",
+      "tab2.card3.title": "Built for AI agents",
+      "tab2.card3.body": "Structured, queryable, versioned. Designed so an LLM agent can traverse legal reasoning — not just retrieve a paragraph by keyword. As Neo4j's Emil Eifrem puts it: thinner agents on a smarter substrate. The ontology is the substrate; the agent stays thin.",
+      "tab2.rel.docDoc.title": "Document to Document",
+      "tab2.rel.docDoc.desc": "Horizontal relations between legal texts.",
+      "tab2.rel.docEnt.title": "Document to Entity",
+      "tab2.rel.docEnt.desc": "Establishing, abolishing, or modifying entities.",
+      "tab2.rel.docPos.title": "Document to Position",
+      "tab2.rel.docPos.desc": "Delegating powers, creating roles, and defining duties.",
+      "tab2.warn": "<strong>Active development</strong> — a living ontology (v1.8). Not a finished product.",
+
+      "tab3.eyebrow": "Why support",
+      "tab3.title": "The money is moving. The Egyptian layer is missing.",
+      "tab3.lead": "Global legal AI is attracting billions. None of it is building the structured knowledge layer for Egyptian law.",
+      "tab3.table.company": "Company / Market",
+      "tab3.table.figure": "Raised / Size",
+      "tab3.table.note": "Note",
+      "tab3.table.harvey": "Legal AI platform (US/UK)",
+      "tab3.table.clio": "Legal practice management + vLex acquisition",
+      "tab3.table.lt": "Legal tech 2025",
+      "tab3.table.ltnote": "Global market, year-over-year growth",
+      "tab3.highlight": "$6B+ in global legal AI funding. <span class=\"hl-accent\">Zero dollars</span> building the Egyptian legal knowledge layer.",
+      "tab3.stat1": "Accuracy gain on structured legal reasoning tasks (VentureBeat)",
+      "tab3.stat2": "Arabic legal ontologies in production today",
+      "tab3.stat3": "Active Egyptian laws after the 17,049 → 618 cleanup",
+
+      "tab4.eyebrow": "Competitors & Inspiration",
+      "tab4.title": "Global legal AI models. The Egyptian layer is either ignored or superficial.",
+      "tab4.lead": "Global models like Ansvar and Dike either treat Egyptian law as plain text or build a superficial layer on top. They lack the depth, the article-level precision, and the institutional understanding required for a true legal knowledge graph.",
+      "tab4.card1.title": "Ansvar — Text Search MCP",
+      "tab4.card1.body": "Ansvar is an MCP server that applies a text search engine across many different jurisdictions. However, it treats Egyptian law merely as text, lacking the deep legal complexity, specific structural layers, and the nuanced relationships required to model Egyptian legal semantics.",
+      "tab4.card2.title": "Dike — Flat Document States",
+      "tab4.card2.body": "Dike's published dataset on Hugging Face (eg-legal-citation-graph) relies on flat document states, treating entire laws as single entities (canonical_id). Its citation graph lacks semantic meaning, fails to build precise article-level relations, and completely ignores institutional and functional relations.",
+      "tab4.diffEyebrow": "What ELKM delivers",
+      "tab4.diffTitle": "What we offer that they have not",
+      "tab4.diff1.title": "The only Egyptian ontology",
+      "tab4.diff1.body": "A formal ontology for Egyptian law — with its historical depth and legislative diversity — does not exist anywhere else. ELKM is the first to structure it.",
+      "tab4.diff2.title": "Sector and legal-field classifications",
+      "tab4.diff2.body": "Documents are classified by subject matter and legal field — not just tagged with keywords. Classification is part of the model, not a layer added later.",
+      "tab4.diff3.title": "Document types and definitions schema",
+      "tab4.diff3.body": "A typed schema for each kind of legal document — law, decree, judgment, principle, fatwa, regulation — with its own definition rules and hierarchy levels.",
+      "tab4.diff4.title": "Identifier system",
+      "tab4.diff4.body": "Every document, article, entity, position and court principle carries a stable, resolvable identifier (e.g., LAW-12-2025, ENT-CC). Edges never break and citations never drift.",
+      "tab4.diff5.title": "Multi-format export",
+      "tab4.diff5.body": "The graph can be exported as JSON, RDF-style triples, CSV adjacency lists, or the native ELKM schema — so it plugs into any downstream AI or analytics pipeline.",
+      "tab4.diff6.title": "Diverse, precise relations — at the article level",
+      "tab4.diff6.body": "Relations are not at the document level. They are at the article level, and typed precisely. Every edge carries source, date and confidence metadata.",
+      "tab4.diff7.title": "Document, institutional and functional relations",
+      "tab4.diff7.body": "Three relation families in one model — DOC↔DOC, DOC↔ENT, and DOC↔POS. Most existing efforts stop at the first.",
+
+      "tab5.eyebrow": "The state of Egyptian law",
+      "tab5.title": "Egypt cleaned the corpus. It didn't structure it.",
+      "tab5.lead": "Egyptian law is scattered across state-run portals. The Supreme Committee for Legislative Reform produced an inventory and a cleanup of active laws (17,049 → 618): a digital archive, not a knowledge layer. No classifications, no relations, no structure.",
+      "tab5.card1.title": "Egyptian Legal Portal",
+      "tab5.card1.body": "290K laws + 100K judgments. Huge, searchable, but flat text — no relations, no status graph.",
+      "tab5.card2.title": "Court of Cassation",
+      "tab5.card2.body": "650K principles. The reasoning goldmine — locked in PDFs and inconsistent citations.",
+      "tab5.link.cc": "Court of Cassation ↗",
+      "tab5.card3.title": "Official Gazette",
+      "tab5.card3.body": "The only authoritative source of enactment dates. Manually read, manually cited, not machine-linked.",
+      "tab5.link.gazette": "Official Gazette ↗",
+      "tab5.card4.title": "Manshurat",
+      "tab5.card4.body": "A free digital archive concerned with legal texts in Egypt. A private project by the Law and Society Research Unit, at the School of Global Affairs and Public Policy, The American University in Cairo.",
+      "tab5.card5.title": "Supreme Committee",
+      "tab5.card5.body": "The latest state effort to refine laws and inventory existing legislation. It is a closed database with no ontology, relations, or time-tracking.",
+      "tab5.card6.title": "Supreme Constitutional Court",
+      "tab5.card6.body": "Rulings on constitutionality that silently invalidate articles — invisible to keyword search.",
+      "tab5.highlight": "Egypt is completely disconnected from the proposed vision — on both the official and private levels.",
+      "tab5.siloTitle": "Law is a foundational infrastructure. Fragmented data creates fragmented AI.",
+      "tab5.siloBody": "Even our conversation right now is governed by a decision, based on a regulation, derived from a law. If every ministry builds its own AI agent with isolated legal data and no awareness of the overarching legal structure, the Ministry of Investment's AI will contradict the Ministry of Communications' AI. ELKM prevents this fragmentation by building a unified, open knowledge layer.",
+
+      "ncai.eyebrow": "Why NCAI · Why now",
+      "ncai.title": "Aligning ELKM with the National AI Governance Framework",
+      "ncai.lead": "Egypt's National AI Governance Framework demands safe, transparent, and reliable AI. But when it comes to the law, current AI models read flat, fragmented texts. They hallucinate legal citations and miss amendments. You cannot govern what you cannot structure. ELKM is the technical backbone that makes responsible legal AI possible.",
+      "ncai.chalEyebrow": "The Challenge",
+      "ncai.chalTitle": "AI needs structured legal data. Right now, it has none.",
+      "ncai.c1.title": "The Legal Hallucination Risk",
+      "ncai.c1.body": "When a citizen asks an AI for legal advice, it often invents article numbers or cites repealed laws. This violates the \"Safety\" and \"Accountability\" principles of the National Framework. ELKM fixes this by grounding the AI in a verifiable, article-level graph.",
+      "ncai.c2.title": "Fragmented Legal Data",
+      "ncai.c2.body": "Egyptian law is scattered across portals as flat text. If every ministry builds its own AI agent based on isolated data, the Ministry of Investment's AI will contradict the Ministry of Communications' AI. A unified open layer is essential for \"State as Coordinator\".",
+      "ncai.c3.title": "Missing Temporal Tracking",
+      "ncai.c3.body": "Law is not static. Knowing that Article 5 amends Article 2, and that Article 2 was repealed, is knowledge. Current systems don't track time. ELKM introduces \"Time-Travel\" queries, ensuring the AI always references the valid version of the law.",
+      "ncai.alignEyebrow": "National Alignment",
+      "ncai.alignTitle": "ELKM implements the 5 Guiding Principles of ECRAI",
+      "ncai.th1": "Guiding Principle (ECRAI)",
+      "ncai.th2": "What it means",
+      "ncai.th3": "How ELKM implements it",
+      "ncai.r1c1": "1. Beneficence & Collaboration",
+      "ncai.r1c2": "AI should benefit society and involve stakeholders.",
+      "ncai.r1c3": "ELKM is open-source (MIT/CC BY 4.0). The ontology, schema, and graph are public assets, built collaboratively with legal and academic experts.",
+      "ncai.r2c1": "2. Safety",
+      "ncai.r2c2": "AI must not cause harm or mislead.",
+      "ncai.r2c3": "ELKM eliminates legal hallucination. Every AI answer is grounded in a documented article with citation and confidence metadata.",
+      "ncai.r3c1": "3. Diversity & Inclusion",
+      "ncai.r3c2": "AI should serve all segments of society.",
+      "ncai.r3c3": "Structured open law allows civil society and legal-aid clinics to build simple-language tools, empowering women, youth, and low-income groups.",
+      "ncai.r4c1": "4. Transparency & Accountability",
+      "ncai.r4c2": "AI decisions must be explainable and traceable.",
+      "ncai.r4c3": "Every edge in the ELKM graph has a stable identifier and historical timeline. You can trace exactly why the AI gave a specific legal answer.",
+      "ncai.r5c1": "5. Sustainability",
+      "ncai.r5c2": "AI systems must be viable long-term.",
+      "ncai.r5c3": "ELKM is a \"Living Ontology.\" It evolves with every new legislation and court ruling, ensuring continuous, sustainable value without rebuilding from scratch.",
+      "ncai.justEyebrow": "Priority Sector",
+      "ncai.justTitle": "Transforming the Justice Sector with Responsible AI",
+      "ncai.justLead": "The National AI Strategy explicitly identifies the \"Justice Sector\" as a priority area. ELKM is the foundational data infrastructure required to make these applications accurate and safe.",
+      "ncai.j1.title": "AI Legal Research",
+      "ncai.j1.body": "Judges and lawyers need to find how a specific article was amended across 50 years. ELKM's temporal graph makes this a one-second query, reducing judicial burden and accelerating case resolution.",
+      "ncai.j2.title": "Virtual Legal Assistants",
+      "ncai.j2.body": "Citizens need accessible legal guidance. An AI assistant powered by ELKM will not hallucinate; it will cite the exact law, the exact article, and the exact date of enforcement, ensuring \"Human Oversight\" as required by the Generative AI guidelines.",
+      "ncai.govEyebrow": "Governance Model",
+      "ncai.govTitle": "\"State as Coordinator\" — A unified layer for all ministries",
+      "ncai.commitTitle": "Our Institutional Commitment",
+      "ncai.commitBody": "We recognize that partnering with national bodies requires a legally established entity to ensure sustainability. Therefore, in alignment with the state's vision for responsible governance, <strong>we declare our readiness to implement any requirements set by the Council—including the establishment or legal declaration of a legal entity, in the manner and mechanism it deems appropriate—in the event that the project is accepted and supported.</strong>",
+      "ncai.role1.title": "Preventing AI Contradiction",
+      "ncai.role1.body": "By providing a single, centralized legal graph, ELKM ensures that the AI agent of the Ministry of Finance and the AI agent of the Ministry of Trade are reading from the same source of truth.",
+      "ncai.role2.title": "Standardization",
+      "ncai.role2.body": "ELKM introduces standard legal identifiers (e.g., LAW-12-2025) and 26+ typed relations. This becomes the national standard for all legal-tech companies building AI in Egypt.",
+      "ncai.role3.title": "Data Sovereignty",
+      "ncai.role3.body": "Instead of relying on foreign proprietary models (like Harvey or Dike) to structure Egyptian law, ELKM keeps the knowledge graph open, sovereign, and owned by an Egyptian non-profit entity.",
+
+      "tab7.title": "Build the safe, open legal AI layer for Egypt",
+      "tab7.body": "ELKM is ready to demonstrate. The ontology, the graph, and the schema are public on GitHub. We invite the NCAI to review the architecture, test the prototype, and consider ELKM as a foundational project under the National AI Governance Framework.",
+      "tab7.ctaGithub": "Open the repo",
+      "tab7.ctaEmail": "Contact the founder",
+      "contact.title": "Contact Details",
+      "footer.line": " — Egyptian Legal Knowledge Model · Proposal for NCAI"
+    },
+    ar: {
+      "hero.eyebrow": "مقترح للمجلس الوطني للذكاء الاصطناعي والمركز المصري للذكاء الاصطناعي المسؤول",
+      "hero.subtitle": "نموذج المعرفة القانونية المصري",
+      "hero.github": "شوف على GitHub",
+      "hero.watchVideo": "شاهد الفيديو",
+      "hero.signature": "هشام مالك — محامي · مؤسس ELKM",
+      "tabs.what": "إحنا إيه",
+      "tabs.why": "ليه تدعم",
+      "tabs.comp": "المنافسين",
+      "tabs.mess": "واقع القانون",
+      "tabs.ncai": "ليه المجلس الوطني",
+      "tabs.start": "ابدأ معانا",
+
+      "tab2.eyebrow": "إحنا إيه",
+      "tab2.title": "بيانات قانونية جاهزة للذكاء الاصطناعي + أنطولوجيا + جراف معرفة",
+      "tab2.lead": "النماذج اللغوية بتقرا القانون المصري كنص. لكن القانون مش نص — هو علاقات، وأحكام بتقيّده، وفقه بيديله عمق، ومبادئ دستورية بيستمد منها، ومؤسسات اتبنت عليه. ELKM هي طبقة الفهم اللي بتمسك ده كله.",
+      "tab2.card1.title": "النص الخام مش معرفة",
+      "tab2.card1.body": "الصوت ده مألوف؟ إجابة من الذكاء الاصطناعي تستشهد بمادة، ومحدش يقدر يشوف المادة بتقول إيه. حكم بيتنقل من الذاكرة، من غير محكمة أو تاريخ أو لينك. ومحدش عارف الإجابة كانت مبنية على أنهي نسخة من القانون.<br><br><strong>ELKM بيحل ده.</strong> ملف PDF لقانون ده بيانات. إنك تعرف إن المادة 5 بتعدّل المادة 2، وإن المادة 2 اتلغت — دي المعرفة. ELKM بيبني الطبقة اللي بتخلي الذكاء الاصطناعي يستشهد بالنص المصري <em>الحقيقي</em>، مش بهلوسة.",
+      "tab2.card2.title": "مخطط علاقات احترافي",
+      "tab2.card2.body": "3 عائلات علاقات مكتوبة — مستند↔مستند، مستند↔جهة، مستند↔وظيفة — في صورة enum منظّم. مفتوح، بإصدارات، وغير نهائي.",
+      "tab2.card3.title": "مبني لوكلاء الذكاء الاصطناعي",
+      "tab2.card3.body": "منظّم، قابل للاستعلام، ومُصدَّر بإصدارات. مصمم عشان وكيل LLM يمشي في مسار الاستدلال القانوني — مش مجرد يجيب فقرة بكلمة مفتاحية. زي ما إميل إيفريم من Neo4j بيقول: وكلاء أنحف على قاعدة ذكية. الأنطولوجيا هي القاعدة؛ الوكيل يفضل نحيف.",
+      "tab2.rel.docDoc.title": "مستند ↔ مستند",
+      "tab2.rel.docDoc.desc": "علاقات أفقية بين النصوص القانونية.",
+      "tab2.rel.docEnt.title": "مستند ↔ كيان",
+      "tab2.rel.docEnt.desc": "إنشاء، إلغاء، أو تعديل الكيانات.",
+      "tab2.rel.docPos.title": "مستند ↔ منصب",
+      "tab2.rel.docPos.desc": "تفويض سلطات، إنشاء مناصب، وتحديد واجبات.",
+      "tab2.warn": "<strong>تطوير نشط</strong> — أنطولوجيا حيّة (v1.8). مش منتج نهائي.",
+
+      "tab3.eyebrow": "ليه تدعم",
+      "tab3.title": "الفلوس بتتحرك. الطبقة المصرية غايبة.",
+      "tab3.lead": "الذكاء الاصطناعي القانوني العالمي بيجذب مليارات. مفيش ولا واحد منهم بيبني طبقة المعرفة المنظّمة للقانون المصري.",
+      "tab3.table.company": "الشركة / السوق",
+      "tab3.table.figure": "التمويل / الحجم",
+      "tab3.table.note": "ملاحظة",
+      "tab3.table.harvey": "منصة ذكاء اصطناعي قانوني (أمريكا/بريطانيا)",
+      "tab3.table.clio": "إدارة ممارسة قانونية + الاستحواذ على vLex",
+      "tab3.table.lt": "تكنولوجيا قانونية 2025",
+      "tab3.table.ltnote": "السوق العالمي، نمو سنوي",
+      "tab3.highlight": "أكثر من 6 مليار دولار تمويل عالمي للذكاء الاصطناعي القانوني. <span class=\"hl-accent\">صفر دولار</span> بيتبني في طبقة المعرفة القانونية المصرية.",
+      "tab3.stat1": "تحسّن في الدقة على مهام الاستدلال القانوني المنظّم (VentureBeat)",
+      "tab3.stat2": "أنطولوجيات قانونية عربية في الإنتاج النهارده",
+      "tab3.stat3": "قانون مصري نشط بعد تنقية 17,049 → 618",
+
+      "tab4.eyebrow": "المنافسون والإلهام",
+      "tab4.title": "نماذج ذكاء قانونية عالمية. الطبقة المصرية بين التجاهل أو السطحية.",
+      "tab4.lead": "نماذج عالمية زي Ansvar و Dike بتتعامل مع القانون المصري كنص عادي أو بتبني طبقة سطحية. بتفتقد العمق، والدقة على مستوى المادة، والفهم المؤسسي المطلوب لجراف معرفة قانوني حقيقي.",
+      "tab4.card1.title": "Ansvar — MCP لمحرك بحث نصي",
+      "tab4.card1.body": "Ansvar هو MCP Server بيطبق محرك بحث نصي على ولايات قضائية مختلفة. لكنه بيتعامل مع القانون المصري كنص فقط، وبيعرزه التعقيد القانوني العميق، والطبقات الهيكلية، والعلاقات الدقيقة المطلوبة لنمذجة الدلالات القانونية المصرية.",
+      "tab4.card2.title": "Dike — حالات مستندات مسطحة",
+      "tab4.card2.body": "قاعدة بيانات Dike على Hugging Face (eg-legal-citation-graph) بتعتمد على حالات مستندات مسطحة، وبتتعامل مع القوانين ككيانات واحدة (canonical_id). جراف الاستشهادات بتاعها مفتقد للمعنى الدلالي، وبیفشل في بناء علاقات دقيقة على مستوى المادة، وبيتجاهل تماماً العلاقات المؤسسية والوظيفية.",
+      "tab4.diffEyebrow": "اللي ELKM بيقدمه",
+      "tab4.diffTitle": "اللي بنقدمه ومقدموهوش",
+      "tab4.diff1.title": "الأنطولوجيا المصرية الوحيدة",
+      "tab4.diff1.body": "أنطولوجيا رسمية للقانون المصري — بعمقها التاريخي وتنوعها التشريعي — مش موجودة في أي مكان تاني. ELKM هي الأولى اللي بتنظمها.",
+      "tab4.diff2.title": "تصنيفات القطاعات والمجالات القانونية",
+      "tab4.diff2.body": "المستندات بتتصنّف حسب الموضوع والمجال القانوني — مش بس بتتوسم بكلمات مفتاحية. التصنيف جزء من النموذج.",
+      "tab4.diff3.title": "أنواع المستندات وسكيما التعريفات",
+      "tab4.diff3.body": "سكيما مكتوبة لكل نوع مستند قانوني — قانون، مرسوم، حكم، مبدأ، فتوى، لائحة — بقواعد تعريفها ومستوياتها الهرمية.",
+      "tab4.diff4.title": "نظام معرفات",
+      "tab4.diff4.body": "كل مستند، مادة، جهة، وظيفة، ومبدأ نقض بيحمل معرف ثابت وقابل للحل (مثل LAW-12-2025 أو ENT-CC).",
+      "tab4.diff5.title": "تصدير متعدد",
+      "tab4.diff5.body": "الجراف بيتصدّر كـ JSON، أو ثلاثيات بنمط RDF، أو قوائم تجاور CSV، أو سكيما ELKM الأصلية — عشان يتوصل بأي pipeline.",
+      "tab4.diff6.title": "علاقات متنوعة ودقيقة — على مستوى المواد",
+      "tab4.diff6.body": "العلاقات مش على مستوى المستند. هي على مستوى المادة، ومكتوبة بدقة. كل حافة بتحمل المصدر والتاريخ ودرجة الثقة.",
+      "tab4.diff7.title": "علاقات مستندية ومؤسسية ووظيفية",
+      "tab4.diff7.body": "3 عائلات علاقات في نموذج واحد — مستند↔مستند، مستند↔مؤسسة، ومستند↔وظيفة. معظم الجهود الموجودة بتتوقف عند الأولى.",
+
+      "tab5.eyebrow": "واقع القانون المصري",
+      "tab5.title": "مصر نظّفت الكوربس. لكنها لم تهيكله.",
+      "tab5.lead": "القانون المصري مبعثر بين المواقع التابعة للدولة. اللجنة العليا للإصلاح التشريعي أثمرت حصر وتنقية للقوانين السارية (17,049 → 618): أرشيف رقمي آخر، لا وجود لطبقة معرفية. لا تصنيفات، لا علاقات، لا هيكلة.",
+      "tab5.card1.title": "بوابة التشريع المصرية",
+      "tab5.card1.body": "290 ألف قانون + 100 ألف حكم. ضخم، قابل للبحث، لكن نص مسطح — بدون علاقات، بدون جراف حالة.",
+      "tab5.card2.title": "محكمة النقض",
+      "tab5.card2.body": "650 ألف مبدأ. منجم الاستدلال — مقفول في PDFs واستشهادات غير متسقة.",
+      "tab5.link.cc": "محكمة النقض ↗",
+      "tab5.card3.title": "الجريدة الرسمية",
+      "tab5.card3.body": "المصدر الوحيد الموثوق لتواريخ النفاذ. بيتقرا يدوي، بيتستشهد يدوي، ومش مربوط بالآلة.",
+      "tab5.link.gazette": "الجريدة الرسمية ↗",
+      "tab5.card4.title": "منشورات قانونية",
+      "tab5.card4.body": "أرشيفٌ رقميّ مجانيّ معنيّ بالمواد ذات الطبيعة القانونية في مصر. وهو مشروع خاص بوحدة أبحاث القانون والمجتمع، التابعة لكلية الشئون الدولية والسياسات العامة، بالجامعة الأمريكية بالقاهرة.",
+      "tab5.card5.title": "اللجنة العليا",
+      "tab5.card5.body": "أحدث ما أنتجته الدولة لتنقيح القوانين وهي عملية حصر للتشريعات القائمة. وهي قاعدة بيانات مغلقة لا وجود للأنطولوجيا أو العلاقات أو التتبع الزمني.",
+      "tab5.card6.title": "المحكمة الدستورية العليا",
+      "tab5.card6.body": "أحكام دستورية بتبطل مواد بصمت — غير مرئية للبحث بالكلمات المفتاحية.",
+      "tab5.highlight": "مصر منفصلة تمامًا عن الرؤية المقترحة — على المستويين الرسمي والخاص.",
+      "tab5.siloTitle": "القانون بنية تحتية. البيانات المجزأة تُنتج ذكاءً اصطناعيًا مجزأً.",
+      "tab5.siloBody": "حتى محادثتنا دلوقتي محكومة بقرار، مبني على لائحة، مستمدة من قانون. لو كل وزارة بنت وكيل ذكاء اصطناعي ببيانات قانونية معزولة وبدون وعي بالبنية القانونية الشاملة، ذكاء وزارة الاستثمار هيتناقض مع ذكاء وزارة الاتصالات. ELKM بيمنع التجزئة دي ببناء طبقة معرفية موحدة ومفتوحة.",
+
+      "ncai.eyebrow": "ليه NCAI · وليه دلوقتي",
+      "ncai.title": "التوافق مع إطار الحوكمة الوطني للذكاء الاصطناعي",
+      "ncai.lead": "إطار الحوكمة الوطني للذكاء الاصطناعي في مصر يتطلب ذكاءً آمناً وشفافاً وموثوقاً. لكن عندما يتعلق الأمر بالقانون، النماذج الحالية تقرأ نصوصاً مسطحة ومجزأة. إنها تهلوس الاستشهادات القانونية وتفوتها التعديلات. لا يمكنك حوكمة ما لا يمكنك هيكلته. ELKM هو الركيزة التقنية التي تجعل الذكاء الاصطناعي القانوني المسؤول ممكناً.",
+      "ncai.chalEyebrow": "التحدي",
+      "ncai.chalTitle": "الذكاء الاصطناعي يحتاج بيانات قانونية مهيكلة. والآن، لا يملكها.",
+      "ncai.c1.title": "خطر الهلوسة القانونية",
+      "ncai.c1.body": "عندما يسأل مواطن الذكاء الاصطناعي عن نصيحة قانونية، غالباً ما يختلق أرقام مواد أو يستشهد بقوانين ملغاة. هذا ينتهك مبادئ \"الأمان\" و\"المساءلة\" في الإطار الوطني. ELKM يحل ذلك بربط الذكاء الاصطناعي بجراف موثق على مستوى المادة.",
+      "ncai.c2.title": "تجزئة البيانات القانونية",
+      "ncai.c2.body": "القانون المصري مبعثر عبر البوابات كنص مسطح. إذا بنت كل وزارة وكيل ذكاء اصطناعي خاص بها بناءً على بيانات معزولة، سيتناقض ذكاء وزارة الاستثمار مع ذكاء وزارة الاتصالات. الطبقة المفتوحة الموحدة ضرورية لفلسفة \"الدولة كمنسق\".",
+      "ncai.c3.title": "غياب التتبع الزمني",
+      "ncai.c3.body": "القانون ليس ثابتاً. معرفة أن المادة 5 تعدل المادة 2، وأن المادة 2 ألغيت، هي معرفة. الأنظمة الحالية لا تتبع الزمن. ELKM يقدم استعلامات \"السفر عبر الزمن\"، مما يضمن أن الذكاء الاصطناعي يشير دائماً إلى النسخة السارية من القانون.",
+      "ncai.alignEyebrow": "التوافق الوطني",
+      "ncai.alignTitle": "ELKM ينفذ المبادئ التوجيهية الخمسة لـ ECRAI",
+      "ncai.th1": "المبدأ التوجيهي (ECRAI)",
+      "ncai.th2": "ماذا يعني",
+      "ncai.th3": "كيف ينفذه ELKM",
+      "ncai.r1c1": "1. الإفادة والتعاون",
+      "ncai.r1c2": "يجب أن يفيد AI المجتمع ويشرك أصحاب المصلحة.",
+      "ncai.r1c3": "ELKM مفتوح المصدر (MIT/CC BY 4.0). الأنطولوجيا والسكيما والجراف أصول عامة، تم بناؤها بالتعاون مع خبراء قانونيين وأكاديميين.",
+      "ncai.r2c1": "2. الأمان",
+      "ncai.r2c2": "يجب ألا يسبب AI ضرراً أو يضلل.",
+      "ncai.r2c3": "ELKM يلغي الهلوسة القانونية. كل إجابة AI مبنية على مادة موثقة مع استشهاد وبيانات وصفية للثقة.",
+      "ncai.r3c1": "3. التنوع والشمول",
+      "ncai.r3c2": "يجب أن يخدم AI جميع شرائح المجتمع.",
+      "ncai.r3c3": "القانون المفتوح المهيكل يمكّن المجتمع المدني والعيادات القانونية من بناء أدوات بلغة بسيطة، لتمكين النساء والشباب والفقراء.",
+      "ncai.r4c1": "4. الشفافية والمساءلة",
+      "ncai.r4c2": "يجب أن تكون قرارات AI قابلة للتفسير والتتبع.",
+      "ncai.r4c3": "كل حافة في جراف ELKM لها معرف ثابت وجدول زمني تاريخي. يمكنك تتبع سبب إعطاء AI لإجابة قانونية محددة بدقة.",
+      "ncai.r5c1": "5. الاستدامة",
+      "ncai.r5c2": "يجب أن تكون أنظمة AI قابلة للحياة على المدى الطويل.",
+      "ncai.r5c3": "ELKM هو \"أنطولوجيا حية\". يتطور مع كل تشريع جديد وحكم قضائي، مما يضمن قيمة مستدامة ومستمرة دون إعادة البناء من الصفر.",
+      "ncai.justEyebrow": "القطاع ذو الأولوية",
+      "ncai.justTitle": "تحويل القطاع القضائي بالذكاء الاصطناعي المسؤول",
+      "ncai.justLead": "تحدد الاستراتيجية الوطنية للذكاء الاصطناعي \"القطاع القضائي\" صراحةً كمجال ذي أولوية. ELKM هو البنية التحتية للبيانات الأساسية المطلوبة لجعل هذه التطبيقات دقيقة وآمنة.",
+      "ncai.j1.title": "البحث القانوني بالذكاء الاصطناعي",
+      "ncai.j1.body": "يحتاج القضاة والمحامون إلى معرفة كيف تم تعديل مادة معينة على مدار 50 عاماً. جراف ELKM الزمني يجعل هذا استعلاماً في ثانية واحدة، مما يقلل العبء القضائي ويسرع حل القضايا.",
+      "ncai.j2.title": "المساعدون القانونيون الافتراضيون",
+      "ncai.j2.body": "يحتاج المواطنون إلى إرشاد قانوني ميسور. مساعد AI مدعوم بـ ELKM لن يهلوس؛ سوف يستشهد بالقانون الدقيق، والمادة الدقيقة، وتاريخ النفاذ الدقيق، مما يضمن \"الإشراف البشري\" كما هو مطلوب في إرشادات AI التوليدي.",
+      "ncai.govEyebrow": "نموذج الحوكمة",
+      "ncai.govTitle": "\"الدولة كمنسق\" — طبقة موحدة لجميع الوزارات",
+      "ncai.commitTitle": "التزامنا المؤسسي",
+      "ncai.commitBody": "ندرك أن الشراكة مع الجهات الوطنية تتطلب وجود كيان قانوني راسخ لضمان الاستدامة. لذلك، وتماشياً مع رؤية الدولة في الحوكمة المسؤولة، <strong>نعلن استعدادنا لتنفيذ أي متطلبات يراها المجلس، بما في ذلك تأسيس أو إشهار كيان قانوني، بالكيفية والآلية التي يحددها المجلس، في حال قبول دعم المشروع.</strong>",
+      "ncai.role1.title": "منع تناقض الذكاء الاصطناعي",
+      "ncai.role1.body": "من خلال توفير جراف قانوني واحد ومركزي، يضمن ELKM أن وكيل AI لوزارة المالية ووكيل AI لوزارة التجارة يقرآن من نفس مصدر الحقيقة.",
+      "ncai.role2.title": "التوحيد القياسي",
+      "ncai.role2.body": "يقدم ELKM معرفات قانونية قياسية (مثل LAW-12-2025) و26+ علاقة مصنفة. يصبح هذا هو المعيار الوطني لجميع شركات التكنولوجيا القانونية التي تبني AI في مصر.",
+      "ncai.role3.title": "السيادة على البيانات",
+      "ncai.role3.body": "بدلاً من الاعتماد على نماذج مملوكة أجنبية (مثل Harvey أو Dike) لهيكلة القانون المصري، يحافظ ELKM على جراف المعرفة مفتوحاً وسيادياً ومملوكاً لكيان مصري غير ربحي.",
+
+      "tab7.title": "ابنِ طبقة الذكاء الاصطناعي القانوني الآمنة والمفتوحة لمصر",
+      "tab7.body": "ELKM جاهز للعرض. الأنطولوجيا والجراف والسكيما متاحة للجمهور على GitHub. ندعو المجلس الوطني للذكاء الاصطناعي لمراجعة الهندسة المعمارية، واختبار النموذج الأولي، والنظر في ELKM كمشروع تأسيسي في إطار الحوكمة الوطني للذكاء الاصطناعي.",
+      "tab7.ctaGithub": "افتح الريبو",
+      "tab7.ctaEmail": "تواصل مع المؤسس",
+      "contact.title": "بيانات التواصل",
+      "footer.line": " — نموذج المعرفة القانونية المصري · مقترح للمجلس الوطني للذكاء الاصطناعي"
+    }
+  };
+
+  var lang = "en";
+  var body = document.body;
+  var tEn = document.getElementById("langBtnEn");
+  var tAr = document.getElementById("langBtnAr");
+
+  function applyLang(l) {
+    lang = l;
+    body.classList.toggle("lang-ar", l === "ar");
+    document.documentElement.lang = l;
+    document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
+    tEn.classList.toggle("active", l === "en");
+    tAr.classList.toggle("active", l === "ar");
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n");
+      var val = I18N[l][key];
+      if (typeof val === "string") el.innerHTML = val;
+    });
+  }
+
+  tEn.addEventListener("click", function () { applyLang("en"); });
+  tAr.addEventListener("click", function () { applyLang("ar"); });
+
+  // Tabs
+  document.querySelectorAll(".tab-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = btn.getAttribute("data-tab");
+      document.querySelectorAll(".tab-btn").forEach(function (b) { b.classList.remove("active"); });
+      document.querySelectorAll(".tab-panel").forEach(function (p) { p.classList.remove("active"); });
+      btn.classList.add("active");
+      var panel = document.getElementById(target);
+      if (panel) panel.classList.add("active");
+    });
+  });
+
+  // Video Modal Logic
+  var modal = document.getElementById("videoModal");
+  var watchBtn = document.getElementById("watchVideoBtn");
+  var closeBtn = document.getElementById("closeModal");
+
+  watchBtn.addEventListener("click", function() {
+    modal.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", function() {
+    modal.classList.remove("active");
+  });
+
+  modal.addEventListener("click", function(e) {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+
+  // Contact Card Toggle Logic
+  var contactBtn = document.getElementById("contactToggleBtn");
+  var contactCard = document.getElementById("contactCard");
+
+  contactBtn.addEventListener("click", function() {
+    contactCard.classList.toggle("active");
+  });
+
+  // Typewriter
+  var phrases = [
+    "Safe AI requires structured law.",
+    "Aligning ELKM with the National AI Governance Framework.",
+    "Empowering the Justice Sector with Responsible AI."
+  ];
+  var ti = 0, ci = 0, deleting = false;
+  var tw = document.getElementById("typewriterText");
+  function tick() {
+    if (!tw) return;
+    var full = phrases[ti];
+    if (!deleting) {
+      ci++;
+      tw.textContent = full.slice(0, ci);
+      if (ci === full.length) { deleting = true; setTimeout(tick, 1800); return; }
+    } else {
+      ci--;
+      tw.textContent = full.slice(0, ci);
+      if (ci === 0) { deleting = false; ti = (ti + 1) % phrases.length; }
+    }
+    setTimeout(tick, deleting ? 28 : 55);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>
